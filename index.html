@@ -1,1 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Triovision Studios — Visionary Farms of Imagination.">
+
+    <meta name="theme-color" content="#000000">
+
+    <title>TRIOVISION STUDIOS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        #intro {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                opacity 1.2s ease,
+                visibility 1.2s ease;
+        }
+
+        #intro video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #intro.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* =========================
+           MAIN WEBSITE
+        ========================= */
+
+        #website {
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        #website.visible {
+            opacity: 1;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,.8),
+                transparent
+            );
+        }
+
+        .nav-logo {
+            width: 55px;
+            height: auto;
+        }
+
+        .menu-button {
+            border: 1px solid rgba(255,255,255,.4);
+            background: rgba(0,0,0,.3);
+            color: #fff;
+            padding: 12px 20px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            font-size: 11px;
+            transition: .3s ease;
+        }
+
+        .menu-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 100px 20px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,.08),
+                    transparent 45%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: min(420px, 75vw);
+            margin-bottom: 40px;
+            animation: logoFloat 5s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 7vw, 82px);
+            letter-spacing: .25em;
+            font-weight: 300;
+            margin-left: .25em;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 13px;
+            letter-spacing: .4em;
+            opacity: .65;
+            margin-left: .4em;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            letter-spacing: 4px;
+            opacity: .5;
+            animation: scrollPulse 2s infinite;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            min-height: 80vh;
+            padding: 140px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-number {
+            font-size: 11px;
+            letter-spacing: 4px;
+            opacity: .4;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(42px, 8vw, 100px);
+            font-weight: 200;
+            letter-spacing: .08em;
+            margin-bottom: 35px;
+        }
+
+        .section-text {
+            max-width: 650px;
+            font-size: 17px;
+            line-height: 1.9;
+            color: rgba(255,255,255,.65);
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: #050505;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(250px, 1fr)
+            );
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            min-height: 350px;
+            border: 1px solid rgba(255,255,255,.12);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform .5s ease,
+                        border-color .5s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,255,255,.5);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.9),
+                    transparent
+                );
+        }
+
+        .project-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-code {
+            font-size: 10px;
+            letter-spacing: 3px;
+            opacity: .5;
+        }
+
+        .project-name {
+            margin-top: 10px;
+            font-size: 25px;
+            letter-spacing: .08em;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        footer img {
+            width: 90px;
+            margin-bottom: 25px;
+        }
+
+        footer p {
+            font-size: 11px;
+            letter-spacing: 3px;
+            opacity: .45;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes logoFloat {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes scrollPulse {
+
+            0%, 100% {
+                opacity: .25;
+            }
+
+            50% {
+                opacity: .8;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+            }
+
+            section {
+                padding: 110px 7%;
+            }
+
+            .hero h1 {
+                letter-spacing: .15em;
+            }
+
+            .hero p {
+                font-size: 9px;
+                letter-spacing: .25em;
+            }
+
+            .project-card {
+                min-height: 280px;
+            }
+        }
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+
+            #intro {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         10 SECOND INTRO
+    ========================= -->
+
+    <div id="intro">
+
+        <video
+            id="introVideo"
+            autoplay
+            muted
+            playsinline
+            preload="auto">
+
+            <source src="intro.mp4" type="video/mp4">
+
+        </video>
+
+    </div>
+
+
+    <!-- =========================
+         WEBSITE
+    ========================= -->
+
+    <div id="website">
+
+        <header>
+
+            <img
+                src="logo.png"
+                alt="Triovision Studios"
+                class="nav-logo">
+
+            <button
+                class="menu-button"
+                type="button">
+
+                MENU
+
+            </button>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <main>
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <img
+                        src="logo.png"
+                        alt="Triovision Studios Logo"
+                        class="hero-logo">
+
+                    <h1>TRIOVISION</h1>
+
+                    <p>
+                        VISIONARY FARMS OF IMAGINATION
+                    </p>
+
+                </div>
+
+                <div class="scroll">
+                    SCROLL TO EXPLORE
+                </div>
+
+            </section>
+
+
+            <!-- STUDIO -->
+
+            <section>
+
+                <div class="section-number">
+                    01 — THE STUDIO
+                </div>
+
+                <h2 class="section-title">
+                    IMAGINE.
+                </h2>
+
+                <p class="section-text">
+                    Triovision Studios is a creative studio
+                    built to develop original stories,
+                    cinematic experiences and imaginative
+                    worlds.
+                </p>
+
+            </section>
+
+
+            <!-- PROJECTS -->
+
+            <section class="projects">
+
+                <div class="section-number">
+                    02 — OUR WORK
+                </div>
+
+                <h2 class="section-title">
+                    PROJECTS.
+                </h2>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+
+                        <div class="project-info">
+
+                            <div class="project-code">
+                                TVS#001
+                            </div>
+
+                            <div class="project-name">
+                                COMING SOON
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-info">
+
+                            <div class="project-code">
+                                TVS#002
+                            </div>
+
+                            <div class="project-name">
+                                IN DEVELOPMENT
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- VISION -->
+
+            <section>
+
+                <div class="section-number">
+                    03 — THE VISION
+                </div>
+
+                <h2 class="section-title">
+                    CREATE WORLDS.
+                </h2>
+
+                <p class="section-text">
+                    From a single idea to an entire universe,
+                    Triovision Studios explores the limitless
+                    possibilities of imagination.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <img
+                src="logo.png"
+                alt="Triovision Studios">
+
+            <p>
+                TRIOVISION STUDIOS
+            </p>
+
+            <p>
+                VISIONARY FARMS OF IMAGINATION
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         INTRO SCRIPT
+    ========================= -->
+
+    <script>
+
+        const intro = document.getElementById("intro");
+        const video = document.getElementById("introVideo");
+        const website = document.getElementById("website");
+
+        function finishIntro() {
+
+            intro.classList.add("hidden");
+
+            setTimeout(() => {
+
+                website.classList.add("visible");
+
+            }, 500);
+
+        }
+
+        video.addEventListener(
+            "ended",
+            finishIntro
+        );
+
+        /*
+         * Fallback in case the video
+         * cannot autoplay or load.
+         */
+
+        video.addEventListener(
+            "error",
+            () => {
+
+                setTimeout(
+                    finishIntro,
+                    1500
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+  </html>
