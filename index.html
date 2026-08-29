@@ -33,15 +33,7 @@
           href="logo.png">
 
 
-    <!--
-        TYPOGRAPHY
-
-        Cormorant Garamond:
-        Elegant cinematic/editorial display font.
-
-        Manrope:
-        Modern clean interface font.
-    -->
+    <!-- FONTS -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -50,11 +42,44 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+    <!-- Stylish modern cinematic font combination -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap"
           rel="stylesheet">
 
 
     <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+
+            --black: #000000;
+            --black-soft: #050505;
+            --black-panel: #0b0b0b;
+
+            --white: #ffffff;
+            --white-soft: #e8e8e8;
+
+            --gray-light: #aaaaaa;
+            --gray: #777777;
+            --gray-dark: #444444;
+
+            --line: rgba(255,255,255,0.12);
+            --line-strong: rgba(255,255,255,0.24);
+
+            --display:
+                "Space Grotesk",
+                Arial,
+                sans-serif;
+
+            --body:
+                "DM Sans",
+                Arial,
+                sans-serif;
+        }
+
 
         /* =====================================================
            RESET
@@ -63,76 +88,55 @@
         *,
         *::before,
         *::after {
+
             margin: 0;
             padding: 0;
+
             box-sizing: border-box;
         }
 
 
         html {
+
             scroll-behavior: smooth;
         }
 
 
         body {
-            background: #000;
-            color: #fff;
 
-            font-family:
-                "Manrope",
-                Arial,
-                sans-serif;
+            background: var(--black);
+
+            color: var(--white);
+
+            font-family: var(--body);
 
             overflow-x: hidden;
 
             -webkit-font-smoothing: antialiased;
+
             text-rendering: optimizeLegibility;
         }
 
 
         img {
+
             max-width: 100%;
+
             display: block;
         }
 
 
         a {
+
             color: inherit;
+
             text-decoration: none;
         }
 
 
         button {
-            font: inherit;
-        }
 
-
-        :root {
-
-            --black: #000000;
-            --white: #ffffff;
-
-            --off-white: #eeeeee;
-
-            --gray: #888888;
-
-            --dark-gray: #444444;
-
-            --line:
-                rgba(255,255,255,0.12);
-
-            --line-light:
-                rgba(255,255,255,0.20);
-
-            --display:
-                "Cormorant Garamond",
-                Georgia,
-                serif;
-
-            --ui:
-                "Manrope",
-                Arial,
-                sans-serif;
+            font-family: inherit;
         }
 
 
@@ -162,8 +166,8 @@
             overflow: hidden;
 
             transition:
-                opacity 1.2s ease,
-                visibility 1.2s ease;
+                opacity 1s ease,
+                visibility 1s ease;
         }
 
 
@@ -177,52 +181,33 @@
         }
 
 
-        /*
-           IMPORTANT VIDEO FIX
+        /* =====================================================
+           INTRO VIDEO
 
-           The video stays completely inside
-           the intro viewport.
-
-           It will NOT create horizontal overflow.
-        */
+           IMPORTANT:
+           contain = entire video stays visible.
+           It will NOT crop or overflow.
+        ===================================================== */
 
         #intro-video {
 
             display: block;
 
             width: 100%;
+
             height: 100%;
 
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 100vw;
+
+            max-height: 100dvh;
 
             object-fit: contain;
 
-            object-position: center;
-
             background: #000;
-        }
 
+            border: 0;
 
-        /*
-           Mobile intro video
-
-           Keeps the complete video visible
-           instead of cropping it.
-        */
-
-        @media (max-width: 700px) {
-
-            #intro-video {
-
-                width: 100%;
-                height: auto;
-
-                max-height: 100dvh;
-
-                object-fit: contain;
-            }
-
+            outline: 0;
         }
 
 
@@ -238,11 +223,11 @@
 
             display: flex;
 
-            flex-direction: column;
-
             align-items: center;
 
             justify-content: center;
+
+            flex-direction: column;
 
             background: #000;
 
@@ -252,7 +237,7 @@
 
         .intro-fallback img {
 
-            width: 120px;
+            width: 130px;
 
             margin-bottom: 25px;
 
@@ -266,9 +251,68 @@
 
             letter-spacing: 5px;
 
-            color: #666;
+            text-transform: uppercase;
+
+            color: #777;
+        }
+
+
+        /* =====================================================
+           SKIP INTRO
+        ===================================================== */
+
+        #skip-intro {
+
+            position: absolute;
+
+            right: 28px;
+
+            bottom: 28px;
+
+            z-index: 5;
+
+            border: 1px solid
+                rgba(255,255,255,.35);
+
+            background:
+                rgba(0,0,0,.65);
+
+            color: #fff;
+
+            padding: 12px 18px;
+
+            font-family: var(--body);
+
+            font-size: 9px;
+
+            font-weight: 500;
+
+            letter-spacing: 3px;
 
             text-transform: uppercase;
+
+            cursor: pointer;
+
+            backdrop-filter: blur(8px);
+
+            -webkit-backdrop-filter: blur(8px);
+
+            transition:
+                background .3s ease,
+                border-color .3s ease,
+                transform .3s ease;
+        }
+
+
+        #skip-intro:hover {
+
+            background: #fff;
+
+            color: #000;
+
+            border-color: #fff;
+
+            transform: translateY(-2px);
         }
 
 
@@ -290,8 +334,7 @@
 
             opacity: 1;
 
-            transition:
-                opacity 1s ease;
+            transition: opacity .8s ease;
         }
 
 
@@ -302,7 +345,7 @@
 
 
         /* =====================================================
-           NAVIGATION
+           NAVBAR
         ===================================================== */
 
         .navbar {
@@ -347,7 +390,7 @@
 
         .navbar.scrolled {
 
-            height: 66px;
+            height: 68px;
 
             background:
                 rgba(0,0,0,.94);
@@ -366,8 +409,9 @@
 
         .nav-logo {
 
-            width: 40px;
-            height: 40px;
+            width: 42px;
+
+            height: 42px;
 
             object-fit: contain;
         }
@@ -375,9 +419,9 @@
 
         .nav-name {
 
-            font-family: var(--ui);
+            font-family: var(--display);
 
-            font-size: 10px;
+            font-size: 12px;
 
             font-weight: 500;
 
@@ -391,7 +435,7 @@
 
             align-items: center;
 
-            gap: 34px;
+            gap: 35px;
 
             list-style: none;
         }
@@ -403,9 +447,7 @@
 
             color: #aaa;
 
-            font-family: var(--ui);
-
-            font-size: 8px;
+            font-size: 9px;
 
             font-weight: 500;
 
@@ -413,8 +455,7 @@
 
             text-transform: uppercase;
 
-            transition:
-                color .3s ease;
+            transition: color .3s ease;
         }
 
 
@@ -434,8 +475,7 @@
 
             background: #fff;
 
-            transition:
-                width .3s ease;
+            transition: width .3s ease;
         }
 
 
@@ -459,7 +499,9 @@
 
             position: relative;
 
-            min-height: 100svh;
+            min-height: 100vh;
+
+            min-height: 100dvh;
 
             display: flex;
 
@@ -473,7 +515,7 @@
 
             padding:
                 130px 25px
-                100px;
+                90px;
 
             background:
                 radial-gradient(
@@ -492,23 +534,27 @@
             position: absolute;
 
             width: 650px;
+
             height: 650px;
 
             left: 50%;
+
             top: 50%;
 
             transform:
-                translate(-50%,-50%);
+                translate(-50%, -50%);
 
             background:
                 radial-gradient(
                     circle,
-                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.045),
                     transparent 68%
                 );
 
             animation:
-                heroGlow 9s ease-in-out infinite;
+                heroGlow 8s
+                ease-in-out
+                infinite;
         }
 
 
@@ -516,12 +562,14 @@
 
             0%,
             100% {
+
                 transform:
                     translate(-50%,-50%)
                     scale(.9);
             }
 
             50% {
+
                 transform:
                     translate(-50%,-50%)
                     scale(1.12);
@@ -537,10 +585,10 @@
 
             width: 100%;
 
-            max-width: 1100px;
+            max-width: 1000px;
 
             animation:
-                heroReveal 1.6s
+                heroReveal 1.5s
                 cubic-bezier(.16,1,.3,1)
                 both;
         }
@@ -569,20 +617,19 @@
         .hero-logo {
 
             width:
-                min(190px,48vw);
+                min(220px, 58vw);
 
             margin:
-                0 auto 42px;
+                0 auto 38px;
 
             filter:
-                grayscale(100%)
                 drop-shadow(
-                    0 0 35px
-                    rgba(255,255,255,.09)
+                    0 0 30px
+                    rgba(255,255,255,.08)
                 );
 
             animation:
-                logoFloat 7s
+                logoFloat 6s
                 ease-in-out
                 infinite;
         }
@@ -592,70 +639,60 @@
 
             0%,
             100% {
+
                 transform:
                     translateY(0);
             }
 
             50% {
+
                 transform:
                     translateY(-7px);
             }
         }
 
 
-        /*
-           NEW DISPLAY FONT
-        */
-
         .hero-title {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
             font-size:
-                clamp(54px,9vw,110px);
+                clamp(42px, 8vw, 90px);
 
-            font-weight: 400;
-
-            line-height: .9;
+            font-weight: 300;
 
             letter-spacing:
-                clamp(5px,1.2vw,14px);
+                clamp(7px, 1.3vw, 15px);
 
-            text-transform:
-                uppercase;
+            line-height: 1;
         }
 
 
         .hero-divider {
 
-            width: 70px;
+            width: 75px;
 
             height: 1px;
 
             background: #777;
 
-            margin:
-                34px auto;
+            margin: 30px auto;
         }
 
 
         .hero-tagline {
 
-            font-family: var(--ui);
+            color: #aaa;
 
             font-size:
-                clamp(9px,1.3vw,13px);
+                clamp(9px, 1.5vw, 13px);
 
-            font-weight: 300;
+            font-weight: 400;
 
             letter-spacing:
-                clamp(3px,.7vw,6px);
+                clamp(3px, .7vw, 6px);
 
-            color: #999;
-
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
 
@@ -663,7 +700,7 @@
 
             position: absolute;
 
-            bottom: 28px;
+            bottom: 30px;
 
             left: 50%;
 
@@ -676,13 +713,11 @@
 
             align-items: center;
 
-            gap: 11px;
+            gap: 10px;
 
             color: #555;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
+            font-size: 8px;
 
             letter-spacing: 4px;
 
@@ -694,7 +729,7 @@
 
             width: 1px;
 
-            height: 42px;
+            height: 40px;
 
             background:
                 linear-gradient(
@@ -718,7 +753,7 @@
                 opacity: .3;
 
                 transform:
-                    scaleY(.65);
+                    scaleY(.7);
             }
 
             50% {
@@ -732,7 +767,7 @@
 
 
         /* =====================================================
-           GENERAL SECTION
+           SECTIONS
         ===================================================== */
 
         .section {
@@ -756,37 +791,31 @@
 
             display: block;
 
-            color: #444;
+            color: #555;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
+            font-size: 8px;
 
             font-weight: 500;
 
             letter-spacing: 5px;
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
 
         .section-title {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
             font-size:
-                clamp(40px,6vw,72px);
+                clamp(30px, 5vw, 58px);
 
-            font-weight: 400;
-
-            line-height: 1;
+            font-weight: 300;
 
             letter-spacing:
-                clamp(3px,.7vw,8px);
+                clamp(4px, .8vw, 9px);
 
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
 
@@ -796,11 +825,7 @@
 
             color: #666;
 
-            font-family: var(--ui);
-
-            font-size: 8px;
-
-            font-weight: 400;
+            font-size: 9px;
 
             letter-spacing: 4px;
 
@@ -809,7 +834,7 @@
 
 
         /* =====================================================
-           PROJECTS
+           PROJECT SECTION
         ===================================================== */
 
         #projects {
@@ -817,15 +842,15 @@
             background:
                 linear-gradient(
                     180deg,
-                    #000,
-                    #070707
+                    #050505,
+                    #090909
                 );
         }
 
 
         .project-card {
 
-            max-width: 1220px;
+            max-width: 1200px;
 
             margin: 0 auto;
 
@@ -835,7 +860,7 @@
                 minmax(0,1.05fr)
                 minmax(0,.95fr);
 
-            background: #050505;
+            background: #090909;
 
             border:
                 1px solid
@@ -846,7 +871,7 @@
             opacity: 0;
 
             transform:
-                translateY(45px);
+                translateY(40px);
 
             transition:
                 opacity 1s ease,
@@ -868,19 +893,22 @@
         .project-card:hover {
 
             border-color:
-                var(--line-light);
+                var(--line-strong);
         }
 
 
         /* =====================================================
-           POSTER
+           COLOURED POSTER
+
+           IMPORTANT:
+           No grayscale filter is applied here.
         ===================================================== */
 
         .project-poster {
 
             position: relative;
 
-            min-height: 610px;
+            min-height: 620px;
 
             overflow: hidden;
 
@@ -901,8 +929,8 @@
             background:
                 linear-gradient(
                     90deg,
-                    transparent 65%,
-                    rgba(0,0,0,.3)
+                    transparent 60%,
+                    rgba(0,0,0,.28)
                 );
         }
 
@@ -910,17 +938,20 @@
         .project-poster img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
 
-            filter:
-                grayscale(100%);
+            /* KEEP POSTER IN ORIGINAL COLOUR */
+
+            filter: none !important;
+
+            -webkit-filter: none !important;
 
             transition:
-                transform 1.3s
-                cubic-bezier(.16,1,.3,1),
-                filter .8s ease;
+                transform 1.1s
+                cubic-bezier(.16,1,.3,1);
         }
 
 
@@ -929,9 +960,6 @@
 
             transform:
                 scale(1.035);
-
-            filter:
-                grayscale(80%);
         }
 
 
@@ -948,23 +976,21 @@
             justify-content: center;
 
             padding:
-                clamp(40px,5vw,75px);
+                clamp(35px,5vw,70px);
         }
 
 
         .project-type {
 
-            color: #555;
+            color: #666;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
+            font-size: 8px;
 
             font-weight: 500;
 
             letter-spacing: 4px;
 
-            line-height: 1.8;
+            line-height: 1.7;
 
             text-transform: uppercase;
 
@@ -974,33 +1000,28 @@
 
         .project-title {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
             font-size:
-                clamp(45px,5vw,75px);
+                clamp(38px,5vw,68px);
 
-            font-weight: 400;
+            font-weight: 300;
 
-            line-height: .9;
+            letter-spacing: 4px;
 
-            letter-spacing: 3px;
+            line-height: 1.05;
         }
 
 
         .project-subtitle {
 
-            margin-top: 15px;
+            margin-top: 13px;
 
-            color: #888;
+            color: #999;
 
-            font-family: var(--ui);
+            font-size: 10px;
 
-            font-size: 9px;
-
-            font-weight: 400;
-
-            letter-spacing: 4px;
+            letter-spacing: 5px;
 
             text-transform: uppercase;
         }
@@ -1015,7 +1036,7 @@
             background: #555;
 
             margin:
-                30px 0;
+                28px 0;
         }
 
 
@@ -1023,28 +1044,25 @@
 
             color: #aaa;
 
-            font-family: var(--ui);
-
-            font-size: 12px;
-
-            font-weight: 300;
+            font-size: 13px;
 
             line-height: 2;
 
-            max-width: 500px;
+            max-width: 520px;
+
+            font-weight: 300;
         }
 
 
         .project-description::first-letter {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
-            font-size: 46px;
+            font-size: 38px;
 
             float: left;
 
-            line-height: .75;
+            line-height: .8;
 
             padding:
                 5px 8px 0 0;
@@ -1053,41 +1071,29 @@
         }
 
 
-        /* =====================================================
-           CREDITS
-        ===================================================== */
-
         .project-credits {
 
-            margin-top: 38px;
+            margin-top: 35px;
 
-            padding-top: 25px;
+            padding-top: 23px;
 
             border-top:
                 1px solid
                 var(--line);
 
-            color: #555;
+            color: #5f5f5f;
 
-            font-family: var(--ui);
+            font-size: 8px;
 
-            font-size: 7px;
-
-            font-weight: 400;
-
-            line-height: 2.5;
+            line-height: 2.3;
 
             letter-spacing: 2px;
         }
 
 
-        /* =====================================================
-           PROJECT STATUS
-        ===================================================== */
-
         .project-status {
 
-            margin-top: 34px;
+            margin-top: 30px;
 
             display: inline-flex;
 
@@ -1095,13 +1101,9 @@
 
             gap: 9px;
 
-            color: #777;
+            color: #999;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
-
-            font-weight: 500;
+            font-size: 8px;
 
             letter-spacing: 3px;
 
@@ -1111,16 +1113,13 @@
 
         .status-dot {
 
-            width: 5px;
-            height: 5px;
+            width: 6px;
+
+            height: 6px;
 
             border-radius: 50%;
 
             background: #aaa;
-
-            box-shadow:
-                0 0 8px
-                rgba(255,255,255,.4);
 
             animation:
                 statusBlink 2s infinite;
@@ -1131,10 +1130,12 @@
 
             0%,
             100% {
+
                 opacity: .35;
             }
 
             50% {
+
                 opacity: 1;
             }
         }
@@ -1152,9 +1153,7 @@
 
             gap: 20px;
 
-            width: 85%;
-
-            max-width: 750px;
+            max-width: 700px;
 
             margin:
                 0 auto;
@@ -1174,12 +1173,12 @@
 
         .studio-divider i {
 
-            width: 6px;
-            height: 6px;
+            width: 7px;
+
+            height: 7px;
 
             border:
-                1px solid
-                #666;
+                1px solid #777;
 
             transform:
                 rotate(45deg);
@@ -1203,14 +1202,13 @@
             text-align: center;
 
             padding:
-                100px 25px;
+                90px 25px;
 
             background:
                 radial-gradient(
                     ellipse at center,
                     #111 0%,
-                    #050505 60%,
-                    #000 100%
+                    #050505 68%
                 );
 
             border-top:
@@ -1225,21 +1223,21 @@
 
         .future-content {
 
-            max-width: 850px;
+            max-width: 800px;
         }
 
 
         .future-symbol {
 
-            width: 54px;
-            height: 54px;
+            width: 55px;
+
+            height: 55px;
 
             margin:
-                0 auto 32px;
+                0 auto 30px;
 
             border:
-                1px solid
-                #444;
+                1px solid #444;
 
             border-radius: 50%;
 
@@ -1251,27 +1249,29 @@
 
             color: #777;
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
-            font-size: 22px;
+            font-size: 19px;
 
             font-weight: 300;
 
             animation:
-                futureRotate 15s
-                linear infinite;
+                futureRotate 12s
+                linear
+                infinite;
         }
 
 
         @keyframes futureRotate {
 
             from {
+
                 transform:
                     rotate(0deg);
             }
 
             to {
+
                 transform:
                     rotate(360deg);
             }
@@ -1280,34 +1280,28 @@
 
         .future-title {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
             font-size:
-                clamp(45px,7vw,78px);
+                clamp(30px,6vw,64px);
 
-            font-weight: 400;
-
-            line-height: .95;
+            font-weight: 300;
 
             letter-spacing:
-                clamp(3px,1vw,9px);
-
-            text-transform:
-                uppercase;
+                clamp(4px,1vw,10px);
         }
 
 
         .future-line {
 
-            width: 60px;
+            width: 65px;
 
             height: 1px;
 
             background: #555;
 
             margin:
-                30px auto;
+                28px auto;
         }
 
 
@@ -1315,15 +1309,11 @@
 
             color: #666;
 
-            font-family: var(--ui);
-
-            font-size: 8px;
-
-            font-weight: 400;
+            font-size: 9px;
 
             letter-spacing: 4px;
 
-            line-height: 2.3;
+            line-height: 2;
 
             text-transform: uppercase;
         }
@@ -1336,7 +1326,7 @@
             margin-top: 32px;
 
             padding:
-                12px 25px;
+                12px 26px;
 
             border:
                 1px solid
@@ -1344,37 +1334,23 @@
 
             color: #888;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
+            font-size: 8px;
 
             font-weight: 500;
 
             letter-spacing: 4px;
 
             text-transform: uppercase;
-
-            transition:
-                all .3s ease;
-        }
-
-
-        .coming-soon:hover {
-
-            color: #fff;
-
-            border-color:
-                rgba(255,255,255,.5);
         }
 
 
         /* =====================================================
-           ABOUT
+           ABOUT / STUDIO
         ===================================================== */
 
         #about {
 
-            background: #000;
+            background: #050505;
         }
 
 
@@ -1408,19 +1384,18 @@
 
         .about-lead {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
             font-size:
-                clamp(28px,4vw,44px);
+                clamp(22px,3vw,34px);
 
-            font-weight: 400;
-
-            line-height: 1.35;
+            line-height: 1.55;
 
             color: #ddd;
 
             letter-spacing: 1px;
+
+            font-weight: 300;
         }
 
 
@@ -1430,13 +1405,11 @@
 
             color: #777;
 
-            font-family: var(--ui);
-
-            font-size: 12px;
-
-            font-weight: 300;
+            font-size: 13px;
 
             line-height: 2.1;
+
+            font-weight: 300;
         }
 
 
@@ -1444,15 +1417,13 @@
 
             margin-top: 42px;
 
-            font-family: var(--ui);
+            font-family: var(--display);
 
-            font-size: 8px;
-
-            font-weight: 500;
+            font-size: 10px;
 
             letter-spacing: 5px;
 
-            color: #888;
+            color: #999;
 
             text-transform: uppercase;
         }
@@ -1479,24 +1450,20 @@
 
         .footer-logo {
 
-            width: 65px;
+            width: 70px;
 
             margin:
                 0 auto 24px;
 
-            filter:
-                grayscale(100%);
-
-            opacity: .85;
+            opacity: .9;
         }
 
 
         .footer-name {
 
-            font-family:
-                var(--display);
+            font-family: var(--display);
 
-            font-size: 22px;
+            font-size: 13px;
 
             font-weight: 400;
 
@@ -1506,15 +1473,11 @@
 
         .footer-tagline {
 
-            margin-top: 13px;
+            margin-top: 14px;
 
-            color: #444;
+            color: #555;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
-
-            font-weight: 400;
+            font-size: 8px;
 
             letter-spacing: 4px;
 
@@ -1537,11 +1500,9 @@
 
         .copyright {
 
-            color: #333;
+            color: #3d3d3d;
 
-            font-family: var(--ui);
-
-            font-size: 7px;
+            font-size: 8px;
 
             letter-spacing: 2px;
 
@@ -1558,14 +1519,17 @@
             position: fixed;
 
             right: 22px;
+
             bottom: 22px;
 
-            width: 40px;
-            height: 40px;
+            width: 42px;
+
+            height: 42px;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             border:
@@ -1573,9 +1537,9 @@
                 rgba(255,255,255,.2);
 
             background:
-                rgba(0,0,0,.8);
+                rgba(0,0,0,.75);
 
-            color: #777;
+            color: #aaa;
 
             cursor: pointer;
 
@@ -1583,10 +1547,10 @@
 
             visibility: hidden;
 
+            z-index: 4000;
+
             transition:
                 all .3s ease;
-
-            z-index: 4000;
         }
 
 
@@ -1607,30 +1571,17 @@
 
 
         /* =====================================================
-           TABLET / MOBILE
+           TABLET
         ===================================================== */
 
         @media (max-width: 850px) {
 
             .navbar {
 
-                height: 68px;
+                height: 70px;
 
                 padding:
                     0 5%;
-            }
-
-
-            .navbar.scrolled {
-
-                height: 62px;
-            }
-
-
-            .nav-logo {
-
-                width: 36px;
-                height: 36px;
             }
 
 
@@ -1640,15 +1591,23 @@
             }
 
 
+            .nav-logo {
+
+                width: 39px;
+
+                height: 39px;
+            }
+
+
             .nav-links {
 
-                gap: 17px;
+                gap: 18px;
             }
 
 
             .nav-links a {
 
-                font-size: 7px;
+                font-size: 8px;
 
                 letter-spacing: 2px;
             }
@@ -1658,34 +1617,22 @@
 
                 padding:
                     120px 20px
-                    80px;
+                    75px;
             }
 
 
             .hero-logo {
 
                 width:
-                    min(175px,55vw);
+                    min(210px,58vw);
 
-                margin-bottom: 35px;
+                margin-bottom: 32px;
             }
 
 
-            .hero-title {
+            .hero-scroll {
 
-                font-size:
-                    clamp(45px,12vw,75px);
-            }
-
-
-            .hero-tagline {
-
-                max-width: 320px;
-
-                margin:
-                    0 auto;
-
-                line-height: 2;
+                bottom: 18px;
             }
 
 
@@ -1710,7 +1657,7 @@
 
             .project-poster {
 
-                min-height: 0;
+                min-height: auto;
 
                 aspect-ratio:
                     2 / 3;
@@ -1720,38 +1667,42 @@
             .project-details {
 
                 padding:
-                    40px 25px 45px;
+                    38px 25px 45px;
             }
 
 
             .project-title {
 
-                font-size: 48px;
+                font-size: 42px;
             }
 
 
             .project-description {
 
-                font-size: 11px;
+                font-size: 13px;
             }
 
 
             .future-section {
 
                 min-height: 50vh;
-
-                padding:
-                    80px 25px;
             }
 
         }
 
 
         /* =====================================================
-           SMALL PHONES
+           MOBILE
         ===================================================== */
 
         @media (max-width: 480px) {
+
+            .navbar {
+
+                padding:
+                    0 18px;
+            }
+
 
             .nav-links {
 
@@ -1761,7 +1712,7 @@
 
             .nav-links a {
 
-                font-size: 6px;
+                font-size: 7px;
 
                 letter-spacing: 1.5px;
             }
@@ -1769,9 +1720,9 @@
 
             .hero-title {
 
-                font-size: 43px;
+                font-size: 37px;
 
-                letter-spacing: 4px;
+                letter-spacing: 5px;
             }
 
 
@@ -1780,12 +1731,21 @@
                 font-size: 8px;
 
                 letter-spacing: 2.5px;
+
+                line-height: 2;
+            }
+
+
+            .hero-logo {
+
+                width:
+                    min(185px,58vw);
             }
 
 
             .project-title {
 
-                font-size: 41px;
+                font-size: 35px;
 
                 letter-spacing: 2px;
             }
@@ -1793,31 +1753,38 @@
 
             .project-subtitle {
 
-                font-size: 8px;
-
                 letter-spacing: 3px;
             }
 
 
             .project-credits {
 
-                font-size: 6.5px;
+                font-size: 7px;
 
                 letter-spacing: 1.4px;
             }
 
 
-            .about-lead {
+            #skip-intro {
 
-                font-size: 27px;
+                right: 15px;
+
+                bottom: 15px;
+
+                padding:
+                    10px 14px;
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
             }
 
 
-            .footer-name {
+            #top-button {
 
-                font-size: 18px;
+                right: 15px;
 
-                letter-spacing: 4px;
+                bottom: 15px;
             }
 
         }
@@ -1830,8 +1797,10 @@
         @media (prefers-reduced-motion: reduce) {
 
             html {
+
                 scroll-behavior: auto;
             }
+
 
             *,
             *::before,
@@ -1858,7 +1827,7 @@
 
 
     <!-- =====================================================
-         10-SECOND TRIOVISION INTRO
+         10 SECOND INTRO
     ===================================================== -->
 
     <div id="intro-screen">
@@ -1869,8 +1838,6 @@
             muted
             playsinline
             preload="auto"
-            disablepictureinpicture
-            controlslist="nodownload noplaybackrate"
             aria-label="Triovision Studios opening animation">
 
             <source
@@ -1879,6 +1846,8 @@
 
         </video>
 
+
+        <!-- FALLBACK -->
 
         <div class="intro-fallback">
 
@@ -1891,6 +1860,17 @@
             </p>
 
         </div>
+
+
+        <!-- SKIP BUTTON -->
+
+        <button
+            id="skip-intro"
+            type="button">
+
+            Skip Intro
+
+        </button>
 
     </div>
 
@@ -1984,7 +1964,9 @@
 
 
                 <h1 class="hero-title">
+
                     TRIOVISION
+
                 </h1>
 
 
@@ -1992,7 +1974,9 @@
 
 
                 <p class="hero-tagline">
+
                     Visionary Farms of Imagination
+
                 </p>
 
             </div>
@@ -2012,7 +1996,7 @@
 
 
         <!-- =================================================
-             CURRENT PROJECT
+             PROJECTS
         ================================================= -->
 
         <section
@@ -2023,38 +2007,48 @@
             <div class="section-header">
 
                 <span class="section-number">
-                    01 / CURRENT PROJECT
+
+                    01 / PROJECTS
+
                 </span>
 
+
                 <h2 class="section-title">
+
                     Current Project
+
                 </h2>
 
+
                 <p class="section-subtitle">
+
                     Stories currently in creation
+
                 </p>
 
             </div>
 
+
+            <!-- SWAN-MERE -->
 
             <article
                 class="project-card"
                 id="swan-mere">
 
 
-                <!-- POSTER -->
+                <!-- COLOURED POSTER -->
 
                 <div class="project-poster">
 
                     <img
                         src="swan-mere.png"
-                        alt="SWAN-MERE — Echoes of Hearts"
+                        alt="SWAN-MERE — Echoes of Hearts poster"
                         loading="lazy">
 
                 </div>
 
 
-                <!-- INFORMATION -->
+                <!-- DETAILS -->
 
                 <div class="project-details">
 
@@ -2068,12 +2062,16 @@
 
 
                     <h3 class="project-title">
+
                         SWAN-MERE
+
                     </h3>
 
 
                     <p class="project-subtitle">
+
                         Echoes of Hearts
+
                     </p>
 
 
@@ -2148,16 +2146,21 @@
             class="future-section"
             id="future">
 
+
             <div class="future-content">
 
 
                 <div class="future-symbol">
+
                     +
+
                 </div>
 
 
                 <h2 class="future-title">
+
                     Future Projects
+
                 </h2>
 
 
@@ -2185,7 +2188,7 @@
 
 
         <!-- =================================================
-             ABOUT / STUDIO
+             ABOUT
         ================================================= -->
 
         <section
@@ -2196,15 +2199,23 @@
             <div class="section-header">
 
                 <span class="section-number">
+
                     02 / THE STUDIO
+
                 </span>
 
+
                 <h2 class="section-title">
+
                     Triovision Studios
+
                 </h2>
 
+
                 <p class="section-subtitle">
+
                     Visionary Farms of Imagination
+
                 </p>
 
             </div>
@@ -2217,10 +2228,8 @@
 
                     We imagine worlds.
                     <br>
-
                     We build stories.
                     <br>
-
                     We create visions.
 
                 </p>
@@ -2269,12 +2278,16 @@
 
 
         <h3 class="footer-name">
+
             TRIOVISION STUDIOS
+
         </h3>
 
 
         <p class="footer-tagline">
+
             Visionary Farms of Imagination
+
         </p>
 
 
@@ -2291,9 +2304,7 @@
     </footer>
 
 
-    <!-- =====================================================
-         BACK TO TOP
-    ===================================================== -->
+    <!-- BACK TO TOP -->
 
     <button
         id="top-button"
@@ -2319,49 +2330,32 @@
         ================================================= */
 
         const introScreen =
-            document.getElementById(
-                "intro-screen"
-            );
-
+            document.getElementById("intro-screen");
 
         const introVideo =
-            document.getElementById(
-                "intro-video"
-            );
+            document.getElementById("intro-video");
 
+        const skipIntro =
+            document.getElementById("skip-intro");
 
         const pageLoader =
-            document.getElementById(
-                "page-loader"
-            );
-
+            document.getElementById("page-loader");
 
         const navbar =
-            document.getElementById(
-                "navbar"
-            );
-
+            document.getElementById("navbar");
 
         const topButton =
-            document.getElementById(
-                "top-button"
-            );
-
+            document.getElementById("top-button");
 
         const projectCard =
-            document.querySelector(
-                ".project-card"
-            );
-
+            document.querySelector(".project-card");
 
         const aboutContainer =
-            document.querySelector(
-                ".about-container"
-            );
+            document.querySelector(".about-container");
 
 
         /* =================================================
-           INTRO VIDEO
+           INTRO CONTROL
         ================================================= */
 
         let introClosed = false;
@@ -2370,6 +2364,7 @@
         function closeIntro() {
 
             if (introClosed) {
+
                 return;
             }
 
@@ -2377,32 +2372,42 @@
             introClosed = true;
 
 
-            introScreen.classList.add(
-                "hidden"
-            );
+            /*
+             * Stop the video immediately.
+             */
+
+            try {
+
+                introVideo.pause();
+
+            } catch (error) {}
 
 
             /*
-             * Stop the video after the
-             * intro has disappeared.
+             * Fade out intro.
+             */
+
+            introScreen.classList.add("hidden");
+
+
+            /*
+             * Remove intro from interaction
+             * after the fade animation.
              */
 
             setTimeout(
                 function () {
 
-                    introVideo.pause();
+                    introScreen.style.display =
+                        "none";
 
                 },
-                1300
+                1100
             );
-
         }
 
 
-        /*
-         * Close exactly when the video
-         * reaches its natural end.
-         */
+        /* VIDEO ENDS */
 
         introVideo.addEventListener(
             "ended",
@@ -2410,35 +2415,23 @@
         );
 
 
-        /*
-         * 11 second safety fallback.
-         *
-         * Your intro is expected to be
-         * approximately 10 seconds.
-         */
+        /* SKIP BUTTON */
 
-        const introTimer =
-            setTimeout(
-                closeIntro,
-                11000
-            );
+        skipIntro.addEventListener(
+            "click",
+            closeIntro
+        );
 
 
-        /*
-         * Video loading error.
-         */
+        /* VIDEO ERROR */
 
         introVideo.addEventListener(
             "error",
             function () {
 
-                clearTimeout(
-                    introTimer
-                );
-
                 setTimeout(
                     closeIntro,
-                    1000
+                    800
                 );
 
             }
@@ -2446,32 +2439,39 @@
 
 
         /*
-         * Force autoplay when possible.
+         * Safety fallback.
+         *
+         * Even if the browser does not detect
+         * the MP4 ending correctly, the visitor
+         * will never be trapped on the intro.
          */
+
+        setTimeout(
+            closeIntro,
+            11000
+        );
+
+
+        /* =================================================
+           TRY TO PLAY VIDEO
+        ================================================= */
 
         window.addEventListener(
             "load",
             function () {
 
-                introVideo
-                    .play()
+                introVideo.play()
                     .catch(
-                        function () {}
+                        function () {
+
+                            /*
+                             * Some browsers may block
+                             * autoplay. The Skip Intro
+                             * button remains available.
+                             */
+
+                        }
                     );
-
-            }
-        );
-
-
-        /*
-         * No context menu on intro.
-         */
-
-        introVideo.addEventListener(
-            "contextmenu",
-            function (event) {
-
-                event.preventDefault();
 
             }
         );
@@ -2506,9 +2506,7 @@
 
         function updateNavbar() {
 
-            if (
-                window.scrollY > 60
-            ) {
+            if (window.scrollY > 60) {
 
                 navbar.classList.add(
                     "scrolled"
@@ -2543,9 +2541,7 @@
 
         function updateTopButton() {
 
-            if (
-                window.scrollY > 600
-            ) {
+            if (window.scrollY > 600) {
 
                 topButton.classList.add(
                     "show"
@@ -2605,10 +2601,7 @@
 
                                 entry.target
                                     .classList
-                                    .add(
-                                        "visible"
-                                    );
-
+                                    .add("visible");
 
                                 observer.unobserve(
                                     entry.target
@@ -2624,7 +2617,6 @@
                 {
                     threshold: .15
                 }
-
             );
 
 
@@ -2644,6 +2636,23 @@
             );
 
         }
+
+
+        /* =================================================
+           VIDEO SECURITY / UI
+        ================================================= */
+
+        introVideo.controls = false;
+
+
+        introVideo.addEventListener(
+            "contextmenu",
+            function (event) {
+
+                event.preventDefault();
+
+            }
+        );
 
 
         /* =================================================
@@ -2676,8 +2685,7 @@
                     !introClosed
                 ) {
 
-                    introVideo
-                        .play()
+                    introVideo.play()
                         .catch(
                             function () {}
                         );
