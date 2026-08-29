@@ -1,1443 +1,2475 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Triovision Studios — Visionary Farms of Imagination.">
-<meta name="theme-color" content="#000000">
+    <!-- =========================================
+         BASIC DOCUMENT SETTINGS
+    ========================================== -->
 
-<title>TRIOVISION STUDIOS</title>
+    <meta charset="UTF-8">
 
-<style>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-/* =========================================================
-   RESET
-========================================================= */
+    <meta name="description"
+          content="Triovision Studios — Visionary Farms of Imagination. Original stories, films and cinematic worlds.">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <meta name="author"
+          content="Triovision Studios">
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta name="robots"
+          content="index, follow">
 
-body {
-    background: #000;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-}
+    <meta name="theme-color"
+          content="#050505">
 
-button,
-a {
-    font: inherit;
-}
+    <title>Triovision Studios | Visionary Farms of Imagination</title>
 
-button {
-    border: 0;
-}
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    <!-- =========================================
+         SECURITY / REFERRER POLICY
+    ========================================== -->
 
+    <meta name="referrer"
+          content="strict-origin-when-cross-origin">
 
-/* =========================================================
-   INTRO — 10 SECOND STUDIO IDENT
-========================================================= */
 
-#intro {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
+    <link rel="icon"
+          type="image/png"
+          href="logo.png">
 
-    background: #000;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    <!-- =========================================
+         GOOGLE FONT
+         Cinematic typography
+    ========================================== -->
 
-    opacity: 1;
-    visibility: visible;
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    transition:
-        opacity 1.4s ease,
-        visibility 1.4s ease;
-}
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-#intro video {
-    width: 100%;
-    height: 100%;
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
 
-    object-fit: cover;
 
-    display: block;
-}
+    <!-- =========================================
+         STYLES
+    ========================================== -->
 
-#intro.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
+    <style>
 
+        /* =========================================
+           RESET
+        ========================================== */
 
-/* =========================================================
-   MAIN WEBSITE
-========================================================= */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-#website {
-    opacity: 0;
-    visibility: hidden;
 
-    transition:
-        opacity 1.5s ease,
-        visibility 1.5s ease;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-#website.visible {
-    opacity: 1;
-    visibility: visible;
-}
 
+        body {
+            background: #050505;
+            color: #ffffff;
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+            font-family: "Inter",
+                         Arial,
+                         sans-serif;
 
-header {
-    position: fixed;
+            overflow-x: hidden;
 
-    top: 0;
-    left: 0;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
-    width: 100%;
 
-    padding: 25px 5%;
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    z-index: 5000;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.85),
-            rgba(0,0,0,0)
-        );
-}
 
-.nav-logo {
-    width: 58px;
-    height: auto;
+        button {
+            font: inherit;
+        }
 
-    display: block;
-}
 
-.menu-button {
-    position: relative;
+        /* =========================================
+           CUSTOM VARIABLES
+        ========================================== */
 
-    padding: 12px 20px;
+        :root {
 
-    color: #fff;
-    background: rgba(0,0,0,.35);
+            --black: #000000;
 
-    border: 1px solid rgba(255,255,255,.35);
+            --background: #050505;
 
-    cursor: pointer;
+            --background-two: #0a0a0a;
 
-    font-size: 10px;
-    letter-spacing: 4px;
+            --panel: #0d0d0d;
 
-    transition:
-        background .4s ease,
-        color .4s ease,
-        border-color .4s ease;
-}
+            --white: #ffffff;
 
-.menu-button:hover {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
-}
+            --soft-white: #dedede;
 
+            --gray: #999999;
 
-/* =========================================================
-   FULL SCREEN MENU
-========================================================= */
+            --dark-gray: #555555;
 
-.menu-overlay {
-    position: fixed;
+            --line:
+                rgba(255,255,255,0.10);
 
-    inset: 0;
+            --line-strong:
+                rgba(255,255,255,0.20);
 
-    z-index: 4500;
+            --serif:
+                "Cinzel",
+                Georgia,
+                serif;
 
-    background: rgba(0,0,0,.97);
+            --sans:
+                "Inter",
+                Arial,
+                sans-serif;
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    opacity: 0;
-    visibility: hidden;
+        /* =========================================
+           LOADING / INTRO SCREEN
+        ========================================== */
 
-    transition:
-        opacity .6s ease,
-        visibility .6s ease;
-}
+        #intro-screen {
 
-.menu-overlay.open {
-    opacity: 1;
-    visibility: visible;
-}
+            position: fixed;
 
-.menu-content {
-    text-align: center;
-}
+            inset: 0;
 
-.menu-content a {
-    display: block;
+            width: 100%;
+            height: 100%;
 
-    margin: 22px 0;
+            background: #000000;
 
-    font-size: clamp(30px, 7vw, 70px);
+            z-index: 99999;
 
-    font-weight: 200;
+            display: flex;
 
-    letter-spacing: .12em;
+            align-items: center;
 
-    opacity: 0;
+            justify-content: center;
 
-    transform: translateY(25px);
+            overflow: hidden;
 
-    transition:
-        opacity .6s ease,
-        transform .6s ease,
-        letter-spacing .4s ease;
-}
+            transition:
+                opacity 1.5s ease,
+                visibility 1.5s ease;
+        }
 
-.menu-overlay.open .menu-content a {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.menu-overlay.open .menu-content a:nth-child(1) {
-    transition-delay: .05s;
-}
+        #intro-screen.hidden {
 
-.menu-overlay.open .menu-content a:nth-child(2) {
-    transition-delay: .10s;
-}
+            opacity: 0;
 
-.menu-overlay.open .menu-content a:nth-child(3) {
-    transition-delay: .15s;
-}
+            visibility: hidden;
 
-.menu-overlay.open .menu-content a:nth-child(4) {
-    transition-delay: .20s;
-}
+            pointer-events: none;
+        }
 
-.menu-overlay.open .menu-content a:nth-child(5) {
-    transition-delay: .25s;
-}
 
-.menu-content a:hover {
-    letter-spacing: .2em;
-}
+        #intro-video {
 
+            width: 100%;
+            height: 100%;
 
-/* =========================================================
-   HERO
-========================================================= */
+            object-fit: cover;
 
-.hero {
-    position: relative;
+            background: #000;
+        }
 
-    min-height: 100vh;
-    min-height: 100dvh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        /* Fallback if video cannot load */
 
-    text-align: center;
+        .intro-fallback {
 
-    overflow: hidden;
+            position: absolute;
 
-    padding: 120px 20px;
-}
+            inset: 0;
 
-.hero::before {
-    content: "";
+            display: flex;
 
-    position: absolute;
+            align-items: center;
 
-    inset: 0;
+            justify-content: center;
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,255,255,.08),
-            transparent 35%
-        );
+            flex-direction: column;
 
-    pointer-events: none;
-}
+            background: #000;
 
-.hero::after {
-    content: "";
+            z-index: -1;
+        }
 
-    position: absolute;
 
-    width: 700px;
-    height: 700px;
+        .intro-fallback img {
 
-    border: 1px solid rgba(255,255,255,.035);
+            width: 150px;
 
-    border-radius: 50%;
+            opacity: 0.9;
 
-    animation: rotateRing 35s linear infinite;
+            margin-bottom: 25px;
+        }
 
-    pointer-events: none;
-}
 
-.hero-content {
-    position: relative;
+        .intro-fallback p {
 
-    z-index: 2;
+            font-size: 10px;
 
-    animation: heroReveal 2s ease both;
-}
+            letter-spacing: 5px;
 
-.hero-logo {
-    width: min(330px, 70vw);
+            color: #777;
 
-    height: auto;
+            text-transform: uppercase;
+        }
 
-    margin-bottom: 35px;
 
-    animation:
-        logoFloat 6s ease-in-out infinite;
-}
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
 
-.hero-title {
-    font-size: clamp(35px, 8vw, 90px);
+        #page-loader {
 
-    font-weight: 300;
+            position: fixed;
 
-    letter-spacing: .27em;
+            inset: 0;
 
-    margin-left: .27em;
-}
+            background: #050505;
 
-.hero-tagline {
-    margin-top: 22px;
+            z-index: 9998;
 
-    font-size: 11px;
+            pointer-events: none;
 
-    letter-spacing: .45em;
+            opacity: 1;
 
-    margin-left: .45em;
+            transition:
+                opacity 1s ease;
+        }
 
-    opacity: .55;
-}
 
-.scroll-indicator {
-    position: absolute;
+        #page-loader.loaded {
 
-    bottom: 35px;
-    left: 50%;
+            opacity: 0;
+        }
 
-    transform: translateX(-50%);
 
-    font-size: 9px;
+        /* =========================================
+           NAVIGATION
+        ========================================== */
 
-    letter-spacing: 4px;
+        .navbar {
 
-    opacity: .45;
+            position: fixed;
 
-    z-index: 2;
+            top: 0;
+            left: 0;
 
-    animation: scrollPulse 2.5s ease-in-out infinite;
-}
+            width: 100%;
 
+            height: 82px;
 
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
+            z-index: 5000;
 
-section {
-    position: relative;
+            display: flex;
 
-    min-height: 85vh;
+            align-items: center;
 
-    padding: 150px 8%;
+            justify-content: space-between;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+            padding: 0 6%;
 
-    overflow: hidden;
-}
+            background:
+                rgba(0,0,0,0.72);
 
-.section-number {
-    font-size: 10px;
+            backdrop-filter:
+                blur(15px);
 
-    letter-spacing: 4px;
+            -webkit-backdrop-filter:
+                blur(15px);
 
-    opacity: .4;
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
 
-    margin-bottom: 22px;
-}
+            transition:
+                background 0.4s ease,
+                height 0.4s ease;
+        }
 
-.section-title {
-    font-size: clamp(45px, 9vw, 110px);
 
-    font-weight: 200;
+        .navbar.scrolled {
 
-    letter-spacing: .08em;
+            height: 70px;
 
-    line-height: .95;
+            background:
+                rgba(0,0,0,0.92);
+        }
 
-    margin-bottom: 40px;
-}
 
-.section-text {
-    max-width: 680px;
+        .nav-brand {
 
-    font-size: 17px;
+            display: flex;
 
-    line-height: 1.9;
+            align-items: center;
 
-    color: rgba(255,255,255,.62);
-}
+            gap: 15px;
+        }
 
 
-/* =========================================================
-   STUDIO SECTION
-========================================================= */
+        .nav-logo {
 
-.studio {
-    background:
-        linear-gradient(
-            180deg,
-            #000,
-            #030303
-        );
-}
+            width: 47px;
 
-.studio-line {
-    width: 100px;
+            height: 47px;
 
-    height: 1px;
+            object-fit: contain;
+        }
 
-    background: rgba(255,255,255,.5);
 
-    margin-bottom: 35px;
-}
+        .nav-name {
 
+            font-family: var(--serif);
 
-/* =========================================================
-   CURRENT PROJECT
-========================================================= */
+            font-size: 14px;
 
-.projects {
-    background: #050505;
+            letter-spacing: 4px;
 
-    padding-top: 170px;
-    padding-bottom: 170px;
-}
+            font-weight: 500;
+        }
 
-.project-intro {
-    max-width: 800px;
-}
 
-.current-label {
-    display: inline-block;
+        .nav-links {
 
-    font-size: 9px;
+            display: flex;
 
-    letter-spacing: 4px;
+            align-items: center;
 
-    border: 1px solid rgba(255,255,255,.3);
+            gap: 38px;
 
-    padding: 10px 15px;
+            list-style: none;
+        }
 
-    margin-bottom: 30px;
-}
 
-.project-title {
-    font-size: clamp(45px, 9vw, 105px);
+        .nav-links a {
 
-    font-weight: 200;
+            position: relative;
 
-    letter-spacing: .04em;
+            color: #d8d8d8;
 
-    line-height: .95;
-}
+            font-size: 10px;
 
-.project-subtitle {
-    margin-top: 20px;
+            letter-spacing: 3px;
 
-    font-size: clamp(15px, 2vw, 22px);
+            text-transform: uppercase;
 
-    letter-spacing: .35em;
+            transition:
+                color 0.3s ease;
+        }
 
-    opacity: .65;
-}
 
+        .nav-links a::after {
 
-/* =========================================================
-   PROJECT DISPLAY
-========================================================= */
+            content: "";
 
-.project-display {
-    margin-top: 80px;
+            position: absolute;
 
-    display: grid;
+            left: 0;
 
-    grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(280px, .95fr);
+            bottom: -8px;
 
-    gap: 70px;
+            width: 0;
 
-    align-items: center;
-}
+            height: 1px;
 
-.poster-wrapper {
-    position: relative;
+            background: #ffffff;
 
-    overflow: hidden;
+            transition:
+                width 0.3s ease;
+        }
 
-    background: #000;
 
-    border: 1px solid rgba(255,255,255,.12);
+        .nav-links a:hover {
 
-    box-shadow:
-        0 40px 100px rgba(0,0,0,.65);
+            color: #ffffff;
+        }
 
-    cursor: pointer;
-}
 
-.poster-wrapper::after {
-    content: "";
+        .nav-links a:hover::after {
 
-    position: absolute;
+            width: 100%;
+        }
 
-    inset: 0;
 
-    background:
-        linear-gradient(
-            120deg,
-            transparent 35%,
-            rgba(255,255,255,.12),
-            transparent 65%
-        );
+        /* =========================================
+           HERO
+        ========================================== */
 
-    transform: translateX(-120%);
+        .hero {
 
-    transition: transform 1s ease;
-}
+            position: relative;
 
-.poster-wrapper:hover::after {
-    transform: translateX(120%);
-}
+            min-height: 100vh;
 
-.poster-wrapper img {
-    display: block;
+            display: flex;
 
-    width: 100%;
-    height: auto;
+            align-items: center;
 
-    transition:
-        transform 1.2s cubic-bezier(.2,.7,.2,1),
-        filter 1s ease;
-}
+            justify-content: center;
 
-.poster-wrapper:hover img {
-    transform: scale(1.035);
+            text-align: center;
 
-    filter: brightness(1.08);
-}
+            overflow: hidden;
 
-.project-details {
-    max-width: 480px;
-}
+            padding:
+                150px 25px
+                100px;
 
-.detail-line {
-    width: 60px;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #181818 0%,
+                    #090909 40%,
+                    #000000 100%
+                );
+        }
 
-    height: 1px;
 
-    background: rgba(255,255,255,.5);
+        /* Cinematic moving light */
 
-    margin-bottom: 30px;
-}
+        .hero::before {
 
-.project-description {
-    font-size: 16px;
+            content: "";
 
-    line-height: 1.9;
+            position: absolute;
 
-    color: rgba(255,255,255,.62);
+            width: 700px;
 
-    margin-bottom: 40px;
-}
+            height: 700px;
 
-.project-credit {
-    font-size: 10px;
+            left: 50%;
 
-    letter-spacing: 3px;
+            top: 50%;
 
-    line-height: 2;
+            transform:
+                translate(-50%, -50%);
 
-    opacity: .55;
-}
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.045),
+                    transparent 65%
+                );
 
+            animation:
+                heroGlow 8s ease-in-out infinite;
+        }
 
-/* =========================================================
-   FUTURE PROJECTS
-========================================================= */
 
-.future {
-    min-height: 65vh;
+        @keyframes heroGlow {
 
-    text-align: center;
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.9);
+            }
 
-    align-items: center;
+            50% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+            }
+        }
 
-    background:
-        radial-gradient(
-            circle at center,
-            #101010,
-            #000 65%
-        );
-}
 
-.future .section-number {
-    margin-bottom: 25px;
-}
+        .hero-content {
 
-.future-title {
-    font-size: clamp(42px, 8vw, 90px);
+            position: relative;
 
-    font-weight: 200;
+            z-index: 2;
 
-    letter-spacing: .1em;
-}
+            max-width: 1000px;
 
-.future-status {
-    margin-top: 35px;
+            animation:
+                heroReveal 1.8s
+                cubic-bezier(.16,1,.3,1)
+                both;
+        }
 
-    font-size: 11px;
 
-    letter-spacing: 6px;
+        @keyframes heroReveal {
 
-    opacity: .5;
-}
+            from {
 
-.future-line {
-    width: 100px;
+                opacity: 0;
 
-    height: 1px;
+                transform:
+                    translateY(40px);
+            }
 
-    background: rgba(255,255,255,.35);
+            to {
 
-    margin: 40px auto;
-}
+                opacity: 1;
 
-.future-text {
-    max-width: 550px;
+                transform:
+                    translateY(0);
+            }
+        }
 
-    line-height: 1.9;
 
-    color: rgba(255,255,255,.5);
+        .hero-logo {
 
-    font-size: 15px;
-}
+            width:
+                min(250px, 65vw);
 
+            margin:
+                0 auto 40px;
 
-/* =========================================================
-   VISION
-========================================================= */
+            filter:
+                drop-shadow(
+                    0 0 35px
+                    rgba(255,255,255,0.08)
+                );
 
-.vision {
-    background: #020202;
-}
+            animation:
+                logoFloat 6s
+                ease-in-out
+                infinite;
+        }
 
-.vision-word {
-    font-size: clamp(55px, 13vw, 170px);
 
-    font-weight: 200;
+        @keyframes logoFloat {
 
-    letter-spacing: .04em;
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
 
-    line-height: .85;
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+        }
 
-    opacity: .9;
-}
 
+        .hero-title {
 
-/* =========================================================
-   FOOTER
-========================================================= */
+            font-family: var(--serif);
 
-footer {
-    border-top: 1px solid rgba(255,255,255,.1);
+            font-size:
+                clamp(42px, 8vw, 92px);
 
-    padding: 80px 8% 45px;
+            font-weight: 400;
 
-    text-align: center;
+            letter-spacing:
+                clamp(6px, 1.2vw, 14px);
 
-    background: #000;
-}
+            line-height: 1;
+        }
 
-footer img {
-    width: 85px;
 
-    height: auto;
+        .hero-divider {
 
-    margin-bottom: 30px;
-}
+            width: 90px;
 
-.footer-name {
-    font-size: 12px;
+            height: 1px;
 
-    letter-spacing: 5px;
+            background:
+                rgba(255,255,255,0.7);
 
-    margin-left: 5px;
+            margin:
+                32px auto;
+        }
 
-    margin-bottom: 12px;
-}
 
-.footer-tagline {
-    font-size: 9px;
+        .hero-tagline {
 
-    letter-spacing: 3px;
+            font-size:
+                clamp(11px, 1.8vw, 16px);
 
-    opacity: .4;
-}
+            letter-spacing:
+                clamp(3px, 0.7vw, 6px);
 
-.copyright {
-    margin-top: 55px;
+            color: #bdbdbd;
 
-    font-size: 8px;
+            text-transform: uppercase;
 
-    letter-spacing: 2px;
+            font-weight: 300;
+        }
 
-    opacity: .25;
-}
 
+        .hero-scroll {
 
-/* =========================================================
-   ANIMATIONS
-========================================================= */
+            position: absolute;
 
-@keyframes heroReveal {
+            bottom: 35px;
 
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
+            left: 50%;
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            transform:
+                translateX(-50%);
 
-@keyframes logoFloat {
+            display: flex;
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+            flex-direction: column;
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
+            align-items: center;
 
-@keyframes scrollPulse {
+            gap: 12px;
 
-    0%,
-    100% {
-        opacity: .2;
-    }
+            color: #666;
 
-    50% {
-        opacity: .75;
-    }
-}
+            font-size: 8px;
 
-@keyframes rotateRing {
+            letter-spacing: 4px;
 
-    from {
-        transform: rotate(0deg);
-    }
+            text-transform: uppercase;
+        }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
 
+        .scroll-line {
 
-/* =========================================================
-   MOBILE
-========================================================= */
+            width: 1px;
 
-@media (max-width: 800px) {
+            height: 45px;
 
-    header {
-        padding: 20px 6%;
-    }
+            background:
+                linear-gradient(
+                    to bottom,
+                    #777,
+                    transparent
+                );
 
-    .nav-logo {
-        width: 48px;
-    }
+            animation:
+                scrollPulse 2s
+                ease-in-out
+                infinite;
+        }
 
-    .hero-logo {
-        width: min(280px, 70vw);
-    }
 
-    .hero-title {
-        font-size: clamp(30px, 9vw, 55px);
+        @keyframes scrollPulse {
 
-        letter-spacing: .18em;
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(0.7);
+            }
 
-        margin-left: .18em;
-    }
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
 
-    .hero-tagline {
-        font-size: 8px;
 
-        letter-spacing: .25em;
+        /* =========================================
+           GENERAL SECTION
+        ========================================== */
 
-        margin-left: .25em;
-    }
+        .section {
 
-    section {
-        min-height: auto;
+            position: relative;
 
-        padding: 110px 7%;
-    }
+            padding:
+                130px 7%;
+        }
 
-    .section-title {
-        font-size: clamp(43px, 13vw, 75px);
-    }
 
-    .section-text {
-        font-size: 15px;
-    }
+        .section-header {
 
-    .project-display {
-        grid-template-columns: 1fr;
+            text-align: center;
 
-        gap: 50px;
+            margin-bottom: 75px;
+        }
 
-        margin-top: 55px;
-    }
 
-    .project-title {
-        font-size: clamp(45px, 14vw, 80px);
-    }
+        .section-number {
 
-    .project-subtitle {
-        font-size: 12px;
+            display: block;
 
-        letter-spacing: .25em;
-    }
+            color: #555;
 
-    .future {
-        padding-top: 130px;
-        padding-bottom: 130px;
-    }
+            font-size: 9px;
 
-    .vision-word {
-        font-size: 18vw;
-    }
-}
+            letter-spacing: 5px;
 
+            margin-bottom: 20px;
+        }
 
-/* =========================================================
-   REDUCED MOTION / ACCESSIBILITY
-========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+        .section-title {
 
-    html {
-        scroll-behavior: auto;
-    }
+            font-family: var(--serif);
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
+            font-size:
+                clamp(30px, 5vw, 58px);
 
-        transition-duration: .01ms !important;
-    }
-}
+            font-weight: 400;
 
-</style>
+            letter-spacing:
+                clamp(4px, 0.8vw, 9px);
+
+            text-transform: uppercase;
+        }
+
+
+        .section-subtitle {
+
+            margin-top: 20px;
+
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           CURRENT PROJECT
+        ========================================== */
+
+        #projects {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #050505,
+                    #090909
+                );
+        }
+
+
+        .project-card {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(0, 0.95fr);
+
+            background: #0a0a0a;
+
+            border:
+                1px solid
+                var(--line);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.6s
+                cubic-bezier(.16,1,.3,1),
+                border-color 0.4s ease;
+
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s
+                cubic-bezier(.16,1,.3,1);
+        }
+
+
+        .project-card.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .project-card:hover {
+
+            border-color:
+                var(--line-strong);
+
+            transform:
+                translateY(-7px);
+        }
+
+
+        .project-poster {
+
+            position: relative;
+
+            min-height: 620px;
+
+            overflow: hidden;
+
+            background: #000;
+        }
+
+
+        .project-poster::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 65%,
+                    rgba(0,0,0,0.25)
+                );
+        }
+
+
+        .project-poster img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 1.2s
+                cubic-bezier(.16,1,.3,1);
+        }
+
+
+        .project-card:hover
+        .project-poster img {
+
+            transform:
+                scale(1.045);
+        }
+
+
+        .project-details {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding:
+                clamp(35px, 5vw, 70px);
+        }
+
+
+        .project-type {
+
+            color: #777;
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+        }
+
+
+        .project-title {
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(38px, 5vw, 68px);
+
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            line-height: 1.05;
+        }
+
+
+        .project-subtitle {
+
+            margin-top: 13px;
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+        }
+
+
+        .project-rule {
+
+            width: 60px;
+
+            height: 1px;
+
+            background: #666;
+
+            margin:
+                30px 0;
+        }
+
+
+        .project-description {
+
+            color: #b5b5b5;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            max-width: 520px;
+        }
+
+
+        .project-description::first-letter {
+
+            font-family: var(--serif);
+
+            font-size: 42px;
+
+            float: left;
+
+            line-height: 0.8;
+
+            padding:
+                5px 8px 0 0;
+
+            color: #fff;
+        }
+
+
+        .project-credits {
+
+            margin-top: 38px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid
+                var(--line);
+
+            color: #666;
+
+            font-size: 9px;
+
+            line-height: 2.3;
+
+            letter-spacing: 2px;
+        }
+
+
+        .project-status {
+
+            margin-top: 35px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #aaa;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .status-dot {
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #aaa;
+
+            box-shadow:
+                0 0 10px
+                rgba(255,255,255,0.5);
+
+            animation:
+                statusBlink 2s
+                infinite;
+        }
+
+
+        @keyframes statusBlink {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================
+           FUTURE PROJECTS
+        ========================================== */
+
+        .future-section {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #111111 0%,
+                    #050505 65%
+                );
+
+            border-top:
+                1px solid
+                var(--line);
+
+            border-bottom:
+                1px solid
+                var(--line);
+        }
+
+
+        .future-content {
+
+            max-width: 800px;
+        }
+
+
+        .future-symbol {
+
+            width: 55px;
+
+            height: 55px;
+
+            margin:
+                0 auto 35px;
+
+            border:
+                1px solid
+                #444;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #777;
+
+            font-family: var(--serif);
+
+            font-size: 20px;
+
+            animation:
+                futureRotate 12s
+                linear
+                infinite;
+        }
+
+
+        @keyframes futureRotate {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .future-title {
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(30px, 6vw, 65px);
+
+            font-weight: 400;
+
+            letter-spacing:
+                clamp(4px, 1vw, 10px);
+        }
+
+
+        .future-line {
+
+            width: 70px;
+
+            height: 1px;
+
+            background: #555;
+
+            margin: 30px auto;
+        }
+
+
+        .future-text {
+
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            line-height: 2;
+        }
+
+
+        .coming-soon {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                13px 28px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            color: #999;
+
+            font-size: 8px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================== */
+
+        #about {
+
+            background: #050505;
+        }
+
+
+        .about-container {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        .about-container.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .about-lead {
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(22px, 3vw, 34px);
+
+            line-height: 1.6;
+
+            color: #ddd;
+
+            letter-spacing: 1px;
+        }
+
+
+        .about-text {
+
+            margin-top: 35px;
+
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 2.1;
+        }
+
+
+        .about-motto {
+
+            margin-top: 45px;
+
+            font-family: var(--serif);
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            color: #aaa;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           STUDIO DIVIDER
+        ========================================== */
+
+        .studio-divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            max-width: 700px;
+
+            margin:
+                0 auto;
+        }
+
+
+        .studio-divider span {
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                var(--line);
+        }
+
+
+        .studio-divider i {
+
+            width: 7px;
+
+            height: 7px;
+
+            border:
+                1px solid #777;
+
+            transform:
+                rotate(45deg);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+
+            padding:
+                80px 25px 40px;
+
+            text-align: center;
+
+            background: #000;
+
+            border-top:
+                1px solid
+                var(--line);
+        }
+
+
+        .footer-logo {
+
+            width: 75px;
+
+            margin:
+                0 auto 25px;
+
+            opacity: 0.9;
+        }
+
+
+        .footer-name {
+
+            font-family: var(--serif);
+
+            font-size: 14px;
+
+            letter-spacing: 6px;
+
+            font-weight: 400;
+        }
+
+
+        .footer-tagline {
+
+            margin-top: 15px;
+
+            color: #555;
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .footer-line {
+
+            width: 50px;
+
+            height: 1px;
+
+            background: #333;
+
+            margin:
+                35px auto;
+        }
+
+
+        .copyright {
+
+            color: #444;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
+
+        #top-button {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
+
+            background:
+                rgba(0,0,0,0.7);
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                all 0.3s ease;
+
+            z-index: 4000;
+        }
+
+
+        #top-button.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        #top-button:hover {
+
+            color: #fff;
+
+            border-color: #777;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+
+                height: 70px;
+
+                padding:
+                    0 5%;
+            }
+
+
+            .nav-name {
+
+                display: none;
+            }
+
+
+            .nav-logo {
+
+                width: 40px;
+
+                height: 40px;
+            }
+
+
+            .nav-links {
+
+                gap: 18px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .hero {
+
+                padding:
+                    130px 20px
+                    80px;
+            }
+
+
+            .hero-logo {
+
+                width:
+                    min(220px, 60vw);
+
+                margin-bottom: 35px;
+            }
+
+
+            .hero-scroll {
+
+                bottom: 20px;
+            }
+
+
+            .section {
+
+                padding:
+                    90px 5%;
+            }
+
+
+            .section-header {
+
+                margin-bottom: 50px;
+            }
+
+
+            .project-card {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-poster {
+
+                min-height: auto;
+
+                aspect-ratio:
+                    2 / 3;
+            }
+
+
+            .project-details {
+
+                padding: 38px 25px 45px;
+            }
+
+
+            .project-title {
+
+                font-size: 42px;
+            }
+
+
+            .project-description {
+
+                font-size: 13px;
+            }
+
+
+            .future-section {
+
+                min-height: 50vh;
+
+                padding:
+                    80px 25px;
+            }
+
+        }
+
+
+        /* =========================================
+           SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 480px) {
+
+            .nav-links {
+
+                gap: 12px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 7px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            .hero-title {
+
+                font-size: 38px;
+
+                letter-spacing: 5px;
+            }
+
+
+            .hero-tagline {
+
+                font-size: 9px;
+
+                letter-spacing: 3px;
+
+                line-height: 2;
+            }
+
+
+            .project-title {
+
+                font-size: 36px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .project-subtitle {
+
+                letter-spacing: 3px;
+            }
+
+
+            .project-credits {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =======================================================
-     10 SECOND INTRO
-======================================================= -->
+    <!-- =========================================
+         10 SECOND TRIOVISION INTRO
+    ========================================== -->
 
-<div id="intro">
+    <div id="intro-screen">
 
-    <video
-        id="introVideo"
-        autoplay
-        muted
-        playsinline
-        preload="auto">
+        <video
+            id="intro-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Triovision Studios opening animation">
 
-        <source src="intro.mp4" type="video/mp4">
+            <source
+                src="intro.mp4"
+                type="video/mp4">
 
-    </video>
+        </video>
 
-</div>
 
-
-<!-- =======================================================
-     MAIN WEBSITE
-======================================================= -->
-
-<div id="website">
-
-
-<!-- =======================================================
-     HEADER
-======================================================= -->
-
-<header>
-
-    <a href="#home" aria-label="Triovision Studios Home">
-
-        <img
-            src="logo.png"
-            alt="Triovision Studios"
-            class="nav-logo">
-
-    </a>
-
-
-    <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false">
-
-        MENU
-
-    </button>
-
-</header>
-
-
-<!-- =======================================================
-     MENU
-======================================================= -->
-
-<div
-    class="menu-overlay"
-    id="menuOverlay"
-    aria-hidden="true">
-
-    <nav class="menu-content">
-
-        <a href="#home">HOME</a>
-
-        <a href="#studio">STUDIO</a>
-
-        <a href="#projects">PROJECTS</a>
-
-        <a href="#future">FUTURE</a>
-
-        <a href="#vision">VISION</a>
-
-    </nav>
-
-</div>
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<main>
-
-<section
-    class="hero"
-    id="home">
-
-    <div class="hero-content">
-
-        <img
-            src="logo.png"
-            alt="Triovision Studios official logo"
-            class="hero-logo">
-
-        <h1 class="hero-title">
-            TRIOVISION
-        </h1>
-
-        <p class="hero-tagline">
-            VISIONARY FARMS OF IMAGINATION
-        </p>
-
-    </div>
-
-
-    <div class="scroll-indicator">
-        SCROLL TO EXPLORE
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     STUDIO
-======================================================= -->
-
-<section
-    class="studio"
-    id="studio">
-
-    <div class="section-number">
-        01 — THE STUDIO
-    </div>
-
-    <div class="studio-line"></div>
-
-    <h2 class="section-title">
-        IMAGINE.
-    </h2>
-
-    <p class="section-text">
-
-        Triovision Studios is a creative studio
-        built to develop original stories,
-        cinematic experiences and imaginative
-        worlds.
-
-        <br><br>
-
-        Every idea begins somewhere.
-        Here, imagination becomes the beginning
-        of something larger.
-
-    </p>
-
-</section>
-
-
-<!-- =======================================================
-     CURRENT PROJECT
-======================================================= -->
-
-<section
-    class="projects"
-    id="projects">
-
-    <div class="project-intro">
-
-        <div class="section-number">
-            02 — CURRENT PROJECT
-        </div>
-
-        <div class="current-label">
-            A TRIOVISION STUDIOS ORIGINAL
-        </div>
-
-        <h2 class="project-title">
-            SWAN-MERE
-        </h2>
-
-        <div class="project-subtitle">
-            ECHOES OF HEARTS
-        </div>
-
-    </div>
-
-
-    <div class="project-display">
-
-
-        <!-- POSTER -->
-
-        <div class="poster-wrapper">
+        <!-- Fallback -->
+        <div class="intro-fallback">
 
             <img
-                src="swan-mere.png"
-                alt="Swan-Mere — Echoes of Hearts poster">
+                src="logo.png"
+                alt="Triovision Studios">
+
+            <p>
+                Triovision Studios
+            </p>
 
         </div>
 
+    </div>
 
-        <!-- DETAILS -->
 
-        <div class="project-details">
+    <!-- =========================================
+         PAGE LOADER
+    ========================================== -->
 
-            <div class="detail-line"></div>
+    <div id="page-loader"></div>
 
-            <p class="project-description">
 
-                <strong>SWAN-MERE — ECHOES OF HEARTS</strong>
-                is a current Triovision Studios
-                original film project.
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
-                <br><br>
+    <header class="navbar"
+            id="navbar">
 
-                A story in development,
-                created as part of the expanding
-                Triovision creative universe.
+        <a href="#home"
+           class="nav-brand"
+           aria-label="Triovision Studios Home">
 
-            </p>
+            <img
+                src="logo.png"
+                alt="Triovision Studios Logo"
+                class="nav-logo">
 
-            <div class="project-credit">
+            <span class="nav-name">
+                TRIOVISION STUDIOS
+            </span>
 
-                WRITTEN AND DIRECTED BY<br>
-                SUVESH.B
+        </a>
 
-                <br><br>
 
-                MUSIC COMPOSER<br>
-                M.D. NISHANTH
+        <nav>
 
-                <br><br>
+            <ul class="nav-links">
 
-                ASSOCIATE DIRECTOR<br>
-                M.G. ASWATH NANDHAN
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        Studio
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="hero-content">
+
+                <img
+                    src="logo.png"
+                    alt="Triovision Studios"
+                    class="hero-logo">
+
+
+                <h1 class="hero-title">
+                    TRIOVISION
+                </h1>
+
+
+                <div class="hero-divider"></div>
+
+
+                <p class="hero-tagline">
+                    Visionary Farms of Imagination
+                </p>
 
             </div>
 
+
+            <div class="hero-scroll">
+
+                <span>
+                    Explore
+                </span>
+
+                <div class="scroll-line"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PROJECTS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="projects">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01 / PROJECTS
+                </span>
+
+                <h2 class="section-title">
+                    Current Project
+                </h2>
+
+                <p class="section-subtitle">
+                    Stories currently in creation
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SWAN-MERE
+            ================================== -->
+
+            <article
+                class="project-card"
+                id="swan-mere">
+
+
+                <!-- POSTER -->
+
+                <div class="project-poster">
+
+                    <img
+                        src="swan-mere.png"
+                        alt="SWAN-MERE — Echoes of Hearts poster"
+                        loading="lazy">
+
+                </div>
+
+
+
+                <!-- PROJECT INFORMATION -->
+
+                <div class="project-details">
+
+
+                    <span class="project-type">
+
+                        A TRIOVISION STUDIOS
+                        ORIGINAL FILM
+
+                    </span>
+
+
+                    <h3 class="project-title">
+                        SWAN-MERE
+                    </h3>
+
+
+                    <p class="project-subtitle">
+                        Echoes of Hearts
+                    </p>
+
+
+                    <div class="project-rule"></div>
+
+
+                    <p class="project-description">
+
+                        A wounded swan journeys through
+                        love, betrayal, and loss, only to
+                        discover that true healing means
+                        choosing herself and learning to
+                        fly free.
+
+                    </p>
+
+
+                    <!-- CREDITS -->
+
+                    <div class="project-credits">
+
+                        SCREENPLAY BY SUVESH.B
+                        <br>
+
+                        WRITTEN AND DIRECTED BY
+                        SUVESH.B
+                        <br>
+
+                        MUSIC COMPOSER
+                        M.D. NISHANTH
+                        <br>
+
+                        ASSOCIATE DIRECTOR
+                        M.G. ASWATH NANDHAN
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="project-status">
+
+                        <span class="status-dot"></span>
+
+                        CURRENT PROJECT
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STUDIO DIVIDER
+        ====================================== -->
+
+        <div class="studio-divider">
+
+            <span></span>
+
+            <i></i>
+
+            <span></span>
+
         </div>
 
-    </div>
-
-</section>
 
 
-<!-- =======================================================
-     FUTURE PROJECTS
-======================================================= -->
+        <!-- =====================================
+             FUTURE PROJECTS
+        ====================================== -->
 
-<section
-    class="future"
-    id="future">
-
-    <div class="section-number">
-        03 — FUTURE PROJECTS
-    </div>
-
-    <h2 class="future-title">
-        SOON.
-    </h2>
-
-    <div class="future-status">
-        MORE WORLDS ARE COMING
-    </div>
-
-    <div class="future-line"></div>
-
-    <p class="future-text">
-
-        New stories, new characters and new
-        cinematic worlds are currently being
-        imagined and developed.
-
-        <br><br>
-
-        The journey has only begun.
-
-    </p>
-
-</section>
+        <section
+            class="future-section"
+            id="future">
 
 
-<!-- =======================================================
-     VISION
-======================================================= -->
-
-<section
-    class="vision"
-    id="vision">
-
-    <div class="section-number">
-        04 — THE VISION
-    </div>
-
-    <div class="vision-word">
-        CREATE.
-    </div>
-
-    <div class="vision-word">
-        EXPLORE.
-    </div>
-
-    <div class="vision-word">
-        BECOME.
-    </div>
-
-</section>
-
-</main>
+            <div class="future-content">
 
 
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-    <img
-        src="logo.png"
-        alt="Triovision Studios">
-
-    <div class="footer-name">
-        TRIOVISION STUDIOS
-    </div>
-
-    <div class="footer-tagline">
-        VISIONARY FARMS OF IMAGINATION
-    </div>
-
-    <div class="copyright">
-        © 2026 TRIOVISION STUDIOS. ALL RIGHTS RESERVED.
-    </div>
-
-</footer>
+                <div class="future-symbol">
+                    +
+                </div>
 
 
-</div>
+                <h2 class="future-title">
+
+                    Future Projects
+
+                </h2>
 
 
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
-
-<script>
-
-/* =========================================================
-   INTRO
-========================================================= */
-
-const intro = document.getElementById("intro");
-const video = document.getElementById("introVideo");
-const website = document.getElementById("website");
-
-let introFinished = false;
+                <div class="future-line"></div>
 
 
-function finishIntro() {
+                <p class="future-text">
 
-    if (introFinished) {
-        return;
-    }
+                    New worlds are taking shape.
+                    <br>
+                    More stories are coming soon.
 
-    introFinished = true;
-
-    intro.classList.add("hidden");
-
-    setTimeout(() => {
-
-        website.classList.add("visible");
-
-    }, 400);
-}
+                </p>
 
 
-/*
-   Normally the 10-second video will trigger this
-   automatically when it finishes.
-*/
+                <span class="coming-soon">
 
-video.addEventListener(
-    "ended",
-    finishIntro
-);
+                    Coming Soon
 
+                </span>
 
-/*
-   If the video cannot load,
-   the website will still become accessible.
-*/
+            </div>
 
-video.addEventListener(
-    "error",
-    () => {
-
-        setTimeout(
-            finishIntro,
-            1200
-        );
-
-    }
-);
+        </section>
 
 
-/*
-   Extra fallback for unusual browser behaviour.
-*/
 
-setTimeout(
-    () => {
+        <!-- =====================================
+             ABOUT THE STUDIO
+        ====================================== -->
 
-        if (!introFinished) {
+        <section
+            class="section"
+            id="about">
 
-            finishIntro();
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    02 / THE STUDIO
+                </span>
+
+                <h2 class="section-title">
+                    Triovision Studios
+                </h2>
+
+                <p class="section-subtitle">
+                    Visionary Farms of Imagination
+                </p>
+
+            </div>
+
+
+
+            <div class="about-container">
+
+
+                <p class="about-lead">
+
+                    We imagine worlds.
+                    <br>
+                    We build stories.
+                    <br>
+                    We create visions.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    Triovision Studios is a creative
+                    studio focused on developing
+                    original stories, cinematic worlds
+                    and imaginative experiences.
+
+                    <br><br>
+
+                    Every project begins as an idea.
+                    Every idea has a world waiting
+                    to be discovered.
+
+                </p>
+
+
+                <p class="about-motto">
+
+                    Visionary Farms of Imagination
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+
+        <img
+            src="logo.png"
+            alt="Triovision Studios Logo"
+            class="footer-logo">
+
+
+        <h3 class="footer-name">
+
+            TRIOVISION STUDIOS
+
+        </h3>
+
+
+        <p class="footer-tagline">
+
+            Visionary Farms of Imagination
+
+        </p>
+
+
+        <div class="footer-line"></div>
+
+
+        <p class="copyright">
+
+            © 2026 Triovision Studios.
+            All rights reserved.
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
+
+    <button
+        id="top-button"
+        type="button"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         No external libraries required
+    ========================================== -->
+
+    <script>
+
+        "use strict";
+
+
+        /* =========================================
+           ELEMENTS
+        ========================================== */
+
+        const introScreen =
+            document.getElementById("intro-screen");
+
+        const introVideo =
+            document.getElementById("intro-video");
+
+        const pageLoader =
+            document.getElementById("page-loader");
+
+        const navbar =
+            document.getElementById("navbar");
+
+        const topButton =
+            document.getElementById("top-button");
+
+        const projectCard =
+            document.querySelector(".project-card");
+
+        const aboutContainer =
+            document.querySelector(".about-container");
+
+
+        /* =========================================
+           INTRO VIDEO
+        ========================================== */
+
+        let introClosed = false;
+
+
+        function closeIntro() {
+
+            if (introClosed) {
+                return;
+            }
+
+            introClosed = true;
+
+            introScreen.classList.add("hidden");
 
         }
 
-    },
-    15000
-);
 
+        /*
+         * Normally the video will close when
+         * the 10-second intro finishes.
+         */
 
-/* =========================================================
-   MENU
-========================================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-const menuLinks =
-    document.querySelectorAll(".menu-content a");
-
-
-function toggleMenu() {
-
-    const isOpen =
-        menuOverlay.classList.contains("open");
-
-    if (isOpen) {
-
-        menuOverlay.classList.remove("open");
-
-        menuOverlay.setAttribute(
-            "aria-hidden",
-            "true"
+        introVideo.addEventListener(
+            "ended",
+            closeIntro
         );
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            "false"
+
+        /*
+         * Safety fallback.
+         * If the MP4 does not fire "ended",
+         * the website will still open.
+         */
+
+        setTimeout(
+            closeIntro,
+            11000
         );
 
-        menuButton.textContent = "MENU";
 
-    } else {
+        /*
+         * If video cannot load,
+         * don't leave the visitor stuck.
+         */
 
-        menuOverlay.classList.add("open");
+        introVideo.addEventListener(
+            "error",
+            function () {
 
-        menuOverlay.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        menuButton.textContent = "CLOSE";
-
-    }
-
-}
-
-
-menuButton.addEventListener(
-    "click",
-    toggleMenu
-);
-
-
-menuLinks.forEach(
-    link => {
-
-        link.addEventListener(
-            "click",
-            () => {
-
-                menuOverlay.classList.remove("open");
-
-                menuOverlay.setAttribute(
-                    "aria-hidden",
-                    "true"
+                setTimeout(
+                    closeIntro,
+                    1200
                 );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuButton.textContent = "MENU";
 
             }
         );
 
-    }
-);
+
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        pageLoader.classList.add(
+                            "loaded"
+                        );
+
+                    },
+                    300
+                );
+
+            }
+        );
 
 
-/* =========================================================
-   ESCAPE KEY
-========================================================= */
+        /* =========================================
+           NAVBAR SCROLL EFFECT
+        ========================================== */
 
-document.addEventListener(
-    "keydown",
-    event => {
+        function updateNavbar() {
 
-        if (
-            event.key === "Escape" &&
-            menuOverlay.classList.contains("open")
-        ) {
+            if (window.scrollY > 60) {
 
-            menuOverlay.classList.remove("open");
+                navbar.classList.add(
+                    "scrolled"
+                );
 
-            menuOverlay.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+            } else {
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                navbar.classList.remove(
+                    "scrolled"
+                );
 
-            menuButton.textContent = "MENU";
+            }
 
         }
 
-    }
-);
 
-</script>
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
+        );
+
+
+        updateNavbar();
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
+
+        function updateTopButton() {
+
+            if (window.scrollY > 600) {
+
+                topButton.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                topButton.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateTopButton,
+            { passive: true }
+        );
+
+
+        topButton.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        if (projectCard) {
+
+            observer.observe(
+                projectCard
+            );
+
+        }
+
+
+        if (aboutContainer) {
+
+            observer.observe(
+                aboutContainer
+            );
+
+        }
+
+
+        /* =========================================
+           PREVENT ACCIDENTAL VIDEO CONTROLS
+        ========================================== */
+
+        introVideo.controls = false;
+
+
+        /* =========================================
+           SECURITY:
+           Prevent the intro video from becoming
+           interactive through keyboard controls.
+        ========================================== */
+
+        introVideo.addEventListener(
+            "contextmenu",
+            function (event) {
+
+                event.preventDefault();
+
+            }
+        );
+
+
+        /* =========================================
+           PAGE VISIBILITY
+        ========================================== */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.pause();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           RESTART VIDEO WHEN USER RETURNS
+        ========================================== */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    !document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.play()
+                        .catch(
+                            function () {}
+                        );
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
-    </html>
+
+   </html>
