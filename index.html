@@ -1,1831 +1,2897 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="Triovision Studios — Visionary Farms of Imagination.">
+    <!-- =========================================
+         BASIC DOCUMENT SETTINGS
+    ========================================== -->
 
-<meta name="theme-color" content="#080607">
+    <meta charset="UTF-8">
 
-<title>TRIOVISION STUDIOS</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<style>
+    <meta name="description"
+          content="Triovision Studios — Visionary Farms of Imagination. Original stories, films and cinematic worlds.">
 
-/* =========================================================
-   CORE
-========================================================= */
+    <meta name="author"
+          content="Triovision Studios">
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+    <meta name="robots"
+          content="index, follow">
 
-html{
-    scroll-behavior:smooth;
-    overflow-x:hidden;
-}
+    <meta name="theme-color"
+          content="#050505">
 
-body{
-    background:#080607;
-    color:#f1e9dd;
-    font-family:Inter,Arial,sans-serif;
-    overflow-x:hidden;
-}
+    <title>Triovision Studios | Visionary Farms of Imagination</title>
 
-img{
-    display:block;
-    max-width:100%;
-}
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+    <!-- =========================================
+         SECURITY / REFERRER POLICY
+    ========================================== -->
 
-:root{
-    --bg:#080607;
-    --bg2:#11090a;
-    --panel:#140b0d;
+    <meta name="referrer"
+          content="strict-origin-when-cross-origin">
 
-    --red:#b20f18;
-    --red2:#e22a2f;
 
-    --cream:#f1e9dd;
-    --muted:#a69c91;
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
-    --line:rgba(241,233,221,.13);
+    <link rel="icon"
+          type="image/png"
+          href="logo.png">
 
-    --serif:"Cinzel",Georgia,serif;
-    --sans:Inter,Arial,sans-serif;
 
-    --max:1180px;
-}
+    <!-- =========================================
+         PREMIUM CINEMATIC FONTS
+         
+         Bodoni Moda  = Main cinematic titles
+         Manrope     = Modern body/navigation
+         Space Mono  = Technical film labels
+    ========================================== -->
 
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-/* =========================================================
-   GOOGLE FONTS
-========================================================= */
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-@import url(
-'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap'
-);
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+          rel="stylesheet">
 
 
-/* =========================================================
-   10 SECOND INTRO
-   KEEP THIS SEPARATE FROM THE MAIN WEBSITE
-========================================================= */
+    <!-- =========================================
+         STYLES
+    ========================================== -->
 
-#intro{
+    <style>
 
-    position:fixed;
+        /* =========================================
+           RESET
+        ========================================== */
 
-    inset:0;
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    width:100vw;
-    height:100vh;
-    height:100dvh;
 
-    background:#000;
+        html {
+            scroll-behavior: smooth;
+        }
 
-    z-index:999999;
 
-    display:flex;
+        body {
+            background: #050505;
+            color: #ffffff;
 
-    align-items:center;
-    justify-content:center;
+            font-family:
+                "Manrope",
+                Arial,
+                sans-serif;
 
-    overflow:hidden;
+            overflow-x: hidden;
 
-    opacity:1;
-    visibility:visible;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
-}
 
-.intro-video-wrapper{
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    width:100%;
-    height:100%;
 
-    display:flex;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    align-items:center;
-    justify-content:center;
 
-    overflow:hidden;
-}
+        button {
+            font: inherit;
+        }
 
 
-/*
-    IMPORTANT:
+        /* =========================================
+           CUSTOM VARIABLES
+        ========================================== */
 
-    contain = entire animation remains visible.
+        :root {
 
-    DO NOT change this to cover.
-*/
+            --black: #000000;
 
-#introVideo{
+            --background: #050505;
 
-    width:100%;
-    height:100%;
+            --background-two: #0a0a0a;
 
-    max-width:100vw;
-    max-height:100dvh;
+            --panel: #0d0d0d;
 
-    object-fit:contain;
+            --white: #ffffff;
 
-    object-position:center;
+            --soft-white: #dedede;
 
-    display:block;
+            --gray: #999999;
 
-    background:#000;
-}
+            --dark-gray: #555555;
 
-#intro.hidden{
+            --line:
+                rgba(255,255,255,0.10);
 
-    opacity:0;
-    visibility:hidden;
+            --line-strong:
+                rgba(255,255,255,0.20);
 
-    pointer-events:none;
-}
+            /* PREMIUM TYPOGRAPHY */
 
+            --serif:
+                "Bodoni Moda",
+                "Times New Roman",
+                serif;
 
-/* Skip */
+            --sans:
+                "Manrope",
+                Arial,
+                sans-serif;
 
-#skipIntro{
+            --mono:
+                "Space Mono",
+                monospace;
+        }
 
-    position:absolute;
 
-    right:25px;
-    bottom:25px;
+        /* =========================================
+           LOADING / INTRO SCREEN
+        ========================================== */
 
-    z-index:10;
+        #intro-screen {
 
-    padding:9px 16px;
+            position: fixed;
 
-    border:1px solid rgba(255,255,255,.35);
+            inset: 0;
 
-    border-radius:30px;
+            width: 100vw;
+            height: 100dvh;
 
-    background:rgba(0,0,0,.45);
+            min-height: 100vh;
 
-    color:#fff;
+            background: #000000;
 
-    font-size:8px;
+            z-index: 99999;
 
-    letter-spacing:.28em;
+            display: flex;
 
-    cursor:pointer;
+            align-items: center;
 
-    backdrop-filter:blur(10px);
+            justify-content: center;
 
-    transition:.3s ease;
-}
+            overflow: hidden;
 
-#skipIntro:hover{
+            transition:
+                opacity 1.5s ease,
+                visibility 1.5s ease;
+        }
 
-    background:rgba(255,255,255,.1);
 
-    border-color:#fff;
-}
+        #intro-screen.hidden {
 
+            opacity: 0;
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+            visibility: hidden;
 
-.navbar{
+            pointer-events: none;
+        }
 
-    position:fixed;
 
-    top:0;
-    left:0;
+        /*
+         * INTRO VIDEO FIX
+         *
+         * The video is contained inside the screen.
+         * It will NOT overflow or get cropped.
+         */
 
-    width:100%;
+        #intro-video {
 
-    z-index:1000;
+            display: block;
 
-    padding:26px 0;
+            width: 100%;
+            height: 100%;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(8,6,7,.95),
-            rgba(8,6,7,0)
-        );
-}
+            max-width: 100%;
+            max-height: 100%;
 
-.nav-inner{
+            object-fit: contain;
 
-    width:min(90%,var(--max));
+            object-position: center center;
 
-    margin:auto;
+            background: #000000;
 
-    display:flex;
+            border: 0;
 
-    justify-content:space-between;
+            outline: 0;
+        }
 
-    align-items:center;
-}
 
-.brand{
+        /*
+         * If you specifically want the video
+         * to completely fill the screen, change:
+         *
+         * object-fit: contain;
+         *
+         * to:
+         *
+         * object-fit: cover;
+         *
+         * But "contain" keeps the complete video visible.
+         */
 
-    display:flex;
 
-    align-items:center;
+        /* =========================================
+           INTRO FALLBACK
+        ========================================== */
 
-    gap:12px;
-}
+        .intro-fallback {
 
-.brand img{
+            position: absolute;
 
-    width:39px;
-    height:39px;
+            inset: 0;
 
-    object-fit:contain;
-}
+            display: flex;
 
-.brand-text{
+            align-items: center;
 
-    font-size:10px;
+            justify-content: center;
 
-    letter-spacing:.25em;
+            flex-direction: column;
 
-    font-weight:500;
-}
+            background: #000;
 
-.nav-links{
+            z-index: -1;
+        }
 
-    display:flex;
 
-    gap:35px;
+        .intro-fallback img {
 
-    font-size:8px;
+            width: 150px;
 
-    letter-spacing:.28em;
+            max-width: 45vw;
 
-    text-transform:uppercase;
-}
+            opacity: 0.9;
 
-.nav-links a{
+            margin-bottom: 25px;
+        }
 
-    color:#a69c91;
 
-    transition:.3s ease;
-}
+        .intro-fallback p {
 
-.nav-links a:hover{
+            font-family: var(--mono);
 
-    color:#f1e9dd;
-}
+            font-size: 10px;
 
+            letter-spacing: 5px;
 
-/* =========================================================
-   HERO
-========================================================= */
+            color: #777;
 
-.hero{
+            text-transform: uppercase;
+        }
 
-    min-height:100vh;
-    min-height:100dvh;
 
-    position:relative;
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
 
-    display:flex;
+        #page-loader {
 
-    align-items:center;
+            position: fixed;
 
-    overflow:hidden;
+            inset: 0;
 
-    background:
+            background: #050505;
 
-        radial-gradient(
-            circle at 80% 50%,
-            rgba(178,15,24,.09),
-            transparent 35%
-        ),
+            z-index: 9998;
 
-        linear-gradient(
-            135deg,
-            #080607,
-            #100809
-        );
-}
+            pointer-events: none;
 
-.hero::before{
+            opacity: 1;
 
-    content:"";
+            transition:
+                opacity 1s ease;
+        }
 
-    position:absolute;
 
-    width:650px;
-    height:650px;
+        #page-loader.loaded {
 
-    right:-280px;
-    top:15%;
+            opacity: 0;
+        }
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(226,42,47,.08),
-            transparent 70%
-        );
 
-    filter:blur(30px);
-}
+        /* =========================================
+           NAVIGATION
+        ========================================== */
 
-.hero::after{
+        .navbar {
 
-    content:"";
+            position: fixed;
 
-    position:absolute;
+            top: 0;
+            left: 0;
 
-    inset:0;
+            width: 100%;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(178,15,24,.025),
-            transparent
-        );
+            height: 82px;
 
-    pointer-events:none;
-}
+            z-index: 5000;
 
-.hero-content{
+            display: flex;
 
-    position:relative;
+            align-items: center;
 
-    z-index:2;
+            justify-content: space-between;
 
-    width:min(90%,var(--max));
+            padding: 0 6%;
 
-    margin:auto;
+            background:
+                rgba(0,0,0,0.72);
 
-    padding-top:60px;
-}
+            backdrop-filter:
+                blur(15px);
 
-.hero-overline{
+            -webkit-backdrop-filter:
+                blur(15px);
 
-    color:var(--muted);
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
 
-    font-size:8px;
+            transition:
+                background 0.4s ease,
+                height 0.4s ease;
+        }
 
-    letter-spacing:.42em;
 
-    text-transform:uppercase;
+        .navbar.scrolled {
 
-    margin-bottom:25px;
-}
+            height: 70px;
 
-.hero-title{
+            background:
+                rgba(0,0,0,0.92);
+        }
 
-    font-family:var(--sans);
 
-    font-size:
-        clamp(
-            50px,
-            10vw,
-            145px
-        );
+        .nav-brand {
 
-    font-weight:300;
+            display: flex;
 
-    line-height:.83;
+            align-items: center;
 
-    letter-spacing:-.065em;
+            gap: 15px;
+        }
 
-    color:var(--cream);
-}
 
-.hero-tagline{
+        .nav-logo {
 
-    margin-top:31px;
+            width: 47px;
 
-    font-family:var(--serif);
+            height: 47px;
 
-    color:#c5b8aa;
+            object-fit: contain;
+        }
 
-    font-size:13px;
 
-    letter-spacing:.17em;
-}
+        .nav-name {
 
-.hero-bottom{
+            font-family: var(--serif);
 
-    margin-top:55px;
+            font-size: 14px;
 
-    display:flex;
+            letter-spacing: 4px;
 
-    align-items:center;
+            font-weight: 500;
+        }
 
-    gap:18px;
 
-    color:#847970;
+        .nav-links {
 
-    font-size:8px;
+            display: flex;
 
-    letter-spacing:.3em;
+            align-items: center;
 
-    text-transform:uppercase;
-}
+            gap: 38px;
 
-.hero-line{
+            list-style: none;
+        }
 
-    width:55px;
 
-    height:1px;
+        .nav-links a {
 
-    background:var(--red);
-}
+            position: relative;
 
+            color: #d8d8d8;
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+            font-family: var(--mono);
 
-.section{
+            font-size: 10px;
 
-    padding:115px 0;
+            letter-spacing: 2px;
 
-    border-top:1px solid var(--line);
-}
+            text-transform: uppercase;
 
-.container{
+            transition:
+                color 0.3s ease;
+        }
 
-    width:min(90%,var(--max));
 
-    margin:auto;
-}
+        .nav-links a::after {
 
-.section-heading{
+            content: "";
 
-    display:flex;
+            position: absolute;
 
-    justify-content:space-between;
+            left: 0;
 
-    align-items:flex-end;
+            bottom: -8px;
 
-    gap:40px;
+            width: 0;
 
-    margin-bottom:48px;
-}
+            height: 1px;
 
-.section-number{
+            background: #ffffff;
 
-    color:#665b54;
+            transition:
+                width 0.3s ease;
+        }
 
-    font-size:8px;
 
-    letter-spacing:.35em;
+        .nav-links a:hover {
 
-    margin-bottom:12px;
-}
+            color: #ffffff;
+        }
 
-.section-title{
 
-    font-family:var(--serif);
+        .nav-links a:hover::after {
 
-    font-size:
-        clamp(
-            32px,
-            4.5vw,
-            57px
-        );
+            width: 100%;
+        }
 
-    font-weight:400;
 
-    letter-spacing:-.025em;
-}
+        /* =========================================
+           HERO
+        ========================================== */
 
-.section-intro{
+        .hero {
 
-    max-width:280px;
+            position: relative;
 
-    color:#82776e;
+            min-height: 100vh;
 
-    font-size:11px;
+            min-height: 100dvh;
 
-    line-height:1.8;
-}
+            display: flex;
 
+            align-items: center;
 
-/* =========================================================
-   CURRENT PROJECT
-========================================================= */
+            justify-content: center;
 
-.feature-card{
+            text-align: center;
 
-    border:1px solid var(--line);
+            overflow: hidden;
 
-    background:var(--panel);
+            padding:
+                150px 25px
+                100px;
 
-    overflow:hidden;
-}
+            background:
+                radial-gradient(
+                    circle at center,
+                    #181818 0%,
+                    #090909 40%,
+                    #000000 100%
+                );
+        }
 
-.feature-image{
 
-    width:100%;
+        /* Cinematic moving light */
 
-    background:#050505;
+        .hero::before {
 
-    overflow:hidden;
-}
+            content: "";
 
-.feature-image img{
+            position: absolute;
 
-    width:100%;
+            width: 700px;
 
-    height:auto;
+            height: 700px;
 
-    transition:
-        transform 1.2s
-        cubic-bezier(.2,.7,.2,1);
-}
+            left: 50%;
 
-.feature-card:hover
-.feature-image img{
+            top: 50%;
 
-    transform:scale(1.02);
-}
+            transform:
+                translate(-50%, -50%);
 
-.feature-info{
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.045),
+                    transparent 65%
+                );
 
-    padding:35px;
-}
+            animation:
+                heroGlow 8s ease-in-out infinite;
+        }
 
-.project-label{
 
-    color:#70635c;
+        @keyframes heroGlow {
 
-    font-size:8px;
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.9);
+            }
 
-    letter-spacing:.3em;
+            50% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+            }
+        }
 
-    text-transform:uppercase;
-}
 
-.project-title{
+        .hero-content {
 
-    margin-top:15px;
+            position: relative;
 
-    font-family:var(--serif);
+            z-index: 2;
 
-    font-size:
-        clamp(
-            45px,
-            7vw,
-            82px
-        );
+            max-width: 1000px;
 
-    font-weight:400;
+            animation:
+                heroReveal 1.8s
+                cubic-bezier(.16,1,.3,1)
+                both;
+        }
 
-    line-height:.9;
 
-    letter-spacing:-.035em;
-}
+        @keyframes heroReveal {
 
-.project-subtitle{
+            from {
 
-    margin-top:9px;
+                opacity: 0;
 
-    color:#766a62;
+                transform:
+                    translateY(40px);
+            }
 
-    font-size:9px;
+            to {
 
-    letter-spacing:.23em;
+                opacity: 1;
 
-    text-transform:uppercase;
-}
+                transform:
+                    translateY(0);
+            }
+        }
 
-.logline{
 
-    max-width:760px;
+        .hero-logo {
 
-    margin-top:27px;
+            width:
+                min(250px, 65vw);
 
-    color:#a69c91;
+            margin:
+                0 auto 40px;
 
-    font-size:12px;
+            filter:
+                drop-shadow(
+                    0 0 35px
+                    rgba(255,255,255,0.08)
+                );
 
-    line-height:1.9;
-}
+            animation:
+                logoFloat 6s
+                ease-in-out
+                infinite;
+        }
 
 
-/* =========================================================
-   CREDITS
-========================================================= */
+        @keyframes logoFloat {
 
-.credits{
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
 
-    display:grid;
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+        }
 
-    grid-template-columns:
-        repeat(4,1fr);
 
-    gap:25px;
+        .hero-title {
 
-    margin-top:38px;
+            font-family: var(--serif);
 
-    padding-top:27px;
+            font-size:
+                clamp(42px, 8vw, 92px);
 
-    border-top:1px solid var(--line);
-}
+            font-weight: 500;
 
-.credit-label{
+            letter-spacing:
+                clamp(6px, 1.2vw, 14px);
 
-    color:#5e534c;
+            line-height: 1;
+        }
 
-    font-size:7px;
 
-    letter-spacing:.25em;
+        .hero-divider {
 
-    text-transform:uppercase;
+            width: 90px;
 
-    margin-bottom:8px;
-}
+            height: 1px;
 
-.credit-name{
+            background:
+                rgba(255,255,255,0.7);
 
-    color:#c9beb4;
+            margin:
+                32px auto;
+        }
 
-    font-size:10px;
 
-    letter-spacing:.05em;
-}
+        .hero-tagline {
 
-.status{
+            font-family: var(--mono);
 
-    display:inline-block;
+            font-size:
+                clamp(9px, 1.5vw, 13px);
 
-    margin-top:32px;
+            letter-spacing:
+                clamp(2px, 0.5vw, 5px);
 
-    padding:8px 13px;
+            color: #bdbdbd;
 
-    border:1px solid rgba(178,15,24,.45);
+            text-transform: uppercase;
 
-    color:#b98d8e;
+            font-weight: 400;
 
-    font-size:7px;
+            line-height: 1.8;
+        }
 
-    letter-spacing:.27em;
 
-    text-transform:uppercase;
-}
+        .hero-scroll {
 
+            position: absolute;
 
-/* =========================================================
-   FUTURE PROJECTS
-========================================================= */
+            bottom: 35px;
 
-.future-projects{
+            left: 50%;
 
-    position:relative;
+            transform:
+                translateX(-50%);
 
-    margin-top:85px;
+            display: flex;
 
-    padding:85px 20px;
+            flex-direction: column;
 
-    text-align:center;
+            align-items: center;
 
-    border-top:1px solid var(--line);
+            gap: 12px;
 
-    border-bottom:1px solid var(--line);
+            color: #666;
 
-    overflow:hidden;
-}
+            font-family: var(--mono);
 
-.future-projects::before{
+            font-size: 8px;
 
-    content:"";
+            letter-spacing: 4px;
 
-    position:absolute;
+            text-transform: uppercase;
+        }
 
-    width:450px;
-    height:450px;
 
-    left:50%;
-    top:50%;
+        .scroll-line {
 
-    transform:
-        translate(-50%,-50%);
+            width: 1px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(178,15,24,.045),
-            transparent 70%
-        );
-}
+            height: 45px;
 
-.future-number{
+            background:
+                linear-gradient(
+                    to bottom,
+                    #777,
+                    transparent
+                );
 
-    position:relative;
+            animation:
+                scrollPulse 2s
+                ease-in-out
+                infinite;
+        }
 
-    color:#5e534c;
 
-    font-size:8px;
+        @keyframes scrollPulse {
 
-    letter-spacing:.35em;
-}
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(0.7);
+            }
 
-.future-title{
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
 
-    position:relative;
 
-    margin:18px 0;
+        /* =========================================
+           GENERAL SECTION
+        ========================================== */
 
-    font-family:var(--serif);
+        .section {
 
-    font-size:
-        clamp(
-            32px,
-            5vw,
-            60px
-        );
+            position: relative;
 
-    font-weight:400;
-}
+            padding:
+                130px 7%;
+        }
 
-.future-text{
 
-    position:relative;
+        .section-header {
 
-    max-width:480px;
+            text-align: center;
 
-    margin:auto;
+            margin-bottom: 75px;
+        }
 
-    color:#71675f;
 
-    font-size:11px;
+        .section-number {
 
-    line-height:1.9;
-}
+            display: block;
 
-.future-divider{
+            color: #555;
 
-    position:relative;
+            font-family: var(--mono);
 
-    width:65px;
+            font-size: 9px;
 
-    height:1px;
+            letter-spacing: 3px;
 
-    margin:30px auto;
+            margin-bottom: 20px;
+        }
 
-    background:var(--red);
-}
 
-.future-status{
+        .section-title {
 
-    position:relative;
+            font-family: var(--serif);
 
-    color:#8c7770;
+            font-size:
+                clamp(30px, 5vw, 58px);
 
-    font-size:7px;
+            font-weight: 500;
 
-    letter-spacing:.38em;
+            letter-spacing:
+                clamp(4px, 0.8vw, 9px);
 
-    text-transform:uppercase;
-}
+            text-transform: uppercase;
+        }
 
 
-/* =========================================================
-   STUDIO
-========================================================= */
+        .section-subtitle {
 
-.studio-grid{
+            margin-top: 20px;
 
-    display:grid;
+            color: #777;
 
-    grid-template-columns:1fr 1fr;
+            font-family: var(--mono);
 
-    gap:90px;
+            font-size: 9px;
 
-    align-items:center;
-}
+            letter-spacing: 3px;
 
-.studio-heading{
+            text-transform: uppercase;
 
-    font-family:var(--serif);
+            line-height: 1.8;
+        }
 
-    font-size:
-        clamp(
-            45px,
-            6.5vw,
-            78px
-        );
 
-    font-weight:400;
+        /* =========================================
+           CURRENT PROJECT
+        ========================================== */
 
-    line-height:.95;
+        #projects {
 
-    letter-spacing:-.04em;
-}
+            background:
+                linear-gradient(
+                    180deg,
+                    #050505,
+                    #090909
+                );
+        }
 
-.studio-copy{
 
-    color:#938880;
+        .project-card {
 
-    font-size:12px;
+            max-width: 1200px;
 
-    line-height:2;
-}
+            margin: 0 auto;
 
-.studio-copy p{
+            display: grid;
 
-    margin-bottom:23px;
-}
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(0, 0.95fr);
 
-.studio-motto{
+            background: #0a0a0a;
 
-    margin-top:32px;
+            border:
+                1px solid
+                var(--line);
 
-    color:#c1b4aa;
+            overflow: hidden;
 
-    font-size:8px;
+            opacity: 0;
 
-    letter-spacing:.22em;
+            transform:
+                translateY(40px);
 
-    line-height:2.3;
+            transition:
+                opacity 1s ease,
+                transform 1s
+                cubic-bezier(.16,1,.3,1),
+                border-color 0.4s ease;
+        }
 
-    text-transform:uppercase;
-}
 
+        .project-card.visible {
 
-/* =========================================================
-   LOGO / BRAND
-========================================================= */
+            opacity: 1;
 
-.brand-section{
+            transform:
+                translateY(0);
+        }
 
-    padding:90px 0 110px;
 
-    text-align:center;
-}
+        .project-card:hover {
 
-.brand-section img{
+            border-color:
+                var(--line-strong);
 
-    width:min(190px,45vw);
+            transform:
+                translateY(-7px);
+        }
 
-    margin:0 auto 27px;
-}
 
-.brand-section-title{
+        .project-poster {
 
-    font-size:9px;
+            position: relative;
 
-    letter-spacing:.4em;
-}
+            min-height: 620px;
 
-.brand-section-subtitle{
+            overflow: hidden;
 
-    margin-top:11px;
+            background: #000;
+        }
 
-    color:#5e534c;
 
-    font-size:7px;
+        .project-poster::after {
 
-    letter-spacing:.28em;
+            content: "";
 
-    text-transform:uppercase;
-}
+            position: absolute;
 
+            inset: 0;
 
-/* =========================================================
-   FOOTER
-========================================================= */
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 65%,
+                    rgba(0,0,0,0.25)
+                );
 
-footer{
+            pointer-events: none;
+        }
 
-    border-top:1px solid var(--line);
 
-    padding:30px 0;
-}
+        .project-poster img {
 
-.footer-inner{
+            width: 100%;
 
-    width:min(90%,var(--max));
+            height: 100%;
 
-    margin:auto;
+            object-fit: cover;
 
-    display:flex;
+            transition:
+                transform 1.2s
+                cubic-bezier(.16,1,.3,1);
+        }
 
-    justify-content:space-between;
 
-    gap:20px;
-}
+        .project-card:hover
+        .project-poster img {
 
-.footer-text{
+            transform:
+                scale(1.045);
+        }
 
-    color:#514740;
 
-    font-size:7px;
+        .project-details {
 
-    letter-spacing:.22em;
+            display: flex;
 
-    text-transform:uppercase;
-}
+            flex-direction: column;
 
+            justify-content: center;
 
-/* =========================================================
-   BACK TO TOP
-========================================================= */
+            padding:
+                clamp(35px, 5vw, 70px);
+        }
 
-#topButton{
 
-    position:fixed;
+        .project-type {
 
-    right:20px;
-    bottom:20px;
+            color: #777;
 
-    width:40px;
-    height:40px;
+            font-family: var(--mono);
 
-    border:1px solid var(--line);
+            font-size: 8px;
 
-    background:rgba(8,6,7,.9);
+            letter-spacing: 2px;
 
-    color:#d8cdc2;
+            line-height: 1.8;
 
-    cursor:pointer;
+            text-transform: uppercase;
 
-    display:flex;
+            margin-bottom: 22px;
+        }
 
-    align-items:center;
-    justify-content:center;
 
-    opacity:0;
+        .project-title {
 
-    pointer-events:none;
+            font-family: var(--serif);
 
-    transition:.3s ease;
+            font-size:
+                clamp(38px, 5vw, 68px);
 
-    z-index:500;
-}
+            font-weight: 500;
 
-#topButton.show{
+            letter-spacing: 4px;
 
-    opacity:1;
+            line-height: 1.05;
+        }
 
-    pointer-events:auto;
-}
 
+        .project-subtitle {
 
-/* =========================================================
-   MOBILE
-========================================================= */
+            margin-top: 13px;
 
-@media(max-width:700px){
+            color: #aaa;
 
-    /* INTRO */
+            font-family: var(--mono);
 
-    #intro{
+            font-size: 9px;
 
-        width:100vw;
+            letter-spacing: 3px;
 
-        height:100dvh;
+            text-transform: uppercase;
+        }
 
-        overflow:hidden;
-    }
 
-    .intro-video-wrapper{
+        .project-rule {
 
-        width:100vw;
+            width: 60px;
 
-        height:100dvh;
+            height: 1px;
 
-        overflow:hidden;
-    }
+            background: #666;
 
-    #introVideo{
+            margin:
+                30px 0;
+        }
 
-        width:100%;
 
-        height:100%;
+        .project-description {
 
-        max-width:100%;
+            color: #b5b5b5;
 
-        max-height:100%;
+            font-family: var(--sans);
 
-        object-fit:contain;
+            font-size: 14px;
 
-        object-position:center;
-    }
+            line-height: 2;
 
-    #skipIntro{
+            max-width: 520px;
 
-        right:14px;
+            font-weight: 300;
+        }
 
-        bottom:14px;
 
-        padding:8px 12px;
+        .project-description::first-letter {
 
-        font-size:7px;
-    }
+            font-family: var(--serif);
 
+            font-size: 42px;
 
-    /* NAV */
+            float: left;
 
-    .navbar{
+            line-height: 0.8;
 
-        padding:17px 0;
-    }
+            padding:
+                5px 8px 0 0;
 
-    .nav-inner{
+            color: #fff;
+        }
 
-        width:
-            calc(100% - 32px);
-    }
 
-    .brand img{
+        .project-credits {
 
-        width:32px;
-        height:32px;
-    }
+            margin-top: 38px;
 
-    .brand-text{
+            padding-top: 25px;
 
-        font-size:8px;
+            border-top:
+                1px solid
+                var(--line);
 
-        letter-spacing:.17em;
-    }
+            color: #666;
 
-    .nav-links{
+            font-family: var(--mono);
 
-        display:none;
-    }
+            font-size: 8px;
 
+            line-height: 2.3;
 
-    /* HERO */
+            letter-spacing: 1.5px;
+        }
 
-    .hero-content{
 
-        width:
-            calc(100% - 32px);
+        .project-status {
 
-        padding-top:50px;
-    }
+            margin-top: 35px;
 
-    .hero-title{
+            display: inline-flex;
 
-        font-size:
-            clamp(
-                46px,
-                16vw,
-                78px
-            );
-    }
+            align-items: center;
 
-    .hero-tagline{
+            gap: 10px;
 
-        font-size:10px;
+            color: #aaa;
 
-        line-height:1.8;
+            font-family: var(--mono);
 
-        max-width:300px;
-    }
+            font-size: 8px;
 
+            letter-spacing: 2px;
 
-    /* SECTIONS */
+            text-transform: uppercase;
+        }
 
-    .container{
 
-        width:
-            calc(100% - 32px);
-    }
+        .status-dot {
 
-    .section{
+            width: 6px;
 
-        padding:80px 0;
-    }
+            height: 6px;
 
-    .section-heading{
+            border-radius: 50%;
 
-        display:block;
+            background: #aaa;
 
-        margin-bottom:35px;
-    }
+            box-shadow:
+                0 0 10px
+                rgba(255,255,255,0.5);
 
-    .section-intro{
+            animation:
+                statusBlink 2s
+                infinite;
+        }
 
-        margin-top:18px;
-    }
 
+        @keyframes statusBlink {
 
-    /* PROJECT */
+            0%,
+            100% {
+                opacity: 0.4;
+            }
 
-    .feature-info{
+            50% {
+                opacity: 1;
+            }
+        }
 
-        padding:24px 19px;
-    }
 
-    .project-title{
+        /* =========================================
+           FUTURE PROJECTS
+        ========================================== */
 
-        font-size:
-            clamp(
-                43px,
-                14vw,
-                65px
-            );
-    }
+        .future-section {
 
-    .logline{
+            min-height: 55vh;
 
-        font-size:11px;
-    }
+            display: flex;
 
+            align-items: center;
 
-    /* CREDITS */
+            justify-content: center;
 
-    .credits{
+            text-align: center;
 
-        grid-template-columns:1fr 1fr;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #111111 0%,
+                    #050505 65%
+                );
 
-        gap:25px 15px;
-    }
+            border-top:
+                1px solid
+                var(--line);
 
+            border-bottom:
+                1px solid
+                var(--line);
+        }
 
-    /* FUTURE */
 
-    .future-projects{
+        .future-content {
 
-        padding:65px 18px;
-    }
+            max-width: 800px;
+        }
 
 
-    /* STUDIO */
+        .future-symbol {
 
-    .studio-grid{
+            width: 55px;
 
-        grid-template-columns:1fr;
+            height: 55px;
 
-        gap:45px;
-    }
+            margin:
+                0 auto 35px;
 
-    .studio-heading{
+            border:
+                1px solid
+                #444;
 
-        font-size:52px;
-    }
+            border-radius: 50%;
 
+            display: flex;
 
-    /* FOOTER */
+            align-items: center;
 
-    .footer-inner{
+            justify-content: center;
 
-        width:
-            calc(100% - 32px);
+            color: #777;
 
-        flex-direction:column;
+            font-family: var(--serif);
 
-        align-items:flex-start;
-    }
+            font-size: 20px;
 
-}
+            animation:
+                futureRotate 12s
+                linear
+                infinite;
+        }
 
 
-/* =========================================================
-   VERY SMALL DEVICES
-========================================================= */
+        @keyframes futureRotate {
 
-@media(max-width:380px){
+            from {
+                transform: rotate(0deg);
+            }
 
-    .hero-title{
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-        font-size:43px;
-    }
 
-    .credits{
+        .future-title {
 
-        grid-template-columns:1fr;
-    }
+            font-family: var(--serif);
 
-}
+            font-size:
+                clamp(30px, 6vw, 65px);
 
-</style>
+            font-weight: 500;
+
+            letter-spacing:
+                clamp(4px, 1vw, 10px);
+        }
+
+
+        .future-line {
+
+            width: 70px;
+
+            height: 1px;
+
+            background: #555;
+
+            margin: 30px auto;
+        }
+
+
+        .future-text {
+
+            color: #777;
+
+            font-family: var(--mono);
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            line-height: 2.2;
+        }
+
+
+        .coming-soon {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                13px 28px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            color: #999;
+
+            font-family: var(--mono);
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================== */
+
+        #about {
+
+            background: #050505;
+        }
+
+
+        .about-container {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        .about-container.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .about-lead {
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(22px, 3vw, 34px);
+
+            line-height: 1.6;
+
+            color: #ddd;
+
+            letter-spacing: 1px;
+
+            font-weight: 400;
+        }
+
+
+        .about-text {
+
+            margin-top: 35px;
+
+            color: #888;
+
+            font-family: var(--sans);
+
+            font-size: 14px;
+
+            line-height: 2.1;
+
+            font-weight: 300;
+        }
+
+
+        .about-motto {
+
+            margin-top: 45px;
+
+            font-family: var(--mono);
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            color: #aaa;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           STUDIO DIVIDER
+        ========================================== */
+
+        .studio-divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            max-width: 700px;
+
+            margin:
+                0 auto;
+        }
+
+
+        .studio-divider span {
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                var(--line);
+        }
+
+
+        .studio-divider i {
+
+            width: 7px;
+
+            height: 7px;
+
+            border:
+                1px solid #777;
+
+            transform:
+                rotate(45deg);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+
+            padding:
+                80px 25px 40px;
+
+            text-align: center;
+
+            background: #000;
+
+            border-top:
+                1px solid
+                var(--line);
+        }
+
+
+        .footer-logo {
+
+            width: 75px;
+
+            margin:
+                0 auto 25px;
+
+            opacity: 0.9;
+        }
+
+
+        .footer-name {
+
+            font-family: var(--serif);
+
+            font-size: 14px;
+
+            letter-spacing: 6px;
+
+            font-weight: 500;
+        }
+
+
+        .footer-tagline {
+
+            margin-top: 15px;
+
+            color: #555;
+
+            font-family: var(--mono);
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .footer-line {
+
+            width: 50px;
+
+            height: 1px;
+
+            background: #333;
+
+            margin:
+                35px auto;
+        }
+
+
+        .copyright {
+
+            color: #444;
+
+            font-family: var(--mono);
+
+            font-size: 7px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
+
+        #top-button {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
+
+            background:
+                rgba(0,0,0,0.7);
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                all 0.3s ease;
+
+            z-index: 4000;
+        }
+
+
+        #top-button.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        #top-button:hover {
+
+            color: #fff;
+
+            border-color: #777;
+        }
+
+
+        /* =========================================
+           TABLETS / MOBILE
+        ========================================== */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+
+                height: 70px;
+
+                padding:
+                    0 5%;
+            }
+
+
+            .nav-name {
+
+                display: none;
+            }
+
+
+            .nav-logo {
+
+                width: 40px;
+
+                height: 40px;
+            }
+
+
+            .nav-links {
+
+                gap: 18px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            .hero {
+
+                padding:
+                    130px 20px
+                    80px;
+            }
+
+
+            .hero-logo {
+
+                width:
+                    min(220px, 60vw);
+
+                margin-bottom: 35px;
+            }
+
+
+            .hero-scroll {
+
+                bottom: 20px;
+            }
+
+
+            .section {
+
+                padding:
+                    90px 5%;
+            }
+
+
+            .section-header {
+
+                margin-bottom: 50px;
+            }
+
+
+            .project-card {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-poster {
+
+                min-height: auto;
+
+                aspect-ratio:
+                    2 / 3;
+            }
+
+
+            .project-details {
+
+                padding: 38px 25px 45px;
+            }
+
+
+            .project-title {
+
+                font-size: 42px;
+            }
+
+
+            .project-description {
+
+                font-size: 13px;
+            }
+
+
+            .future-section {
+
+                min-height: 50vh;
+
+                padding:
+                    80px 25px;
+            }
+
+        }
+
+
+        /* =========================================
+           SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 480px) {
+
+            .navbar {
+
+                padding:
+                    0 4%;
+            }
+
+
+            .nav-links {
+
+                gap: 11px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 7px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .hero {
+
+                padding:
+                    115px 18px
+                    75px;
+            }
+
+
+            .hero-logo {
+
+                width:
+                    min(190px, 55vw);
+
+                margin-bottom: 30px;
+            }
+
+
+            .hero-title {
+
+                font-size: 38px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .hero-tagline {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+
+                line-height: 2;
+            }
+
+
+            .hero-scroll {
+
+                bottom: 15px;
+            }
+
+
+            .section {
+
+                padding:
+                    75px 5%;
+            }
+
+
+            .section-title {
+
+                font-size: 29px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .section-subtitle {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .project-title {
+
+                font-size: 36px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .project-subtitle {
+
+                letter-spacing: 2px;
+            }
+
+
+            .project-description {
+
+                font-size: 12px;
+
+                line-height: 1.9;
+            }
+
+
+            .project-credits {
+
+                font-size: 7px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .project-status {
+
+                font-size: 7px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            .future-title {
+
+                font-size: 32px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .future-text {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .about-lead {
+
+                font-size: 21px;
+            }
+
+
+            .about-text {
+
+                font-size: 12px;
+
+                line-height: 2;
+            }
+
+
+            .about-motto {
+
+                font-size: 7px;
+
+                letter-spacing: 2.5px;
+            }
+
+
+            footer {
+
+                padding:
+                    65px 20px 35px;
+            }
+
+
+            .footer-name {
+
+                font-size: 12px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .footer-tagline {
+
+                font-size: 7px;
+
+                letter-spacing: 2px;
+            }
+
+
+            #top-button {
+
+                width: 38px;
+
+                height: 38px;
+
+                right: 18px;
+
+                bottom: 18px;
+            }
+
+        }
+
+
+        /* =========================================
+           VERY SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 360px) {
+
+            .nav-links {
+
+                gap: 8px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 6px;
+
+                letter-spacing: 0.8px;
+            }
+
+
+            .hero-title {
+
+                font-size: 33px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .hero-logo {
+
+                width: 165px;
+            }
+
+
+            .project-title {
+
+                font-size: 32px;
+            }
+
+        }
+
+
+        /* =========================================
+           LANDSCAPE MOBILE
+        ========================================== */
+
+        @media (max-height: 600px) and (orientation: landscape) {
+
+            #intro-screen {
+
+                height: 100dvh;
+            }
+
+
+            #intro-video {
+
+                width: 100vw;
+
+                height: 100dvh;
+
+                object-fit: contain;
+            }
+
+
+            .hero {
+
+                min-height: 700px;
+
+                padding-top: 120px;
+            }
+
+
+            .hero-logo {
+
+                width: 150px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .hero-scroll {
+
+                display: none;
+            }
+
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =======================================================
-     INTRO VIDEO
-======================================================== -->
+    <!-- =========================================
+         10 SECOND TRIOVISION INTRO
+    ========================================== -->
 
-<div id="intro">
-
-    <div class="intro-video-wrapper">
+    <div id="intro-screen">
 
         <video
-            id="introVideo"
+            id="intro-video"
             autoplay
             muted
             playsinline
+            webkit-playsinline
             preload="auto"
-        >
+            aria-label="Triovision Studios opening animation">
 
             <source
                 src="intro.mp4"
-                type="video/mp4"
-            >
+                type="video/mp4">
 
         </video>
+
+
+        <!-- FALLBACK -->
+
+        <div class="intro-fallback">
+
+            <img
+                src="logo.png"
+                alt="Triovision Studios">
+
+            <p>
+                Triovision Studios
+            </p>
+
+        </div>
 
     </div>
 
 
-    <button
-        id="skipIntro"
-        type="button"
-    >
-        SKIP INTRO
-    </button>
+    <!-- =========================================
+         PAGE LOADER
+    ========================================== -->
 
-</div>
+    <div id="page-loader"></div>
 
 
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
-<!-- =======================================================
-     MAIN WEBSITE
-======================================================== -->
+    <header class="navbar"
+            id="navbar">
 
-<header class="navbar">
-
-    <nav class="nav-inner">
-
-        <a
-            href="#home"
-            class="brand"
-        >
+        <a href="#home"
+           class="nav-brand"
+           aria-label="Triovision Studios Home">
 
             <img
                 src="logo.png"
-                alt="Triovision Studios logo"
-            >
+                alt="Triovision Studios Logo"
+                class="nav-logo">
 
-            <span class="brand-text">
+            <span class="nav-name">
                 TRIOVISION STUDIOS
             </span>
 
         </a>
 
 
-        <div class="nav-links">
+        <nav>
 
-            <a href="#projects">
-                PROJECTS
-            </a>
+            <ul class="nav-links">
 
-            <a href="#studio">
-                STUDIO
-            </a>
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
 
-        </div>
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
 
-    </nav>
+                <li>
+                    <a href="#about">
+                        Studio
+                    </a>
+                </li>
 
-</header>
+            </ul>
 
+        </nav>
 
-
-<main id="home">
-
-
-<!-- =======================================================
-     HERO
-======================================================== -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-overline">
-            A CREATIVE STUDIO
-        </div>
+    </header>
 
 
-        <h1 class="hero-title">
-            TRIOVISION
-        </h1>
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
 
 
-        <div class="hero-tagline">
-            Visionary Farms of Imagination
-        </div>
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="hero-content">
+
+                <img
+                    src="logo.png"
+                    alt="Triovision Studios"
+                    class="hero-logo">
 
 
-        <a
-            href="#projects"
-            class="hero-bottom"
-        >
-
-            <span>
-                EXPLORE
-            </span>
-
-            <span class="hero-line"></span>
-
-        </a>
-
-    </div>
-
-</section>
+                <h1 class="hero-title">
+                    TRIOVISION
+                </h1>
 
 
-
-<!-- =======================================================
-     PROJECTS
-======================================================== -->
-
-<section
-    class="section"
-    id="projects"
->
-
-<div class="container">
+                <div class="hero-divider"></div>
 
 
-    <div class="section-heading">
+                <p class="hero-tagline">
+                    Visionary Farms of Imagination
+                </p>
 
-
-        <div>
-
-            <div class="section-number">
-                01 / CURRENT PROJECT
-            </div>
-
-            <h2 class="section-title">
-                Current Projects
-            </h2>
-
-        </div>
-
-
-        <div class="section-intro">
-            A story currently taking shape
-            within Triovision Studios.
-        </div>
-
-
-    </div>
-
-
-
-    <!-- SWAN-MERE -->
-
-    <article class="feature-card">
-
-
-        <div class="feature-image">
-
-            <img
-                src="swan-mere.png"
-                alt="SWAN-MERE — Echoes of Hearts"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="feature-info">
-
-
-            <div class="project-label">
-                A TRIOVISION STUDIOS ORIGINAL
             </div>
 
 
-            <h3 class="project-title">
-                SWAN-MERE
-            </h3>
+            <div class="hero-scroll">
+
+                <span>
+                    Explore
+                </span>
+
+                <div class="scroll-line"></div>
+
+            </div>
+
+        </section>
 
 
-            <div class="project-subtitle">
-                Echoes of Hearts
+        <!-- =====================================
+             PROJECTS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="projects">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01 / PROJECTS
+                </span>
+
+                <h2 class="section-title">
+                    Current Project
+                </h2>
+
+                <p class="section-subtitle">
+                    Stories currently in creation
+                </p>
+
             </div>
 
 
-            <p class="logline">
+            <!-- =================================
+                 SWAN-MERE
+            ================================== -->
 
-                A wounded swan journeys through love,
-                betrayal and loss, discovering that
-                true healing begins when she chooses
-                herself and learns to fly free.
-
-            </p>
-
-
-            <div class="credits">
+            <article
+                class="project-card"
+                id="swan-mere">
 
 
-                <div>
+                <!-- POSTER -->
 
-                    <div class="credit-label">
-                        SCREENPLAY BY
-                    </div>
+                <div class="project-poster">
 
-                    <div class="credit-name">
-                        SUVESH.B
-                    </div>
+                    <img
+                        src="swan-mere.png"
+                        alt="SWAN-MERE — Echoes of Hearts poster"
+                        loading="lazy">
 
                 </div>
 
 
-                <div>
+                <!-- PROJECT INFORMATION -->
 
-                    <div class="credit-label">
-                        WRITTEN & DIRECTED BY
-                    </div>
+                <div class="project-details">
 
-                    <div class="credit-name">
+
+                    <span class="project-type">
+
+                        A TRIOVISION STUDIOS
+                        ORIGINAL FILM
+
+                    </span>
+
+
+                    <h3 class="project-title">
+                        SWAN-MERE
+                    </h3>
+
+
+                    <p class="project-subtitle">
+                        Echoes of Hearts
+                    </p>
+
+
+                    <div class="project-rule"></div>
+
+
+                    <p class="project-description">
+
+                        A wounded swan journeys through
+                        love, betrayal, and loss, only to
+                        discover that true healing means
+                        choosing herself and learning to
+                        fly free.
+
+                    </p>
+
+
+                    <!-- CREDITS -->
+
+                    <div class="project-credits">
+
+                        SCREENPLAY BY SUVESH.B
+                        <br>
+
+                        WRITTEN AND DIRECTED BY
                         SUVESH.B
-                    </div>
+                        <br>
 
-                </div>
-
-
-                <div>
-
-                    <div class="credit-label">
                         MUSIC COMPOSER
-                    </div>
-
-                    <div class="credit-name">
                         M.D. NISHANTH
-                    </div>
+                        <br>
 
-                </div>
-
-
-                <div>
-
-                    <div class="credit-label">
                         ASSOCIATE DIRECTOR
+                        M.G. ASWATH NANDHAN
+
                     </div>
 
-                    <div class="credit-name">
-                        M.G. ASWATH NANDHAN
+
+                    <!-- STATUS -->
+
+                    <div class="project-status">
+
+                        <span class="status-dot"></span>
+
+                        CURRENT PROJECT
+
                     </div>
 
                 </div>
 
+            </article>
+
+        </section>
+
+
+        <!-- =====================================
+             STUDIO DIVIDER
+        ====================================== -->
+
+        <div class="studio-divider">
+
+            <span></span>
+
+            <i></i>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- =====================================
+             FUTURE PROJECTS
+        ====================================== -->
+
+        <section
+            class="future-section"
+            id="future">
+
+
+            <div class="future-content">
+
+
+                <div class="future-symbol">
+                    +
+                </div>
+
+
+                <h2 class="future-title">
+
+                    Future Projects
+
+                </h2>
+
+
+                <div class="future-line"></div>
+
+
+                <p class="future-text">
+
+                    New worlds are taking shape.
+                    <br>
+                    More stories are coming soon.
+
+                </p>
+
+
+                <span class="coming-soon">
+
+                    Coming Soon
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ABOUT THE STUDIO
+        ====================================== -->
+
+        <section
+            class="section"
+            id="about">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    02 / THE STUDIO
+                </span>
+
+                <h2 class="section-title">
+                    Triovision Studios
+                </h2>
+
+                <p class="section-subtitle">
+                    Visionary Farms of Imagination
+                </p>
 
             </div>
 
 
-            <div class="status">
-                CURRENT PROJECT
+            <div class="about-container">
+
+
+                <p class="about-lead">
+
+                    We imagine worlds.
+                    <br>
+                    We build stories.
+                    <br>
+                    We create visions.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    Triovision Studios is a creative
+                    studio focused on developing
+                    original stories, cinematic worlds
+                    and imaginative experiences.
+
+                    <br><br>
+
+                    Every project begins as an idea.
+                    Every idea has a world waiting
+                    to be discovered.
+
+                </p>
+
+
+                <p class="about-motto">
+
+                    Visionary Farms of Imagination
+
+                </p>
+
             </div>
 
+        </section>
 
-        </div>
-
-    </article>
-
+    </main>
 
 
-    <!-- ===================================================
-         FUTURE PROJECTS
-    ==================================================== -->
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
-    <div class="future-projects">
-
-
-        <div class="future-number">
-            02 / FUTURE PROJECTS
-        </div>
+    <footer>
 
 
-        <h3 class="future-title">
-            Future projects soon.
+        <img
+            src="logo.png"
+            alt="Triovision Studios Logo"
+            class="footer-logo">
+
+
+        <h3 class="footer-name">
+
+            TRIOVISION STUDIOS
+
         </h3>
 
 
-        <p class="future-text">
+        <p class="footer-tagline">
 
-            New stories, new worlds and new
-            visions are currently taking shape.
+            Visionary Farms of Imagination
 
         </p>
 
 
-        <div class="future-divider"></div>
+        <div class="footer-line"></div>
 
 
-        <div class="future-status">
-            MORE TO COME
-        </div>
+        <p class="copyright">
 
+            © 2026 Triovision Studios.
+            All rights reserved.
 
-    </div>
+        </p>
 
+    </footer>
 
-</div>
 
-</section>
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
 
+    <button
+        id="top-button"
+        type="button"
+        aria-label="Back to top">
 
+        ↑
 
-<!-- =======================================================
-     STUDIO
-======================================================== -->
+    </button>
 
-<section
-    class="section"
-    id="studio"
->
 
-<div class="container">
+    <!-- =========================================
+         JAVASCRIPT
+         No external libraries required
+    ========================================== -->
 
+    <script>
 
-    <div class="section-heading">
+        "use strict";
 
 
-        <div>
+        /* =========================================
+           ELEMENTS
+        ========================================== */
 
-            <div class="section-number">
-                03 / THE STUDIO
-            </div>
+        const introScreen =
+            document.getElementById("intro-screen");
 
-            <h2 class="section-title">
-                The Studio
-            </h2>
+        const introVideo =
+            document.getElementById("intro-video");
 
-        </div>
+        const pageLoader =
+            document.getElementById("page-loader");
 
+        const navbar =
+            document.getElementById("navbar");
 
-    </div>
+        const topButton =
+            document.getElementById("top-button");
 
+        const projectCard =
+            document.querySelector(".project-card");
 
+        const aboutContainer =
+            document.querySelector(".about-container");
 
-    <div class="studio-grid">
 
+        /* =========================================
+           INTRO VIDEO
+        ========================================== */
 
-        <div>
+        let introClosed = false;
 
-            <h3 class="studio-heading">
 
-                We imagine.<br>
-                We create.
+        function closeIntro() {
 
-            </h3>
+            if (introClosed) {
+                return;
+            }
 
-        </div>
+            introClosed = true;
 
+            introScreen.classList.add("hidden");
 
-        <div class="studio-copy">
+            /*
+             * Stop the video after the fade-out.
+             * This prevents unnecessary playback.
+             */
 
+            setTimeout(function () {
 
-            <p>
+                try {
 
-                Triovision Studios is a creative
-                storytelling studio dedicated to
-                building original worlds, characters
-                and cinematic experiences.
+                    introVideo.pause();
 
-            </p>
+                } catch (error) {
 
+                    /* Ignore video pause errors */
 
-            <p>
+                }
 
-                From a simple idea to an entire world,
-                every project begins with imagination.
-
-            </p>
-
-
-            <div class="studio-motto">
-
-                VISIONARY FARMS OF IMAGINATION
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =======================================================
-     BRAND
-======================================================== -->
-
-<section class="brand-section">
-
-<div class="container">
-
-
-    <img
-        src="logo.png"
-        alt="Triovision Studios"
-        loading="lazy"
-    >
-
-
-    <div class="brand-section-title">
-        TRIOVISION STUDIOS
-    </div>
-
-
-    <div class="brand-section-subtitle">
-        Visionary Farms of Imagination
-    </div>
-
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =======================================================
-     FOOTER
-======================================================== -->
-
-<footer>
-
-<div class="footer-inner">
-
-
-    <div class="footer-text">
-        © 2026 TRIOVISION STUDIOS
-    </div>
-
-
-    <div class="footer-text">
-        VISIONARY FARMS OF IMAGINATION
-    </div>
-
-
-</div>
-
-</footer>
-
-
-
-<!-- =======================================================
-     BACK TO TOP
-======================================================== -->
-
-<button
-    id="topButton"
-    type="button"
-    aria-label="Back to top"
->
-    ↑
-</button>
-
-
-
-<script>
-
-/* =========================================================
-   INTRO VIDEO
-========================================================= */
-
-const intro =
-    document.getElementById("intro");
-
-const introVideo =
-    document.getElementById("introVideo");
-
-const skipIntro =
-    document.getElementById("skipIntro");
-
-
-function closeIntro(){
-
-    if(!intro) return;
-
-    intro.classList.add("hidden");
-
-    setTimeout(function(){
-
-        if(intro){
-
-            intro.remove();
+            }, 1600);
 
         }
 
-    },1100);
-}
 
+        /*
+         * Close normally when the video ends.
+         */
 
-/*
-    Close when the 10-second animation
-    actually finishes.
-*/
-
-introVideo.addEventListener(
-    "ended",
-    closeIntro
-);
-
-
-/*
-    Skip.
-*/
-
-skipIntro.addEventListener(
-    "click",
-    closeIntro
-);
-
-
-/*
-    If video cannot load,
-    don't leave the visitor stuck.
-*/
-
-introVideo.addEventListener(
-    "error",
-    function(){
-
-        setTimeout(
-            closeIntro,
-            500
+        introVideo.addEventListener(
+            "ended",
+            closeIntro
         );
 
-    }
-);
+
+        /*
+         * Safety fallback.
+         *
+         * Your intro is approximately 10 seconds.
+         * 11.5 seconds gives the browser a little
+         * extra time while preventing the visitor
+         * from becoming stuck.
+         */
+
+        const introSafetyTimer =
+            setTimeout(
+                closeIntro,
+                11500
+            );
 
 
-/*
-    Safety fallback.
+        /*
+         * If the video cannot load,
+         * don't leave the visitor stuck.
+         */
 
-    13 seconds gives a little extra
-    time for a 10-second animation.
-*/
+        introVideo.addEventListener(
+            "error",
+            function () {
 
-setTimeout(
-    closeIntro,
-    13000
-);
+                setTimeout(
+                    closeIntro,
+                    1000
+                );
 
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const topButton =
-    document.getElementById("topButton");
+            }
+        );
 
 
-window.addEventListener(
-    "scroll",
-    function(){
+        /*
+         * Attempt autoplay.
+         *
+         * Because the video is muted and playsinline,
+         * modern mobile browsers normally allow it.
+         */
 
-        if(window.scrollY > 600){
+        window.addEventListener(
+            "load",
+            function () {
 
-            topButton.classList.add("show");
+                introVideo
+                    .play()
+                    .catch(
+                        function () {
 
-        }else{
+                            /*
+                             * If autoplay is blocked,
+                             * allow the safety timer to
+                             * close the intro.
+                             */
 
-            topButton.classList.remove("show");
+                        }
+                    );
+
+            }
+        );
+
+
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        pageLoader.classList.add(
+                            "loaded"
+                        );
+
+                    },
+                    300
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           NAVBAR SCROLL EFFECT
+        ========================================== */
+
+        function updateNavbar() {
+
+            if (window.scrollY > 60) {
+
+                navbar.classList.add(
+                    "scrolled"
+                );
+
+            } else {
+
+                navbar.classList.remove(
+                    "scrolled"
+                );
+
+            }
 
         }
 
-    },
-    {
-        passive:true
-    }
-);
+
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
+        );
 
 
-topButton.addEventListener(
-    "click",
-    function(){
+        updateNavbar();
 
-        window.scrollTo({
 
-            top:0,
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
 
-            behavior:"smooth"
+        function updateTopButton() {
 
-        });
+            if (window.scrollY > 600) {
 
-    }
-);
+                topButton.classList.add(
+                    "show"
+                );
 
-</script>
+            } else {
 
+                topButton.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateTopButton,
+            { passive: true }
+        );
+
+
+        topButton.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        if (projectCard) {
+
+            observer.observe(
+                projectCard
+            );
+
+        }
+
+
+        if (aboutContainer) {
+
+            observer.observe(
+                aboutContainer
+            );
+
+        }
+
+
+        /* =========================================
+           PREVENT VIDEO CONTROLS
+        ========================================== */
+
+        introVideo.controls = false;
+
+
+        /* =========================================
+           PREVENT CONTEXT MENU ON INTRO VIDEO
+        ========================================== */
+
+        introVideo.addEventListener(
+            "contextmenu",
+            function (event) {
+
+                event.preventDefault();
+
+            }
+        );
+
+
+        /* =========================================
+           PAGE VISIBILITY
+        ========================================== */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.pause();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           RESTART VIDEO WHEN USER RETURNS
+        ========================================== */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    !document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo
+                        .play()
+                        .catch(
+                            function () {}
+                        );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           SMOOTH NAVIGATION
+        ========================================== */
+
+        document
+            .querySelectorAll(
+                '.nav-links a[href^="#"]'
+            )
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function (event) {
+
+                            const targetId =
+                                this.getAttribute(
+                                    "href"
+                                );
+
+                            const target =
+                                document.querySelector(
+                                    targetId
+                                );
+
+                            if (!target) {
+                                return;
+                            }
+
+                            event.preventDefault();
+
+                            const navHeight =
+                                navbar.offsetHeight;
+
+                            const targetPosition =
+                                target.getBoundingClientRect()
+                                    .top
+                                +
+                                window.scrollY
+                                -
+                                navHeight;
+
+                            window.scrollTo({
+
+                                top:
+                                    targetPosition,
+
+                                behavior:
+                                    "smooth"
+
+                            });
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
 
 </body>
-  </html>
+
+   </html>
