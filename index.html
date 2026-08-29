@@ -3,10 +3,6 @@
 
 <head>
 
-    <!-- =========================================
-         BASIC DOCUMENT SETTINGS
-    ========================================== -->
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -22,35 +18,30 @@
           content="index, follow">
 
     <meta name="theme-color"
-          content="#050505">
-
-    <title>Triovision Studios | Visionary Farms of Imagination</title>
-
-
-    <!-- =========================================
-         SECURITY / REFERRER POLICY
-    ========================================== -->
+          content="#000000">
 
     <meta name="referrer"
           content="strict-origin-when-cross-origin">
 
+    <title>Triovision Studios | Visionary Farms of Imagination</title>
 
-    <!-- =========================================
-         FAVICON
-    ========================================== -->
+
+    <!-- FAVICON -->
 
     <link rel="icon"
           type="image/png"
           href="logo.png">
 
 
-    <!-- =========================================
-         PREMIUM CINEMATIC FONTS
-         
-         Bodoni Moda  = Main cinematic titles
-         Manrope     = Modern body/navigation
-         Space Mono  = Technical film labels
-    ========================================== -->
+    <!--
+        TYPOGRAPHY
+
+        Cormorant Garamond:
+        Elegant cinematic/editorial display font.
+
+        Manrope:
+        Modern clean interface font.
+    -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -59,19 +50,15 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
 
-    <!-- =========================================
-         STYLES
-    ========================================== -->
-
     <style>
 
-        /* =========================================
+        /* =====================================================
            RESET
-        ========================================== */
+        ===================================================== */
 
         *,
         *::before,
@@ -88,8 +75,8 @@
 
 
         body {
-            background: #050505;
-            color: #ffffff;
+            background: #000;
+            color: #fff;
 
             font-family:
                 "Manrope",
@@ -120,55 +107,38 @@
         }
 
 
-        /* =========================================
-           CUSTOM VARIABLES
-        ========================================== */
-
         :root {
 
             --black: #000000;
-
-            --background: #050505;
-
-            --background-two: #0a0a0a;
-
-            --panel: #0d0d0d;
-
             --white: #ffffff;
 
-            --soft-white: #dedede;
+            --off-white: #eeeeee;
 
-            --gray: #999999;
+            --gray: #888888;
 
-            --dark-gray: #555555;
+            --dark-gray: #444444;
 
             --line:
-                rgba(255,255,255,0.10);
+                rgba(255,255,255,0.12);
 
-            --line-strong:
+            --line-light:
                 rgba(255,255,255,0.20);
 
-            /* PREMIUM TYPOGRAPHY */
-
-            --serif:
-                "Bodoni Moda",
-                "Times New Roman",
+            --display:
+                "Cormorant Garamond",
+                Georgia,
                 serif;
 
-            --sans:
+            --ui:
                 "Manrope",
                 Arial,
                 sans-serif;
-
-            --mono:
-                "Space Mono",
-                monospace;
         }
 
 
-        /* =========================================
-           LOADING / INTRO SCREEN
-        ========================================== */
+        /* =====================================================
+           INTRO SCREEN
+        ===================================================== */
 
         #intro-screen {
 
@@ -176,12 +146,10 @@
 
             inset: 0;
 
-            width: 100vw;
+            width: 100%;
             height: 100dvh;
 
-            min-height: 100vh;
-
-            background: #000000;
+            background: #000;
 
             z-index: 99999;
 
@@ -194,8 +162,8 @@
             overflow: hidden;
 
             transition:
-                opacity 1.5s ease,
-                visibility 1.5s ease;
+                opacity 1.2s ease,
+                visibility 1.2s ease;
         }
 
 
@@ -210,11 +178,13 @@
 
 
         /*
-         * INTRO VIDEO FIX
-         *
-         * The video is contained inside the screen.
-         * It will NOT overflow or get cropped.
-         */
+           IMPORTANT VIDEO FIX
+
+           The video stays completely inside
+           the intro viewport.
+
+           It will NOT create horizontal overflow.
+        */
 
         #intro-video {
 
@@ -228,33 +198,37 @@
 
             object-fit: contain;
 
-            object-position: center center;
+            object-position: center;
 
-            background: #000000;
-
-            border: 0;
-
-            outline: 0;
+            background: #000;
         }
 
 
         /*
-         * If you specifically want the video
-         * to completely fill the screen, change:
-         *
-         * object-fit: contain;
-         *
-         * to:
-         *
-         * object-fit: cover;
-         *
-         * But "contain" keeps the complete video visible.
-         */
+           Mobile intro video
+
+           Keeps the complete video visible
+           instead of cropping it.
+        */
+
+        @media (max-width: 700px) {
+
+            #intro-video {
+
+                width: 100%;
+                height: auto;
+
+                max-height: 100dvh;
+
+                object-fit: contain;
+            }
+
+        }
 
 
-        /* =========================================
+        /* =====================================================
            INTRO FALLBACK
-        ========================================== */
+        ===================================================== */
 
         .intro-fallback {
 
@@ -264,11 +238,11 @@
 
             display: flex;
 
+            flex-direction: column;
+
             align-items: center;
 
             justify-content: center;
-
-            flex-direction: column;
 
             background: #000;
 
@@ -278,33 +252,29 @@
 
         .intro-fallback img {
 
-            width: 150px;
-
-            max-width: 45vw;
-
-            opacity: 0.9;
+            width: 120px;
 
             margin-bottom: 25px;
+
+            opacity: .9;
         }
 
 
         .intro-fallback p {
 
-            font-family: var(--mono);
-
-            font-size: 10px;
+            font-size: 9px;
 
             letter-spacing: 5px;
 
-            color: #777;
+            color: #666;
 
             text-transform: uppercase;
         }
 
 
-        /* =========================================
+        /* =====================================================
            PAGE LOADER
-        ========================================== */
+        ===================================================== */
 
         #page-loader {
 
@@ -312,7 +282,7 @@
 
             inset: 0;
 
-            background: #050505;
+            background: #000;
 
             z-index: 9998;
 
@@ -331,9 +301,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            NAVIGATION
-        ========================================== */
+        ===================================================== */
 
         .navbar {
 
@@ -344,7 +314,7 @@
 
             width: 100%;
 
-            height: 82px;
+            height: 78px;
 
             z-index: 5000;
 
@@ -357,30 +327,30 @@
             padding: 0 6%;
 
             background:
-                rgba(0,0,0,0.72);
+                rgba(0,0,0,.72);
 
             backdrop-filter:
-                blur(15px);
+                blur(18px);
 
             -webkit-backdrop-filter:
-                blur(15px);
+                blur(18px);
 
             border-bottom:
                 1px solid
-                rgba(255,255,255,0.07);
+                rgba(255,255,255,.08);
 
             transition:
-                background 0.4s ease,
-                height 0.4s ease;
+                height .4s ease,
+                background .4s ease;
         }
 
 
         .navbar.scrolled {
 
-            height: 70px;
+            height: 66px;
 
             background:
-                rgba(0,0,0,0.92);
+                rgba(0,0,0,.94);
         }
 
 
@@ -390,15 +360,14 @@
 
             align-items: center;
 
-            gap: 15px;
+            gap: 14px;
         }
 
 
         .nav-logo {
 
-            width: 47px;
-
-            height: 47px;
+            width: 40px;
+            height: 40px;
 
             object-fit: contain;
         }
@@ -406,13 +375,13 @@
 
         .nav-name {
 
-            font-family: var(--serif);
+            font-family: var(--ui);
 
-            font-size: 14px;
-
-            letter-spacing: 4px;
+            font-size: 10px;
 
             font-weight: 500;
+
+            letter-spacing: 4px;
         }
 
 
@@ -422,7 +391,7 @@
 
             align-items: center;
 
-            gap: 38px;
+            gap: 34px;
 
             list-style: none;
         }
@@ -432,18 +401,20 @@
 
             position: relative;
 
-            color: #d8d8d8;
+            color: #aaa;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 10px;
+            font-size: 8px;
 
-            letter-spacing: 2px;
+            font-weight: 500;
+
+            letter-spacing: 3px;
 
             text-transform: uppercase;
 
             transition:
-                color 0.3s ease;
+                color .3s ease;
         }
 
 
@@ -461,16 +432,16 @@
 
             height: 1px;
 
-            background: #ffffff;
+            background: #fff;
 
             transition:
-                width 0.3s ease;
+                width .3s ease;
         }
 
 
         .nav-links a:hover {
 
-            color: #ffffff;
+            color: #fff;
         }
 
 
@@ -480,17 +451,15 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            HERO
-        ========================================== */
+        ===================================================== */
 
         .hero {
 
             position: relative;
 
-            min-height: 100vh;
-
-            min-height: 100dvh;
+            min-height: 100svh;
 
             display: flex;
 
@@ -503,20 +472,18 @@
             overflow: hidden;
 
             padding:
-                150px 25px
+                130px 25px
                 100px;
 
             background:
                 radial-gradient(
                     circle at center,
-                    #181818 0%,
-                    #090909 40%,
-                    #000000 100%
+                    #151515 0%,
+                    #080808 42%,
+                    #000 100%
                 );
         }
 
-
-        /* Cinematic moving light */
 
         .hero::before {
 
@@ -524,26 +491,24 @@
 
             position: absolute;
 
-            width: 700px;
-
-            height: 700px;
+            width: 650px;
+            height: 650px;
 
             left: 50%;
-
             top: 50%;
 
             transform:
-                translate(-50%, -50%);
+                translate(-50%,-50%);
 
             background:
                 radial-gradient(
                     circle,
-                    rgba(255,255,255,0.045),
-                    transparent 65%
+                    rgba(255,255,255,.055),
+                    transparent 68%
                 );
 
             animation:
-                heroGlow 8s ease-in-out infinite;
+                heroGlow 9s ease-in-out infinite;
         }
 
 
@@ -552,14 +517,14 @@
             0%,
             100% {
                 transform:
-                    translate(-50%, -50%)
-                    scale(0.9);
+                    translate(-50%,-50%)
+                    scale(.9);
             }
 
             50% {
                 transform:
-                    translate(-50%, -50%)
-                    scale(1.15);
+                    translate(-50%,-50%)
+                    scale(1.12);
             }
         }
 
@@ -570,10 +535,12 @@
 
             z-index: 2;
 
-            max-width: 1000px;
+            width: 100%;
+
+            max-width: 1100px;
 
             animation:
-                heroReveal 1.8s
+                heroReveal 1.6s
                 cubic-bezier(.16,1,.3,1)
                 both;
         }
@@ -586,7 +553,7 @@
                 opacity: 0;
 
                 transform:
-                    translateY(40px);
+                    translateY(35px);
             }
 
             to {
@@ -602,19 +569,20 @@
         .hero-logo {
 
             width:
-                min(250px, 65vw);
+                min(190px,48vw);
 
             margin:
-                0 auto 40px;
+                0 auto 42px;
 
             filter:
+                grayscale(100%)
                 drop-shadow(
                     0 0 35px
-                    rgba(255,255,255,0.08)
+                    rgba(255,255,255,.09)
                 );
 
             animation:
-                logoFloat 6s
+                logoFloat 7s
                 ease-in-out
                 infinite;
         }
@@ -630,58 +598,64 @@
 
             50% {
                 transform:
-                    translateY(-8px);
+                    translateY(-7px);
             }
         }
 
 
+        /*
+           NEW DISPLAY FONT
+        */
+
         .hero-title {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
             font-size:
-                clamp(42px, 8vw, 92px);
+                clamp(54px,9vw,110px);
 
-            font-weight: 500;
+            font-weight: 400;
+
+            line-height: .9;
 
             letter-spacing:
-                clamp(6px, 1.2vw, 14px);
+                clamp(5px,1.2vw,14px);
 
-            line-height: 1;
+            text-transform:
+                uppercase;
         }
 
 
         .hero-divider {
 
-            width: 90px;
+            width: 70px;
 
             height: 1px;
 
-            background:
-                rgba(255,255,255,0.7);
+            background: #777;
 
             margin:
-                32px auto;
+                34px auto;
         }
 
 
         .hero-tagline {
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
             font-size:
-                clamp(9px, 1.5vw, 13px);
+                clamp(9px,1.3vw,13px);
+
+            font-weight: 300;
 
             letter-spacing:
-                clamp(2px, 0.5vw, 5px);
+                clamp(3px,.7vw,6px);
 
-            color: #bdbdbd;
+            color: #999;
 
-            text-transform: uppercase;
-
-            font-weight: 400;
-
-            line-height: 1.8;
+            text-transform:
+                uppercase;
         }
 
 
@@ -689,7 +663,7 @@
 
             position: absolute;
 
-            bottom: 35px;
+            bottom: 28px;
 
             left: 50%;
 
@@ -702,13 +676,13 @@
 
             align-items: center;
 
-            gap: 12px;
+            gap: 11px;
 
-            color: #666;
+            color: #555;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 8px;
+            font-size: 7px;
 
             letter-spacing: 4px;
 
@@ -720,7 +694,7 @@
 
             width: 1px;
 
-            height: 45px;
+            height: 42px;
 
             background:
                 linear-gradient(
@@ -740,27 +714,33 @@
 
             0%,
             100% {
-                opacity: 0.3;
-                transform: scaleY(0.7);
+
+                opacity: .3;
+
+                transform:
+                    scaleY(.65);
             }
 
             50% {
+
                 opacity: 1;
-                transform: scaleY(1);
+
+                transform:
+                    scaleY(1);
             }
         }
 
 
-        /* =========================================
+        /* =====================================================
            GENERAL SECTION
-        ========================================== */
+        ===================================================== */
 
         .section {
 
             position: relative;
 
             padding:
-                130px 7%;
+                125px 7%;
         }
 
 
@@ -768,7 +748,7 @@
 
             text-align: center;
 
-            margin-bottom: 75px;
+            margin-bottom: 70px;
         }
 
 
@@ -776,13 +756,15 @@
 
             display: block;
 
-            color: #555;
+            color: #444;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 9px;
+            font-size: 7px;
 
-            letter-spacing: 3px;
+            font-weight: 500;
+
+            letter-spacing: 5px;
 
             margin-bottom: 20px;
         }
@@ -790,66 +772,70 @@
 
         .section-title {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
             font-size:
-                clamp(30px, 5vw, 58px);
+                clamp(40px,6vw,72px);
 
-            font-weight: 500;
+            font-weight: 400;
+
+            line-height: 1;
 
             letter-spacing:
-                clamp(4px, 0.8vw, 9px);
+                clamp(3px,.7vw,8px);
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
 
         .section-subtitle {
 
-            margin-top: 20px;
+            margin-top: 18px;
 
-            color: #777;
+            color: #666;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 9px;
+            font-size: 8px;
 
-            letter-spacing: 3px;
+            font-weight: 400;
+
+            letter-spacing: 4px;
 
             text-transform: uppercase;
-
-            line-height: 1.8;
         }
 
 
-        /* =========================================
-           CURRENT PROJECT
-        ========================================== */
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
 
         #projects {
 
             background:
                 linear-gradient(
                     180deg,
-                    #050505,
-                    #090909
+                    #000,
+                    #070707
                 );
         }
 
 
         .project-card {
 
-            max-width: 1200px;
+            max-width: 1220px;
 
             margin: 0 auto;
 
             display: grid;
 
             grid-template-columns:
-                minmax(0, 1.05fr)
-                minmax(0, 0.95fr);
+                minmax(0,1.05fr)
+                minmax(0,.95fr);
 
-            background: #0a0a0a;
+            background: #050505;
 
             border:
                 1px solid
@@ -860,13 +846,13 @@
             opacity: 0;
 
             transform:
-                translateY(40px);
+                translateY(45px);
 
             transition:
                 opacity 1s ease,
                 transform 1s
                 cubic-bezier(.16,1,.3,1),
-                border-color 0.4s ease;
+                border-color .4s ease;
         }
 
 
@@ -882,18 +868,19 @@
         .project-card:hover {
 
             border-color:
-                var(--line-strong);
-
-            transform:
-                translateY(-7px);
+                var(--line-light);
         }
 
+
+        /* =====================================================
+           POSTER
+        ===================================================== */
 
         .project-poster {
 
             position: relative;
 
-            min-height: 620px;
+            min-height: 610px;
 
             overflow: hidden;
 
@@ -909,28 +896,31 @@
 
             inset: 0;
 
+            pointer-events: none;
+
             background:
                 linear-gradient(
                     90deg,
                     transparent 65%,
-                    rgba(0,0,0,0.25)
+                    rgba(0,0,0,.3)
                 );
-
-            pointer-events: none;
         }
 
 
         .project-poster img {
 
             width: 100%;
-
             height: 100%;
 
             object-fit: cover;
 
+            filter:
+                grayscale(100%);
+
             transition:
-                transform 1.2s
-                cubic-bezier(.16,1,.3,1);
+                transform 1.3s
+                cubic-bezier(.16,1,.3,1),
+                filter .8s ease;
         }
 
 
@@ -938,9 +928,16 @@
         .project-poster img {
 
             transform:
-                scale(1.045);
+                scale(1.035);
+
+            filter:
+                grayscale(80%);
         }
 
+
+        /* =====================================================
+           PROJECT DETAILS
+        ===================================================== */
 
         .project-details {
 
@@ -951,19 +948,21 @@
             justify-content: center;
 
             padding:
-                clamp(35px, 5vw, 70px);
+                clamp(40px,5vw,75px);
         }
 
 
         .project-type {
 
-            color: #777;
+            color: #555;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 8px;
+            font-size: 7px;
 
-            letter-spacing: 2px;
+            font-weight: 500;
+
+            letter-spacing: 4px;
 
             line-height: 1.8;
 
@@ -975,30 +974,33 @@
 
         .project-title {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
             font-size:
-                clamp(38px, 5vw, 68px);
+                clamp(45px,5vw,75px);
 
-            font-weight: 500;
+            font-weight: 400;
 
-            letter-spacing: 4px;
+            line-height: .9;
 
-            line-height: 1.05;
+            letter-spacing: 3px;
         }
 
 
         .project-subtitle {
 
-            margin-top: 13px;
+            margin-top: 15px;
 
-            color: #aaa;
+            color: #888;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
             font-size: 9px;
 
-            letter-spacing: 3px;
+            font-weight: 400;
+
+            letter-spacing: 4px;
 
             text-transform: uppercase;
         }
@@ -1006,11 +1008,11 @@
 
         .project-rule {
 
-            width: 60px;
+            width: 55px;
 
             height: 1px;
 
-            background: #666;
+            background: #555;
 
             margin:
                 30px 0;
@@ -1019,29 +1021,30 @@
 
         .project-description {
 
-            color: #b5b5b5;
+            color: #aaa;
 
-            font-family: var(--sans);
+            font-family: var(--ui);
 
-            font-size: 14px;
+            font-size: 12px;
+
+            font-weight: 300;
 
             line-height: 2;
 
-            max-width: 520px;
-
-            font-weight: 300;
+            max-width: 500px;
         }
 
 
         .project-description::first-letter {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
-            font-size: 42px;
+            font-size: 46px;
 
             float: left;
 
-            line-height: 0.8;
+            line-height: .75;
 
             padding:
                 5px 8px 0 0;
@@ -1049,6 +1052,10 @@
             color: #fff;
         }
 
+
+        /* =====================================================
+           CREDITS
+        ===================================================== */
 
         .project-credits {
 
@@ -1060,35 +1067,43 @@
                 1px solid
                 var(--line);
 
-            color: #666;
+            color: #555;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 8px;
+            font-size: 7px;
 
-            line-height: 2.3;
+            font-weight: 400;
 
-            letter-spacing: 1.5px;
+            line-height: 2.5;
+
+            letter-spacing: 2px;
         }
 
 
+        /* =====================================================
+           PROJECT STATUS
+        ===================================================== */
+
         .project-status {
 
-            margin-top: 35px;
+            margin-top: 34px;
 
             display: inline-flex;
 
             align-items: center;
 
-            gap: 10px;
+            gap: 9px;
 
-            color: #aaa;
+            color: #777;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 8px;
+            font-size: 7px;
 
-            letter-spacing: 2px;
+            font-weight: 500;
+
+            letter-spacing: 3px;
 
             text-transform: uppercase;
         }
@@ -1096,21 +1111,19 @@
 
         .status-dot {
 
-            width: 6px;
-
-            height: 6px;
+            width: 5px;
+            height: 5px;
 
             border-radius: 50%;
 
             background: #aaa;
 
             box-shadow:
-                0 0 10px
-                rgba(255,255,255,0.5);
+                0 0 8px
+                rgba(255,255,255,.4);
 
             animation:
-                statusBlink 2s
-                infinite;
+                statusBlink 2s infinite;
         }
 
 
@@ -1118,7 +1131,7 @@
 
             0%,
             100% {
-                opacity: 0.4;
+                opacity: .35;
             }
 
             50% {
@@ -1127,13 +1140,59 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .studio-divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            width: 85%;
+
+            max-width: 750px;
+
+            margin:
+                0 auto;
+        }
+
+
+        .studio-divider span {
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                var(--line);
+        }
+
+
+        .studio-divider i {
+
+            width: 6px;
+            height: 6px;
+
+            border:
+                1px solid
+                #666;
+
+            transform:
+                rotate(45deg);
+        }
+
+
+        /* =====================================================
            FUTURE PROJECTS
-        ========================================== */
+        ===================================================== */
 
         .future-section {
 
-            min-height: 55vh;
+            min-height: 58vh;
 
             display: flex;
 
@@ -1143,11 +1202,15 @@
 
             text-align: center;
 
+            padding:
+                100px 25px;
+
             background:
                 radial-gradient(
                     ellipse at center,
-                    #111111 0%,
-                    #050505 65%
+                    #111 0%,
+                    #050505 60%,
+                    #000 100%
                 );
 
             border-top:
@@ -1162,18 +1225,17 @@
 
         .future-content {
 
-            max-width: 800px;
+            max-width: 850px;
         }
 
 
         .future-symbol {
 
-            width: 55px;
-
-            height: 55px;
+            width: 54px;
+            height: 54px;
 
             margin:
-                0 auto 35px;
+                0 auto 32px;
 
             border:
                 1px solid
@@ -1189,68 +1251,81 @@
 
             color: #777;
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
-            font-size: 20px;
+            font-size: 22px;
+
+            font-weight: 300;
 
             animation:
-                futureRotate 12s
-                linear
-                infinite;
+                futureRotate 15s
+                linear infinite;
         }
 
 
         @keyframes futureRotate {
 
             from {
-                transform: rotate(0deg);
+                transform:
+                    rotate(0deg);
             }
 
             to {
-                transform: rotate(360deg);
+                transform:
+                    rotate(360deg);
             }
         }
 
 
         .future-title {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
             font-size:
-                clamp(30px, 6vw, 65px);
+                clamp(45px,7vw,78px);
 
-            font-weight: 500;
+            font-weight: 400;
+
+            line-height: .95;
 
             letter-spacing:
-                clamp(4px, 1vw, 10px);
+                clamp(3px,1vw,9px);
+
+            text-transform:
+                uppercase;
         }
 
 
         .future-line {
 
-            width: 70px;
+            width: 60px;
 
             height: 1px;
 
             background: #555;
 
-            margin: 30px auto;
+            margin:
+                30px auto;
         }
 
 
         .future-text {
 
-            color: #777;
+            color: #666;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 9px;
+            font-size: 8px;
 
-            letter-spacing: 3px;
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            line-height: 2.3;
 
             text-transform: uppercase;
-
-            line-height: 2.2;
         }
 
 
@@ -1258,34 +1333,48 @@
 
             display: inline-block;
 
-            margin-top: 35px;
+            margin-top: 32px;
 
             padding:
-                13px 28px;
+                12px 25px;
 
             border:
                 1px solid
-                rgba(255,255,255,0.18);
+                rgba(255,255,255,.18);
 
-            color: #999;
+            color: #888;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 8px;
+            font-size: 7px;
 
-            letter-spacing: 3px;
+            font-weight: 500;
+
+            letter-spacing: 4px;
 
             text-transform: uppercase;
+
+            transition:
+                all .3s ease;
         }
 
 
-        /* =========================================
+        .coming-soon:hover {
+
+            color: #fff;
+
+            border-color:
+                rgba(255,255,255,.5);
+        }
+
+
+        /* =====================================================
            ABOUT
-        ========================================== */
+        ===================================================== */
 
         #about {
 
-            background: #050505;
+            background: #000;
         }
 
 
@@ -1319,18 +1408,19 @@
 
         .about-lead {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
             font-size:
-                clamp(22px, 3vw, 34px);
+                clamp(28px,4vw,44px);
 
-            line-height: 1.6;
+            font-weight: 400;
+
+            line-height: 1.35;
 
             color: #ddd;
 
             letter-spacing: 1px;
-
-            font-weight: 400;
         }
 
 
@@ -1338,86 +1428,44 @@
 
             margin-top: 35px;
 
-            color: #888;
+            color: #777;
 
-            font-family: var(--sans);
+            font-family: var(--ui);
 
-            font-size: 14px;
-
-            line-height: 2.1;
+            font-size: 12px;
 
             font-weight: 300;
+
+            line-height: 2.1;
         }
 
 
         .about-motto {
 
-            margin-top: 45px;
+            margin-top: 42px;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 9px;
+            font-size: 8px;
 
-            letter-spacing: 4px;
+            font-weight: 500;
 
-            color: #aaa;
+            letter-spacing: 5px;
+
+            color: #888;
 
             text-transform: uppercase;
         }
 
 
-        /* =========================================
-           STUDIO DIVIDER
-        ========================================== */
-
-        .studio-divider {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-            max-width: 700px;
-
-            margin:
-                0 auto;
-        }
-
-
-        .studio-divider span {
-
-            flex: 1;
-
-            height: 1px;
-
-            background:
-                var(--line);
-        }
-
-
-        .studio-divider i {
-
-            width: 7px;
-
-            height: 7px;
-
-            border:
-                1px solid #777;
-
-            transform:
-                rotate(45deg);
-        }
-
-
-        /* =========================================
+        /* =====================================================
            FOOTER
-        ========================================== */
+        ===================================================== */
 
         footer {
 
             padding:
-                80px 25px 40px;
+                75px 25px 35px;
 
             text-align: center;
 
@@ -1431,38 +1479,44 @@
 
         .footer-logo {
 
-            width: 75px;
+            width: 65px;
 
             margin:
-                0 auto 25px;
+                0 auto 24px;
 
-            opacity: 0.9;
+            filter:
+                grayscale(100%);
+
+            opacity: .85;
         }
 
 
         .footer-name {
 
-            font-family: var(--serif);
+            font-family:
+                var(--display);
 
-            font-size: 14px;
+            font-size: 22px;
+
+            font-weight: 400;
 
             letter-spacing: 6px;
-
-            font-weight: 500;
         }
 
 
         .footer-tagline {
 
-            margin-top: 15px;
+            margin-top: 13px;
 
-            color: #555;
+            color: #444;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
-            font-size: 8px;
+            font-size: 7px;
 
-            letter-spacing: 3px;
+            font-weight: 400;
+
+            letter-spacing: 4px;
 
             text-transform: uppercase;
         }
@@ -1470,61 +1524,58 @@
 
         .footer-line {
 
-            width: 50px;
+            width: 45px;
 
             height: 1px;
 
             background: #333;
 
             margin:
-                35px auto;
+                32px auto;
         }
 
 
         .copyright {
 
-            color: #444;
+            color: #333;
 
-            font-family: var(--mono);
+            font-family: var(--ui);
 
             font-size: 7px;
 
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
 
             text-transform: uppercase;
         }
 
 
-        /* =========================================
+        /* =====================================================
            BACK TO TOP
-        ========================================== */
+        ===================================================== */
 
         #top-button {
 
             position: fixed;
 
-            right: 25px;
+            right: 22px;
+            bottom: 22px;
 
-            bottom: 25px;
-
-            width: 42px;
-
-            height: 42px;
+            width: 40px;
+            height: 40px;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             border:
                 1px solid
-                rgba(255,255,255,0.2);
+                rgba(255,255,255,.2);
 
             background:
-                rgba(0,0,0,0.7);
+                rgba(0,0,0,.8);
 
-            color: #aaa;
+            color: #777;
 
             cursor: pointer;
 
@@ -1533,7 +1584,7 @@
             visibility: hidden;
 
             transition:
-                all 0.3s ease;
+                all .3s ease;
 
             z-index: 4000;
         }
@@ -1555,18 +1606,31 @@
         }
 
 
-        /* =========================================
-           TABLETS / MOBILE
-        ========================================== */
+        /* =====================================================
+           TABLET / MOBILE
+        ===================================================== */
 
         @media (max-width: 850px) {
 
             .navbar {
 
-                height: 70px;
+                height: 68px;
 
                 padding:
                     0 5%;
+            }
+
+
+            .navbar.scrolled {
+
+                height: 62px;
+            }
+
+
+            .nav-logo {
+
+                width: 36px;
+                height: 36px;
             }
 
 
@@ -1576,32 +1640,24 @@
             }
 
 
-            .nav-logo {
-
-                width: 40px;
-
-                height: 40px;
-            }
-
-
             .nav-links {
 
-                gap: 18px;
+                gap: 17px;
             }
 
 
             .nav-links a {
 
-                font-size: 8px;
+                font-size: 7px;
 
-                letter-spacing: 1.5px;
+                letter-spacing: 2px;
             }
 
 
             .hero {
 
                 padding:
-                    130px 20px
+                    120px 20px
                     80px;
             }
 
@@ -1609,15 +1665,27 @@
             .hero-logo {
 
                 width:
-                    min(220px, 60vw);
+                    min(175px,55vw);
 
                 margin-bottom: 35px;
             }
 
 
-            .hero-scroll {
+            .hero-title {
 
-                bottom: 20px;
+                font-size:
+                    clamp(45px,12vw,75px);
+            }
+
+
+            .hero-tagline {
+
+                max-width: 320px;
+
+                margin:
+                    0 auto;
+
+                line-height: 2;
             }
 
 
@@ -1642,7 +1710,7 @@
 
             .project-poster {
 
-                min-height: auto;
+                min-height: 0;
 
                 aspect-ratio:
                     2 / 3;
@@ -1651,19 +1719,20 @@
 
             .project-details {
 
-                padding: 38px 25px 45px;
+                padding:
+                    40px 25px 45px;
             }
 
 
             .project-title {
 
-                font-size: 42px;
+                font-size: 48px;
             }
 
 
             .project-description {
 
-                font-size: 13px;
+                font-size: 11px;
             }
 
 
@@ -1678,18 +1747,11 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            SMALL PHONES
-        ========================================== */
+        ===================================================== */
 
         @media (max-width: 480px) {
-
-            .navbar {
-
-                padding:
-                    0 4%;
-            }
-
 
             .nav-links {
 
@@ -1699,32 +1761,15 @@
 
             .nav-links a {
 
-                font-size: 7px;
+                font-size: 6px;
 
-                letter-spacing: 1px;
-            }
-
-
-            .hero {
-
-                padding:
-                    115px 18px
-                    75px;
-            }
-
-
-            .hero-logo {
-
-                width:
-                    min(190px, 55vw);
-
-                margin-bottom: 30px;
+                letter-spacing: 1.5px;
             }
 
 
             .hero-title {
 
-                font-size: 38px;
+                font-size: 43px;
 
                 letter-spacing: 4px;
             }
@@ -1734,44 +1779,13 @@
 
                 font-size: 8px;
 
-                letter-spacing: 2px;
-
-                line-height: 2;
-            }
-
-
-            .hero-scroll {
-
-                bottom: 15px;
-            }
-
-
-            .section {
-
-                padding:
-                    75px 5%;
-            }
-
-
-            .section-title {
-
-                font-size: 29px;
-
-                letter-spacing: 3px;
-            }
-
-
-            .section-subtitle {
-
-                font-size: 8px;
-
-                letter-spacing: 2px;
+                letter-spacing: 2.5px;
             }
 
 
             .project-title {
 
-                font-size: 36px;
+                font-size: 41px;
 
                 letter-spacing: 2px;
             }
@@ -1779,200 +1793,39 @@
 
             .project-subtitle {
 
-                letter-spacing: 2px;
-            }
+                font-size: 8px;
 
-
-            .project-description {
-
-                font-size: 12px;
-
-                line-height: 1.9;
+                letter-spacing: 3px;
             }
 
 
             .project-credits {
 
-                font-size: 7px;
+                font-size: 6.5px;
 
-                letter-spacing: 1px;
-            }
-
-
-            .project-status {
-
-                font-size: 7px;
-
-                letter-spacing: 1.5px;
-            }
-
-
-            .future-title {
-
-                font-size: 32px;
-
-                letter-spacing: 3px;
-            }
-
-
-            .future-text {
-
-                font-size: 8px;
-
-                letter-spacing: 2px;
+                letter-spacing: 1.4px;
             }
 
 
             .about-lead {
 
-                font-size: 21px;
-            }
-
-
-            .about-text {
-
-                font-size: 12px;
-
-                line-height: 2;
-            }
-
-
-            .about-motto {
-
-                font-size: 7px;
-
-                letter-spacing: 2.5px;
-            }
-
-
-            footer {
-
-                padding:
-                    65px 20px 35px;
+                font-size: 27px;
             }
 
 
             .footer-name {
 
-                font-size: 12px;
+                font-size: 18px;
 
                 letter-spacing: 4px;
             }
 
-
-            .footer-tagline {
-
-                font-size: 7px;
-
-                letter-spacing: 2px;
-            }
-
-
-            #top-button {
-
-                width: 38px;
-
-                height: 38px;
-
-                right: 18px;
-
-                bottom: 18px;
-            }
-
         }
 
 
-        /* =========================================
-           VERY SMALL PHONES
-        ========================================== */
-
-        @media (max-width: 360px) {
-
-            .nav-links {
-
-                gap: 8px;
-            }
-
-
-            .nav-links a {
-
-                font-size: 6px;
-
-                letter-spacing: 0.8px;
-            }
-
-
-            .hero-title {
-
-                font-size: 33px;
-
-                letter-spacing: 3px;
-            }
-
-
-            .hero-logo {
-
-                width: 165px;
-            }
-
-
-            .project-title {
-
-                font-size: 32px;
-            }
-
-        }
-
-
-        /* =========================================
-           LANDSCAPE MOBILE
-        ========================================== */
-
-        @media (max-height: 600px) and (orientation: landscape) {
-
-            #intro-screen {
-
-                height: 100dvh;
-            }
-
-
-            #intro-video {
-
-                width: 100vw;
-
-                height: 100dvh;
-
-                object-fit: contain;
-            }
-
-
-            .hero {
-
-                min-height: 700px;
-
-                padding-top: 120px;
-            }
-
-
-            .hero-logo {
-
-                width: 150px;
-
-                margin-bottom: 20px;
-            }
-
-
-            .hero-scroll {
-
-                display: none;
-            }
-
-        }
-
-
-        /* =========================================
+        /* =====================================================
            REDUCED MOTION
-        ========================================== */
+        ===================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -1985,14 +1838,15 @@
             *::after {
 
                 animation-duration:
-                    0.01ms !important;
+                    .01ms !important;
 
                 animation-iteration-count:
                     1 !important;
 
                 transition-duration:
-                    0.01ms !important;
+                    .01ms !important;
             }
+
         }
 
     </style>
@@ -2003,9 +1857,9 @@
 <body>
 
 
-    <!-- =========================================
-         10 SECOND TRIOVISION INTRO
-    ========================================== -->
+    <!-- =====================================================
+         10-SECOND TRIOVISION INTRO
+    ===================================================== -->
 
     <div id="intro-screen">
 
@@ -2014,8 +1868,9 @@
             autoplay
             muted
             playsinline
-            webkit-playsinline
             preload="auto"
+            disablepictureinpicture
+            controlslist="nodownload noplaybackrate"
             aria-label="Triovision Studios opening animation">
 
             <source
@@ -2024,8 +1879,6 @@
 
         </video>
 
-
-        <!-- FALLBACK -->
 
         <div class="intro-fallback">
 
@@ -2042,23 +1895,23 @@
     </div>
 
 
-    <!-- =========================================
-         PAGE LOADER
-    ========================================== -->
+    <!-- PAGE LOADER -->
 
     <div id="page-loader"></div>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          NAVIGATION
-    ========================================== -->
+    ===================================================== -->
 
-    <header class="navbar"
-            id="navbar">
+    <header
+        class="navbar"
+        id="navbar">
 
-        <a href="#home"
-           class="nav-brand"
-           aria-label="Triovision Studios Home">
+        <a
+            href="#home"
+            class="nav-brand"
+            aria-label="Triovision Studios Home">
 
             <img
                 src="logo.png"
@@ -2089,6 +1942,12 @@
                 </li>
 
                 <li>
+                    <a href="#future">
+                        Future
+                    </a>
+                </li>
+
+                <li>
                     <a href="#about">
                         Studio
                     </a>
@@ -2101,16 +1960,16 @@
     </header>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          MAIN
-    ========================================== -->
+    ===================================================== -->
 
     <main>
 
 
-        <!-- =====================================
+        <!-- =================================================
              HERO
-        ====================================== -->
+        ================================================= -->
 
         <section
             class="hero"
@@ -2152,9 +2011,9 @@
         </section>
 
 
-        <!-- =====================================
-             PROJECTS
-        ====================================== -->
+        <!-- =================================================
+             CURRENT PROJECT
+        ================================================= -->
 
         <section
             class="section"
@@ -2164,7 +2023,7 @@
             <div class="section-header">
 
                 <span class="section-number">
-                    01 / PROJECTS
+                    01 / CURRENT PROJECT
                 </span>
 
                 <h2 class="section-title">
@@ -2178,10 +2037,6 @@
             </div>
 
 
-            <!-- =================================
-                 SWAN-MERE
-            ================================== -->
-
             <article
                 class="project-card"
                 id="swan-mere">
@@ -2193,13 +2048,13 @@
 
                     <img
                         src="swan-mere.png"
-                        alt="SWAN-MERE — Echoes of Hearts poster"
+                        alt="SWAN-MERE — Echoes of Hearts"
                         loading="lazy">
 
                 </div>
 
 
-                <!-- PROJECT INFORMATION -->
+                <!-- INFORMATION -->
 
                 <div class="project-details">
 
@@ -2236,8 +2091,6 @@
                     </p>
 
 
-                    <!-- CREDITS -->
-
                     <div class="project-credits">
 
                         SCREENPLAY BY SUVESH.B
@@ -2257,8 +2110,6 @@
                     </div>
 
 
-                    <!-- STATUS -->
-
                     <div class="project-status">
 
                         <span class="status-dot"></span>
@@ -2274,9 +2125,9 @@
         </section>
 
 
-        <!-- =====================================
-             STUDIO DIVIDER
-        ====================================== -->
+        <!-- =================================================
+             DIVIDER
+        ================================================= -->
 
         <div class="studio-divider">
 
@@ -2289,14 +2140,13 @@
         </div>
 
 
-        <!-- =====================================
+        <!-- =================================================
              FUTURE PROJECTS
-        ====================================== -->
+        ================================================= -->
 
         <section
             class="future-section"
             id="future">
-
 
             <div class="future-content">
 
@@ -2307,9 +2157,7 @@
 
 
                 <h2 class="future-title">
-
                     Future Projects
-
                 </h2>
 
 
@@ -2336,9 +2184,9 @@
         </section>
 
 
-        <!-- =====================================
-             ABOUT THE STUDIO
-        ====================================== -->
+        <!-- =================================================
+             ABOUT / STUDIO
+        ================================================= -->
 
         <section
             class="section"
@@ -2369,8 +2217,10 @@
 
                     We imagine worlds.
                     <br>
+
                     We build stories.
                     <br>
+
                     We create visions.
 
                 </p>
@@ -2405,9 +2255,9 @@
     </main>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          FOOTER
-    ========================================== -->
+    ===================================================== -->
 
     <footer>
 
@@ -2419,16 +2269,12 @@
 
 
         <h3 class="footer-name">
-
             TRIOVISION STUDIOS
-
         </h3>
 
 
         <p class="footer-tagline">
-
             Visionary Farms of Imagination
-
         </p>
 
 
@@ -2445,9 +2291,9 @@
     </footer>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          BACK TO TOP
-    ========================================== -->
+    ===================================================== -->
 
     <button
         id="top-button"
@@ -2459,45 +2305,64 @@
     </button>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          JAVASCRIPT
-         No external libraries required
-    ========================================== -->
+    ===================================================== -->
 
     <script>
 
         "use strict";
 
 
-        /* =========================================
+        /* =================================================
            ELEMENTS
-        ========================================== */
+        ================================================= */
 
         const introScreen =
-            document.getElementById("intro-screen");
+            document.getElementById(
+                "intro-screen"
+            );
+
 
         const introVideo =
-            document.getElementById("intro-video");
+            document.getElementById(
+                "intro-video"
+            );
+
 
         const pageLoader =
-            document.getElementById("page-loader");
+            document.getElementById(
+                "page-loader"
+            );
+
 
         const navbar =
-            document.getElementById("navbar");
+            document.getElementById(
+                "navbar"
+            );
+
 
         const topButton =
-            document.getElementById("top-button");
+            document.getElementById(
+                "top-button"
+            );
+
 
         const projectCard =
-            document.querySelector(".project-card");
+            document.querySelector(
+                ".project-card"
+            );
+
 
         const aboutContainer =
-            document.querySelector(".about-container");
+            document.querySelector(
+                ".about-container"
+            );
 
 
-        /* =========================================
+        /* =================================================
            INTRO VIDEO
-        ========================================== */
+        ================================================= */
 
         let introClosed = false;
 
@@ -2508,34 +2373,35 @@
                 return;
             }
 
+
             introClosed = true;
 
-            introScreen.classList.add("hidden");
+
+            introScreen.classList.add(
+                "hidden"
+            );
+
 
             /*
-             * Stop the video after the fade-out.
-             * This prevents unnecessary playback.
+             * Stop the video after the
+             * intro has disappeared.
              */
 
-            setTimeout(function () {
-
-                try {
+            setTimeout(
+                function () {
 
                     introVideo.pause();
 
-                } catch (error) {
-
-                    /* Ignore video pause errors */
-
-                }
-
-            }, 1600);
+                },
+                1300
+            );
 
         }
 
 
         /*
-         * Close normally when the video ends.
+         * Close exactly when the video
+         * reaches its natural end.
          */
 
         introVideo.addEventListener(
@@ -2545,29 +2411,30 @@
 
 
         /*
-         * Safety fallback.
+         * 11 second safety fallback.
          *
-         * Your intro is approximately 10 seconds.
-         * 11.5 seconds gives the browser a little
-         * extra time while preventing the visitor
-         * from becoming stuck.
+         * Your intro is expected to be
+         * approximately 10 seconds.
          */
 
-        const introSafetyTimer =
+        const introTimer =
             setTimeout(
                 closeIntro,
-                11500
+                11000
             );
 
 
         /*
-         * If the video cannot load,
-         * don't leave the visitor stuck.
+         * Video loading error.
          */
 
         introVideo.addEventListener(
             "error",
             function () {
+
+                clearTimeout(
+                    introTimer
+                );
 
                 setTimeout(
                     closeIntro,
@@ -2579,10 +2446,7 @@
 
 
         /*
-         * Attempt autoplay.
-         *
-         * Because the video is muted and playsinline,
-         * modern mobile browsers normally allow it.
+         * Force autoplay when possible.
          */
 
         window.addEventListener(
@@ -2592,24 +2456,30 @@
                 introVideo
                     .play()
                     .catch(
-                        function () {
-
-                            /*
-                             * If autoplay is blocked,
-                             * allow the safety timer to
-                             * close the intro.
-                             */
-
-                        }
+                        function () {}
                     );
 
             }
         );
 
 
-        /* =========================================
+        /*
+         * No context menu on intro.
+         */
+
+        introVideo.addEventListener(
+            "contextmenu",
+            function (event) {
+
+                event.preventDefault();
+
+            }
+        );
+
+
+        /* =================================================
            PAGE LOADER
-        ========================================== */
+        ================================================= */
 
         window.addEventListener(
             "load",
@@ -2630,13 +2500,15 @@
         );
 
 
-        /* =========================================
-           NAVBAR SCROLL EFFECT
-        ========================================== */
+        /* =================================================
+           NAVBAR
+        ================================================= */
 
         function updateNavbar() {
 
-            if (window.scrollY > 60) {
+            if (
+                window.scrollY > 60
+            ) {
 
                 navbar.classList.add(
                     "scrolled"
@@ -2656,20 +2528,24 @@
         window.addEventListener(
             "scroll",
             updateNavbar,
-            { passive: true }
+            {
+                passive: true
+            }
         );
 
 
         updateNavbar();
 
 
-        /* =========================================
+        /* =================================================
            BACK TO TOP
-        ========================================== */
+        ================================================= */
 
         function updateTopButton() {
 
-            if (window.scrollY > 600) {
+            if (
+                window.scrollY > 600
+            ) {
 
                 topButton.classList.add(
                     "show"
@@ -2689,7 +2565,9 @@
         window.addEventListener(
             "scroll",
             updateTopButton,
-            { passive: true }
+            {
+                passive: true
+            }
         );
 
 
@@ -2709,9 +2587,9 @@
         );
 
 
-        /* =========================================
+        /* =================================================
            SCROLL REVEAL
-        ========================================== */
+        ================================================= */
 
         const observer =
             new IntersectionObserver(
@@ -2727,7 +2605,10 @@
 
                                 entry.target
                                     .classList
-                                    .add("visible");
+                                    .add(
+                                        "visible"
+                                    );
+
 
                                 observer.unobserve(
                                     entry.target
@@ -2741,7 +2622,7 @@
                 },
 
                 {
-                    threshold: 0.15
+                    threshold: .15
                 }
 
             );
@@ -2765,30 +2646,9 @@
         }
 
 
-        /* =========================================
-           PREVENT VIDEO CONTROLS
-        ========================================== */
-
-        introVideo.controls = false;
-
-
-        /* =========================================
-           PREVENT CONTEXT MENU ON INTRO VIDEO
-        ========================================== */
-
-        introVideo.addEventListener(
-            "contextmenu",
-            function (event) {
-
-                event.preventDefault();
-
-            }
-        );
-
-
-        /* =========================================
+        /* =================================================
            PAGE VISIBILITY
-        ========================================== */
+        ================================================= */
 
         document.addEventListener(
             "visibilitychange",
@@ -2806,10 +2666,6 @@
             }
         );
 
-
-        /* =========================================
-           RESTART VIDEO WHEN USER RETURNS
-        ========================================== */
 
         document.addEventListener(
             "visibilitychange",
@@ -2831,67 +2687,8 @@
             }
         );
 
-
-        /* =========================================
-           SMOOTH NAVIGATION
-        ========================================== */
-
-        document
-            .querySelectorAll(
-                '.nav-links a[href^="#"]'
-            )
-            .forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function (event) {
-
-                            const targetId =
-                                this.getAttribute(
-                                    "href"
-                                );
-
-                            const target =
-                                document.querySelector(
-                                    targetId
-                                );
-
-                            if (!target) {
-                                return;
-                            }
-
-                            event.preventDefault();
-
-                            const navHeight =
-                                navbar.offsetHeight;
-
-                            const targetPosition =
-                                target.getBoundingClientRect()
-                                    .top
-                                +
-                                window.scrollY
-                                -
-                                navHeight;
-
-                            window.scrollTo({
-
-                                top:
-                                    targetPosition,
-
-                                behavior:
-                                    "smooth"
-
-                            });
-
-                        }
-                    );
-
-                }
-            );
-
     </script>
 
 </body>
 
-   </html>
+    </html>
