@@ -1,1 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="SWAN-MERE Original Motion Picture Soundtrack — Triovision Studios.">
+
+<meta name="author"
+      content="Triovision Studios">
+
+<meta name="robots"
+      content="index, follow">
+
+<meta name="theme-color"
+      content="#050505">
+
+<link rel="icon"
+      type="image/png"
+      href="logo.png">
+
+<title>SWAN-MERE OST | Triovision Studios</title>
+
+
+<!-- =========================================
+     FONTS
+========================================= -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+
+    background:#050505;
+
+    color:#fff;
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+}
+
+a {
+
+    color:inherit;
+
+    text-decoration:none;
+}
+
+:root {
+
+    --black:#000;
+
+    --bg:#050505;
+
+    --bg2:#090909;
+
+    --panel:#0c0c0c;
+
+    --white:#fff;
+
+    --soft:#d8d8d8;
+
+    --gray:#777;
+
+    --dark:#444;
+
+    --line:
+        rgba(255,255,255,.10);
+
+    --serif:
+        "Bodoni Moda",
+        Georgia,
+        serif;
+
+    --sans:
+        "Manrope",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    z-index:5000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:
+        rgba(0,0,0,.80);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    border-bottom:
+        1px solid
+        var(--line);
+}
+
+.nav-brand {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.nav-logo {
+
+    width:45px;
+
+    height:45px;
+
+    object-fit:contain;
+}
+
+.nav-name {
+
+    font-family:var(--serif);
+
+    font-size:13px;
+
+    letter-spacing:4px;
+}
+
+.nav-links {
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+.nav-links a {
+
+    color:#aaa;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    transition:.3s ease;
+}
+
+.nav-links a:hover {
+
+    color:#fff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.ost-hero {
+
+    min-height:75vh;
+
+    padding:
+        150px 25px 90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #171717 0%,
+            #080808 48%,
+            #000 100%
+        );
+}
+
+.ost-hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.05),
+            transparent 65%
+        );
+}
+
+.ost-hero-content {
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+}
+
+.ost-small {
+
+    color:#555;
+
+    font-size:8px;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+}
+
+.ost-main-title {
+
+    font-family:var(--serif);
+
+    font-size:
+        clamp(45px,9vw,100px);
+
+    font-weight:400;
+
+    letter-spacing:
+        clamp(5px,1vw,12px);
+
+    line-height:1;
+}
+
+.ost-rule {
+
+    width:90px;
+
+    height:1px;
+
+    background:#777;
+
+    margin:35px auto;
+}
+
+.ost-subtitle {
+
+    color:#aaa;
+
+    font-size:
+        clamp(9px,1.5vw,13px);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-home {
+
+    position:absolute;
+
+    top:110px;
+
+    left:6%;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#777;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    transition:.3s ease;
+}
+
+.back-home:hover {
+
+    color:#fff;
+
+    transform:
+        translateX(-4px);
+}
+
+
+/* =========================================
+   SCORE SECTION
+========================================= */
+
+.scores {
+
+    padding:
+        120px 7%;
+
+    background:#050505;
+}
+
+.scores-container {
+
+    max-width:1050px;
+
+    margin:0 auto;
+}
+
+.score-intro {
+
+    text-align:center;
+
+    margin-bottom:65px;
+}
+
+.score-intro-title {
+
+    font-family:var(--serif);
+
+    font-size:
+        clamp(25px,5vw,48px);
+
+    font-weight:400;
+
+    letter-spacing:5px;
+}
+
+.score-intro-subtitle {
+
+    margin-top:12px;
+
+    color:#666;
+
+    font-size:8px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   TRACK
+========================================= */
+
+.track-list {
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.track {
+
+    display:grid;
+
+    grid-template-columns:
+        65px
+        1fr
+        auto;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:
+        32px 0;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    transition:
+        background .3s ease,
+        padding .3s ease;
+}
+
+.track:hover {
+
+    background:
+        rgba(255,255,255,.015);
+
+    padding-left:12px;
+
+    padding-right:12px;
+}
+
+.track-number {
+
+    font-family:var(--serif);
+
+    font-size:15px;
+
+    color:#444;
+
+    letter-spacing:2px;
+}
+
+.track-info {
+
+    min-width:0;
+}
+
+.track-title {
+
+    display:block;
+
+    color:#ddd;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.track-label {
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#555;
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   PLAYER
+========================================= */
+
+.player {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.play {
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
+    background:transparent;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    transition:.3s ease;
+}
+
+.play:hover {
+
+    background:#fff;
+
+    color:#000;
+
+    border-color:#fff;
+
+    transform:scale(1.05);
+}
+
+.progress-area {
+
+    width:
+        clamp(120px,20vw,210px);
+}
+
+.progress {
+
+    width:100%;
+
+    height:2px;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    background:#333;
+
+    cursor:pointer;
+}
+
+.progress::-webkit-slider-thumb {
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#fff;
+}
+
+.progress::-moz-range-thumb {
+
+    width:8px;
+
+    height:8px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#fff;
+}
+
+.time {
+
+    margin-top:8px;
+
+    color:#555;
+
+    font-size:7px;
+
+    letter-spacing:1px;
+
+    text-align:right;
+}
+
+audio {
+    display:none;
+}
+
+
+/* =========================================
+   COMPOSER
+========================================= */
+
+.composer {
+
+    text-align:center;
+
+    padding-top:60px;
+
+    margin-top:60px;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.composer-label {
+
+    display:block;
+
+    color:#555;
+
+    font-size:7px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.composer-name {
+
+    font-family:var(--serif);
+
+    color:#bbb;
+
+    font-size:15px;
+
+    letter-spacing:4px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding:
+        80px 25px 40px;
+
+    text-align:center;
+
+    background:#000;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.footer-logo {
+
+    width:70px;
+
+    margin:0 auto 25px;
+}
+
+.footer-name {
+
+    font-family:var(--serif);
+
+    font-size:14px;
+
+    letter-spacing:6px;
+}
+
+.footer-tagline {
+
+    margin-top:15px;
+
+    color:#555;
+
+    font-size:8px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+.footer-line {
+
+    width:50px;
+
+    height:1px;
+
+    background:#333;
+
+    margin:35px auto;
+}
+
+.copyright {
+
+    color:#444;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:850px) {
+
+    .navbar {
+
+        height:70px;
+
+        padding:0 5%;
+    }
+
+    .nav-name {
+
+        display:none;
+    }
+
+    .nav-logo {
+
+        width:40px;
+
+        height:40px;
+    }
+
+    .nav-links {
+
+        gap:17px;
+    }
+
+    .nav-links a {
+
+        font-size:7px;
+
+        letter-spacing:2px;
+    }
+
+    .back-home {
+
+        top:95px;
+
+        left:5%;
+    }
+
+    .ost-hero {
+
+        min-height:65vh;
+
+        padding:
+            140px 20px 80px;
+    }
+
+    .scores {
+
+        padding:
+            85px 5%;
+    }
+
+    .track {
+
+        grid-template-columns:
+            35px
+            1fr;
+
+        gap:15px;
+    }
+
+    .player {
+
+        grid-column:
+            2 / 3;
+
+        width:100%;
+
+        margin-top:10px;
+    }
+
+    .progress-area {
+
+        flex:1;
+
+        width:auto;
+    }
+}
+
+@media(max-width:480px) {
+
+    .nav-links {
+
+        gap:12px;
+    }
+
+    .nav-links a {
+
+        font-size:6px;
+
+        letter-spacing:1.5px;
+    }
+
+    .ost-main-title {
+
+        font-size:42px;
+    }
+
+    .track-title {
+
+        font-size:8px;
+
+        letter-spacing:2px;
+    }
+
+    .composer-name {
+
+        font-size:12px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="navbar">
+
+    <a
+        href="index.html"
+        class="nav-brand">
+
+        <img
+            src="logo.png"
+            alt="Triovision Studios"
+            class="nav-logo">
+
+        <span class="nav-name">
+            TRIOVISION STUDIOS
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="ost.html">
+                    OST
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#about">
+                    Studio
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#members">
+                    Members
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="ost-hero">
+
+    <a
+        href="index.html"
+        class="back-home">
+
+        ← Back to Studio
+
+    </a>
+
+
+    <div class="ost-hero-content">
+
+        <p class="ost-small">
+            TRIOVISION STUDIOS PRESENTS
+        </p>
+
+        <h1 class="ost-main-title">
+            SWAN-MERE
+        </h1>
+
+        <div class="ost-rule"></div>
+
+        <p class="ost-subtitle">
+            Original Motion Picture Soundtrack
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SCORES
+========================================= -->
+
+<section class="scores">
+
+    <div class="scores-container">
+
+
+        <div class="score-intro">
+
+            <h2 class="score-intro-title">
+                ORIGINAL SCORES
+            </h2>
+
+            <p class="score-intro-subtitle">
+                Five compositions from the world of SWAN-MERE
+            </p>
+
+        </div>
+
+
+        <div class="track-list">
+
+
+            <!-- =================================
+                 TRACK 01
+            ================================== -->
+
+            <article class="track">
+
+                <span class="track-number">
+                    01
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        Echoes of the Misty Lake
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="player">
+
+                    <button
+                        class="play"
+                        type="button">
+
+                        ▶
+
+                    </button>
+
+                    <div class="progress-area">
+
+                        <input
+                            class="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step=".1">
+
+                        <div class="time">
+                            00:00 / 00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio preload="metadata">
+
+                    <source
+                        src="Echoes%20of%20the%20Misty%20Lake.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- =================================
+                 TRACK 02
+            ================================== -->
+
+            <article class="track">
+
+                <span class="track-number">
+                    02
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        Fading Pulse
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="player">
+
+                    <button
+                        class="play"
+                        type="button">
+
+                        ▶
+
+                    </button>
+
+                    <div class="progress-area">
+
+                        <input
+                            class="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step=".1">
+
+                        <div class="time">
+                            00:00 / 00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio preload="metadata">
+
+                    <source
+                        src="Fading%20Pulse%20%282%29.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- =================================
+                 TRACK 03
+            ================================== -->
+
+            <article class="track">
+
+                <span class="track-number">
+                    03
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        Swans at Golden Dawn
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="player">
+
+                    <button
+                        class="play"
+                        type="button">
+
+                        ▶
+
+                    </button>
+
+                    <div class="progress-area">
+
+                        <input
+                            class="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step=".1">
+
+                        <div class="time">
+                            00:00 / 00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio preload="metadata">
+
+                    <source
+                        src="Swans%20at%20Golden%20Dawn.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- =================================
+                 TRACK 04
+            ================================== -->
+
+            <article class="track">
+
+                <span class="track-number">
+                    04
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        The Lakes
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="player">
+
+                    <button
+                        class="play"
+                        type="button">
+
+                        ▶
+
+                    </button>
+
+                    <div class="progress-area">
+
+                        <input
+                            class="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step=".1">
+
+                        <div class="time">
+                            00:00 / 00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio preload="metadata">
+
+                    <source
+                        src="The%20Lakes.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- =================================
+                 TRACK 05
+            ================================== -->
+
+            <article class="track">
+
+                <span class="track-number">
+                    05
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        The Last Golden Hour
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="player">
+
+                    <button
+                        class="play"
+                        type="button">
+
+                        ▶
+
+                    </button>
+
+                    <div class="progress-area">
+
+                        <input
+                            class="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step=".1">
+
+                        <div class="time">
+                            00:00 / 00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio preload="metadata">
+
+                    <source
+                        src="The%20Last%20Golden%20Hour.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =================================
+             COMPOSER
+        ================================== -->
+
+        <div class="composer">
+
+            <span class="composer-label">
+                Music Composer
+            </span>
+
+            <span class="composer-name">
+                M.D. NISHANTH
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <img
+        src="logo.png"
+        alt="Triovision Studios"
+        class="footer-logo">
+
+    <h3 class="footer-name">
+        TRIOVISION STUDIOS
+    </h3>
+
+    <p class="footer-tagline">
+        Visionary Farms of Imagination
+    </p>
+
+    <div class="footer-line"></div>
+
+    <p class="copyright">
+        © 2026 Triovision Studios. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================
+     AUDIO JAVASCRIPT
+========================================= -->
+
+<script>
+
+"use strict";
+
+
+const tracks =
+    document.querySelectorAll(".track");
+
+
+tracks.forEach(function(track) {
+
+
+    const audio =
+        track.querySelector("audio");
+
+
+    const button =
+        track.querySelector(".play");
+
+
+    const progress =
+        track.querySelector(".progress");
+
+
+    const time =
+        track.querySelector(".time");
+
+
+    function formatTime(seconds) {
+
+        if (!Number.isFinite(seconds)) {
+
+            return "00:00";
+
+        }
+
+        const minutes =
+            Math.floor(seconds / 60);
+
+
+        const secondsLeft =
+            Math.floor(seconds % 60);
+
+
+        return (
+            String(minutes).padStart(2,"0")
+            +
+            ":"
+            +
+            String(secondsLeft).padStart(2,"0")
+        );
+    }
+
+
+    /* ================================
+       PLAY
+    ================================= */
+
+    button.addEventListener(
+        "click",
+        function() {
+
+
+            /*
+             Stop all other tracks.
+            */
+
+            document
+                .querySelectorAll(".track audio")
+                .forEach(function(other) {
+
+                    if (other !== audio) {
+
+                        other.pause();
+
+                    }
+
+                });
+
+
+            if (audio.paused) {
+
+                audio.play()
+                    .then(function() {
+
+                        button.textContent = "Ⅱ";
+
+                    })
+                    .catch(function() {
+
+                        button.textContent = "▶";
+
+                    });
+
+            } else {
+
+                audio.pause();
+
+                button.textContent = "▶";
+
+            }
+
+        }
+    );
+
+
+    /* ================================
+       TIME
+    ================================= */
+
+    audio.addEventListener(
+        "loadedmetadata",
+        function() {
+
+            time.textContent =
+                "00:00 / " +
+                formatTime(audio.duration);
+
+        }
+    );
+
+
+    /* ================================
+       PROGRESS
+    ================================= */
+
+    audio.addEventListener(
+        "timeupdate",
+        function() {
+
+            if (audio.duration) {
+
+                progress.value =
+                    (
+                        audio.currentTime /
+                        audio.duration
+                    ) * 100;
+
+            }
+
+            time.textContent =
+                formatTime(audio.currentTime)
+                +
+                " / "
+                +
+                formatTime(audio.duration);
+
+        }
+    );
+
+
+    /* ================================
+       SEEK
+    ================================= */
+
+    progress.addEventListener(
+        "input",
+        function() {
+
+            if (audio.duration) {
+
+                audio.currentTime =
+                    (
+                        progress.value /
+                        100
+                    )
+                    *
+                    audio.duration;
+
+            }
+
+        }
+    );
+
+
+    /* ================================
+       PLAY STATE
+    ================================= */
+
+    audio.addEventListener(
+        "play",
+        function() {
+
+            button.textContent = "Ⅱ";
+
+        }
+    );
+
+
+    audio.addEventListener(
+        "pause",
+        function() {
+
+            button.textContent = "▶";
+
+        }
+    );
+
+
+    /* ================================
+       END
+    ================================= */
+
+    audio.addEventListener(
+        "ended",
+        function() {
+
+            button.textContent = "▶";
+
+            progress.value = 0;
+
+            time.textContent =
+                "00:00 / " +
+                formatTime(audio.duration);
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+
+  </html>
