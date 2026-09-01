@@ -3,1228 +3,1186 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Triovision Studios — SWAN-MERE Original Motion Picture Soundtrack.">
+<meta name="description"
+      content="SWAN-MERE — Original Motion Picture Soundtrack | Triovision Studios">
 
-    <meta name="author"
-          content="Triovision Studios">
+<meta name="theme-color"
+      content="#000000">
 
-    <meta name="robots"
-          content="index, follow">
+<title>SWAN-MERE | Original Soundtrack — Triovision Studios</title>
 
-    <meta name="theme-color"
-          content="#000000">
+<link rel="icon"
+      type="image/png"
+      href="logo.png">
 
-    <link rel="canonical"
-          href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/ost.html">
 
-    <title>SWAN-MERE OST | Triovision Studios</title>
+<!-- FONTS -->
 
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <!-- =========================================
-         FONTS
-    ========================================== -->
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
+<style>
 
+*,
+*::before,
+*::after {
 
-    <!-- =========================================
-         STYLES
-    ========================================== -->
+    margin: 0;
 
-    <style>
+    padding: 0;
 
-        /* =========================================
-           RESET
-        ========================================== */
+    box-sizing: border-box;
+}
 
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
+html {
 
-        html {
-            scroll-behavior: smooth;
-        }
+    scroll-behavior: smooth;
+}
 
 
-        body {
+body {
 
-            background: #000000;
+    min-height: 100vh;
 
-            color: #ffffff;
+    background:
+        #000000;
 
-            font-family:
-                "Manrope",
-                Arial,
-                sans-serif;
+    color:
+        #ffffff;
 
-            overflow-x: hidden;
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
 
-            -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 
-            text-rendering: optimizeLegibility;
-        }
+    -webkit-font-smoothing:
+        antialiased;
+}
 
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+a {
 
+    color:
+        inherit;
 
-        button,
-        input {
-            font: inherit;
-        }
+    text-decoration:
+        none;
+}
 
 
-        :root {
+:root {
 
-            --black: #000000;
+    --black:
+        #000000;
 
-            --deep-black: #030303;
+    --white:
+        #ffffff;
 
-            --panel: #080808;
+    --gray:
+        #888888;
 
-            --panel-two: #0d0d0d;
+    --dark:
+        #222222;
 
-            --white: #ffffff;
+    --line:
+        rgba(255,255,255,0.12);
 
-            --soft-white: #dddddd;
+    --serif:
+        "Bodoni Moda",
+        Georgia,
+        serif;
 
-            --gray: #999999;
+    --sans:
+        "Manrope",
+        Arial,
+        sans-serif;
+}
 
-            --dark-gray: #555555;
 
-            --line:
-                rgba(255,255,255,0.12);
+/* =========================================
+   PAGE INTRO / LOGO ANIMATION
+========================================= */
 
-            --line-strong:
-                rgba(255,255,255,0.28);
+.ost-intro {
 
-            --serif:
-                "Bodoni Moda",
-                Georgia,
-                serif;
+    position:
+        fixed;
 
-            --sans:
-                "Manrope",
-                Arial,
-                sans-serif;
-        }
+    inset:
+        0;
 
+    z-index:
+        9999;
 
-        /* =========================================
-           NAVIGATION
-        ========================================== */
+    background:
+        #000000;
 
-        .navbar {
+    display:
+        flex;
 
-            position: fixed;
+    align-items:
+        center;
 
-            top: 0;
-            left: 0;
+    justify-content:
+        center;
 
-            width: 100%;
+    pointer-events:
+        none;
 
-            height: 78px;
+    animation:
+        introDisappear
+        1.2s
+        ease
+        2.4s
+        forwards;
+}
 
-            z-index: 1000;
 
-            display: flex;
+.ost-intro-logo {
 
-            align-items: center;
+    width:
+        min(180px, 45vw);
 
-            justify-content: space-between;
+    opacity:
+        0;
 
-            padding:
-                0 6%;
+    transform:
+        scale(0.45)
+        rotate(-12deg);
 
-            background:
-                rgba(0,0,0,0.90);
+    filter:
+        brightness(0)
+        invert(1)
+        drop-shadow(
+            0 0 30px
+            rgba(255,255,255,0.35)
+        );
 
-            backdrop-filter:
-                blur(16px);
+    animation:
+        logoEntrance
+        1.7s
+        cubic-bezier(.16,1,.3,1)
+        0.15s
+        forwards;
+}
 
-            -webkit-backdrop-filter:
-                blur(16px);
 
-            border-bottom:
-                1px solid
-                var(--line);
-        }
+@keyframes logoEntrance {
 
+    0% {
 
-        .nav-brand {
+        opacity:
+            0;
 
-            display: flex;
+        transform:
+            scale(0.45)
+            rotate(-12deg);
 
-            align-items: center;
+        filter:
+            brightness(0)
+            invert(1)
+            blur(8px);
+    }
 
-            gap: 14px;
-        }
+    45% {
 
+        opacity:
+            1;
 
-        .nav-logo {
+        transform:
+            scale(1.12)
+            rotate(3deg);
 
-            width: 42px;
+        filter:
+            brightness(0)
+            invert(1)
+            blur(0);
+    }
 
-            height: 42px;
+    70% {
 
-            object-fit: contain;
-        }
+        transform:
+            scale(0.96)
+            rotate(0deg);
+    }
 
+    100% {
 
-        .nav-name {
+        opacity:
+            1;
 
-            font-family: var(--serif);
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+}
 
-            font-size: 13px;
 
-            letter-spacing: 4px;
+@keyframes introDisappear {
 
-            white-space: nowrap;
-        }
+    0% {
 
+        opacity:
+            1;
 
-        .back-home {
+        visibility:
+            visible;
+    }
 
-            font-size: 8px;
+    75% {
 
-            letter-spacing: 3px;
+        opacity:
+            1;
+    }
 
-            text-transform: uppercase;
+    100% {
 
-            color: #999999;
+        opacity:
+            0;
 
-            transition:
-                color 0.3s ease;
-        }
+        visibility:
+            hidden;
+    }
+}
 
 
-        .back-home:hover {
+/* =========================================
+   TOP NAV
+========================================= */
 
-            color: #ffffff;
-        }
+.topbar {
 
+    position:
+        relative;
 
-        /* =========================================
-           HERO
-        ========================================== */
+    width:
+        100%;
 
-        .ost-hero {
+    height:
+        78px;
 
-            min-height:
-                72vh;
+    display:
+        flex;
 
-            position: relative;
+    align-items:
+        center;
 
-            display: flex;
+    justify-content:
+        space-between;
 
-            align-items: center;
+    padding:
+        0 6%;
 
-            justify-content: center;
+    border-bottom:
+        1px solid
+        var(--line);
 
-            text-align: center;
+    background:
+        rgba(0,0,0,0.94);
+}
 
-            padding:
-                130px 25px
-                90px;
 
-            overflow: hidden;
+.brand {
 
-            background:
+    display:
+        flex;
 
-                radial-gradient(
-                    circle at center,
-                    #181818 0%,
-                    #080808 42%,
-                    #000000 100%
-                );
-        }
+    align-items:
+        center;
 
+    gap:
+        14px;
+}
 
-        .ost-hero::before {
 
-            content: "";
+.brand img {
 
-            position: absolute;
+    width:
+        38px;
 
-            width: 650px;
+    height:
+        38px;
 
-            height: 650px;
+    object-fit:
+        contain;
 
-            left: 50%;
-            top: 50%;
+    filter:
+        brightness(0)
+        invert(1);
+}
 
-            transform:
-                translate(-50%, -50%);
 
-            border-radius: 50%;
+.brand span {
 
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(255,255,255,0.055),
-                    transparent 68%
-                );
+    font-family:
+        var(--serif);
 
-            pointer-events: none;
-        }
+    font-size:
+        12px;
 
+    letter-spacing:
+        4px;
+}
 
-        .hero-content {
 
-            position: relative;
+.back {
 
-            z-index: 2;
+    font-size:
+        8px;
 
-            width: 100%;
+    letter-spacing:
+        3px;
 
-            max-width: 850px;
-        }
+    text-transform:
+        uppercase;
 
+    color:
+        #999999;
 
-        /* =========================================
-           LOGO
-        ========================================== */
+    transition:
+        color .3s ease;
+}
 
-        .studio-logo {
 
-            width:
-                clamp(95px, 16vw, 155px);
+.back:hover {
 
-            height:
-                clamp(95px, 16vw, 155px);
+    color:
+        #ffffff;
+}
 
-            object-fit: contain;
 
-            margin:
-                0 auto 32px;
+/* =========================================
+   MAIN HEADER
+========================================= */
 
-            filter:
-                grayscale(100%)
-                brightness(1.15);
+.ost-header {
 
-            opacity: 0.95;
+    position:
+        relative;
 
-            animation:
-                logoFloat 5s
-                ease-in-out
-                infinite;
-        }
+    text-align:
+        center;
 
+    padding:
+        100px 25px 75px;
 
-        @keyframes logoFloat {
+    background:
+        radial-gradient(
+            circle at center,
+            #151515 0%,
+            #050505 45%,
+            #000000 100%
+        );
+}
 
-            0%,
-            100% {
-                transform:
-                    translateY(0);
-            }
 
-            50% {
-                transform:
-                    translateY(-7px);
-            }
-        }
+.header-logo {
 
+    width:
+        min(135px, 35vw);
 
-        .studio-label {
+    margin:
+        0 auto 40px;
 
-            color: #777777;
+    filter:
+        brightness(0)
+        invert(1)
+        drop-shadow(
+            0 0 30px
+            rgba(255,255,255,0.15)
+        );
 
-            font-size: 8px;
+    opacity:
+        0;
 
-            letter-spacing: 5px;
+    animation:
+        headerLogo
+        1.3s
+        cubic-bezier(.16,1,.3,1)
+        2.1s
+        forwards;
+}
 
-            text-transform: uppercase;
 
-            margin-bottom: 18px;
-        }
+@keyframes headerLogo {
 
+    from {
 
-        .ost-title {
+        opacity:
+            0;
 
-            font-family: var(--serif);
+        transform:
+            translateY(20px)
+            scale(.8);
+    }
 
-            font-size:
-                clamp(40px, 8vw, 82px);
+    to {
 
-            font-weight: 400;
+        opacity:
+            1;
 
-            letter-spacing:
-                clamp(5px, 1vw, 12px);
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
 
-            line-height: 1;
-        }
 
+.ost-kicker {
 
-        .ost-subtitle {
+    color:
+        #666666;
 
-            margin-top: 18px;
+    font-size:
+        8px;
 
-            color: #aaaaaa;
+    letter-spacing:
+        5px;
 
-            font-size:
-                clamp(9px, 1.5vw, 13px);
+    text-transform:
+        uppercase;
 
-            letter-spacing:
-                clamp(3px, 0.7vw, 6px);
+    margin-bottom:
+        20px;
+}
 
-            text-transform: uppercase;
-        }
 
+.ost-title {
 
-        .hero-rule {
+    font-family:
+        var(--serif);
 
-            width: 80px;
+    font-size:
+        clamp(42px, 9vw, 90px);
 
-            height: 1px;
+    font-weight:
+        400;
 
-            background: #777777;
+    letter-spacing:
+        clamp(5px, 1vw, 12px);
 
-            margin:
-                30px auto;
-        }
+    line-height:
+        1;
+}
 
 
-        .hero-description {
+.ost-subtitle {
 
-            color: #666666;
+    margin-top:
+        22px;
 
-            font-size: 9px;
+    color:
+        #999999;
 
-            letter-spacing: 3px;
+    font-size:
+        10px;
 
-            text-transform: uppercase;
-        }
+    letter-spacing:
+        5px;
 
+    text-transform:
+        uppercase;
+}
 
-        /* =========================================
-           MUSIC SECTION
-        ========================================== */
 
-        .music-section {
+.header-line {
 
-            position: relative;
+    width:
+        70px;
 
-            padding:
-                100px 7%
-                130px;
+    height:
+        1px;
 
-            background: #030303;
-        }
+    background:
+        #666666;
 
+    margin:
+        32px auto 0;
+}
 
-        .section-header {
 
-            text-align: center;
+/* =========================================
+   TRACKS
+========================================= */
 
-            margin-bottom: 65px;
-        }
+.tracks-section {
 
+    max-width:
+        1050px;
 
-        .section-number {
+    margin:
+        0 auto;
 
-            display: block;
+    padding:
+        40px 7% 120px;
+}
 
-            color: #555555;
 
-            font-size: 8px;
+.track-list {
 
-            letter-spacing: 5px;
+    border-top:
+        1px solid
+        var(--line);
+}
 
-            margin-bottom: 18px;
-        }
 
+.track {
 
-        .section-title {
+    display:
+        grid;
 
-            font-family: var(--serif);
+    grid-template-columns:
+        65px
+        1fr
+        auto;
 
-            font-size:
-                clamp(27px, 5vw, 52px);
+    align-items:
+        center;
 
-            font-weight: 400;
+    gap:
+        25px;
 
-            letter-spacing:
-                clamp(3px, 0.8vw, 8px);
+    min-height:
+        105px;
 
-            text-transform: uppercase;
-        }
+    border-bottom:
+        1px solid
+        var(--line);
 
+    transition:
+        background .35s ease,
+        padding .35s ease;
+}
 
-        .section-subtitle {
 
-            margin-top: 17px;
+.track:hover {
 
-            color: #666666;
+    background:
+        rgba(255,255,255,0.025);
 
-            font-size: 9px;
+    padding:
+        0 15px;
+}
 
-            letter-spacing: 4px;
 
-            text-transform: uppercase;
-        }
+.track-number {
 
+    font-family:
+        var(--serif);
 
-        /* =========================================
-           MUSIC CONTAINER
-        ========================================== */
+    color:
+        #444444;
 
-        .music-container {
+    font-size:
+        15px;
 
-            width: 100%;
+    letter-spacing:
+        2px;
+}
 
-            max-width: 1050px;
 
-            margin: 0 auto;
-        }
+.track-info {
 
+    min-width:
+        0;
+}
 
-        /* =========================================
-           TRACK
-        ========================================== */
 
-        .track {
+.track-name {
 
-            display: grid;
+    display:
+        block;
 
-            grid-template-columns:
-                65px
-                minmax(180px, 1fr)
-                minmax(260px, 360px);
+    color:
+        #eeeeee;
 
-            align-items: center;
+    font-size:
+        11px;
 
-            gap: 28px;
+    letter-spacing:
+        3px;
 
-            min-height: 125px;
+    text-transform:
+        uppercase;
+}
 
-            padding:
-                25px 20px;
 
-            border-top:
-                1px solid
-                var(--line);
+.track-type {
 
-            transition:
-                background 0.35s ease,
-                padding 0.35s ease;
-        }
+    display:
+        block;
 
+    color:
+        #555555;
 
-        .track:last-child {
+    font-size:
+        7px;
 
-            border-bottom:
-                1px solid
-                var(--line);
-        }
+    letter-spacing:
+        3px;
 
+    text-transform:
+        uppercase;
 
-        .track:hover {
+    margin-top:
+        8px;
+}
 
-            background:
-                rgba(255,255,255,0.025);
 
-            padding-left: 28px;
+/* =========================================
+   PLAYER
+========================================= */
 
-            padding-right: 28px;
-        }
+.player {
 
+    display:
+        flex;
 
-        /* =========================================
-           TRACK NUMBER
-        ========================================== */
+    align-items:
+        center;
 
-        .track-number {
+    gap:
+        14px;
+}
 
-            font-family: var(--serif);
 
-            color: #444444;
+/*
+   PURE BLACK & WHITE PLAY LOGO
+*/
 
-            font-size: 19px;
+.play {
 
-            letter-spacing: 2px;
-        }
+    width:
+        48px;
 
+    height:
+        48px;
 
-        /* =========================================
-           TRACK INFORMATION
-        ========================================== */
+    border:
+        1px solid
+        #777777;
 
-        .track-info {
+    border-radius:
+        50%;
 
-            min-width: 0;
-        }
+    background:
+        #000000;
 
+    color:
+        #ffffff;
 
-        .track-title {
+    display:
+        flex;
 
-            display: block;
+    align-items:
+        center;
 
-            color: #eeeeee;
+    justify-content:
+        center;
 
-            font-size: 11px;
+    cursor:
+        pointer;
 
-            letter-spacing: 3px;
+    font-size:
+        12px;
 
-            line-height: 1.7;
+    padding-left:
+        3px;
 
-            text-transform: uppercase;
-        }
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
 
 
-        .track-type {
+.play:hover {
 
-            display: block;
+    background:
+        #ffffff;
 
-            margin-top: 7px;
+    color:
+        #000000;
 
-            color: #555555;
+    border-color:
+        #ffffff;
 
-            font-size: 7px;
+    transform:
+        scale(1.07);
+}
 
-            letter-spacing: 3px;
 
-            text-transform: uppercase;
-        }
+.play.active {
 
+    background:
+        #ffffff;
 
-        /* =========================================
-           PLAYER
-        ========================================== */
+    color:
+        #000000;
 
-        .player {
+    border-color:
+        #ffffff;
+}
 
-            display: flex;
 
-            align-items: center;
+.progress-box {
 
-            gap: 16px;
+    width:
+        clamp(100px, 18vw, 190px);
+}
 
-            min-width: 0;
-        }
 
+.progress {
 
-        /* =========================================
-           PLAY BUTTON
-        ========================================== */
+    width:
+        100%;
 
-        .play-button {
+    height:
+        2px;
 
-            width: 46px;
+    appearance:
+        none;
 
-            height: 46px;
+    -webkit-appearance:
+        none;
 
-            min-width: 46px;
+    background:
+        #333333;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.35);
+    cursor:
+        pointer;
 
-            border-radius: 50%;
+    outline:
+        none;
+}
 
-            background: #000000;
 
-            color: #ffffff;
+.progress::-webkit-slider-thumb {
 
-            display: flex;
+    appearance:
+        none;
 
-            align-items: center;
+    -webkit-appearance:
+        none;
 
-            justify-content: center;
+    width:
+        8px;
 
-            cursor: pointer;
+    height:
+        8px;
 
-            font-size: 12px;
+    border-radius:
+        50%;
 
-            padding-left: 2px;
+    background:
+        #ffffff;
 
-            transition:
-                background 0.3s ease,
-                color 0.3s ease,
-                border-color 0.3s ease,
-                transform 0.3s ease;
-        }
+    cursor:
+        pointer;
+}
 
 
-        .play-button:hover {
+.progress::-moz-range-thumb {
 
-            background: #ffffff;
+    width:
+        8px;
 
-            color: #000000;
+    height:
+        8px;
 
-            border-color: #ffffff;
+    border:
+        0;
 
-            transform:
-                scale(1.06);
-        }
+    border-radius:
+        50%;
 
+    background:
+        #ffffff;
 
-        .play-button.playing {
+    cursor:
+        pointer;
+}
 
-            background: #ffffff;
 
-            color: #000000;
+.time {
 
-            border-color: #ffffff;
-        }
+    display:
+        block;
 
+    margin-top:
+        7px;
 
-        /* =========================================
-           PLAYER DETAILS
-        ========================================== */
+    text-align:
+        right;
 
-        .player-details {
+    color:
+        #555555;
 
-            flex: 1;
+    font-size:
+        7px;
 
-            min-width: 0;
-        }
+    letter-spacing:
+        1px;
+}
 
 
-        .progress {
+audio {
 
-            width: 100%;
+    display:
+        none;
+}
 
-            height: 3px;
 
-            appearance: none;
+/* =========================================
+   COMPOSER
+========================================= */
 
-            -webkit-appearance: none;
+.composer {
 
-            background: #303030;
+    text-align:
+        center;
 
-            cursor: pointer;
+    margin-top:
+        70px;
 
-            outline: none;
+    padding-top:
+        30px;
 
-            border: 0;
-        }
+    border-top:
+        1px solid
+        var(--line);
+}
 
 
-        .progress::-webkit-slider-thumb {
+.composer-label {
 
-            appearance: none;
+    display:
+        block;
 
-            -webkit-appearance: none;
+    color:
+        #555555;
 
-            width: 9px;
+    font-size:
+        7px;
 
-            height: 9px;
+    letter-spacing:
+        4px;
 
-            border-radius: 50%;
+    text-transform:
+        uppercase;
 
-            background: #ffffff;
+    margin-bottom:
+        12px;
+}
 
-            cursor: pointer;
 
-            border: 0;
-        }
+.composer-name {
 
+    font-family:
+        var(--serif);
 
-        .progress::-moz-range-thumb {
+    color:
+        #bbbbbb;
 
-            width: 9px;
+    font-size:
+        14px;
 
-            height: 9px;
+    letter-spacing:
+        4px;
+}
 
-            border-radius: 50%;
 
-            background: #ffffff;
+/* =========================================
+   FOOTER
+========================================= */
 
-            cursor: pointer;
+.ost-footer {
 
-            border: 0;
-        }
+    text-align:
+        center;
 
+    padding:
+        70px 25px 45px;
 
-        .time {
+    border-top:
+        1px solid
+        var(--line);
 
-            display: flex;
+    background:
+        #000000;
+}
 
-            justify-content: space-between;
 
-            margin-top: 8px;
+.footer-logo {
 
-            color: #555555;
+    width:
+        65px;
 
-            font-size: 7px;
+    margin:
+        0 auto 25px;
 
-            letter-spacing: 1px;
-        }
+    filter:
+        brightness(0)
+        invert(1);
+}
 
 
-        /* =========================================
-           COMPOSER
-        ========================================== */
+.footer-name {
 
-        .composer {
+    font-family:
+        var(--serif);
 
-            text-align: center;
+    font-size:
+        13px;
 
-            margin-top: 65px;
+    letter-spacing:
+        5px;
+}
 
-            padding-top: 35px;
 
-            border-top:
-                1px solid
-                var(--line);
-        }
+.footer-text {
 
+    margin-top:
+        14px;
 
-        .composer-label {
+    color:
+        #555555;
 
-            display: block;
+    font-size:
+        7px;
 
-            color: #555555;
+    letter-spacing:
+        3px;
 
-            font-size: 7px;
+    text-transform:
+        uppercase;
+}
 
-            letter-spacing: 5px;
 
-            text-transform: uppercase;
+/* =========================================
+   MOBILE
+========================================= */
 
-            margin-bottom: 12px;
-        }
+@media (max-width: 700px) {
 
+    .topbar {
 
-        .composer-name {
+        height:
+            68px;
 
-            font-family: var(--serif);
+        padding:
+            0 5%;
+    }
 
-            color: #cccccc;
 
-            font-size: 15px;
+    .brand span {
 
-            letter-spacing: 4px;
-        }
+        display:
+            none;
+    }
 
 
-        /* =========================================
-           FOOTER
-        ========================================== */
+    .brand img {
 
-        footer {
+        width:
+            38px;
 
-            padding:
-                75px 25px 40px;
+        height:
+            38px;
+    }
 
-            text-align: center;
 
-            background: #000000;
+    .back {
 
-            border-top:
-                1px solid
-                var(--line);
-        }
+        font-size:
+            7px;
 
+        letter-spacing:
+            2px;
+    }
 
-        .footer-logo {
 
-            width: 65px;
+    .ost-header {
 
-            height: 65px;
+        padding:
+            75px 20px 60px;
+    }
 
-            object-fit: contain;
 
-            margin:
-                0 auto 22px;
+    .header-logo {
 
-            filter:
-                grayscale(100%);
-        }
+        width:
+            105px;
 
+        margin-bottom:
+            32px;
+    }
 
-        .footer-name {
 
-            font-family: var(--serif);
+    .ost-title {
 
-            font-size: 13px;
+        font-size:
+            42px;
 
-            letter-spacing: 5px;
-        }
+        letter-spacing:
+            5px;
+    }
 
 
-        .footer-tagline {
+    .ost-subtitle {
 
-            margin-top: 13px;
+        font-size:
+            8px;
 
-            color: #555555;
+        letter-spacing:
+            3px;
 
-            font-size: 7px;
+        line-height:
+            1.8;
+    }
 
-            letter-spacing: 4px;
 
-            text-transform: uppercase;
-        }
+    .tracks-section {
 
+        padding:
+            30px 5% 80px;
+    }
 
-        .footer-line {
 
-            width: 45px;
+    .track {
 
-            height: 1px;
+        grid-template-columns:
+            40px
+            1fr;
 
-            background: #333333;
+        gap:
+            15px;
 
-            margin:
-                30px auto;
-        }
+        padding:
+            24px 0;
+    }
 
 
-        .copyright {
+    .track:hover {
 
-            color: #444444;
+        padding:
+            24px 5px;
+    }
 
-            font-size: 7px;
 
-            letter-spacing: 2px;
+    .track-number {
 
-            text-transform: uppercase;
-        }
+        grid-row:
+            1 / span 2;
+    }
 
 
-        /* =========================================
-           MOBILE
-        ========================================== */
+    .player {
 
-        @media (max-width: 800px) {
+        grid-column:
+            2;
 
-            .navbar {
+        width:
+            100%;
 
-                height: 68px;
+        margin-top:
+            5px;
+    }
 
-                padding:
-                    0 5%;
-            }
 
+    .progress-box {
 
-            .nav-logo {
+        flex:
+            1;
 
-                width: 37px;
+        width:
+            auto;
+    }
 
-                height: 37px;
-            }
 
+    .track-name {
 
-            .nav-name {
+        font-size:
+            9px;
 
-                display: none;
-            }
+        letter-spacing:
+            2px;
 
+        line-height:
+            1.6;
+    }
 
-            .back-home {
 
-                font-size: 7px;
+    .composer-name {
 
-                letter-spacing: 2px;
-            }
+        font-size:
+            12px;
+    }
+}
 
 
-            .ost-hero {
+@media (max-width: 400px) {
 
-                min-height:
-                    68vh;
+    .ost-title {
 
-                padding:
-                    115px 20px
-                    75px;
-            }
+        font-size:
+            36px;
 
+        letter-spacing:
+            4px;
+    }
 
-            .studio-logo {
 
-                width: 110px;
+    .play {
 
-                height: 110px;
+        width:
+            43px;
 
-                margin-bottom: 28px;
-            }
+        height:
+            43px;
+    }
+}
 
 
-            .ost-title {
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
-                font-size: 43px;
+@media (prefers-reduced-motion: reduce) {
 
-                letter-spacing: 5px;
-            }
+    *,
+    *::before,
+    *::after {
 
+        animation-duration:
+            0.01ms !important;
 
-            .ost-subtitle {
+        animation-iteration-count:
+            1 !important;
 
-                font-size: 8px;
+        transition-duration:
+            0.01ms !important;
+    }
+}
 
-                letter-spacing: 3px;
-
-                line-height: 2;
-            }
-
-
-            .music-section {
-
-                padding:
-                    75px 5%
-                    90px;
-            }
-
-
-            .section-header {
-
-                margin-bottom: 45px;
-            }
-
-
-            .track {
-
-                grid-template-columns:
-                    45px
-                    1fr;
-
-                gap: 15px;
-
-                padding:
-                    25px 8px;
-            }
-
-
-            .track:hover {
-
-                padding-left: 8px;
-
-                padding-right: 8px;
-            }
-
-
-            .track-number {
-
-                align-self: start;
-
-                padding-top: 5px;
-
-                font-size: 15px;
-            }
-
-
-            .track-info {
-
-                padding-right: 5px;
-            }
-
-
-            .player {
-
-                grid-column:
-                    2 / 3;
-
-                width: 100%;
-
-                gap: 12px;
-
-                margin-top: 4px;
-            }
-
-
-            .play-button {
-
-                width: 43px;
-
-                height: 43px;
-
-                min-width: 43px;
-            }
-
-
-            .track-title {
-
-                font-size: 9px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .track-type {
-
-                font-size: 6px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .composer {
-
-                margin-top: 50px;
-            }
-        }
-
-
-        /* =========================================
-           SMALL PHONES
-        ========================================== */
-
-        @media (max-width: 480px) {
-
-            .ost-hero {
-
-                min-height:
-                    65vh;
-            }
-
-
-            .studio-logo {
-
-                width: 90px;
-
-                height: 90px;
-            }
-
-
-            .ost-title {
-
-                font-size: 36px;
-
-                letter-spacing: 4px;
-            }
-
-
-            .ost-subtitle {
-
-                font-size: 7px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .hero-description {
-
-                font-size: 7px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .section-title {
-
-                font-size: 27px;
-
-                letter-spacing: 3px;
-            }
-
-
-            .section-subtitle {
-
-                font-size: 7px;
-
-                letter-spacing: 2px;
-            }
-
-
-            .track {
-
-                grid-template-columns:
-                    35px
-                    1fr;
-
-                padding:
-                    22px 3px;
-            }
-
-
-            .track-number {
-
-                font-size: 13px;
-            }
-
-
-            .play-button {
-
-                width: 40px;
-
-                height: 40px;
-
-                min-width: 40px;
-
-                font-size: 10px;
-            }
-
-
-            .player {
-
-                gap: 10px;
-            }
-
-
-            .track-title {
-
-                font-size: 8px;
-
-                line-height: 1.6;
-
-                letter-spacing: 1.5px;
-            }
-
-
-            .track-type {
-
-                font-size: 5px;
-
-                letter-spacing: 1.5px;
-            }
-
-
-            .composer-name {
-
-                font-size: 12px;
-
-                letter-spacing: 3px;
-            }
-        }
-
-
-        /* =========================================
-           REDUCED MOTION
-        ========================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-
-            *,
-            *::before,
-            *::after {
-
-                animation:
-                    none !important;
-
-                transition:
-                    none !important;
-            }
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -1232,583 +1190,501 @@
 <body>
 
 
-    <!-- =========================================
-         NAVIGATION
-    ========================================== -->
+<!-- =========================================
+     CINEMATIC LOGO INTRO
+========================================= -->
 
-    <header class="navbar">
+<div class="ost-intro">
 
+    <img
+        src="logo.png"
+        alt="Triovision Studios"
+        class="ost-intro-logo">
 
-        <a
-            href="index.html"
-            class="nav-brand"
-            aria-label="Return to Triovision Studios">
+</div>
 
-            <img
-                src="logo.png"
-                alt="Triovision Studios Logo"
-                class="nav-logo">
 
-            <span class="nav-name">
-                TRIOVISION STUDIOS
-            </span>
+<!-- =========================================
+     TOP BAR
+========================================= -->
 
-        </a>
+<header class="topbar">
 
-
-        <a
-            href="index.html#projects"
-            class="back-home">
-
-            ← Back to Studio
-
-        </a>
-
-    </header>
-
-
-    <!-- =========================================
-         HERO
-    ========================================== -->
-
-    <section class="ost-hero">
-
-
-        <div class="hero-content">
-
-
-            <img
-                src="logo.png"
-                alt="Triovision Studios Logo"
-                class="studio-logo">
-
-
-            <p class="studio-label">
-                TRIOVISION STUDIOS PRESENTS
-            </p>
-
-
-            <h1 class="ost-title">
-                SWAN-MERE
-            </h1>
-
-
-            <p class="ost-subtitle">
-                Echoes of Hearts
-            </p>
-
-
-            <div class="hero-rule"></div>
-
-
-            <p class="hero-description">
-                Original Motion Picture Soundtrack
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-         MUSIC
-    ========================================== -->
-
-    <main>
-
-
-        <section class="music-section">
-
-
-            <div class="section-header">
-
-                <span class="section-number">
-                    ORIGINAL SCORE / 01
-                </span>
-
-                <h2 class="section-title">
-                    The Soundtrack
-                </h2>
-
-                <p class="section-subtitle">
-                    Five original compositions from SWAN-MERE
-                </p>
-
-            </div>
-
-
-            <div class="music-container">
-
-
-                <!-- =================================
-                     TRACK 01
-                ================================== -->
-
-                <article class="track">
-
-                    <span class="track-number">
-                        01
-                    </span>
-
-
-                    <div class="track-info">
-
-                        <span class="track-title">
-                            Echoes of the Misty Lake
-                        </span>
-
-                        <span class="track-type">
-                            Original Score
-                        </span>
-
-                    </div>
-
-
-                    <div class="player">
-
-                        <button
-                            class="play-button"
-                            type="button"
-                            aria-label="Play Echoes of the Misty Lake">
-
-                            ▶
-
-                        </button>
-
-
-                        <div class="player-details">
-
-                            <input
-                                class="progress"
-                                type="range"
-                                min="0"
-                                max="100"
-                                value="0"
-                                step="0.1"
-                                aria-label="Echoes of the Misty Lake progress">
-
-
-                            <div class="time">
-
-                                <span class="current-time">
-                                    00:00
-                                </span>
-
-                                <span class="duration">
-                                    00:00
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        preload="metadata"
-                        class="audio">
-
-                        <source
-                            src="Echoes%20of%20the%20Misty%20Lake.mp3"
-                            type="audio/mpeg">
-
-                    </audio>
-
-                </article>
-
-
-                <!-- =================================
-                     TRACK 02
-                ================================== -->
-
-                <article class="track">
-
-                    <span class="track-number">
-                        02
-                    </span>
-
-
-                    <div class="track-info">
-
-                        <span class="track-title">
-                            Fading Pulse
-                        </span>
-
-                        <span class="track-type">
-                            Original Score
-                        </span>
-
-                    </div>
-
-
-                    <div class="player">
-
-                        <button
-                            class="play-button"
-                            type="button"
-                            aria-label="Play Fading Pulse">
-
-                            ▶
-
-                        </button>
-
-
-                        <div class="player-details">
-
-                            <input
-                                class="progress"
-                                type="range"
-                                min="0"
-                                max="100"
-                                value="0"
-                                step="0.1"
-                                aria-label="Fading Pulse progress">
-
-
-                            <div class="time">
-
-                                <span class="current-time">
-                                    00:00
-                                </span>
-
-                                <span class="duration">
-                                    00:00
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        preload="metadata"
-                        class="audio">
-
-                        <source
-                            src="Fading%20Pulse%20%282%29.mp3"
-                            type="audio/mpeg">
-
-                    </audio>
-
-                </article>
-
-
-                <!-- =================================
-                     TRACK 03
-                ================================== -->
-
-                <article class="track">
-
-                    <span class="track-number">
-                        03
-                    </span>
-
-
-                    <div class="track-info">
-
-                        <span class="track-title">
-                            Swans at Golden Dawn
-                        </span>
-
-                        <span class="track-type">
-                            Original Score
-                        </span>
-
-                    </div>
-
-
-                    <div class="player">
-
-                        <button
-                            class="play-button"
-                            type="button"
-                            aria-label="Play Swans at Golden Dawn">
-
-                            ▶
-
-                        </button>
-
-
-                        <div class="player-details">
-
-                            <input
-                                class="progress"
-                                type="range"
-                                min="0"
-                                max="100"
-                                value="0"
-                                step="0.1"
-                                aria-label="Swans at Golden Dawn progress">
-
-
-                            <div class="time">
-
-                                <span class="current-time">
-                                    00:00
-                                </span>
-
-                                <span class="duration">
-                                    00:00
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        preload="metadata"
-                        class="audio">
-
-                        <source
-                            src="Swans%20at%20Golden%20Dawn.mp3"
-                            type="audio/mpeg">
-
-                    </audio>
-
-                </article>
-
-
-                <!-- =================================
-                     TRACK 04
-                ================================== -->
-
-                <article class="track">
-
-                    <span class="track-number">
-                        04
-                    </span>
-
-
-                    <div class="track-info">
-
-                        <span class="track-title">
-                            The Lakes
-                        </span>
-
-                        <span class="track-type">
-                            Original Score
-                        </span>
-
-                    </div>
-
-
-                    <div class="player">
-
-                        <button
-                            class="play-button"
-                            type="button"
-                            aria-label="Play The Lakes">
-
-                            ▶
-
-                        </button>
-
-
-                        <div class="player-details">
-
-                            <input
-                                class="progress"
-                                type="range"
-                                min="0"
-                                max="100"
-                                value="0"
-                                step="0.1"
-                                aria-label="The Lakes progress">
-
-
-                            <div class="time">
-
-                                <span class="current-time">
-                                    00:00
-                                </span>
-
-                                <span class="duration">
-                                    00:00
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        preload="metadata"
-                        class="audio">
-
-                        <source
-                            src="The%20Lakes.mp3"
-                            type="audio/mpeg">
-
-                    </audio>
-
-                </article>
-
-
-                <!-- =================================
-                     TRACK 05
-                ================================== -->
-
-                <article class="track">
-
-                    <span class="track-number">
-                        05
-                    </span>
-
-
-                    <div class="track-info">
-
-                        <span class="track-title">
-                            The Last Golden Hour
-                        </span>
-
-                        <span class="track-type">
-                            Original Score
-                        </span>
-
-                    </div>
-
-
-                    <div class="player">
-
-                        <button
-                            class="play-button"
-                            type="button"
-                            aria-label="Play The Last Golden Hour">
-
-                            ▶
-
-                        </button>
-
-
-                        <div class="player-details">
-
-                            <input
-                                class="progress"
-                                type="range"
-                                min="0"
-                                max="100"
-                                value="0"
-                                step="0.1"
-                                aria-label="The Last Golden Hour progress">
-
-
-                            <div class="time">
-
-                                <span class="current-time">
-                                    00:00
-                                </span>
-
-                                <span class="duration">
-                                    00:00
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        preload="metadata"
-                        class="audio">
-
-                        <source
-                            src="The%20Last%20Golden%20Hour.mp3"
-                            type="audio/mpeg">
-
-                    </audio>
-
-                </article>
-
-
-                <!-- =================================
-                     COMPOSER
-                ================================== -->
-
-                <div class="composer">
-
-                    <span class="composer-label">
-                        Music Composer
-                    </span>
-
-                    <span class="composer-name">
-                        M.D. NISHANTH
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-
-    <footer>
-
+    <a
+        href="index.html"
+        class="brand">
 
         <img
             src="logo.png"
-            alt="Triovision Studios Logo"
-            class="footer-logo">
+            alt="Triovision Studios">
 
-
-        <h3 class="footer-name">
+        <span>
             TRIOVISION STUDIOS
-        </h3>
+        </span>
+
+    </a>
 
 
-        <p class="footer-tagline">
-            Visionary Farms of Imagination
-        </p>
+    <a
+        href="index.html#scores"
+        class="back">
+
+        ← Back to Studio
+
+    </a>
+
+</header>
 
 
-        <div class="footer-line"></div>
+<!-- =========================================
+     OST HEADER
+========================================= -->
+
+<header class="ost-header">
+
+    <img
+        src="logo.png"
+        alt="Triovision Studios"
+        class="header-logo">
 
 
-        <p class="copyright">
-            © 2026 Triovision Studios. All rights reserved.
-        </p>
+    <p class="ost-kicker">
 
-    </footer>
+        Triovision Studios Original
 
-
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
-
-    <script>
-
-        "use strict";
+    </p>
 
 
-        /* =========================================
-           ALL TRACKS
-        ========================================== */
+    <h1 class="ost-title">
 
-        const tracks =
-            document.querySelectorAll(".track");
+        SWAN-MERE
 
-
-        let currentlyPlaying = null;
+    </h1>
 
 
-        /* =========================================
-           FORMAT TIME
-        ========================================== */
+    <p class="ost-subtitle">
+
+        Original Motion Picture Soundtrack
+
+    </p>
+
+
+    <div class="header-line"></div>
+
+</header>
+
+
+<!-- =========================================
+     TRACK LIST
+========================================= -->
+
+<main class="tracks-section">
+
+
+<div class="track-list">
+
+
+<!-- TRACK 01 -->
+
+<article class="track">
+
+    <span class="track-number">
+        01
+    </span>
+
+
+    <div class="track-info">
+
+        <span class="track-name">
+            Echoes of the Misty Lake
+        </span>
+
+        <span class="track-type">
+            Original Score
+        </span>
+
+    </div>
+
+
+    <div class="player">
+
+        <button
+            class="play"
+            type="button"
+            aria-label="Play Echoes of the Misty Lake">
+
+            ▶
+
+        </button>
+
+
+        <div class="progress-box">
+
+            <input
+                class="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Track progress">
+
+            <span class="time">
+                00:00 / 00:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        preload="metadata">
+
+        <source
+            src="Echoes%20of%20the%20Misty%20Lake.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</article>
+
+
+<!-- TRACK 02 -->
+
+<article class="track">
+
+    <span class="track-number">
+        02
+    </span>
+
+
+    <div class="track-info">
+
+        <span class="track-name">
+            Fading Pulse
+        </span>
+
+        <span class="track-type">
+            Original Score
+        </span>
+
+    </div>
+
+
+    <div class="player">
+
+        <button
+            class="play"
+            type="button"
+            aria-label="Play Fading Pulse">
+
+            ▶
+
+        </button>
+
+
+        <div class="progress-box">
+
+            <input
+                class="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Track progress">
+
+            <span class="time">
+                00:00 / 00:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        preload="metadata">
+
+        <source
+            src="Fading%20Pulse%20%282%29.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</article>
+
+
+<!-- TRACK 03 -->
+
+<article class="track">
+
+    <span class="track-number">
+        03
+    </span>
+
+
+    <div class="track-info">
+
+        <span class="track-name">
+            Swans at Golden Dawn
+        </span>
+
+        <span class="track-type">
+            Original Score
+        </span>
+
+    </div>
+
+
+    <div class="player">
+
+        <button
+            class="play"
+            type="button"
+            aria-label="Play Swans at Golden Dawn">
+
+            ▶
+
+        </button>
+
+
+        <div class="progress-box">
+
+            <input
+                class="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Track progress">
+
+            <span class="time">
+                00:00 / 00:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        preload="metadata">
+
+        <source
+            src="Swans%20at%20Golden%20Dawn.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</article>
+
+
+<!-- TRACK 04 -->
+
+<article class="track">
+
+    <span class="track-number">
+        04
+    </span>
+
+
+    <div class="track-info">
+
+        <span class="track-name">
+            The Lakes
+        </span>
+
+        <span class="track-type">
+            Original Score
+        </span>
+
+    </div>
+
+
+    <div class="player">
+
+        <button
+            class="play"
+            type="button"
+            aria-label="Play The Lakes">
+
+            ▶
+
+        </button>
+
+
+        <div class="progress-box">
+
+            <input
+                class="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Track progress">
+
+            <span class="time">
+                00:00 / 00:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        preload="metadata">
+
+        <source
+            src="The%20Lakes.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</article>
+
+
+<!-- TRACK 05 -->
+
+<article class="track">
+
+    <span class="track-number">
+        05
+    </span>
+
+
+    <div class="track-info">
+
+        <span class="track-name">
+            The Last Golden Hour
+        </span>
+
+        <span class="track-type">
+            Original Score
+        </span>
+
+    </div>
+
+
+    <div class="player">
+
+        <button
+            class="play"
+            type="button"
+            aria-label="Play The Last Golden Hour">
+
+            ▶
+
+        </button>
+
+
+        <div class="progress-box">
+
+            <input
+                class="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Track progress">
+
+            <span class="time">
+                00:00 / 00:00
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        preload="metadata">
+
+        <source
+            src="The%20Last%20Golden%20Hour.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</article>
+
+
+</div>
+
+
+<!-- COMPOSER -->
+
+<div class="composer">
+
+    <span class="composer-label">
+        Music Composer
+    </span>
+
+    <span class="composer-name">
+        M.D. NISHANTH
+    </span>
+
+</div>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="ost-footer">
+
+    <img
+        src="logo.png"
+        alt="Triovision Studios"
+        class="footer-logo">
+
+    <h2 class="footer-name">
+        TRIOVISION STUDIOS
+    </h2>
+
+    <p class="footer-text">
+        Visionary Farms of Imagination
+    </p>
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+/* =========================================
+   AUDIO PLAYER
+========================================= */
+
+const tracks =
+    document.querySelectorAll(".track");
+
+
+tracks.forEach(
+    function(track) {
+
+        const audio =
+            track.querySelector("audio");
+
+        const button =
+            track.querySelector(".play");
+
+        const progress =
+            track.querySelector(".progress");
+
+        const time =
+            track.querySelector(".time");
+
 
         function formatTime(seconds) {
 
@@ -1827,343 +1703,243 @@
                 );
 
 
-            const remainingSeconds =
+            const secondsLeft =
                 Math.floor(
                     seconds % 60
                 );
 
 
             return (
-                String(minutes).padStart(2, "0")
+                String(minutes)
+                    .padStart(2, "0")
                 +
                 ":"
                 +
-                String(remainingSeconds).padStart(2, "0")
+                String(secondsLeft)
+                    .padStart(2, "0")
             );
 
         }
 
 
-        /* =========================================
-           INITIALIZE EACH TRACK
-        ========================================== */
+        function updateTime() {
 
-        tracks.forEach(
-            function(track) {
-
-
-                const audio =
-                    track.querySelector(".audio");
-
-
-                const button =
-                    track.querySelector(".play-button");
-
-
-                const progress =
-                    track.querySelector(".progress");
-
-
-                const currentTime =
-                    track.querySelector(".current-time");
-
-
-                const duration =
-                    track.querySelector(".duration");
-
-
-                /* =====================================
-                   AUDIO METADATA
-                ====================================== */
-
-                audio.addEventListener(
-                    "loadedmetadata",
-                    function() {
-
-                        duration.textContent =
-                            formatTime(
-                                audio.duration
-                            );
-
-                    }
+            const current =
+                formatTime(
+                    audio.currentTime
                 );
 
 
-                /* =====================================
-                   PLAY BUTTON
-                ====================================== */
-
-                button.addEventListener(
-                    "click",
-                    function() {
-
-
-                        /*
-                         * Stop currently playing
-                         * track first.
-                         */
-
-                        if (
-                            currentlyPlaying &&
-                            currentlyPlaying !== audio
-                        ) {
-
-                            currentlyPlaying.pause();
-
-                        }
-
-
-                        /*
-                         * PLAY
-                         */
-
-                        if (
-                            audio.paused
-                        ) {
-
-                            audio.play()
-                                .then(
-                                    function() {
-
-                                        currentlyPlaying =
-                                            audio;
-
-                                        button.classList.add(
-                                            "playing"
-                                        );
-
-                                        button.textContent =
-                                            "Ⅱ";
-
-                                    }
-                                )
-                                .catch(
-                                    function(error) {
-
-                                        console.log(
-                                            "Audio playback error:",
-                                            error
-                                        );
-
-                                    }
-                                );
-
-                        }
-
-                        /*
-                         * PAUSE
-                         */
-
-                        else {
-
-                            audio.pause();
-
-                        }
-
-                    }
+            const duration =
+                formatTime(
+                    audio.duration
                 );
 
 
-                /* =====================================
-                   PLAY EVENT
-                ====================================== */
-
-                audio.addEventListener(
-                    "play",
-                    function() {
-
-                        currentlyPlaying =
-                            audio;
-
-                        button.classList.add(
-                            "playing"
-                        );
-
-                        button.textContent =
-                            "Ⅱ";
-
-                    }
-                );
+            time.textContent =
+                current +
+                " / " +
+                duration;
 
 
-                /* =====================================
-                   PAUSE EVENT
-                ====================================== */
+            if (
+                Number.isFinite(
+                    audio.duration
+                )
+            ) {
 
-                audio.addEventListener(
-                    "pause",
-                    function() {
-
-                        button.classList.remove(
-                            "playing"
-                        );
-
-                        button.textContent =
-                            "▶";
-
-                    }
-                );
-
-
-                /* =====================================
-                   TIME UPDATE
-                ====================================== */
-
-                audio.addEventListener(
-                    "timeupdate",
-                    function() {
-
-
-                        if (
-                            Number.isFinite(
-                                audio.duration
-                            ) &&
-                            audio.duration > 0
-                        ) {
-
-                            progress.value =
-                                (
-                                    audio.currentTime /
-                                    audio.duration
-                                ) * 100;
-
-                        }
-
-
-                        currentTime.textContent =
-                            formatTime(
-                                audio.currentTime
-                            );
-
-                    }
-                );
-
-
-                /* =====================================
-                   PROGRESS BAR
-                ====================================== */
-
-                progress.addEventListener(
-                    "input",
-                    function() {
-
-
-                        if (
-                            Number.isFinite(
-                                audio.duration
-                            ) &&
-                            audio.duration > 0
-                        ) {
-
-                            audio.currentTime =
-                                (
-                                    Number(
-                                        progress.value
-                                    ) / 100
-                                )
-                                *
-                                audio.duration;
-
-                        }
-
-                    }
-                );
-
-
-                /* =====================================
-                   TRACK ENDED
-                ====================================== */
-
-                audio.addEventListener(
-                    "ended",
-                    function() {
-
-                        progress.value = 0;
-
-                        currentTime.textContent =
-                            "00:00";
-
-                        button.classList.remove(
-                            "playing"
-                        );
-
-                        button.textContent =
-                            "▶";
-
-                        currentlyPlaying =
-                            null;
-
-                    }
-                );
+                progress.value =
+                    (
+                        audio.currentTime /
+                        audio.duration
+                    ) * 100;
 
             }
-        );
+
+        }
 
 
-        /* =========================================
-           STOP OTHER TRACKS WHEN ONE PLAYS
-        ========================================== */
-
-        tracks.forEach(
-            function(track) {
-
-                const audio =
-                    track.querySelector(".audio");
+        button.addEventListener(
+            "click",
+            function() {
 
 
-                audio.addEventListener(
-                    "play",
-                    function() {
+                /*
+                   Stop all other tracks.
+                */
 
-                        tracks.forEach(
-                            function(otherTrack) {
+                tracks.forEach(
+                    function(otherTrack) {
 
-                                const otherAudio =
-                                    otherTrack.querySelector(
-                                        ".audio"
-                                    );
+                        const otherAudio =
+                            otherTrack.querySelector(
+                                "audio"
+                            );
+
+                        const otherButton =
+                            otherTrack.querySelector(
+                                ".play"
+                            );
 
 
-                                if (
-                                    otherAudio !== audio
-                                ) {
+                        if (
+                            otherAudio !== audio
+                        ) {
 
-                                    otherAudio.pause();
+                            otherAudio.pause();
 
-                                }
+                            otherButton.classList
+                                .remove("active");
+
+                            otherButton.textContent =
+                                "▶";
+
+                        }
+
+                    }
+                );
+
+
+                if (
+                    audio.paused
+                ) {
+
+                    audio.play()
+                        .then(
+                            function() {
+
+                                button.textContent =
+                                    "Ⅱ";
+
+                                button.classList
+                                    .add("active");
+
+                            }
+                        )
+                        .catch(
+                            function() {
+
+                                button.textContent =
+                                    "▶";
 
                             }
                         );
 
-                    }
-                );
+                } else {
 
-            }
-        );
+                    audio.pause();
 
+                    button.textContent =
+                        "▶";
 
-        /* =========================================
-           PAGE VISIBILITY
-        ========================================== */
-
-        document.addEventListener(
-            "visibilitychange",
-            function() {
-
-                if (
-                    document.hidden &&
-                    currentlyPlaying
-                ) {
-
-                    currentlyPlaying.pause();
+                    button.classList
+                        .remove("active");
 
                 }
 
             }
         );
 
-    </script>
+
+        audio.addEventListener(
+            "timeupdate",
+            updateTime
+        );
+
+
+        audio.addEventListener(
+            "loadedmetadata",
+            function() {
+
+                time.textContent =
+                    "00:00 / " +
+                    formatTime(
+                        audio.duration
+                    );
+
+            }
+        );
+
+
+        progress.addEventListener(
+            "input",
+            function() {
+
+                if (
+                    Number.isFinite(
+                        audio.duration
+                    )
+                ) {
+
+                    audio.currentTime =
+                        (
+                            progress.value /
+                            100
+                        ) *
+                        audio.duration;
+
+                }
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "play",
+            function() {
+
+                button.textContent =
+                    "Ⅱ";
+
+                button.classList
+                    .add("active");
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "pause",
+            function() {
+
+                button.textContent =
+                    "▶";
+
+                button.classList
+                    .remove("active");
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "ended",
+            function() {
+
+                button.textContent =
+                    "▶";
+
+                button.classList
+                    .remove("active");
+
+                progress.value =
+                    0;
+
+                time.textContent =
+                    "00:00 / " +
+                    formatTime(
+                        audio.duration
+                    );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
 
 </body>
 
-      </html>
+    </html>
