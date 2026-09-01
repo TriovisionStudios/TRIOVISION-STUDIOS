@@ -3,1515 +3,2332 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <!-- =========================================
+         BASIC DOCUMENT SETTINGS
+    ========================================== -->
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<meta name="description"
-      content="Triovision Studios — Visionary Farms of Imagination. Original stories, films, cinematic worlds and original music.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="author"
-      content="Triovision Studios">
+    <meta name="description"
+          content="Triovision Studios — Visionary Farms of Imagination. Original stories, films, cinematic worlds and original music.">
 
-<meta name="robots"
-      content="index, follow">
+    <meta name="author"
+          content="Triovision Studios">
 
-<meta name="theme-color"
-      content="#050505">
+    <meta name="robots"
+          content="index, follow">
 
-<link rel="canonical"
-      href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
+    <meta name="theme-color"
+          content="#050505">
 
-<title>Triovision Studios | Visionary Farms of Imagination</title>
+    <link rel="canonical"
+          href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
-<meta name="referrer"
-      content="strict-origin-when-cross-origin">
+    <title>Triovision Studios | Visionary Farms of Imagination</title>
 
-<meta property="og:title"
-      content="Triovision Studios">
 
-<meta property="og:description"
-      content="Visionary Farms of Imagination — original stories, films, cinematic worlds and music.">
+    <!-- =========================================
+         SECURITY / REFERRER
+    ========================================== -->
 
-<meta property="og:type"
-      content="website">
+    <meta name="referrer"
+          content="strict-origin-when-cross-origin">
 
-<meta property="og:url"
-      content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
-<meta property="og:image"
-      content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/swan-mere.png">
+    <!-- =========================================
+         SOCIAL PREVIEW
+    ========================================== -->
 
-<link rel="icon"
-      type="image/png"
-      href="logo.png">
+    <meta property="og:title"
+          content="Triovision Studios">
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+    <meta property="og:description"
+          content="Visionary Farms of Imagination — original stories, films, cinematic worlds and music.">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <meta property="og:type"
+          content="website">
 
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
-      rel="stylesheet">
+    <meta property="og:url"
+          content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
+    <meta property="og:image"
+          content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/swan-mere.png">
 
-<style>
 
-*,
-*::before,
-*::after {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
-html {
-    scroll-behavior:smooth;
-}
+    <link rel="icon"
+          type="image/png"
+          href="logo.png">
 
-body {
-    background:#050505;
-    color:#fff;
-    font-family:"Manrope",Arial,sans-serif;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-}
 
-img {
-    max-width:100%;
-    display:block;
-}
+    <!-- =========================================
+         FONTS
+    ========================================== -->
 
-a {
-    color:inherit;
-    text-decoration:none;
-}
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-button {
-    font:inherit;
-}
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-:root {
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
 
-    --black:#000;
-    --background:#050505;
-    --background-two:#0a0a0a;
-    --panel:#0d0d0d;
-    --white:#fff;
-    --soft-white:#dedede;
-    --gray:#999;
-    --dark-gray:#555;
-    --line:rgba(255,255,255,.10);
-    --line-strong:rgba(255,255,255,.22);
 
-    --serif:"Bodoni Moda",Georgia,serif;
-    --sans:"Manrope",Arial,sans-serif;
-}
+    <!-- =========================================
+         STYLES
+    ========================================== -->
 
+    <style>
 
-/* ================================
-   INTRO
-================================ */
+        /* =========================================
+           RESET
+        ========================================== */
 
-#intro-screen {
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    position:fixed;
-    inset:0;
 
-    width:100%;
-    height:100dvh;
+        html {
+            scroll-behavior: smooth;
+        }
 
-    background:#000;
 
-    z-index:99999;
+        body {
+            background: #050505;
+            color: #ffffff;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+            font-family:
+                "Manrope",
+                Arial,
+                sans-serif;
 
-    overflow:hidden;
+            overflow-x: hidden;
 
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
-}
+            -webkit-font-smoothing: antialiased;
 
-#intro-screen.hidden {
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-}
+            text-rendering: optimizeLegibility;
+        }
 
-#intro-video {
 
-    position:absolute;
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    inset:0;
 
-    width:100%;
-    height:100%;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    object-fit:cover;
 
-    background:#000;
-}
+        button {
+            font: inherit;
+        }
 
-.intro-fallback {
 
-    position:absolute;
-    inset:0;
+        :root {
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
+            --black: #000000;
 
-    background:#000;
+            --background: #050505;
 
-    z-index:-1;
-}
+            --background-two: #0a0a0a;
 
-.intro-fallback img {
-    width:150px;
-    margin-bottom:25px;
-}
+            --panel: #0d0d0d;
 
-.intro-fallback p {
+            --white: #ffffff;
 
-    font-size:9px;
-    letter-spacing:5px;
-    color:#777;
-    text-transform:uppercase;
-}
+            --soft-white: #dedede;
 
+            --gray: #999999;
 
-/* ================================
-   SKIP
-================================ */
+            --dark-gray: #555555;
 
-#skip-intro {
+            --line:
+                rgba(255,255,255,0.10);
 
-    position:absolute;
+            --line-strong:
+                rgba(255,255,255,0.22);
 
-    right:30px;
-    bottom:30px;
+            --serif:
+                "Bodoni Moda",
+                Georgia,
+                serif;
 
-    z-index:20;
+            --sans:
+                "Manrope",
+                Arial,
+                sans-serif;
+        }
 
-    padding:12px 22px;
 
-    border:1px solid rgba(255,255,255,.35);
+        /* =========================================
+           INTRO SCREEN
+        ========================================== */
 
-    background:rgba(0,0,0,.55);
+        #intro-screen {
 
-    color:#fff;
+            position: fixed;
 
-    font-size:8px;
-    letter-spacing:3px;
+            inset: 0;
 
-    text-transform:uppercase;
+            width: 100%;
+            height: 100%;
 
-    cursor:pointer;
+            min-width: 100vw;
+            min-height: 100vh;
 
-    backdrop-filter:blur(10px);
+            background: #000000;
 
-    transition:.3s ease;
-}
+            z-index: 99999;
 
-#skip-intro:hover {
+            display: flex;
 
-    background:#fff;
-    color:#000;
-    border-color:#fff;
-}
+            align-items: center;
 
+            justify-content: center;
 
-/* ================================
-   LOADER
-================================ */
+            overflow: hidden;
 
-#page-loader {
+            transition:
+                opacity 1.2s ease,
+                visibility 1.2s ease;
+        }
 
-    position:fixed;
-    inset:0;
 
-    background:#050505;
+        #intro-screen.hidden {
 
-    z-index:9998;
+            opacity: 0;
 
-    pointer-events:none;
+            visibility: hidden;
 
-    opacity:1;
+            pointer-events: none;
+        }
 
-    transition:opacity 1s ease;
-}
 
-#page-loader.loaded {
-    opacity:0;
-}
+        /*
+         * FIX:
+         *
+         * The original intro video is wider than
+         * most phone screens.
+         *
+         * "cover" cropped the video and made the
+         * intro appear outside the screen.
+         *
+         * "contain" keeps the ENTIRE video visible.
+         */
 
+        #intro-video {
 
-/* ================================
-   NAVIGATION
-================================ */
+            display: block;
 
-.navbar {
+            width: 100%;
+            height: 100%;
 
-    position:fixed;
+            max-width: 100vw;
+            max-height: 100vh;
 
-    top:0;
-    left:0;
+            object-fit: contain;
 
-    width:100%;
-    height:82px;
+            object-position: center center;
 
-    z-index:5000;
+            background: #000000;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+            flex-shrink: 0;
+        }
 
-    padding:0 6%;
 
-    background:rgba(0,0,0,.72);
+        .intro-fallback {
 
-    backdrop-filter:blur(15px);
+            position: absolute;
 
-    border-bottom:1px solid rgba(255,255,255,.07);
+            inset: 0;
 
-    transition:.4s ease;
-}
+            display: flex;
 
-.navbar.scrolled {
+            align-items: center;
 
-    height:70px;
+            justify-content: center;
 
-    background:rgba(0,0,0,.92);
-}
+            flex-direction: column;
 
-.nav-brand {
+            background: #000000;
 
-    display:flex;
-    align-items:center;
+            z-index: -1;
+        }
 
-    gap:15px;
-}
 
-.nav-logo {
+        .intro-fallback img {
 
-    width:47px;
-    height:47px;
+            width: 150px;
 
-    object-fit:contain;
-}
+            opacity: 0.9;
 
-.nav-name {
+            margin-bottom: 25px;
+        }
 
-    font-family:var(--serif);
 
-    font-size:14px;
+        .intro-fallback p {
 
-    letter-spacing:4px;
+            font-size: 9px;
 
-    font-weight:500;
-}
+            letter-spacing: 5px;
 
-.nav-links {
+            color: #777;
 
-    display:flex;
-    align-items:center;
+            text-transform: uppercase;
+        }
 
-    gap:38px;
 
-    list-style:none;
-}
+        /* =========================================
+           SKIP INTRO
+        ========================================== */
 
-.nav-links a {
+        #skip-intro {
 
-    position:relative;
+            position: absolute;
 
-    color:#d8d8d8;
+            right: 30px;
 
-    font-size:9px;
+            bottom: 30px;
 
-    letter-spacing:3px;
+            z-index: 10;
 
-    text-transform:uppercase;
+            padding:
+                12px 22px;
 
-    transition:.3s ease;
-}
+            border:
+                1px solid
+                rgba(255,255,255,0.35);
 
-.nav-links a::after {
+            background:
+                rgba(0,0,0,0.55);
 
-    content:"";
+            color: #ffffff;
 
-    position:absolute;
+            font-family: var(--sans);
 
-    left:0;
-    bottom:-8px;
+            font-size: 8px;
 
-    width:0;
-    height:1px;
+            letter-spacing: 3px;
 
-    background:#fff;
+            text-transform: uppercase;
 
-    transition:.3s ease;
-}
+            cursor: pointer;
 
-.nav-links a:hover {
-    color:#fff;
-}
+            backdrop-filter: blur(10px);
 
-.nav-links a:hover::after {
-    width:100%;
-}
+            -webkit-backdrop-filter: blur(10px);
 
+            -webkit-tap-highlight-color: transparent;
 
-/* ================================
-   HERO
-================================ */
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
 
-.hero {
 
-    position:relative;
+        #skip-intro:hover {
 
-    min-height:100vh;
+            background: #ffffff;
 
-    display:flex;
+            color: #000000;
 
-    align-items:center;
-    justify-content:center;
+            border-color: #ffffff;
 
-    text-align:center;
+            transform:
+                translateY(-2px);
+        }
 
-    overflow:hidden;
 
-    padding:150px 25px 100px;
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
 
-    background:
-        radial-gradient(
-            circle at center,
-            #181818 0%,
-            #090909 40%,
-            #000 100%
-        );
-}
+        #page-loader {
 
-.hero::before {
+            position: fixed;
 
-    content:"";
+            inset: 0;
 
-    position:absolute;
+            background: #050505;
 
-    width:700px;
-    height:700px;
+            z-index: 9998;
 
-    left:50%;
-    top:50%;
+            pointer-events: none;
 
-    transform:translate(-50%,-50%);
+            opacity: 1;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.045),
-            transparent 65%
-        );
+            transition:
+                opacity 1s ease;
+        }
 
-    animation:heroGlow 8s ease-in-out infinite;
-}
 
-@keyframes heroGlow {
+        #page-loader.loaded {
 
-    0%,100% {
-        transform:translate(-50%,-50%) scale(.9);
-    }
+            opacity: 0;
+        }
 
-    50% {
-        transform:translate(-50%,-50%) scale(1.15);
-    }
-}
 
-.hero-content {
+        /* =========================================
+           NAVIGATION
+        ========================================== */
 
-    position:relative;
+        .navbar {
 
-    z-index:2;
+            position: fixed;
 
-    max-width:1000px;
+            top: 0;
+            left: 0;
 
-    animation:
-        heroReveal 1.8s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
+            width: 100%;
 
-@keyframes heroReveal {
+            height: 82px;
 
-    from {
-        opacity:0;
-        transform:translateY(40px);
-    }
+            z-index: 5000;
 
-    to {
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+            display: flex;
 
-.hero-logo {
+            align-items: center;
 
-    width:min(250px,65vw);
+            justify-content: space-between;
 
-    margin:0 auto 40px;
+            padding:
+                0 6%;
 
-    filter:
-        drop-shadow(
-            0 0 35px
-            rgba(255,255,255,.08)
-        );
+            background:
+                rgba(0,0,0,0.72);
 
-    animation:logoFloat 6s ease-in-out infinite;
-}
+            backdrop-filter:
+                blur(15px);
 
-@keyframes logoFloat {
+            -webkit-backdrop-filter:
+                blur(15px);
 
-    0%,100% {
-        transform:translateY(0);
-    }
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
 
-    50% {
-        transform:translateY(-8px);
-    }
-}
+            transition:
+                background 0.4s ease,
+                height 0.4s ease;
+        }
 
-.hero-title {
 
-    font-family:var(--serif);
+        .navbar.scrolled {
 
-    font-size:clamp(42px,8vw,92px);
+            height: 70px;
 
-    font-weight:400;
+            background:
+                rgba(0,0,0,0.92);
+        }
 
-    letter-spacing:clamp(6px,1.2vw,14px);
 
-    line-height:1;
-}
+        .nav-brand {
 
-.hero-divider {
+            display: flex;
 
-    width:90px;
-    height:1px;
+            align-items: center;
 
-    background:rgba(255,255,255,.7);
+            gap: 15px;
+        }
 
-    margin:32px auto;
-}
 
-.hero-tagline {
+        .nav-logo {
 
-    font-size:clamp(11px,1.8vw,16px);
+            width: 47px;
 
-    letter-spacing:clamp(3px,.7vw,6px);
+            height: 47px;
 
-    color:#bdbdbd;
+            object-fit: contain;
+        }
 
-    text-transform:uppercase;
 
-    font-weight:300;
-}
+        .nav-name {
 
-.hero-scroll {
+            font-family: var(--serif);
 
-    position:absolute;
+            font-size: 14px;
 
-    bottom:35px;
+            letter-spacing: 4px;
 
-    left:50%;
+            font-weight: 500;
+        }
 
-    transform:translateX(-50%);
 
-    display:flex;
+        .nav-links {
 
-    flex-direction:column;
+            display: flex;
 
-    align-items:center;
+            align-items: center;
 
-    gap:12px;
+            gap: 38px;
 
-    color:#666;
+            list-style: none;
+        }
 
-    font-size:8px;
 
-    letter-spacing:4px;
+        .nav-links a {
 
-    text-transform:uppercase;
-}
+            position: relative;
 
-.scroll-line {
+            color: #d8d8d8;
 
-    width:1px;
-    height:45px;
+            font-size: 9px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #777,
-            transparent
-        );
+            letter-spacing: 3px;
 
-    animation:scrollPulse 2s ease-in-out infinite;
-}
+            text-transform: uppercase;
 
-@keyframes scrollPulse {
+            transition:
+                color 0.3s ease;
+        }
 
-    0%,100% {
-        opacity:.3;
-        transform:scaleY(.7);
-    }
 
-    50% {
-        opacity:1;
-        transform:scaleY(1);
-    }
-}
+        .nav-links a::after {
 
+            content: "";
 
-/* ================================
-   SECTIONS
-================================ */
+            position: absolute;
 
-.section {
+            left: 0;
 
-    position:relative;
+            bottom: -8px;
 
-    padding:130px 7%;
-}
+            width: 0;
 
-.section-header {
+            height: 1px;
 
-    text-align:center;
+            background: #ffffff;
 
-    margin-bottom:75px;
-}
+            transition:
+                width 0.3s ease;
+        }
 
-.section-number {
 
-    display:block;
+        .nav-links a:hover {
 
-    color:#555;
+            color: #ffffff;
+        }
 
-    font-size:8px;
 
-    letter-spacing:5px;
+        .nav-links a:hover::after {
 
-    margin-bottom:20px;
-}
+            width: 100%;
+        }
 
-.section-title {
 
-    font-family:var(--serif);
+        /* =========================================
+           HERO
+        ========================================== */
 
-    font-size:clamp(30px,5vw,58px);
+        .hero {
 
-    font-weight:400;
+            position: relative;
 
-    letter-spacing:clamp(4px,.8vw,9px);
+            min-height: 100vh;
 
-    text-transform:uppercase;
-}
+            display: flex;
 
-.section-subtitle {
+            align-items: center;
 
-    margin-top:20px;
+            justify-content: center;
 
-    color:#777;
+            text-align: center;
 
-    font-size:10px;
+            overflow: hidden;
 
-    letter-spacing:4px;
+            padding:
+                150px 25px
+                100px;
 
-    text-transform:uppercase;
-}
+            background:
+                radial-gradient(
+                    circle at center,
+                    #181818 0%,
+                    #090909 40%,
+                    #000000 100%
+                );
+        }
 
 
-/* ================================
-   PROJECT
-================================ */
+        .hero::before {
 
-#projects {
+            content: "";
 
-    background:
-        linear-gradient(
-            180deg,
-            #050505,
-            #090909
-        );
-}
+            position: absolute;
 
-.project-card {
+            width: 700px;
 
-    max-width:1200px;
+            height: 700px;
 
-    margin:0 auto;
+            left: 50%;
 
-    display:grid;
+            top: 50%;
 
-    grid-template-columns:
-        minmax(0,1.05fr)
-        minmax(0,.95fr);
+            transform:
+                translate(-50%, -50%);
 
-    background:#0a0a0a;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.045),
+                    transparent 65%
+                );
 
-    border:1px solid var(--line);
+            animation:
+                heroGlow 8s
+                ease-in-out
+                infinite;
+        }
 
-    overflow:hidden;
 
-    opacity:0;
+        @keyframes heroGlow {
 
-    transform:translateY(40px);
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.9);
+            }
 
-    transition:
-        opacity 1s ease,
-        transform 1s cubic-bezier(.16,1,.3,1);
-}
+            50% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+            }
+        }
 
-.project-card.visible {
 
-    opacity:1;
+        .hero-content {
 
-    transform:translateY(0);
-}
+            position: relative;
 
-.project-poster {
+            z-index: 2;
 
-    position:relative;
+            max-width: 1000px;
 
-    min-height:620px;
+            animation:
+                heroReveal 1.8s
+                cubic-bezier(.16,1,.3,1)
+                both;
+        }
 
-    overflow:hidden;
 
-    background:#000;
-}
+        @keyframes heroReveal {
 
-.project-poster img {
+            from {
 
-    width:100%;
-    height:100%;
+                opacity: 0;
 
-    object-fit:cover;
+                transform:
+                    translateY(40px);
+            }
 
-    transition:
-        transform 1.2s cubic-bezier(.16,1,.3,1);
-}
+            to {
 
-.project-poster::after {
+                opacity: 1;
 
-    content:"";
+                transform:
+                    translateY(0);
+            }
+        }
 
-    position:absolute;
 
-    inset:0;
+        .hero-logo {
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent 65%,
-            rgba(0,0,0,.25)
-        );
+            width:
+                min(250px, 65vw);
 
-    pointer-events:none;
-}
+            margin:
+                0 auto 40px;
 
-.project-card:hover .project-poster img {
-    transform:scale(1.045);
-}
+            filter:
+                drop-shadow(
+                    0 0 35px
+                    rgba(255,255,255,0.08)
+                );
 
-.project-details {
+            animation:
+                logoFloat 6s
+                ease-in-out
+                infinite;
+        }
 
-    display:flex;
 
-    flex-direction:column;
+        @keyframes logoFloat {
 
-    justify-content:center;
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
 
-    padding:clamp(35px,5vw,70px);
-}
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+        }
 
-.project-type {
 
-    color:#777;
+        .hero-title {
 
-    font-size:8px;
+            font-family: var(--serif);
 
-    letter-spacing:4px;
+            font-size:
+                clamp(42px, 8vw, 92px);
 
-    text-transform:uppercase;
+            font-weight: 400;
 
-    margin-bottom:22px;
-}
+            letter-spacing:
+                clamp(6px, 1.2vw, 14px);
 
-.project-title {
+            line-height: 1;
+        }
 
-    font-family:var(--serif);
 
-    font-size:clamp(38px,5vw,68px);
+        .hero-divider {
 
-    font-weight:400;
+            width: 90px;
 
-    letter-spacing:4px;
+            height: 1px;
 
-    line-height:1.05;
-}
+            background:
+                rgba(255,255,255,0.7);
 
-.project-subtitle {
+            margin:
+                32px auto;
+        }
 
-    margin-top:13px;
 
-    color:#aaa;
+        .hero-tagline {
 
-    font-size:11px;
+            font-size:
+                clamp(11px, 1.8vw, 16px);
 
-    letter-spacing:5px;
+            letter-spacing:
+                clamp(3px, 0.7vw, 6px);
 
-    text-transform:uppercase;
-}
+            color: #bdbdbd;
 
-.project-rule {
+            text-transform: uppercase;
 
-    width:60px;
-    height:1px;
+            font-weight: 300;
+        }
 
-    background:#666;
 
-    margin:30px 0;
-}
+        .hero-scroll {
 
-.project-description {
+            position: absolute;
 
-    color:#b5b5b5;
+            bottom: 35px;
 
-    font-size:13px;
+            left: 50%;
 
-    line-height:2;
+            transform:
+                translateX(-50%);
 
-    max-width:520px;
-}
+            display: flex;
 
-.project-description::first-letter {
+            flex-direction: column;
 
-    font-family:var(--serif);
+            align-items: center;
 
-    font-size:42px;
+            gap: 12px;
 
-    float:left;
+            color: #666;
 
-    line-height:.8;
+            font-size: 8px;
 
-    padding:5px 8px 0 0;
+            letter-spacing: 4px;
 
-    color:#fff;
-}
+            text-transform: uppercase;
+        }
 
-.project-credits {
 
-    margin-top:38px;
+        .scroll-line {
 
-    padding-top:25px;
+            width: 1px;
 
-    border-top:1px solid var(--line);
+            height: 45px;
 
-    color:#666;
+            background:
+                linear-gradient(
+                    to bottom,
+                    #777,
+                    transparent
+                );
 
-    font-size:8px;
+            animation:
+                scrollPulse 2s
+                ease-in-out
+                infinite;
+        }
 
-    line-height:2.3;
 
-    letter-spacing:2px;
-}
+        @keyframes scrollPulse {
 
-.project-status {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(0.7);
+            }
 
-    margin-top:35px;
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
 
-    display:inline-flex;
 
-    align-items:center;
+        /* =========================================
+           GENERAL SECTION
+        ========================================== */
 
-    gap:10px;
+        .section {
 
-    color:#aaa;
+            position: relative;
 
-    font-size:8px;
+            padding:
+                130px 7%;
+        }
 
-    letter-spacing:3px;
 
-    text-transform:uppercase;
-}
+        .section-header {
 
-.status-dot {
+            text-align: center;
 
-    width:6px;
-    height:6px;
+            margin-bottom: 75px;
+        }
 
-    border-radius:50%;
 
-    background:#aaa;
+        .section-number {
 
-    box-shadow:0 0 10px rgba(255,255,255,.5);
+            display: block;
 
-    animation:statusBlink 2s infinite;
-}
+            color: #555;
 
-@keyframes statusBlink {
+            font-size: 8px;
 
-    0%,100% {
-        opacity:.4;
-    }
+            letter-spacing: 5px;
 
-    50% {
-        opacity:1;
-    }
-}
+            margin-bottom: 20px;
+        }
 
 
-/* ================================
-   OST LINK
-================================ */
+        .section-title {
 
-.ost-section {
+            font-family: var(--serif);
 
-    padding:110px 7%;
+            font-size:
+                clamp(30px, 5vw, 58px);
 
-    text-align:center;
+            font-weight: 400;
 
-    background:#070707;
+            letter-spacing:
+                clamp(4px, 0.8vw, 9px);
 
-    border-top:1px solid var(--line);
+            text-transform: uppercase;
+        }
 
-    border-bottom:1px solid var(--line);
-}
 
-.ost-label {
+        .section-subtitle {
 
-    color:#555;
+            margin-top: 20px;
 
-    font-size:8px;
+            color: #777;
 
-    letter-spacing:5px;
+            font-size: 10px;
 
-    text-transform:uppercase;
+            letter-spacing: 4px;
 
-    margin-bottom:20px;
-}
+            text-transform: uppercase;
+        }
 
-.ost-title {
 
-    font-family:var(--serif);
+        /* =========================================
+           PROJECTS
+        ========================================== */
 
-    font-size:clamp(30px,5vw,55px);
+        #projects {
 
-    font-weight:400;
+            background:
+                linear-gradient(
+                    180deg,
+                    #050505,
+                    #090909
+                );
+        }
 
-    letter-spacing:5px;
-}
 
-.ost-description {
+        .project-card {
 
-    margin:20px auto 35px;
+            max-width: 1200px;
 
-    max-width:600px;
+            margin: 0 auto;
 
-    color:#777;
+            display: grid;
 
-    font-size:11px;
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(0, 0.95fr);
 
-    line-height:2;
+            background: #0a0a0a;
 
-    letter-spacing:2px;
-}
+            border:
+                1px solid
+                var(--line);
 
-.ost-button {
+            overflow: hidden;
 
-    display:inline-flex;
+            opacity: 0;
 
-    align-items:center;
+            transform:
+                translateY(40px);
 
-    justify-content:center;
+            transition:
+                opacity 1s ease,
+                transform 1s
+                cubic-bezier(.16,1,.3,1),
+                border-color 0.4s ease;
+        }
 
-    padding:15px 30px;
 
-    border:1px solid rgba(255,255,255,.25);
+        .project-card.visible {
 
-    color:#ddd;
+            opacity: 1;
 
-    font-size:8px;
+            transform:
+                translateY(0);
+        }
 
-    letter-spacing:4px;
 
-    text-transform:uppercase;
+        .project-card:hover {
 
-    transition:.3s ease;
-}
+            border-color:
+                var(--line-strong);
 
-.ost-button:hover {
+            transform:
+                translateY(-7px);
+        }
 
-    background:#fff;
 
-    color:#000;
+        .project-poster {
 
-    border-color:#fff;
+            position: relative;
 
-    transform:translateY(-3px);
-}
+            min-height: 620px;
 
+            overflow: hidden;
 
-/* ================================
-   FUTURE
-================================ */
+            background: #000;
+        }
 
-.future-section {
 
-    min-height:55vh;
+        .project-poster img {
 
-    display:flex;
+            width: 100%;
 
-    align-items:center;
+            height: 100%;
 
-    justify-content:center;
+            object-fit: cover;
 
-    text-align:center;
+            transition:
+                transform 1.2s
+                cubic-bezier(.16,1,.3,1);
+        }
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            #111 0%,
-            #050505 65%
-        );
 
-    border-bottom:1px solid var(--line);
-}
+        .project-poster::after {
 
-.future-content {
-    max-width:800px;
-}
+            content: "";
 
-.future-symbol {
+            position: absolute;
 
-    width:55px;
-    height:55px;
+            inset: 0;
 
-    margin:0 auto 35px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 65%,
+                    rgba(0,0,0,0.25)
+                );
 
-    border:1px solid #444;
+            pointer-events: none;
+        }
 
-    border-radius:50%;
 
-    display:flex;
+        .project-card:hover
+        .project-poster img {
 
-    align-items:center;
-    justify-content:center;
+            transform:
+                scale(1.045);
+        }
 
-    color:#777;
 
-    font-family:var(--serif);
+        .project-details {
 
-    font-size:20px;
-}
+            display: flex;
 
-.future-title {
+            flex-direction: column;
 
-    font-family:var(--serif);
+            justify-content: center;
 
-    font-size:clamp(30px,6vw,65px);
+            padding:
+                clamp(35px, 5vw, 70px);
+        }
 
-    font-weight:400;
 
-    letter-spacing:clamp(4px,1vw,10px);
-}
+        .project-type {
 
-.future-line {
+            color: #777;
 
-    width:70px;
-    height:1px;
+            font-size: 8px;
 
-    background:#555;
+            letter-spacing: 4px;
 
-    margin:30px auto;
-}
+            text-transform: uppercase;
 
-.future-text {
+            margin-bottom: 22px;
+        }
 
-    color:#777;
 
-    font-size:10px;
+        .project-title {
 
-    letter-spacing:4px;
+            font-family: var(--serif);
 
-    text-transform:uppercase;
+            font-size:
+                clamp(38px, 5vw, 68px);
 
-    line-height:2;
-}
+            font-weight: 400;
 
-.coming-soon {
+            letter-spacing: 4px;
 
-    display:inline-block;
+            line-height: 1.05;
+        }
 
-    margin-top:35px;
 
-    padding:13px 28px;
+        .project-subtitle {
 
-    border:1px solid rgba(255,255,255,.18);
+            margin-top: 13px;
 
-    color:#999;
+            color: #aaa;
 
-    font-size:8px;
+            font-size: 11px;
 
-    letter-spacing:4px;
+            letter-spacing: 5px;
 
-    text-transform:uppercase;
-}
+            text-transform: uppercase;
+        }
 
 
-/* ================================
-   ABOUT
-================================ */
+        .project-rule {
 
-#about {
-    background:#050505;
-}
+            width: 60px;
 
-.about-container {
+            height: 1px;
 
-    max-width:900px;
+            background: #666;
 
-    margin:0 auto;
+            margin:
+                30px 0;
+        }
 
-    text-align:center;
 
-    opacity:0;
+        .project-description {
 
-    transform:translateY(30px);
+            color: #b5b5b5;
 
-    transition:1s ease;
-}
+            font-size: 13px;
 
-.about-container.visible {
+            line-height: 2;
 
-    opacity:1;
+            max-width: 520px;
+        }
 
-    transform:translateY(0);
-}
 
-.about-lead {
+        .project-description::first-letter {
 
-    font-family:var(--serif);
+            font-family: var(--serif);
 
-    font-size:clamp(22px,3vw,34px);
+            font-size: 42px;
 
-    line-height:1.6;
+            float: left;
 
-    color:#ddd;
+            line-height: 0.8;
 
-    letter-spacing:1px;
-}
+            padding:
+                5px 8px 0 0;
 
-.about-text {
+            color: #fff;
+        }
 
-    margin-top:35px;
 
-    color:#888;
+        .project-credits {
 
-    font-size:13px;
+            margin-top: 38px;
 
-    line-height:2.1;
-}
+            padding-top: 25px;
 
-.about-motto {
+            border-top:
+                1px solid
+                var(--line);
 
-    margin-top:45px;
+            color: #666;
 
-    font-family:var(--serif);
+            font-size: 8px;
 
-    font-size:11px;
+            line-height: 2.3;
 
-    letter-spacing:5px;
+            letter-spacing: 2px;
+        }
 
-    color:#aaa;
 
-    text-transform:uppercase;
-}
+        .project-status {
 
+            margin-top: 35px;
 
-/* ================================
-   MEMBERS
-================================ */
+            display: inline-flex;
 
-#members {
+            align-items: center;
 
-    background:
-        linear-gradient(
-            180deg,
-            #050505,
-            #080808
-        );
-}
+            gap: 10px;
 
-.members-container {
+            color: #aaa;
 
-    max-width:900px;
+            font-size: 8px;
 
-    margin:0 auto;
-}
+            letter-spacing: 3px;
 
-.members-grid {
+            text-transform: uppercase;
+        }
 
-    display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+        .status-dot {
 
-    border-top:1px solid var(--line);
+            width: 6px;
 
-    border-left:1px solid var(--line);
-}
+            height: 6px;
 
-.member {
+            border-radius: 50%;
 
-    min-height:170px;
+            background: #aaa;
 
-    display:flex;
+            box-shadow:
+                0 0 10px
+                rgba(255,255,255,0.5);
 
-    align-items:center;
+            animation:
+                statusBlink 2s
+                infinite;
+        }
 
-    justify-content:center;
 
-    flex-direction:column;
+        @keyframes statusBlink {
 
-    text-align:center;
+            0%,
+            100% {
+                opacity: 0.4;
+            }
 
-    padding:30px;
+            50% {
+                opacity: 1;
+            }
+        }
 
-    border-right:1px solid var(--line);
 
-    border-bottom:1px solid var(--line);
+        /* =========================================
+           ORIGINAL SCORES
+        ========================================== */
 
-    transition:.4s ease;
-}
+        #scores {
 
-.member:hover {
+            background:
+                #070707;
+        }
 
-    background:rgba(255,255,255,.025);
-}
 
-.member-number {
+        .scores-container {
 
-    color:#444;
+            max-width: 1000px;
 
-    font-family:var(--serif);
+            margin: 0 auto;
+        }
 
-    font-size:12px;
 
-    margin-bottom:15px;
-}
+        .scores-intro {
 
-.member-name {
+            text-align: center;
 
-    font-family:var(--serif);
+            max-width: 650px;
 
-    color:#ddd;
+            margin:
+                0 auto 60px;
+        }
 
-    font-size:clamp(17px,2.5vw,24px);
 
-    font-weight:400;
+        .scores-project {
 
-    letter-spacing:2px;
-}
+            font-family: var(--serif);
 
-.member-line {
+            font-size:
+                clamp(27px, 5vw, 48px);
 
-    width:35px;
-    height:1px;
+            letter-spacing: 4px;
 
-    background:#555;
+            font-weight: 400;
+        }
 
-    margin-top:15px;
-}
 
+        .scores-subtitle {
 
-/* ================================
-   FOOTER
-================================ */
+            margin-top: 12px;
 
-footer {
+            color: #777;
 
-    padding:80px 25px 40px;
+            font-size: 9px;
 
-    text-align:center;
+            letter-spacing: 4px;
 
-    background:#000;
+            text-transform: uppercase;
+        }
 
-    border-top:1px solid var(--line);
-}
 
-.footer-logo {
+        .score-list {
 
-    width:75px;
+            border-top:
+                1px solid
+                var(--line);
+        }
 
-    margin:0 auto 25px;
 
-    opacity:.9;
-}
+        .score-track {
 
-.footer-name {
+            position: relative;
 
-    font-family:var(--serif);
+            display: grid;
 
-    font-size:14px;
+            grid-template-columns:
+                55px
+                1fr
+                auto;
 
-    letter-spacing:6px;
+            align-items: center;
 
-    font-weight:400;
-}
+            gap: 20px;
 
-.footer-tagline {
+            padding:
+                28px 0;
 
-    margin-top:15px;
+            border-bottom:
+                1px solid
+                var(--line);
 
-    color:#555;
+            transition:
+                padding 0.3s ease;
+        }
 
-    font-size:8px;
 
-    letter-spacing:4px;
+        .score-track:hover {
 
-    text-transform:uppercase;
-}
+            padding-left: 10px;
 
-.footer-line {
+            padding-right: 10px;
 
-    width:50px;
-    height:1px;
+            background:
+                rgba(255,255,255,0.015);
+        }
 
-    background:#333;
 
-    margin:35px auto;
-}
+        .track-number {
 
-.copyright {
+            color: #444;
 
-    color:#444;
+            font-family: var(--serif);
 
-    font-size:8px;
+            font-size: 15px;
 
-    letter-spacing:2px;
+            letter-spacing: 2px;
+        }
 
-    text-transform:uppercase;
-}
 
+        .track-info {
 
-/* ================================
-   TOP BUTTON
-================================ */
+            min-width: 0;
+        }
 
-#top-button {
 
-    position:fixed;
+        .track-title {
 
-    right:25px;
-    bottom:25px;
+            display: block;
 
-    width:42px;
-    height:42px;
+            color: #e6e6e6;
 
-    display:flex;
+            font-size: 10px;
 
-    align-items:center;
-    justify-content:center;
+            letter-spacing: 3px;
 
-    border:1px solid rgba(255,255,255,.2);
+            text-transform: uppercase;
 
-    background:rgba(0,0,0,.7);
+            white-space: nowrap;
 
-    color:#aaa;
+            overflow: hidden;
 
-    cursor:pointer;
+            text-overflow: ellipsis;
+        }
 
-    opacity:0;
 
-    visibility:hidden;
+        .track-label {
 
-    transition:.3s ease;
+            display: block;
 
-    z-index:4000;
-}
+            margin-top: 8px;
 
-#top-button.show {
+            color: #555;
 
-    opacity:1;
+            font-size: 7px;
 
-    visibility:visible;
-}
+            letter-spacing: 2px;
 
-#top-button:hover {
+            text-transform: uppercase;
+        }
 
-    color:#fff;
 
-    border-color:#777;
-}
+        .track-player {
 
+            display: flex;
 
-/* ================================
-   MOBILE
-================================ */
+            align-items: center;
 
-@media(max-width:850px) {
+            gap: 14px;
+        }
 
-    .navbar {
 
-        height:70px;
+        /* =========================================
+           PURE BLACK / WHITE PLAY BUTTON
+        ========================================== */
 
-        padding:0 5%;
-    }
+        .play-button {
 
-    .nav-name {
-        display:none;
-    }
+            width: 42px;
 
-    .nav-logo {
+            height: 42px;
 
-        width:40px;
-        height:40px;
-    }
+            flex-shrink: 0;
 
-    .nav-links {
+            border:
+                1px solid
+                #ffffff;
 
-        gap:18px;
-    }
+            border-radius: 50%;
 
-    .nav-links a {
+            background: #000000;
 
-        font-size:8px;
+            color: #ffffff;
 
-        letter-spacing:2px;
-    }
+            cursor: pointer;
 
-    .hero {
+            display: flex;
 
-        padding:130px 20px 80px;
-    }
+            align-items: center;
 
-    .hero-logo {
+            justify-content: center;
 
-        width:min(220px,60vw);
+            font-size: 12px;
 
-        margin-bottom:35px;
-    }
+            padding-left: 2px;
 
-    .section {
+            appearance: none;
 
-        padding:90px 5%;
-    }
+            -webkit-appearance: none;
 
-    .section-header {
+            -webkit-tap-highlight-color: transparent;
 
-        margin-bottom:50px;
-    }
+            outline: none;
 
-    .project-card {
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
 
-        grid-template-columns:1fr;
-    }
 
-    .project-poster {
+        .play-button:hover {
 
-        min-height:auto;
+            background: #ffffff;
 
-        aspect-ratio:2/3;
-    }
+            color: #000000;
 
-    .project-details {
+            border-color: #ffffff;
 
-        padding:38px 25px 45px;
-    }
+            transform:
+                scale(1.05);
+        }
 
-    .score-track {
 
-        grid-template-columns:35px 1fr;
-    }
+        .play-button:focus {
 
-    .members-grid {
+            outline: none;
 
-        grid-template-columns:1fr;
-    }
+            background: #000000;
 
-    #skip-intro {
+            color: #ffffff;
 
-        right:18px;
-        bottom:18px;
+            border-color: #ffffff;
+        }
 
-        padding:11px 17px;
-    }
-}
 
-@media(max-width:480px) {
+        .play-button:active {
 
-    .nav-links {
-        gap:12px;
-    }
+            background: #ffffff;
 
-    .nav-links a {
+            color: #000000;
 
-        font-size:7px;
+            border-color: #ffffff;
+        }
 
-        letter-spacing:1.5px;
-    }
 
-    .hero-title {
+        .track-progress-wrap {
 
-        font-size:38px;
+            width:
+                clamp(90px, 15vw, 170px);
+        }
 
-        letter-spacing:5px;
-    }
 
-    .hero-tagline {
+        .track-progress {
 
-        font-size:9px;
+            width: 100%;
 
-        letter-spacing:3px;
+            height: 2px;
 
-        line-height:2;
-    }
+            background: #333;
 
-    .project-title {
+            cursor: pointer;
 
-        font-size:36px;
+            appearance: none;
 
-        letter-spacing:2px;
-    }
-}
+            -webkit-appearance: none;
 
-@media(prefers-reduced-motion:reduce) {
+            outline: none;
+        }
 
-    html {
-        scroll-behavior:auto;
-    }
 
-    *,
-    *::before,
-    *::after {
+        .track-progress::-webkit-slider-thumb {
 
-        animation-duration:.01ms!important;
+            appearance: none;
 
-        animation-iteration-count:1!important;
+            -webkit-appearance: none;
 
-        transition-duration:.01ms!important;
-    }
-}
+            width: 7px;
 
-</style>
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            cursor: pointer;
+        }
+
+
+        .track-progress::-moz-range-thumb {
+
+            width: 7px;
+
+            height: 7px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            cursor: pointer;
+        }
+
+
+        .track-time {
+
+            margin-top: 7px;
+
+            color: #555;
+
+            font-size: 7px;
+
+            letter-spacing: 1px;
+
+            text-align: right;
+        }
+
+
+        .track-audio {
+
+            display: none;
+        }
+
+
+        .composer-credit {
+
+            margin-top: 55px;
+
+            text-align: center;
+
+            padding-top: 30px;
+
+            border-top:
+                1px solid
+                var(--line);
+        }
+
+
+        .composer-label {
+
+            display: block;
+
+            color: #555;
+
+            font-size: 7px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+
+        .composer-name {
+
+            font-family: var(--serif);
+
+            color: #bbb;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+        }
+
+
+        /* =========================================
+           STUDIO DIVIDER
+        ========================================== */
+
+        .studio-divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            max-width: 700px;
+
+            margin:
+                0 auto;
+        }
+
+
+        .studio-divider span {
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                var(--line);
+        }
+
+
+        .studio-divider i {
+
+            width: 7px;
+
+            height: 7px;
+
+            border:
+                1px solid #777;
+
+            transform:
+                rotate(45deg);
+        }
+
+
+        /* =========================================
+           FUTURE PROJECTS
+        ========================================== */
+
+        .future-section {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #111111 0%,
+                    #050505 65%
+                );
+
+            border-top:
+                1px solid
+                var(--line);
+
+            border-bottom:
+                1px solid
+                var(--line);
+        }
+
+
+        .future-content {
+
+            max-width: 800px;
+        }
+
+
+        .future-symbol {
+
+            width: 55px;
+
+            height: 55px;
+
+            margin:
+                0 auto 35px;
+
+            border:
+                1px solid
+                #444;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #777;
+
+            font-family: var(--serif);
+
+            font-size: 20px;
+
+            animation:
+                futureRotate 12s
+                linear
+                infinite;
+        }
+
+
+        @keyframes futureRotate {
+
+            from {
+                transform:
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+
+        .future-title {
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(30px, 6vw, 65px);
+
+            font-weight: 400;
+
+            letter-spacing:
+                clamp(4px, 1vw, 10px);
+        }
+
+
+        .future-line {
+
+            width: 70px;
+
+            height: 1px;
+
+            background: #555;
+
+            margin:
+                30px auto;
+        }
+
+
+        .future-text {
+
+            color: #777;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            line-height: 2;
+        }
+
+
+        .coming-soon {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                13px 28px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            color: #999;
+
+            font-size: 8px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================== */
+
+        #about {
+
+            background: #050505;
+        }
+
+
+        .about-container {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        .about-container.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .about-lead {
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(22px, 3vw, 34px);
+
+            line-height: 1.6;
+
+            color: #ddd;
+
+            letter-spacing: 1px;
+        }
+
+
+        .about-text {
+
+            margin-top: 35px;
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 2.1;
+        }
+
+
+        .about-motto {
+
+            margin-top: 45px;
+
+            font-family: var(--serif);
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            color: #aaa;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           MEMBERS
+        ========================================== */
+
+        #members {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #050505,
+                    #080808
+                );
+        }
+
+
+        .members-container {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+        }
+
+
+        .members-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            border-top:
+                1px solid
+                var(--line);
+
+            border-left:
+                1px solid
+                var(--line);
+        }
+
+
+        .member {
+
+            min-height: 170px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            text-align: center;
+
+            padding: 30px;
+
+            border-right:
+                1px solid
+                var(--line);
+
+            border-bottom:
+                1px solid
+                var(--line);
+
+            transition:
+                background 0.4s ease;
+        }
+
+
+        .member:hover {
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .member-number {
+
+            color: #444;
+
+            font-family: var(--serif);
+
+            font-size: 12px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .member-name {
+
+            font-family: var(--serif);
+
+            color: #ddd;
+
+            font-size:
+                clamp(17px, 2.5vw, 24px);
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+        }
+
+
+        .member-line {
+
+            width: 35px;
+
+            height: 1px;
+
+            background: #555;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+
+            padding:
+                80px 25px 40px;
+
+            text-align: center;
+
+            background: #000;
+
+            border-top:
+                1px solid
+                var(--line);
+        }
+
+
+        .footer-logo {
+
+            width: 75px;
+
+            margin:
+                0 auto 25px;
+
+            opacity: 0.9;
+        }
+
+
+        .footer-name {
+
+            font-family: var(--serif);
+
+            font-size: 14px;
+
+            letter-spacing: 6px;
+
+            font-weight: 400;
+        }
+
+
+        .footer-tagline {
+
+            margin-top: 15px;
+
+            color: #555;
+
+            font-size: 8px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .footer-line {
+
+            width: 50px;
+
+            height: 1px;
+
+            background: #333;
+
+            margin:
+                35px auto;
+        }
+
+
+        .copyright {
+
+            color: #444;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
+
+        #top-button {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
+
+            background:
+                rgba(0,0,0,0.7);
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                all 0.3s ease;
+
+            z-index: 4000;
+        }
+
+
+        #top-button.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        #top-button:hover {
+
+            color: #fff;
+
+            border-color: #777;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+
+                height: 70px;
+
+                padding:
+                    0 5%;
+            }
+
+
+            .nav-name {
+
+                display: none;
+            }
+
+
+            .nav-logo {
+
+                width: 40px;
+
+                height: 40px;
+            }
+
+
+            .nav-links {
+
+                gap: 18px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .hero {
+
+                padding:
+                    130px 20px
+                    80px;
+            }
+
+
+            .hero-logo {
+
+                width:
+                    min(220px, 60vw);
+
+                margin-bottom: 35px;
+            }
+
+
+            .hero-scroll {
+
+                bottom: 20px;
+            }
+
+
+            .section {
+
+                padding:
+                    90px 5%;
+            }
+
+
+            .section-header {
+
+                margin-bottom: 50px;
+            }
+
+
+            .project-card {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-poster {
+
+                min-height: auto;
+
+                aspect-ratio:
+                    2 / 3;
+            }
+
+
+            .project-details {
+
+                padding:
+                    38px 25px 45px;
+            }
+
+
+            .project-title {
+
+                font-size: 42px;
+            }
+
+
+            .project-description {
+
+                font-size: 13px;
+            }
+
+
+            .future-section {
+
+                min-height: 50vh;
+
+                padding:
+                    80px 25px;
+            }
+
+
+            .score-track {
+
+                grid-template-columns:
+                    35px
+                    1fr;
+            }
+
+
+            .track-player {
+
+                grid-column:
+                    2 / 3;
+
+                width: 100%;
+
+                margin-top: 10px;
+            }
+
+
+            .track-progress-wrap {
+
+                flex: 1;
+
+                width: auto;
+            }
+
+
+            .members-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            #skip-intro {
+
+                right: 18px;
+
+                bottom: 18px;
+
+                padding:
+                    11px 17px;
+            }
+        }
+
+
+        /* =========================================
+           SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 480px) {
+
+            .nav-links {
+
+                gap: 12px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 7px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            .hero-title {
+
+                font-size: 38px;
+
+                letter-spacing: 5px;
+            }
+
+
+            .hero-tagline {
+
+                font-size: 9px;
+
+                letter-spacing: 3px;
+
+                line-height: 2;
+            }
+
+
+            .project-title {
+
+                font-size: 36px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .project-subtitle {
+
+                letter-spacing: 3px;
+            }
+
+
+            .project-credits {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            .track-title {
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .composer-name {
+
+                font-size: 12px;
+
+                letter-spacing: 3px;
+            }
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
 
 </head>
 
@@ -1519,767 +2336,1645 @@ footer {
 <body>
 
 
-<!-- =========================================
-     INTRO
-========================================= -->
+    <!-- =========================================
+         10 SECOND TRIOVISION INTRO
+    ========================================== -->
 
-<div id="intro-screen">
+    <div id="intro-screen">
 
-    <video
-        id="intro-video"
-        autoplay
-        muted
-        playsinline
-        preload="auto">
+        <video
+            id="intro-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Triovision Studios opening animation">
 
-        <source
-            src="intro.mp4"
-            type="video/mp4">
+            <source
+                src="intro.mp4"
+                type="video/mp4">
 
-    </video>
+        </video>
 
-    <div class="intro-fallback">
 
-        <img
-            src="logo.png"
-            alt="Triovision Studios">
+        <div class="intro-fallback">
 
-        <p>
-            Triovision Studios
-        </p>
+            <img
+                src="logo.png"
+                alt="Triovision Studios">
+
+            <p>
+                Triovision Studios
+            </p>
+
+        </div>
+
+
+        <!-- SKIP INTRO -->
+
+        <button
+            id="skip-intro"
+            type="button">
+
+            Skip Intro
+
+        </button>
 
     </div>
 
-    <button
-        id="skip-intro"
-        type="button">
 
-        Skip Intro
+    <!-- =========================================
+         PAGE LOADER
+    ========================================== -->
 
-    </button>
-
-</div>
+    <div id="page-loader"></div>
 
 
-<div id="page-loader"></div>
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <header
+        class="navbar"
+        id="navbar">
+
+        <a
+            href="#home"
+            class="nav-brand"
+            aria-label="Triovision Studios Home">
+
+            <img
+                src="logo.png"
+                alt="Triovision Studios Logo"
+                class="nav-logo">
+
+            <span class="nav-name">
+                TRIOVISION STUDIOS
+            </span>
+
+        </a>
 
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+        <nav>
 
-<header
-    class="navbar"
-    id="navbar">
+            <ul class="nav-links">
 
-    <a
-        href="#home"
-        class="nav-brand">
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#scores">
+                        Scores
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        Studio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#members">
+                        Members
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="hero-content">
+
+                <img
+                    src="logo.png"
+                    alt="Triovision Studios"
+                    class="hero-logo">
+
+
+                <h1 class="hero-title">
+                    TRIOVISION
+                </h1>
+
+
+                <div class="hero-divider"></div>
+
+
+                <p class="hero-tagline">
+                    Visionary Farms of Imagination
+                </p>
+
+            </div>
+
+
+            <div class="hero-scroll">
+
+                <span>
+                    Explore
+                </span>
+
+                <div class="scroll-line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PROJECTS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="projects">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01 / PROJECTS
+                </span>
+
+                <h2 class="section-title">
+                    Current Project
+                </h2>
+
+                <p class="section-subtitle">
+                    Stories currently in creation
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 SWAN-MERE
+            ================================== -->
+
+            <article
+                class="project-card"
+                id="swan-mere">
+
+
+                <div class="project-poster">
+
+                    <img
+                        src="swan-mere.png"
+                        alt="SWAN-MERE — Echoes of Hearts poster"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="project-details">
+
+
+                    <span class="project-type">
+
+                        A TRIOVISION STUDIOS
+                        ORIGINAL FILM
+
+                    </span>
+
+
+                    <h3 class="project-title">
+                        SWAN-MERE
+                    </h3>
+
+
+                    <p class="project-subtitle">
+                        Echoes of Hearts
+                    </p>
+
+
+                    <div class="project-rule"></div>
+
+
+                    <p class="project-description">
+
+                        A wounded swan journeys through
+                        love, betrayal, and loss, only to
+                        discover that true healing means
+                        choosing herself and learning to
+                        fly free.
+
+                    </p>
+
+
+                    <div class="project-credits">
+
+                        SCREENPLAY BY SUVESH.B
+
+                        <br>
+
+                        WRITTEN AND DIRECTED BY
+                        SUVESH.B
+
+                        <br>
+
+                        MUSIC COMPOSER
+                        M.D. NISHANTH
+
+                        <br>
+
+                        ASSOCIATE DIRECTOR
+                        M.G. ASWATH NANDHAN
+
+                    </div>
+
+
+                    <div class="project-status">
+
+                        <span class="status-dot"></span>
+
+                        CURRENT PROJECT
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================
+             ORIGINAL SCORES
+        ====================================== -->
+
+        <section
+            class="section"
+            id="scores">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    03 / ORIGINAL SCORES
+                </span>
+
+                <h2 class="section-title">
+                    Original Scores
+                </h2>
+
+                <p class="section-subtitle">
+                    Music from the world of SWAN-MERE
+                </p>
+
+            </div>
+
+
+            <div class="scores-container">
+
+
+                <div class="scores-intro">
+
+                    <h3 class="scores-project">
+                        SWAN-MERE
+                    </h3>
+
+                    <p class="scores-subtitle">
+                        Original Motion Picture Soundtrack
+                    </p>
+
+                </div>
+
+
+                <div class="score-list">
+
+
+                    <!-- TRACK 01 -->
+
+                    <article class="score-track">
+
+                        <span class="track-number">
+                            01
+                        </span>
+
+
+                        <div class="track-info">
+
+                            <span class="track-title">
+                                Echoes of the Misty Lake
+                            </span>
+
+                            <span class="track-label">
+                                Original Score
+                            </span>
+
+                        </div>
+
+
+                        <div class="track-player">
+
+                            <button
+                                class="play-button"
+                                type="button"
+                                aria-label="Play Echoes of the Misty Lake">
+
+                                ▶
+
+                            </button>
+
+
+                            <div class="track-progress-wrap">
+
+                                <input
+                                    class="track-progress"
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    step="0.1"
+                                    aria-label="Track progress">
+
+                                <div class="track-time">
+                                    00:00
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <audio
+                            class="track-audio"
+                            preload="metadata">
+
+                            <source
+                                src="Echoes%20of%20the%20Misty%20Lake.mp3"
+                                type="audio/mpeg">
+
+                        </audio>
+
+                    </article>
+
+
+                    <!-- TRACK 02 -->
+
+                    <article class="score-track">
+
+                        <span class="track-number">
+                            02
+                        </span>
+
+
+                        <div class="track-info">
+
+                            <span class="track-title">
+                                Fading Pulse
+                            </span>
+
+                            <span class="track-label">
+                                Original Score
+                            </span>
+
+                        </div>
+
+
+                        <div class="track-player">
+
+                            <button
+                                class="play-button"
+                                type="button"
+                                aria-label="Play Fading Pulse">
+
+                                ▶
+
+                            </button>
+
+
+                            <div class="track-progress-wrap">
+
+                                <input
+                                    class="track-progress"
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    step="0.1"
+                                    aria-label="Track progress">
+
+                                <div class="track-time">
+                                    00:00
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <audio
+                            class="track-audio"
+                            preload="metadata">
+
+                            <source
+                                src="Fading%20Pulse%20%282%29.mp3"
+                                type="audio/mpeg">
+
+                        </audio>
+
+                    </article>
+
+
+                    <!-- TRACK 03 -->
+
+                    <article class="score-track">
+
+                        <span class="track-number">
+                            03
+                        </span>
+
+
+                        <div class="track-info">
+
+                            <span class="track-title">
+                                Swans at Golden Dawn
+                            </span>
+
+                            <span class="track-label">
+                                Original Score
+                            </span>
+
+                        </div>
+
+
+                        <div class="track-player">
+
+                            <button
+                                class="play-button"
+                                type="button"
+                                aria-label="Play Swans at Golden Dawn">
+
+                                ▶
+
+                            </button>
+
+
+                            <div class="track-progress-wrap">
+
+                                <input
+                                    class="track-progress"
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    step="0.1"
+                                    aria-label="Track progress">
+
+                                <div class="track-time">
+                                    00:00
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <audio
+                            class="track-audio"
+                            preload="metadata">
+
+                            <source
+                                src="Swans%20at%20Golden%20Dawn.mp3"
+                                type="audio/mpeg">
+
+                        </audio>
+
+                    </article>
+
+
+                    <!-- TRACK 04 -->
+
+                    <article class="score-track">
+
+                        <span class="track-number">
+                            04
+                        </span>
+
+
+                        <div class="track-info">
+
+                            <span class="track-title">
+                                The Lakes
+                            </span>
+
+                            <span class="track-label">
+                                Original Score
+                            </span>
+
+                        </div>
+
+
+                        <div class="track-player">
+
+                            <button
+                                class="play-button"
+                                type="button"
+                                aria-label="Play The Lakes">
+
+                                ▶
+
+                            </button>
+
+
+                            <div class="track-progress-wrap">
+
+                                <input
+                                    class="track-progress"
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    step="0.1"
+                                    aria-label="Track progress">
+
+                                <div class="track-time">
+                                    00:00
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <audio
+                            class="track-audio"
+                            preload="metadata">
+
+                            <source
+                                src="The%20Lakes.mp3"
+                                type="audio/mpeg">
+
+                        </audio>
+
+                    </article>
+
+
+                    <!-- TRACK 05 -->
+
+                    <article class="score-track">
+
+                        <span class="track-number">
+                            05
+                        </span>
+
+
+                        <div class="track-info">
+
+                            <span class="track-title">
+                                The Last Golden Hour
+                            </span>
+
+                            <span class="track-label">
+                                Original Score
+                            </span>
+
+                        </div>
+
+
+                        <div class="track-player">
+
+                            <button
+                                class="play-button"
+                                type="button"
+                                aria-label="Play The Last Golden Hour">
+
+                                ▶
+
+                            </button>
+
+
+                            <div class="track-progress-wrap">
+
+                                <input
+                                    class="track-progress"
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    step="0.1"
+                                    aria-label="Track progress">
+
+                                <div class="track-time">
+                                    00:00
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <audio
+                            class="track-audio"
+                            preload="metadata">
+
+                            <source
+                                src="The%20Last%20Golden%20Hour.mp3"
+                                type="audio/mpeg">
+
+                        </audio>
+
+                    </article>
+
+                </div>
+
+
+                <!-- COMPOSER -->
+
+                <div class="composer-credit">
+
+                    <span class="composer-label">
+                        Music Composer
+                    </span>
+
+                    <span class="composer-name">
+                        M.D. NISHANTH
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DIVIDER
+        ====================================== -->
+
+        <div class="studio-divider">
+
+            <span></span>
+
+            <i></i>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- =====================================
+             FUTURE PROJECTS
+        ====================================== -->
+
+        <section
+            class="future-section"
+            id="future">
+
+
+            <div class="future-content">
+
+
+                <div class="future-symbol">
+                    +
+                </div>
+
+
+                <h2 class="future-title">
+                    Future Projects
+                </h2>
+
+
+                <div class="future-line"></div>
+
+
+                <p class="future-text">
+
+                    New worlds are taking shape.
+
+                    <br>
+
+                    More stories are coming soon.
+
+                </p>
+
+
+                <span class="coming-soon">
+
+                    Coming Soon
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ABOUT THE STUDIO
+        ====================================== -->
+
+        <section
+            class="section"
+            id="about">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    02 / THE STUDIO
+                </span>
+
+                <h2 class="section-title">
+                    Triovision Studios
+                </h2>
+
+                <p class="section-subtitle">
+                    Visionary Farms of Imagination
+                </p>
+
+            </div>
+
+
+            <div class="about-container">
+
+
+                <p class="about-lead">
+
+                    We imagine worlds.
+
+                    <br>
+
+                    We build stories.
+
+                    <br>
+
+                    We create visions.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    Triovision Studios is a creative
+                    studio focused on developing
+                    original stories, cinematic worlds
+                    and imaginative experiences.
+
+                    <br><br>
+
+                    Every project begins as an idea.
+                    Every idea has a world waiting
+                    to be discovered.
+
+                </p>
+
+
+                <p class="about-motto">
+
+                    Visionary Farms of Imagination
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MEMBERS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="members">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    04 / THE MEMBERS
+                </span>
+
+                <h2 class="section-title">
+                    Members
+                </h2>
+
+                <p class="section-subtitle">
+                    The people building the worlds
+                </p>
+
+            </div>
+
+
+            <div class="members-container">
+
+                <div class="members-grid">
+
+
+                    <!-- MEMBER 01 -->
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            01
+                        </span>
+
+                        <h3 class="member-name">
+                            Suvesh.B
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                    <!-- MEMBER 02 -->
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            02
+                        </span>
+
+                        <h3 class="member-name">
+                            M.G. Aswath Nandhan
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                    <!-- MEMBER 03 -->
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            03
+                        </span>
+
+                        <h3 class="member-name">
+                            Ritheesh Kumar
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                    <!-- MEMBER 04 -->
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            04
+                        </span>
+
+                        <h3 class="member-name">
+                            Nishanth.M.D
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
 
         <img
             src="logo.png"
             alt="Triovision Studios Logo"
-            class="nav-logo">
+            class="footer-logo">
 
-        <span class="nav-name">
+
+        <h3 class="footer-name">
             TRIOVISION STUDIOS
-        </span>
-
-    </a>
-
-    <nav>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#home">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="ost.html">
-                    OST
-                </a>
-            </li>
-
-            <li>
-                <a href="#about">
-                    Studio
-                </a>
-            </li>
-
-            <li>
-                <a href="#members">
-                    Members
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-</header>
+        </h3>
 
 
-<main>
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<section
-    class="hero"
-    id="home">
-
-    <div class="hero-content">
-
-        <img
-            src="logo.png"
-            alt="Triovision Studios"
-            class="hero-logo">
-
-        <h1 class="hero-title">
-            TRIOVISION
-        </h1>
-
-        <div class="hero-divider"></div>
-
-        <p class="hero-tagline">
+        <p class="footer-tagline">
             Visionary Farms of Imagination
         </p>
 
-    </div>
 
-    <div class="hero-scroll">
+        <div class="footer-line"></div>
 
-        <span>
-            Explore
-        </span>
 
-        <div class="scroll-line"></div>
+        <p class="copyright">
 
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PROJECTS
-========================================= -->
-
-<section
-    class="section"
-    id="projects">
-
-    <div class="section-header">
-
-        <span class="section-number">
-            01 / PROJECTS
-        </span>
-
-        <h2 class="section-title">
-            Current Project
-        </h2>
-
-        <p class="section-subtitle">
-            Stories currently in creation
-        </p>
-
-    </div>
-
-
-    <article
-        class="project-card"
-        id="swan-mere">
-
-        <div class="project-poster">
-
-            <img
-                src="swan-mere.png"
-                alt="SWAN-MERE — Echoes of Hearts poster"
-                loading="lazy">
-
-        </div>
-
-        <div class="project-details">
-
-            <span class="project-type">
-                A TRIOVISION STUDIOS
-                ORIGINAL FILM
-            </span>
-
-            <h3 class="project-title">
-                SWAN-MERE
-            </h3>
-
-            <p class="project-subtitle">
-                Echoes of Hearts
-            </p>
-
-            <div class="project-rule"></div>
-
-            <p class="project-description">
-
-                A wounded swan journeys through
-                love, betrayal, and loss, only to
-                discover that true healing means
-                choosing herself and learning to
-                fly free.
-
-            </p>
-
-            <div class="project-credits">
-
-                SCREENPLAY BY SUVESH.B
-
-                <br>
-
-                WRITTEN AND DIRECTED BY SUVESH.B
-
-                <br>
-
-                MUSIC COMPOSER M.D. NISHANTH
-
-                <br>
-
-                ASSOCIATE DIRECTOR
-                M.G. ASWATH NANDHAN
-
-            </div>
-
-            <div class="project-status">
-
-                <span class="status-dot"></span>
-
-                CURRENT PROJECT
-
-            </div>
-
-        </div>
-
-    </article>
-
-</section>
-
-
-<!-- =========================================
-     OST
-========================================= -->
-
-<section class="ost-section">
-
-    <p class="ost-label">
-        02 / ORIGINAL MUSIC
-    </p>
-
-    <h2 class="ost-title">
-        SWAN-MERE OST
-    </h2>
-
-    <p class="ost-description">
-
-        Enter the musical world of SWAN-MERE.
-        Five original compositions created for
-        the story and its cinematic universe.
-
-    </p>
-
-    <a
-        href="ost.html"
-        class="ost-button">
-
-        Enter Original Soundtrack
-
-    </a>
-
-</section>
-
-
-<!-- =========================================
-     FUTURE
-========================================= -->
-
-<section
-    class="future-section"
-    id="future">
-
-    <div class="future-content">
-
-        <div class="future-symbol">
-            +
-        </div>
-
-        <h2 class="future-title">
-            Future Projects
-        </h2>
-
-        <div class="future-line"></div>
-
-        <p class="future-text">
-
-            New worlds are taking shape.
-
-            <br>
-
-            More stories are coming soon.
+            © 2026 Triovision Studios.
+            All rights reserved.
 
         </p>
 
-        <span class="coming-soon">
-            Coming Soon
-        </span>
+    </footer>
 
-    </div>
 
-</section>
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
 
+    <button
+        id="top-button"
+        type="button"
+        aria-label="Back to top">
 
-<!-- =========================================
-     ABOUT
-========================================= -->
+        ↑
 
-<section
-    class="section"
-    id="about">
+    </button>
 
-    <div class="section-header">
 
-        <span class="section-number">
-            03 / THE STUDIO
-        </span>
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
-        <h2 class="section-title">
-            Triovision Studios
-        </h2>
+    <script>
 
-        <p class="section-subtitle">
-            Visionary Farms of Imagination
-        </p>
+        "use strict";
 
-    </div>
 
-    <div class="about-container">
+        /* =========================================
+           ELEMENTS
+        ========================================== */
 
-        <p class="about-lead">
+        const introScreen =
+            document.getElementById("intro-screen");
 
-            We imagine worlds.
+        const introVideo =
+            document.getElementById("intro-video");
 
-            <br>
+        const skipIntro =
+            document.getElementById("skip-intro");
 
-            We build stories.
+        const pageLoader =
+            document.getElementById("page-loader");
 
-            <br>
+        const navbar =
+            document.getElementById("navbar");
 
-            We create visions.
+        const topButton =
+            document.getElementById("top-button");
 
-        </p>
+        const projectCard =
+            document.querySelector(".project-card");
 
-        <p class="about-text">
+        const aboutContainer =
+            document.querySelector(".about-container");
 
-            Triovision Studios is a creative
-            studio focused on developing
-            original stories, cinematic worlds
-            and imaginative experiences.
+        const memberCards =
+            document.querySelectorAll(".member");
 
-            <br><br>
+        const scoreTracks =
+            document.querySelectorAll(".score-track");
 
-            Every project begins as an idea.
-            Every idea has a world waiting
-            to be discovered.
 
-        </p>
+        /* =========================================
+           INTRO VIDEO
+        ========================================== */
 
-        <p class="about-motto">
+        let introClosed = false;
 
-            Visionary Farms of Imagination
 
-        </p>
+        function closeIntro() {
 
-    </div>
+            if (introClosed) {
+                return;
+            }
 
-</section>
+            introClosed = true;
 
+            introVideo.pause();
 
-<!-- =========================================
-     MEMBERS
-========================================= -->
+            introScreen.classList.add("hidden");
 
-<section
-    class="section"
-    id="members">
+        }
 
-    <div class="section-header">
 
-        <span class="section-number">
-            04 / THE MEMBERS
-        </span>
+        /*
+         * Close automatically when intro finishes.
+         */
 
-        <h2 class="section-title">
-            Members
-        </h2>
-
-        <p class="section-subtitle">
-            The people building the worlds
-        </p>
-
-    </div>
-
-    <div class="members-container">
-
-        <div class="members-grid">
-
-            <article class="member">
-
-                <span class="member-number">
-                    01
-                </span>
-
-                <h3 class="member-name">
-                    Suvesh.B
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-            <article class="member">
-
-                <span class="member-number">
-                    02
-                </span>
-
-                <h3 class="member-name">
-                    M.G. Aswath Nandhan
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-            <article class="member">
-
-                <span class="member-number">
-                    03
-                </span>
-
-                <h3 class="member-name">
-                    Ritheesh Kumar
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-            <article class="member">
-
-                <span class="member-number">
-                    04
-                </span>
-
-                <h3 class="member-name">
-                    Nishanth.M.D
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <img
-        src="logo.png"
-        alt="Triovision Studios Logo"
-        class="footer-logo">
-
-    <h3 class="footer-name">
-        TRIOVISION STUDIOS
-    </h3>
-
-    <p class="footer-tagline">
-        Visionary Farms of Imagination
-    </p>
-
-    <div class="footer-line"></div>
-
-    <p class="copyright">
-
-        © 2026 Triovision Studios.
-        All rights reserved.
-
-    </p>
-
-</footer>
-
-
-<button
-    id="top-button"
-    type="button"
-    aria-label="Back to top">
-
-    ↑
-
-</button>
-
-
-<script>
-
-"use strict";
-
-
-/* =========================================
-   ELEMENTS
-========================================= */
-
-const introScreen =
-    document.getElementById("intro-screen");
-
-const introVideo =
-    document.getElementById("intro-video");
-
-const skipIntro =
-    document.getElementById("skip-intro");
-
-const pageLoader =
-    document.getElementById("page-loader");
-
-const navbar =
-    document.getElementById("navbar");
-
-const topButton =
-    document.getElementById("top-button");
-
-const projectCard =
-    document.querySelector(".project-card");
-
-const aboutContainer =
-    document.querySelector(".about-container");
-
-
-/* =========================================
-   INTRO
-========================================= */
-
-let introClosed = false;
-
-function closeIntro() {
-
-    if (introClosed) {
-        return;
-    }
-
-    introClosed = true;
-
-    try {
-        introVideo.pause();
-    } catch(e) {}
-
-    introScreen.classList.add("hidden");
-}
-
-introVideo.addEventListener(
-    "ended",
-    closeIntro
-);
-
-skipIntro.addEventListener(
-    "click",
-    closeIntro
-);
-
-introVideo.addEventListener(
-    "error",
-    closeIntro
-);
-
-
-/*
-   Safety fallback.
-*/
-
-setTimeout(
-    closeIntro,
-    11000
-);
-
-
-/* =========================================
-   PAGE LOADER
-========================================= */
-
-window.addEventListener(
-    "load",
-    function() {
-
-        setTimeout(
-            function() {
-
-                pageLoader.classList.add("loaded");
-
-            },
-            300
+        introVideo.addEventListener(
+            "ended",
+            closeIntro
         );
 
-    }
-);
+
+        /*
+         * Skip button.
+         */
+
+        skipIntro.addEventListener(
+            "click",
+            closeIntro
+        );
 
 
-/* =========================================
-   NAVBAR
-========================================= */
+        /*
+         * Safety fallback.
+         */
 
-function updateNavbar() {
-
-    if (window.scrollY > 60) {
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
-
-    }
-}
-
-window.addEventListener(
-    "scroll",
-    updateNavbar,
-    {passive:true}
-);
-
-updateNavbar();
+        setTimeout(
+            closeIntro,
+            11000
+        );
 
 
-/* =========================================
-   TOP BUTTON
-========================================= */
+        /*
+         * If video fails.
+         */
 
-function updateTopButton() {
+        introVideo.addEventListener(
+            "error",
+            function () {
 
-    if (window.scrollY > 600) {
+                setTimeout(
+                    closeIntro,
+                    1200
+                );
 
-        topButton.classList.add("show");
-
-    } else {
-
-        topButton.classList.remove("show");
-
-    }
-}
-
-window.addEventListener(
-    "scroll",
-    updateTopButton,
-    {passive:true}
-);
-
-topButton.addEventListener(
-    "click",
-    function() {
-
-        window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
-        });
-
-    }
-);
+            }
+        );
 
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
+        /*
+         * Prevent right-click menu.
+         */
 
-const observer =
-    new IntersectionObserver(
+        introVideo.addEventListener(
+            "contextmenu",
+            function (event) {
 
-        function(entries) {
+                event.preventDefault();
 
-            entries.forEach(
-                function(entry) {
+            }
+        );
+
+
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        pageLoader.classList.add(
+                            "loaded"
+                        );
+
+                    },
+                    300
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           NAVBAR SCROLL
+        ========================================== */
+
+        function updateNavbar() {
+
+            if (window.scrollY > 60) {
+
+                navbar.classList.add(
+                    "scrolled"
+                );
+
+            } else {
+
+                navbar.classList.remove(
+                    "scrolled"
+                );
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
+        );
+
+
+        updateNavbar();
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
+
+        function updateTopButton() {
+
+            if (window.scrollY > 600) {
+
+                topButton.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                topButton.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateTopButton,
+            { passive: true }
+        );
+
+
+        topButton.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        if (projectCard) {
+
+            observer.observe(
+                projectCard
+            );
+
+        }
+
+
+        if (aboutContainer) {
+
+            observer.observe(
+                aboutContainer
+            );
+
+        }
+
+
+        /* =========================================
+           MEMBERS REVEAL
+        ========================================== */
+
+        memberCards.forEach(
+            function (member) {
+
+                member.style.opacity = "0";
+
+                member.style.transform =
+                    "translateY(25px)";
+
+                member.style.transition =
+                    "opacity 0.8s ease, transform 0.8s ease";
+
+                observer.observe(member);
+
+            }
+        );
+
+
+        const memberObserver =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.style.opacity =
+                                    "1";
+
+                                entry.target.style.transform =
+                                    "translateY(0)";
+
+                                memberObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        memberCards.forEach(
+            function (member) {
+
+                memberObserver.observe(
+                    member
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           ORIGINAL SCORES PLAYER
+        ========================================== */
+
+        scoreTracks.forEach(
+            function (track) {
+
+                const audio =
+                    track.querySelector(
+                        ".track-audio"
+                    );
+
+                const button =
+                    track.querySelector(
+                        ".play-button"
+                    );
+
+                const progress =
+                    track.querySelector(
+                        ".track-progress"
+                    );
+
+                const timeDisplay =
+                    track.querySelector(
+                        ".track-time"
+                    );
+
+
+                /*
+                 * Format seconds.
+                 */
+
+                function formatTime(seconds) {
 
                     if (
-                        entry.isIntersecting
+                        !Number.isFinite(seconds)
                     ) {
 
-                        entry.target
-                            .classList
-                            .add("visible");
-
-                        observer.unobserve(
-                            entry.target
-                        );
+                        return "00:00";
 
                     }
 
+
+                    const minutes =
+                        Math.floor(
+                            seconds / 60
+                        );
+
+
+                    const remaining =
+                        Math.floor(
+                            seconds % 60
+                        );
+
+
+                    return (
+                        String(minutes)
+                            .padStart(2, "0")
+                        +
+                        ":"
+                        +
+                        String(remaining)
+                            .padStart(2, "0")
+                    );
+
                 }
-            );
-
-        },
-
-        {
-            threshold:.15
-        }
-    );
 
 
-if (projectCard) {
+                /*
+                 * Play / Pause.
+                 */
 
-    observer.observe(
-        projectCard
-    );
-}
+                button.addEventListener(
+                    "click",
+                    function () {
 
-if (aboutContainer) {
+                        /*
+                         * Stop every other
+                         * Triovision track.
+                         */
 
-    observer.observe(
-        aboutContainer
-    );
-}
+                        document
+                            .querySelectorAll(
+                                ".track-audio"
+                            )
+                            .forEach(
+                                function (otherAudio) {
+
+                                    if (
+                                        otherAudio !== audio
+                                    ) {
+
+                                        otherAudio.pause();
+
+                                    }
+
+                                }
+                            );
 
 
-/* =========================================
-   MOBILE INTRO HEIGHT FIX
-========================================= */
+                        if (audio.paused) {
 
-function fixIntroHeight() {
+                            audio.play()
+                                .then(
+                                    function () {
 
-    introScreen.style.height =
-        window.innerHeight + "px";
-}
+                                        button.textContent =
+                                            "Ⅱ";
 
-fixIntroHeight();
+                                    }
+                                )
+                                .catch(
+                                    function () {
 
-window.addEventListener(
-    "resize",
-    fixIntroHeight
-);
+                                        button.textContent =
+                                            "▶";
 
-</script>
+                                    }
+                                );
+
+                        } else {
+
+                            audio.pause();
+
+                            button.textContent =
+                                "▶";
+
+                        }
+
+                    }
+                );
+
+
+                /*
+                 * Update progress.
+                 */
+
+                audio.addEventListener(
+                    "timeupdate",
+                    function () {
+
+                        if (
+                            audio.duration
+                        ) {
+
+                            const percentage =
+                                (
+                                    audio.currentTime /
+                                    audio.duration
+                                ) * 100;
+
+
+                            progress.value =
+                                percentage;
+
+                        }
+
+
+                        timeDisplay.textContent =
+                            formatTime(
+                                audio.currentTime
+                            );
+
+                    }
+                );
+
+
+                /*
+                 * Duration loaded.
+                 */
+
+                audio.addEventListener(
+                    "loadedmetadata",
+                    function () {
+
+                        timeDisplay.textContent =
+                            "00:00 / " +
+                            formatTime(
+                                audio.duration
+                            );
+
+                    }
+                );
+
+
+                /*
+                 * Click progress bar.
+                 */
+
+                progress.addEventListener(
+                    "input",
+                    function () {
+
+                        if (
+                            audio.duration
+                        ) {
+
+                            audio.currentTime =
+                                (
+                                    progress.value /
+                                    100
+                                ) *
+                                audio.duration;
+
+                        }
+
+                    }
+                );
+
+
+                /*
+                 * Reset when finished.
+                 */
+
+                audio.addEventListener(
+                    "ended",
+                    function () {
+
+                        button.textContent =
+                            "▶";
+
+                        progress.value =
+                            0;
+
+                        timeDisplay.textContent =
+                            "00:00 / " +
+                            formatTime(
+                                audio.duration
+                            );
+
+                    }
+                );
+
+
+                /*
+                 * Keep button state correct
+                 * when another track starts.
+                 */
+
+                audio.addEventListener(
+                    "play",
+                    function () {
+
+                        button.textContent =
+                            "Ⅱ";
+
+                    }
+                );
+
+
+                audio.addEventListener(
+                    "pause",
+                    function () {
+
+                        button.textContent =
+                            "▶";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           PAGE VISIBILITY
+        ========================================== */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.pause();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    !document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.play()
+                        .catch(
+                            function () {}
+                        );
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 
-    </html>
+      </html>
