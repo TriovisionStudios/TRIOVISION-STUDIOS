@@ -3,71 +3,66 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Triovision Studios — Visionary Farms of Imagination. Original stories, films, cinematic worlds and original music.">
+<meta name="description"
+      content="Triovision Studios — Visionary Farms of Imagination. Original stories, films, cinematic worlds and original music.">
 
-    <meta name="author"
-          content="Triovision Studios">
+<meta name="author"
+      content="Triovision Studios">
 
-    <meta name="robots"
-          content="index, follow">
+<meta name="robots"
+      content="index, follow">
 
-    <meta name="theme-color"
-          content="#050505">
+<meta name="theme-color"
+      content="#050505">
 
-    <link rel="canonical"
-          href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
+<link rel="canonical"
+      href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
-    <title>Triovision Studios | Visionary Farms of Imagination</title>
+<title>Triovision Studios | Visionary Farms of Imagination</title>
 
-    <meta name="referrer"
-          content="strict-origin-when-cross-origin">
+<meta name="referrer"
+      content="strict-origin-when-cross-origin">
 
+<meta property="og:title"
+      content="Triovision Studios">
 
-    <!-- SOCIAL PREVIEW -->
+<meta property="og:description"
+      content="Visionary Farms of Imagination — original stories, films, cinematic worlds and music.">
 
-    <meta property="og:title"
-          content="Triovision Studios">
+<meta property="og:type"
+      content="website">
 
-    <meta property="og:description"
-          content="Visionary Farms of Imagination — original stories, films, cinematic worlds and music.">
+<meta property="og:url"
+      content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
-    <meta property="og:type"
-          content="website">
+<meta property="og:image"
+      content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/swan-mere.png">
 
-    <meta property="og:url"
-          content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
+<link rel="icon"
+      type="image/png"
+      href="logo.png">
 
-    <meta property="og:image"
-          content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/swan-mere.png">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <!-- FAVICON -->
-
-    <link rel="icon"
-          type="image/png"
-          href="logo.png">
-
-
-    <!-- FONTS -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
 
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *,
 *::before,
@@ -107,45 +102,35 @@ button {
 :root {
 
     --black: #000000;
-
     --background: #050505;
-
     --background-two: #0a0a0a;
-
     --panel: #0d0d0d;
 
     --white: #ffffff;
-
     --soft-white: #dedede;
 
     --gray: #999999;
-
     --dark-gray: #555555;
 
     --line: rgba(255,255,255,0.10);
-
     --line-strong: rgba(255,255,255,0.22);
 
     --serif: "Bodoni Moda", Georgia, serif;
-
     --sans: "Manrope", Arial, sans-serif;
 }
 
 
-/* =========================================
-   INTRO SCREEN
-========================================= */
+/* =====================================================
+   INTRO
+===================================================== */
 
 #intro-screen {
 
     position: fixed;
-
     inset: 0;
 
-    width: 100vw;
+    width: 100%;
     height: 100dvh;
-
-    min-height: 100%;
 
     background: #000000;
 
@@ -154,7 +139,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
@@ -167,50 +151,34 @@ button {
 #intro-screen.hidden {
 
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
 }
 
-
-/*
-   FIX:
-   The entire intro video remains
-   inside the screen instead of being
-   cropped outside the viewport.
-*/
-
 #intro-video {
 
-    display: block;
+    position: absolute;
 
-    width: 100vw;
+    inset: 0;
 
-    height: 100dvh;
+    width: 100%;
+    height: 100%;
 
-    max-width: 100%;
-
-    max-height: 100%;
-
-    object-fit: contain;
+    object-fit: cover;
 
     object-position: center center;
 
     background: #000000;
 }
 
-
 .intro-fallback {
 
     position: absolute;
-
     inset: 0;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
@@ -241,28 +209,24 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    SKIP INTRO
-========================================= */
+===================================================== */
 
 #skip-intro {
 
     position: absolute;
 
     right: 30px;
-
     bottom: 30px;
 
     z-index: 20;
 
     padding: 12px 22px;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.35);
 
-    background:
-        rgba(0,0,0,0.60);
+    background: rgba(0,0,0,0.55);
 
     color: #ffffff;
 
@@ -298,9 +262,9 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    PAGE LOADER
-========================================= */
+===================================================== */
 
 #page-loader {
 
@@ -324,9 +288,9 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    NAVIGATION
-========================================= */
+===================================================== */
 
 .navbar {
 
@@ -344,7 +308,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 6%;
@@ -355,9 +318,7 @@ button {
 
     -webkit-backdrop-filter: blur(15px);
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
 
     transition:
         background 0.4s ease,
@@ -383,7 +344,6 @@ button {
 .nav-logo {
 
     width: 47px;
-
     height: 47px;
 
     object-fit: contain;
@@ -433,11 +393,9 @@ button {
     position: absolute;
 
     left: 0;
-
     bottom: -8px;
 
     width: 0;
-
     height: 1px;
 
     background: #ffffff;
@@ -454,9 +412,9 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    HERO
-========================================= */
+===================================================== */
 
 .hero {
 
@@ -467,7 +425,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -492,15 +449,12 @@ button {
     position: absolute;
 
     width: 700px;
-
     height: 700px;
 
     left: 50%;
-
     top: 50%;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     background:
         radial-gradient(
@@ -510,9 +464,7 @@ button {
         );
 
     animation:
-        heroGlow 8s
-        ease-in-out
-        infinite;
+        heroGlow 8s ease-in-out infinite;
 }
 
 @keyframes heroGlow {
@@ -560,11 +512,9 @@ button {
 
 .hero-logo {
 
-    width:
-        min(250px, 65vw);
+    width: min(250px,65vw);
 
-    margin:
-        0 auto 40px;
+    margin: 0 auto 40px;
 
     filter:
         drop-shadow(
@@ -573,9 +523,7 @@ button {
         );
 
     animation:
-        logoFloat 6s
-        ease-in-out
-        infinite;
+        logoFloat 6s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
@@ -594,13 +542,11 @@ button {
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(42px, 8vw, 92px);
+    font-size: clamp(42px,8vw,92px);
 
     font-weight: 400;
 
-    letter-spacing:
-        clamp(6px, 1.2vw, 14px);
+    letter-spacing: clamp(6px,1.2vw,14px);
 
     line-height: 1;
 }
@@ -611,20 +557,16 @@ button {
 
     height: 1px;
 
-    background:
-        rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.7);
 
-    margin:
-        32px auto;
+    margin: 32px auto;
 }
 
 .hero-tagline {
 
-    font-size:
-        clamp(11px, 1.8vw, 16px);
+    font-size: clamp(11px,1.8vw,16px);
 
-    letter-spacing:
-        clamp(3px, 0.7vw, 6px);
+    letter-spacing: clamp(3px,0.7vw,6px);
 
     color: #bdbdbd;
 
@@ -663,7 +605,6 @@ button {
 .scroll-line {
 
     width: 1px;
-
     height: 45px;
 
     background:
@@ -674,9 +615,7 @@ button {
         );
 
     animation:
-        scrollPulse 2s
-        ease-in-out
-        infinite;
+        scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
@@ -694,16 +633,15 @@ button {
 }
 
 
-/* =========================================
-   GENERAL SECTION
-========================================= */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section {
 
     position: relative;
 
-    padding:
-        130px 7%;
+    padding: 130px 7%;
 }
 
 .section-header {
@@ -730,13 +668,11 @@ button {
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(30px, 5vw, 58px);
+    font-size: clamp(30px,5vw,58px);
 
     font-weight: 400;
 
-    letter-spacing:
-        clamp(4px, 0.8vw, 9px);
+    letter-spacing: clamp(4px,0.8vw,9px);
 
     text-transform: uppercase;
 }
@@ -755,9 +691,9 @@ button {
 }
 
 
-/* =========================================
-   PROJECTS
-========================================= */
+/* =====================================================
+   PROJECT
+===================================================== */
 
 #projects {
 
@@ -778,26 +714,22 @@ button {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(0, 0.95fr);
+        minmax(0,1.05fr)
+        minmax(0,0.95fr);
 
     background: #0a0a0a;
 
-    border:
-        1px solid
-        var(--line);
+    border: 1px solid var(--line);
 
     overflow: hidden;
 
     opacity: 0;
 
-    transform:
-        translateY(40px);
+    transform: translateY(40px);
 
     transition:
         opacity 1s ease,
-        transform 1s
-        cubic-bezier(.16,1,.3,1),
+        transform 1s cubic-bezier(.16,1,.3,1),
         border-color 0.4s ease;
 }
 
@@ -805,17 +737,14 @@ button {
 
     opacity: 1;
 
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 .project-card:hover {
 
-    border-color:
-        var(--line-strong);
+    border-color: var(--line-strong);
 
-    transform:
-        translateY(-7px);
+    transform: translateY(-7px);
 }
 
 .project-poster {
@@ -832,7 +761,6 @@ button {
 .project-poster img {
 
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -863,8 +791,7 @@ button {
 .project-card:hover
 .project-poster img {
 
-    transform:
-        scale(1.045);
+    transform: scale(1.045);
 }
 
 .project-details {
@@ -875,8 +802,7 @@ button {
 
     justify-content: center;
 
-    padding:
-        clamp(35px, 5vw, 70px);
+    padding: clamp(35px,5vw,70px);
 }
 
 .project-type {
@@ -896,8 +822,7 @@ button {
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(38px, 5vw, 68px);
+    font-size: clamp(38px,5vw,68px);
 
     font-weight: 400;
 
@@ -927,8 +852,7 @@ button {
 
     background: #666;
 
-    margin:
-        30px 0;
+    margin: 30px 0;
 }
 
 .project-description {
@@ -952,8 +876,7 @@ button {
 
     line-height: 0.8;
 
-    padding:
-        5px 8px 0 0;
+    padding: 5px 8px 0 0;
 
     color: #fff;
 }
@@ -964,9 +887,7 @@ button {
 
     padding-top: 25px;
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
 
     color: #666;
 
@@ -999,7 +920,6 @@ button {
 .status-dot {
 
     width: 6px;
-
     height: 6px;
 
     border-radius: 50%;
@@ -1011,8 +931,7 @@ button {
         rgba(255,255,255,0.5);
 
     animation:
-        statusBlink 2s
-        infinite;
+        statusBlink 2s infinite;
 }
 
 @keyframes statusBlink {
@@ -1028,14 +947,12 @@ button {
 }
 
 
-/* =========================================
-   ORIGINAL SCORES
-========================================= */
+/* =====================================================
+   SCORES
+===================================================== */
 
 #scores {
-
-    background:
-        #070707;
+    background: #070707;
 }
 
 .scores-container {
@@ -1051,16 +968,14 @@ button {
 
     max-width: 650px;
 
-    margin:
-        0 auto 60px;
+    margin: 0 auto 60px;
 }
 
 .scores-project {
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(27px, 5vw, 48px);
+    font-size: clamp(27px,5vw,48px);
 
     letter-spacing: 4px;
 
@@ -1080,96 +995,331 @@ button {
     text-transform: uppercase;
 }
 
+.score-list {
 
-/* =========================================
-   OST LINK
-========================================= */
-
-.ost-page-link {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-top: 30px;
-
-    padding: 14px 28px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.25);
-
-    color: #ffffff;
-
-    font-size: 8px;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+    border-top: 1px solid var(--line);
 }
 
-.ost-page-link:hover {
+.score-track {
 
-    background: #ffffff;
+    position: relative;
 
-    color: #000000;
+    display: grid;
 
-    border-color: #ffffff;
-}
-
-
-/* =========================================
-   STUDIO DIVIDER
-========================================= */
-
-.studio-divider {
-
-    display: flex;
+    grid-template-columns:
+        55px
+        1fr
+        auto;
 
     align-items: center;
 
     gap: 20px;
 
-    max-width: 700px;
+    padding: 28px 0;
 
-    margin:
-        0 auto;
+    border-bottom: 1px solid var(--line);
+
+    transition: padding 0.3s ease;
 }
 
-.studio-divider span {
+.score-track:hover {
 
-    flex: 1;
-
-    height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     background:
-        var(--line);
+        rgba(255,255,255,0.015);
 }
 
-.studio-divider i {
+.track-number {
+
+    color: #444;
+
+    font-family: var(--serif);
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+.track-info {
+    min-width: 0;
+}
+
+.track-title {
+
+    display: block;
+
+    color: #e6e6e6;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.track-label {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.track-player {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   PURE WHITE PLAY BUTTON
+===================================================== */
+
+.play-button {
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/*
+   IMPORTANT:
+   CSS-drawn icon.
+   This prevents Android/Chrome from
+   turning the play symbol into a blue emoji.
+*/
+
+.play-icon {
+
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    margin-left: 3px;
+
+    border-top: 7px solid transparent;
+
+    border-bottom: 7px solid transparent;
+
+    border-left: 10px solid #ffffff;
+}
+
+.play-icon.pause {
+
+    width: 10px;
+    height: 14px;
+
+    margin-left: 0;
+
+    border: none;
+
+    position: relative;
+}
+
+.play-icon.pause::before,
+.play-icon.pause::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 3px;
+    height: 14px;
+
+    background: #ffffff;
+}
+
+.play-icon.pause::before {
+    left: 0;
+}
+
+.play-icon.pause::after {
+    right: 0;
+}
+
+.play-button:hover {
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+.play-button:hover .play-icon {
+
+    border-left-color: #000000;
+}
+
+.play-button:hover .play-icon.pause::before,
+.play-button:hover .play-icon.pause::after {
+
+    background: #000000;
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.track-progress-wrap {
+
+    width: clamp(90px,15vw,170px);
+}
+
+.track-progress {
+
+    width: 100%;
+
+    height: 2px;
+
+    background: #333;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    outline: none;
+}
+
+.track-progress::-webkit-slider-thumb {
+
+    appearance: none;
+
+    -webkit-appearance: none;
 
     width: 7px;
-
     height: 7px;
 
-    border:
-        1px solid #777;
+    border-radius: 50%;
 
-    transform:
-        rotate(45deg);
+    background: #ffffff;
+
+    cursor: pointer;
+}
+
+.track-progress::-moz-range-thumb {
+
+    width: 7px;
+    height: 7px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    cursor: pointer;
+}
+
+.track-time {
+
+    margin-top: 7px;
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+}
+
+.track-audio {
+    display: none;
+}
+
+.composer-credit {
+
+    margin-top: 55px;
+
+    text-align: center;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--line);
+}
+
+.composer-label {
+
+    display: block;
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.composer-name {
+
+    font-family: var(--serif);
+
+    color: #bbb;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
 }
 
 
-/* =========================================
-   FUTURE PROJECTS
-========================================= */
+/* =====================================================
+   FUTURE
+===================================================== */
 
 .future-section {
 
@@ -1178,7 +1328,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -1190,39 +1339,29 @@ button {
             #050505 65%
         );
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
 
-    border-bottom:
-        1px solid
-        var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .future-content {
-
     max-width: 800px;
 }
 
 .future-symbol {
 
     width: 55px;
-
     height: 55px;
 
-    margin:
-        0 auto 35px;
+    margin: 0 auto 35px;
 
-    border:
-        1px solid
-        #444;
+    border: 1px solid #444;
 
     border-radius: 50%;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     color: #777;
@@ -1232,21 +1371,17 @@ button {
     font-size: 20px;
 
     animation:
-        futureRotate 12s
-        linear
-        infinite;
+        futureRotate 12s linear infinite;
 }
 
 @keyframes futureRotate {
 
     from {
-        transform:
-            rotate(0deg);
+        transform: rotate(0deg);
     }
 
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -1254,25 +1389,21 @@ button {
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(30px, 6vw, 65px);
+    font-size: clamp(30px,6vw,65px);
 
     font-weight: 400;
 
-    letter-spacing:
-        clamp(4px, 1vw, 10px);
+    letter-spacing: clamp(4px,1vw,10px);
 }
 
 .future-line {
 
     width: 70px;
-
     height: 1px;
 
     background: #555;
 
-    margin:
-        30px auto;
+    margin: 30px auto;
 }
 
 .future-text {
@@ -1294,12 +1425,9 @@ button {
 
     margin-top: 35px;
 
-    padding:
-        13px 28px;
+    padding: 13px 28px;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.18);
 
     color: #999;
 
@@ -1311,12 +1439,11 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    ABOUT
-========================================= */
+===================================================== */
 
 #about {
-
     background: #050505;
 }
 
@@ -1330,8 +1457,7 @@ button {
 
     opacity: 0;
 
-    transform:
-        translateY(30px);
+    transform: translateY(30px);
 
     transition:
         opacity 1s ease,
@@ -1342,16 +1468,14 @@ button {
 
     opacity: 1;
 
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 .about-lead {
 
     font-family: var(--serif);
 
-    font-size:
-        clamp(22px, 3vw, 34px);
+    font-size: clamp(22px,3vw,34px);
 
     line-height: 1.6;
 
@@ -1387,9 +1511,9 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    MEMBERS
-========================================= */
+===================================================== */
 
 #members {
 
@@ -1413,15 +1537,11 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
 
-    border-left:
-        1px solid
-        var(--line);
+    border-left: 1px solid var(--line);
 }
 
 .member {
@@ -1431,7 +1551,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
@@ -1440,13 +1559,9 @@ button {
 
     padding: 30px;
 
-    border-right:
-        1px solid
-        var(--line);
+    border-right: 1px solid var(--line);
 
-    border-bottom:
-        1px solid
-        var(--line);
+    border-bottom: 1px solid var(--line);
 
     transition:
         background 0.4s ease;
@@ -1475,8 +1590,7 @@ button {
 
     color: #ddd;
 
-    font-size:
-        clamp(17px, 2.5vw, 24px);
+    font-size: clamp(17px,2.5vw,24px);
 
     font-weight: 400;
 
@@ -1486,7 +1600,6 @@ button {
 .member-line {
 
     width: 35px;
-
     height: 1px;
 
     background: #555;
@@ -1495,30 +1608,26 @@ button {
 }
 
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 footer {
 
-    padding:
-        80px 25px 40px;
+    padding: 80px 25px 40px;
 
     text-align: center;
 
     background: #000;
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
 }
 
 .footer-logo {
 
     width: 75px;
 
-    margin:
-        0 auto 25px;
+    margin: 0 auto 25px;
 
     opacity: 0.9;
 }
@@ -1550,13 +1659,11 @@ footer {
 .footer-line {
 
     width: 50px;
-
     height: 1px;
 
     background: #333;
 
-    margin:
-        35px auto;
+    margin: 35px auto;
 }
 
 .copyright {
@@ -1571,34 +1678,28 @@ footer {
 }
 
 
-/* =========================================
-   BACK TO TOP
-========================================= */
+/* =====================================================
+   TOP
+===================================================== */
 
 #top-button {
 
     position: fixed;
 
     right: 25px;
-
     bottom: 25px;
 
     width: 42px;
-
     height: 42px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 
-    background:
-        rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.7);
 
     color: #aaa;
 
@@ -1608,8 +1709,7 @@ footer {
 
     visibility: hidden;
 
-    transition:
-        all 0.3s ease;
+    transition: all 0.3s ease;
 
     z-index: 4000;
 }
@@ -1629,18 +1729,17 @@ footer {
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
-@media (max-width: 850px) {
+@media (max-width:850px) {
 
     .navbar {
 
         height: 70px;
 
-        padding:
-            0 5%;
+        padding: 0 5%;
     }
 
     .nav-name {
@@ -1650,7 +1749,6 @@ footer {
     .nav-logo {
 
         width: 40px;
-
         height: 40px;
     }
 
@@ -1669,20 +1767,17 @@ footer {
     .hero {
 
         padding:
-            130px 20px
-            80px;
+            130px 20px 80px;
     }
 
     .hero-logo {
 
-        width:
-            min(220px, 60vw);
+        width: min(220px,60vw);
 
         margin-bottom: 35px;
     }
 
     .hero-scroll {
-
         bottom: 20px;
     }
 
@@ -1706,8 +1801,7 @@ footer {
 
         min-height: auto;
 
-        aspect-ratio:
-            2 / 3;
+        aspect-ratio: 2 / 3;
     }
 
     .project-details {
@@ -1734,16 +1828,37 @@ footer {
             80px 25px;
     }
 
-    .members-grid {
+    .score-track {
 
         grid-template-columns:
-            1fr;
+            35px 1fr;
+    }
+
+    .track-player {
+
+        grid-column:
+            2 / 3;
+
+        width: 100%;
+
+        margin-top: 10px;
+    }
+
+    .track-progress-wrap {
+
+        flex: 1;
+
+        width: auto;
+    }
+
+    .members-grid {
+
+        grid-template-columns: 1fr;
     }
 
     #skip-intro {
 
         right: 18px;
-
         bottom: 18px;
 
         padding:
@@ -1751,10 +1866,10 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width:480px) {
 
     .nav-links {
-
         gap: 12px;
     }
 
@@ -1799,9 +1914,24 @@ footer {
 
         letter-spacing: 1.5px;
     }
+
+    .track-title {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .composer-name {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
 }
 
-@media (prefers-reduced-motion: reduce) {
+
+@media (prefers-reduced-motion:reduce) {
 
     html {
         scroll-behavior: auto;
@@ -1830,9 +1960,9 @@ footer {
 <body>
 
 
-<!-- =========================================
+<!-- =====================================================
      INTRO
-========================================= -->
+===================================================== -->
 
 <div id="intro-screen">
 
@@ -1850,6 +1980,7 @@ footer {
 
     </video>
 
+
     <div class="intro-fallback">
 
         <img
@@ -1862,6 +1993,7 @@ footer {
 
     </div>
 
+
     <button
         id="skip-intro"
         type="button">
@@ -1873,14 +2005,12 @@ footer {
 </div>
 
 
-<!-- PAGE LOADER -->
-
 <div id="page-loader"></div>
 
 
-<!-- =========================================
+<!-- =====================================================
      NAVIGATION
-========================================= -->
+===================================================== -->
 
 <header
     class="navbar"
@@ -1901,6 +2031,7 @@ footer {
         </span>
 
     </a>
+
 
     <nav>
 
@@ -1943,10 +2074,12 @@ footer {
 </header>
 
 
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <main>
 
-
-<!-- HERO -->
 
 <section
     class="hero"
@@ -1971,6 +2104,7 @@ footer {
 
     </div>
 
+
     <div class="hero-scroll">
 
         <span>
@@ -1984,7 +2118,9 @@ footer {
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
 <section
     class="section"
@@ -2020,13 +2156,11 @@ footer {
 
         </div>
 
+
         <div class="project-details">
 
             <span class="project-type">
-
-                A TRIOVISION STUDIOS
-                ORIGINAL FILM
-
+                A TRIOVISION STUDIOS ORIGINAL FILM
             </span>
 
             <h3 class="project-title">
@@ -2049,19 +2183,18 @@ footer {
 
             </p>
 
+
             <div class="project-credits">
 
                 SCREENPLAY BY SUVESH.B
 
                 <br>
 
-                WRITTEN AND DIRECTED BY
-                SUVESH.B
+                WRITTEN AND DIRECTED BY SUVESH.B
 
                 <br>
 
-                MUSIC COMPOSER
-                M.D. NISHANTH
+                MUSIC COMPOSER M.D. NISHANTH
 
                 <br>
 
@@ -2069,6 +2202,7 @@ footer {
                 M.G. ASWATH NANDHAN
 
             </div>
+
 
             <div class="project-status">
 
@@ -2085,9 +2219,9 @@ footer {
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      ORIGINAL SCORES
-========================================= -->
+===================================================== -->
 
 <section
     class="section"
@@ -2109,6 +2243,7 @@ footer {
 
     </div>
 
+
     <div class="scores-container">
 
         <div class="scores-intro">
@@ -2121,13 +2256,337 @@ footer {
                 Original Motion Picture Soundtrack
             </p>
 
-            <a
-                href="ost.html"
-                class="ost-page-link">
+        </div>
 
-                ENTER ORIGINAL SOUNDTRACK
 
-            </a>
+        <div class="score-list">
+
+            <!-- TRACK 01 -->
+
+            <article class="score-track">
+
+                <span class="track-number">
+                    01
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        Echoes of the Misty Lake
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="track-player">
+
+                    <button
+                        class="play-button"
+                        type="button"
+                        aria-label="Play Echoes of the Misty Lake">
+
+                        <span class="play-icon"></span>
+
+                    </button>
+
+                    <div class="track-progress-wrap">
+
+                        <input
+                            class="track-progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Track progress">
+
+                        <div class="track-time">
+                            00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio
+                    class="track-audio"
+                    preload="metadata">
+
+                    <source
+                        src="Echoes%20of%20the%20Misty%20Lake.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- TRACK 02 -->
+
+            <article class="score-track">
+
+                <span class="track-number">
+                    02
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        Fading Pulse
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="track-player">
+
+                    <button
+                        class="play-button"
+                        type="button"
+                        aria-label="Play Fading Pulse">
+
+                        <span class="play-icon"></span>
+
+                    </button>
+
+                    <div class="track-progress-wrap">
+
+                        <input
+                            class="track-progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Track progress">
+
+                        <div class="track-time">
+                            00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio
+                    class="track-audio"
+                    preload="metadata">
+
+                    <source
+                        src="Fading%20Pulse%20%282%29.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- TRACK 03 -->
+
+            <article class="score-track">
+
+                <span class="track-number">
+                    03
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        Swans at Golden Dawn
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="track-player">
+
+                    <button
+                        class="play-button"
+                        type="button"
+                        aria-label="Play Swans at Golden Dawn">
+
+                        <span class="play-icon"></span>
+
+                    </button>
+
+                    <div class="track-progress-wrap">
+
+                        <input
+                            class="track-progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Track progress">
+
+                        <div class="track-time">
+                            00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio
+                    class="track-audio"
+                    preload="metadata">
+
+                    <source
+                        src="Swans%20at%20Golden%20Dawn.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- TRACK 04 -->
+
+            <article class="score-track">
+
+                <span class="track-number">
+                    04
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        The Lakes
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="track-player">
+
+                    <button
+                        class="play-button"
+                        type="button"
+                        aria-label="Play The Lakes">
+
+                        <span class="play-icon"></span>
+
+                    </button>
+
+                    <div class="track-progress-wrap">
+
+                        <input
+                            class="track-progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Track progress">
+
+                        <div class="track-time">
+                            00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio
+                    class="track-audio"
+                    preload="metadata">
+
+                    <source
+                        src="The%20Lakes.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+
+            <!-- TRACK 05 -->
+
+            <article class="score-track">
+
+                <span class="track-number">
+                    05
+                </span>
+
+                <div class="track-info">
+
+                    <span class="track-title">
+                        The Last Golden Hour
+                    </span>
+
+                    <span class="track-label">
+                        Original Score
+                    </span>
+
+                </div>
+
+                <div class="track-player">
+
+                    <button
+                        class="play-button"
+                        type="button"
+                        aria-label="Play The Last Golden Hour">
+
+                        <span class="play-icon"></span>
+
+                    </button>
+
+                    <div class="track-progress-wrap">
+
+                        <input
+                            class="track-progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="0.1"
+                            aria-label="Track progress">
+
+                        <div class="track-time">
+                            00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <audio
+                    class="track-audio"
+                    preload="metadata">
+
+                    <source
+                        src="The%20Last%20Golden%20Hour.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+            </article>
+
+        </div>
+
+
+        <div class="composer-credit">
+
+            <span class="composer-label">
+                Music Composer
+            </span>
+
+            <span class="composer-name">
+                M.D. NISHANTH
+            </span>
 
         </div>
 
@@ -2136,20 +2595,9 @@ footer {
 </section>
 
 
-<!-- DIVIDER -->
-
-<div class="studio-divider">
-
-    <span></span>
-
-    <i></i>
-
-    <span></span>
-
-</div>
-
-
-<!-- FUTURE PROJECTS -->
+<!-- =====================================================
+     FUTURE
+===================================================== -->
 
 <section
     class="future-section"
@@ -2186,7 +2634,9 @@ footer {
 </section>
 
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section
     class="section"
@@ -2207,6 +2657,7 @@ footer {
         </p>
 
     </div>
+
 
     <div class="about-container">
 
@@ -2240,9 +2691,7 @@ footer {
         </p>
 
         <p class="about-motto">
-
             Visionary Farms of Imagination
-
         </p>
 
     </div>
@@ -2250,7 +2699,9 @@ footer {
 </section>
 
 
-<!-- MEMBERS -->
+<!-- =====================================================
+     MEMBERS
+===================================================== -->
 
 <section
     class="section"
@@ -2272,6 +2723,7 @@ footer {
 
     </div>
 
+
     <div class="members-container">
 
         <div class="members-grid">
@@ -2290,6 +2742,7 @@ footer {
 
             </article>
 
+
             <article class="member">
 
                 <span class="member-number">
@@ -2304,6 +2757,7 @@ footer {
 
             </article>
 
+
             <article class="member">
 
                 <span class="member-number">
@@ -2317,6 +2771,7 @@ footer {
                 <span class="member-line"></span>
 
             </article>
+
 
             <article class="member">
 
@@ -2341,7 +2796,9 @@ footer {
 </main>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -2361,16 +2818,12 @@ footer {
     <div class="footer-line"></div>
 
     <p class="copyright">
-
         © 2026 Triovision Studios.
         All rights reserved.
-
     </p>
 
 </footer>
 
-
-<!-- BACK TO TOP -->
 
 <button
     id="top-button"
@@ -2387,9 +2840,9 @@ footer {
 "use strict";
 
 
-/* =========================================
+/* =====================================================
    ELEMENTS
-========================================= */
+===================================================== */
 
 const introScreen =
     document.getElementById("intro-screen");
@@ -2418,10 +2871,13 @@ const aboutContainer =
 const memberCards =
     document.querySelectorAll(".member");
 
+const scoreTracks =
+    document.querySelectorAll(".score-track");
 
-/* =========================================
+
+/* =====================================================
    INTRO
-========================================= */
+===================================================== */
 
 let introClosed = false;
 
@@ -2438,36 +2894,20 @@ function closeIntro() {
     introScreen.classList.add("hidden");
 }
 
-
-/* Video ends */
-
 introVideo.addEventListener(
     "ended",
     closeIntro
 );
-
-
-/* Skip */
 
 skipIntro.addEventListener(
     "click",
     closeIntro
 );
 
-
-/*
-   Safety fallback.
-*/
-
 setTimeout(
     closeIntro,
     11000
 );
-
-
-/*
-   Video error.
-*/
 
 introVideo.addEventListener(
     "error",
@@ -2481,14 +2921,9 @@ introVideo.addEventListener(
     }
 );
 
-
-/*
-   Prevent right click.
-*/
-
 introVideo.addEventListener(
     "contextmenu",
-    function (event) {
+    function(event) {
 
         event.preventDefault();
 
@@ -2496,16 +2931,16 @@ introVideo.addEventListener(
 );
 
 
-/* =========================================
+/* =====================================================
    PAGE LOADER
-========================================= */
+===================================================== */
 
 window.addEventListener(
     "load",
-    function () {
+    function() {
 
         setTimeout(
-            function () {
+            function() {
 
                 pageLoader.classList.add(
                     "loaded"
@@ -2519,9 +2954,9 @@ window.addEventListener(
 );
 
 
-/* =========================================
+/* =====================================================
    NAVBAR
-========================================= */
+===================================================== */
 
 function updateNavbar() {
 
@@ -2550,9 +2985,9 @@ window.addEventListener(
 updateNavbar();
 
 
-/* =========================================
-   BACK TO TOP
-========================================= */
+/* =====================================================
+   TOP BUTTON
+===================================================== */
 
 function updateTopButton() {
 
@@ -2580,31 +3015,28 @@ window.addEventListener(
 
 topButton.addEventListener(
     "click",
-    function () {
+    function() {
 
         window.scrollTo({
-
             top: 0,
-
             behavior: "smooth"
-
         });
 
     }
 );
 
 
-/* =========================================
+/* =====================================================
    SCROLL REVEAL
-========================================= */
+===================================================== */
 
 const observer =
     new IntersectionObserver(
 
-        function (entries) {
+        function(entries) {
 
             entries.forEach(
-                function (entry) {
+                function(entry) {
 
                     if (
                         entry.isIntersecting
@@ -2637,6 +3069,7 @@ if (projectCard) {
     observer.observe(
         projectCard
     );
+
 }
 
 if (aboutContainer) {
@@ -2644,20 +3077,21 @@ if (aboutContainer) {
     observer.observe(
         aboutContainer
     );
+
 }
 
 
-/* =========================================
+/* =====================================================
    MEMBERS
-========================================= */
+===================================================== */
 
 const memberObserver =
     new IntersectionObserver(
 
-        function (entries) {
+        function(entries) {
 
             entries.forEach(
-                function (entry) {
+                function(entry) {
 
                     if (
                         entry.isIntersecting
@@ -2688,7 +3122,7 @@ const memberObserver =
 
 
 memberCards.forEach(
-    function (member) {
+    function(member) {
 
         member.style.opacity = "0";
 
@@ -2706,13 +3140,240 @@ memberCards.forEach(
 );
 
 
-/* =========================================
-   PAGE VISIBILITY
-========================================= */
+/* =====================================================
+   AUDIO PLAYER
+===================================================== */
+
+scoreTracks.forEach(
+    function(track) {
+
+        const audio =
+            track.querySelector(
+                ".track-audio"
+            );
+
+        const button =
+            track.querySelector(
+                ".play-button"
+            );
+
+        const icon =
+            track.querySelector(
+                ".play-icon"
+            );
+
+        const progress =
+            track.querySelector(
+                ".track-progress"
+            );
+
+        const timeDisplay =
+            track.querySelector(
+                ".track-time"
+            );
+
+
+        function formatTime(seconds) {
+
+            if (
+                !Number.isFinite(seconds)
+            ) {
+
+                return "00:00";
+
+            }
+
+            const minutes =
+                Math.floor(
+                    seconds / 60
+                );
+
+            const remaining =
+                Math.floor(
+                    seconds % 60
+                );
+
+            return (
+                String(minutes).padStart(2,"0")
+                +
+                ":"
+                +
+                String(remaining).padStart(2,"0")
+            );
+
+        }
+
+
+        function setPlayIcon() {
+
+            icon.classList.remove(
+                "pause"
+            );
+
+        }
+
+
+        function setPauseIcon() {
+
+            icon.classList.add(
+                "pause"
+            );
+
+        }
+
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                document
+                    .querySelectorAll(
+                        ".track-audio"
+                    )
+                    .forEach(
+                        function(otherAudio) {
+
+                            if (
+                                otherAudio !== audio
+                            ) {
+
+                                otherAudio.pause();
+
+                            }
+
+                        }
+                    );
+
+
+                if (audio.paused) {
+
+                    audio.play()
+                        .then(
+                            function() {
+
+                                setPauseIcon();
+
+                            }
+                        )
+                        .catch(
+                            function() {
+
+                                setPlayIcon();
+
+                            }
+                        );
+
+                } else {
+
+                    audio.pause();
+
+                    setPlayIcon();
+
+                }
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "timeupdate",
+            function() {
+
+                if (audio.duration) {
+
+                    const percentage =
+                        (
+                            audio.currentTime /
+                            audio.duration
+                        ) * 100;
+
+                    progress.value =
+                        percentage;
+
+                }
+
+                timeDisplay.textContent =
+                    formatTime(
+                        audio.currentTime
+                    );
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "loadedmetadata",
+            function() {
+
+                timeDisplay.textContent =
+                    "00:00 / " +
+                    formatTime(
+                        audio.duration
+                    );
+
+            }
+        );
+
+
+        progress.addEventListener(
+            "input",
+            function() {
+
+                if (audio.duration) {
+
+                    audio.currentTime =
+                        (
+                            progress.value /
+                            100
+                        ) *
+                        audio.duration;
+
+                }
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "ended",
+            function() {
+
+                setPlayIcon();
+
+                progress.value = 0;
+
+                timeDisplay.textContent =
+                    "00:00 / " +
+                    formatTime(
+                        audio.duration
+                    );
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "play",
+            setPauseIcon
+        );
+
+
+        audio.addEventListener(
+            "pause",
+            setPlayIcon
+        );
+
+    }
+);
+
+
+/* =====================================================
+   VISIBILITY
+===================================================== */
 
 document.addEventListener(
     "visibilitychange",
-    function () {
+    function() {
 
         if (
             document.hidden &&
@@ -2728,7 +3389,7 @@ document.addEventListener(
 
 document.addEventListener(
     "visibilitychange",
-    function () {
+    function() {
 
         if (
             !document.hidden &&
@@ -2737,7 +3398,7 @@ document.addEventListener(
 
             introVideo.play()
                 .catch(
-                    function () {}
+                    function() {}
                 );
 
         }
@@ -2748,4 +3409,4 @@ document.addEventListener(
 </script>
 
 </body>
-      </html>
+    </html>
