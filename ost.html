@@ -3,63 +3,64 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="SWAN-MERE Original Motion Picture Soundtrack — Triovision Studios.">
+<meta name="description"
+      content="SWAN-MERE Original Motion Picture Soundtrack — Triovision Studios.">
 
-    <meta name="author"
-          content="Triovision Studios">
+<meta name="author"
+      content="Triovision Studios">
 
-    <meta name="theme-color"
-          content="#000000">
+<meta name="robots"
+      content="index, follow">
 
-    <link rel="icon"
-          type="image/png"
-          href="logo.png">
+<meta name="theme-color"
+      content="#050505">
 
-    <title>SWAN-MERE | Original Soundtrack — Triovision Studios</title>
+<link rel="canonical"
+      href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/ost.html">
 
+<title>SWAN-MERE | Original Scores — Triovision Studios</title>
 
-    <!-- FONTS -->
+<link rel="icon"
+      type="image/png"
+      href="logo.png">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Manrope:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
 
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *,
 *::before,
 *::after {
 
     margin: 0;
-
     padding: 0;
 
     box-sizing: border-box;
 }
 
-
 html {
-
     scroll-behavior: smooth;
 }
 
-
 body {
-
-    min-height: 100vh;
 
     background: #050505;
 
@@ -76,7 +77,6 @@ body {
         antialiased;
 }
 
-
 a {
 
     color: inherit;
@@ -84,50 +84,78 @@ a {
     text-decoration: none;
 }
 
-
 button {
 
     font: inherit;
 }
 
 
-/* =========================================
-   OST INTRO
-========================================= */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-#ost-intro {
+:root {
+
+    --black: #000000;
+
+    --background: #050505;
+
+    --panel: #090909;
+
+    --white: #ffffff;
+
+    --gray: #999999;
+
+    --dark-gray: #555555;
+
+    --line:
+        rgba(255,255,255,0.10);
+
+    --line-strong:
+        rgba(255,255,255,0.25);
+
+    --serif:
+        "Bodoni Moda",
+        Georgia,
+        serif;
+
+    --sans:
+        "Manrope",
+        Arial,
+        sans-serif;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+#intro-screen {
 
     position: fixed;
 
     inset: 0;
 
-    width: 100vw;
-
+    width: 100%;
     height: 100dvh;
 
-    background: #000000;
+    background: #000;
 
     z-index: 99999;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
-
-    opacity: 1;
-
-    visibility: visible;
 
     transition:
         opacity 1.2s ease,
         visibility 1.2s ease;
 }
 
-
-#ost-intro.hide {
+#intro-screen.hidden {
 
     opacity: 0;
 
@@ -136,82 +164,84 @@ button {
     pointer-events: none;
 }
 
+#intro-video {
 
-/*
-   Your Triovision GIF.
-*/
+    position: absolute;
 
-#ost-intro img {
+    inset: 0;
 
-    width: min(520px, 90vw);
+    width: 100%;
+    height: 100%;
 
-    height: auto;
+    object-fit: cover;
 
-    max-height: 75dvh;
+    object-position: center center;
 
-    object-fit: contain;
+    background: #000;
+}
 
-    display: block;
+.intro-fallback {
 
-    animation:
-        triovisionAppear
-        1.4s
-        cubic-bezier(.16,1,.3,1)
-        both;
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    background: #000;
+
+    z-index: -1;
+}
+
+.intro-fallback img {
+
+    width: 150px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.9;
+}
+
+.intro-fallback p {
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #777;
+
+    text-transform: uppercase;
 }
 
 
-@keyframes triovisionAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0.82);
-
-        filter:
-            brightness(0.25);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-
-        filter:
-            brightness(1);
-    }
-}
-
-
-/* =========================================
+/* =====================================================
    SKIP INTRO
-========================================= */
+===================================================== */
 
-#skip-ost-intro {
+#skip-intro {
 
     position: absolute;
 
     right: 30px;
-
     bottom: 30px;
 
-    z-index: 100;
+    z-index: 20;
 
-    padding:
-        12px 22px;
+    padding: 12px 22px;
 
     border:
         1px solid
         rgba(255,255,255,0.35);
 
     background:
-        rgba(0,0,0,0.65);
+        rgba(0,0,0,0.55);
 
-    color: #ffffff;
+    color: #fff;
 
     font-size: 8px;
 
@@ -228,116 +258,98 @@ button {
         blur(10px);
 
     transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
+        all 0.3s ease;
+}
+
+#skip-intro:hover {
+
+    background: #fff;
+
+    color: #000;
+
+    border-color: #fff;
 }
 
 
-#skip-ost-intro:hover {
-
-    background: #ffffff;
-
-    color: #000000;
-
-    border-color: #ffffff;
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* =========================================
-   PAGE
-========================================= */
-
-.ost-page {
-
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at center top,
-            #141414 0%,
-            #070707 40%,
-            #000000 100%
-        );
-}
-
-
-/* =========================================
+/* =====================================================
    NAVIGATION
-========================================= */
+===================================================== */
 
-.ost-nav {
+.navbar {
 
-    position: relative;
+    position: fixed;
+
+    top: 0;
+    left: 0;
 
     width: 100%;
 
-    min-height: 82px;
+    height: 78px;
 
-    padding:
-        0 6%;
+    z-index: 5000;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.09);
+    padding:
+        0 6%;
 
     background:
-        rgba(0,0,0,0.55);
+        rgba(0,0,0,0.80);
 
     backdrop-filter:
         blur(15px);
 
     -webkit-backdrop-filter:
         blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
 }
 
-
-.ost-brand {
+.nav-brand {
 
     display: flex;
 
     align-items: center;
 
-    gap: 14px;
+    gap: 15px;
 }
 
-
-.ost-brand img {
+.nav-logo {
 
     width: 45px;
-
     height: 45px;
 
     object-fit: contain;
 }
 
+.nav-name {
 
-.ost-brand-name {
-
-    font-family:
-        "Bodoni Moda",
-        Georgia,
-        serif;
+    font-family: var(--serif);
 
     font-size: 13px;
 
     letter-spacing: 4px;
 }
 
+.nav-links {
 
-.back-link {
+    display: flex;
 
-    color: #999999;
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+.nav-links a {
+
+    color: #bbb;
 
     font-size: 8px;
 
@@ -349,186 +361,304 @@ button {
         color 0.3s ease;
 }
 
+.nav-links a:hover {
 
-.back-link:hover {
-
-    color: #ffffff;
+    color: #fff;
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* =====================================================
+   PAGE HEADER
+===================================================== */
 
-.ost-hero {
+.ost-header {
 
-    min-height:
-        48vh;
+    min-height: 52vh;
 
     padding:
-        90px 25px 75px;
+        150px 25px 80px;
 
     display: flex;
-
-    flex-direction: column;
 
     align-items: center;
 
     justify-content: center;
 
     text-align: center;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #161616 0%,
+            #070707 55%,
+            #000000 100%
+        );
+
+    overflow: hidden;
 }
 
+.ost-header::before {
 
-.ost-small-title {
+    content: "";
 
-    color: #666666;
+    position: absolute;
 
-    font-size: 8px;
+    width: 600px;
+    height: 600px;
 
-    letter-spacing: 5px;
+    left: 50%;
+    top: 50%;
 
-    text-transform: uppercase;
+    transform:
+        translate(-50%,-50%);
 
-    margin-bottom: 25px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.035),
+            transparent 65%
+        );
+
+    animation:
+        headerGlow 8s
+        ease-in-out
+        infinite;
 }
 
+@keyframes headerGlow {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%,-50%)
+            scale(0.9);
+    }
+
+    50% {
+        transform:
+            translate(-50%,-50%)
+            scale(1.15);
+    }
+}
+
+.ost-header-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        headerReveal 1.5s
+        cubic-bezier(.16,1,.3,1)
+        both;
+}
+
+@keyframes headerReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.ost-logo {
+
+    width:
+        min(130px,35vw);
+
+    margin:
+        0 auto 35px;
+
+    animation:
+        ostLogoReveal 2s
+        cubic-bezier(.16,1,.3,1)
+        both;
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255,255,255,0.10)
+        );
+}
+
+@keyframes ostLogoReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.65)
+            rotate(-8deg);
+
+        filter:
+            blur(8px)
+            drop-shadow(
+                0 0 0
+                rgba(255,255,255,0)
+            );
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.05)
+            rotate(2deg);
+
+        filter:
+            blur(0)
+            drop-shadow(
+                0 0 35px
+                rgba(255,255,255,0.16)
+            );
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        filter:
+            blur(0)
+            drop-shadow(
+                0 0 25px
+                rgba(255,255,255,0.08)
+            );
+    }
+}
 
 .ost-title {
 
-    font-family:
-        "Bodoni Moda",
-        Georgia,
-        serif;
+    font-family: var(--serif);
 
     font-size:
-        clamp(46px, 9vw, 100px);
+        clamp(38px,7vw,75px);
 
     font-weight: 400;
 
     letter-spacing:
-        clamp(6px, 1.4vw, 15px);
-
-    line-height: 1;
+        clamp(5px,1vw,12px);
 }
-
-
-.ost-rule {
-
-    width: 75px;
-
-    height: 1px;
-
-    background: #777777;
-
-    margin:
-        30px auto;
-}
-
 
 .ost-subtitle {
 
-    color: #999999;
+    margin-top: 17px;
 
-    font-size:
-        clamp(9px, 1.5vw, 12px);
+    color: #888;
 
-    letter-spacing:
-        clamp(3px, 0.6vw, 5px);
+    font-size: 9px;
+
+    letter-spacing: 5px;
 
     text-transform: uppercase;
 }
 
+.ost-line {
 
-/* =========================================
-   TRACKS
-========================================= */
+    width: 70px;
+    height: 1px;
 
-.tracks-section {
+    background: #666;
 
-    width: min(1050px, 90%);
-
-    margin:
-        0 auto;
-
-    padding:
-        0 0 110px;
+    margin: 30px auto;
 }
 
 
-.track-list {
+/* =====================================================
+   TRACKS
+===================================================== */
+
+.scores {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+        100px 25px 130px;
+}
+
+.score-list {
 
     border-top:
         1px solid
-        rgba(255,255,255,0.10);
+        var(--line);
 }
 
-
-.track {
-
-    position: relative;
+.score-track {
 
     display: grid;
 
     grid-template-columns:
         55px
-        minmax(0,1fr)
+        1fr
         auto;
 
     align-items: center;
 
-    gap: 22px;
+    gap: 20px;
 
     padding:
-        28px 0;
+        30px 0;
 
     border-bottom:
         1px solid
-        rgba(255,255,255,0.10);
+        var(--line);
 
     transition:
         background 0.3s ease,
         padding 0.3s ease;
 }
 
-
-.track:hover {
+.score-track:hover {
 
     background:
-        rgba(255,255,255,0.018);
+        rgba(255,255,255,0.015);
 
-    padding-left: 12px;
+    padding-left: 10px;
 
-    padding-right: 12px;
+    padding-right: 10px;
 }
-
 
 .track-number {
 
-    color: #444444;
+    color: #444;
 
-    font-family:
-        "Bodoni Moda",
-        Georgia,
-        serif;
+    font-family: var(--serif);
 
     font-size: 15px;
 
     letter-spacing: 2px;
 }
 
-
 .track-info {
 
     min-width: 0;
 }
 
-
 .track-title {
 
     display: block;
 
-    color: #eeeeee;
+    color: #e8e8e8;
 
     font-size: 10px;
 
@@ -543,14 +673,13 @@ button {
     text-overflow: ellipsis;
 }
 
-
 .track-label {
 
     display: block;
 
     margin-top: 8px;
 
-    color: #555555;
+    color: #555;
 
     font-size: 7px;
 
@@ -558,11 +687,6 @@ button {
 
     text-transform: uppercase;
 }
-
-
-/* =========================================
-   PLAYER
-========================================= */
 
 .track-player {
 
@@ -574,56 +698,115 @@ button {
 }
 
 
-/*
-   PURE BLACK + WHITE PLAY BUTTON.
-   No blue.
-*/
+/* =====================================================
+   PURE WHITE PLAY BUTTON
+===================================================== */
 
 .play-button {
 
-    width: 44px;
-
-    height: 44px;
+    width: 48px;
+    height: 48px;
 
     flex-shrink: 0;
 
     border:
         1px solid
-        rgba(255,255,255,0.45);
+        rgba(255,255,255,0.35);
 
     border-radius: 50%;
 
-    background: #000000;
+    background: #050505;
 
-    color: #ffffff;
+    color: #fff;
 
     cursor: pointer;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 0;
 
-    font-size: 12px;
-
-    line-height: 1;
-
     transition:
         background 0.3s ease,
-        color 0.3s ease,
         border-color 0.3s ease,
         transform 0.3s ease;
 }
 
 
+/*
+   PURE CSS TRIANGLE
+   No emoji = no blue square.
+*/
+
+.play-icon {
+
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    margin-left: 3px;
+
+    border-top:
+        7px solid transparent;
+
+    border-bottom:
+        7px solid transparent;
+
+    border-left:
+        10px solid #ffffff;
+}
+
+
+/*
+   PURE CSS PAUSE ICON
+*/
+
+.play-icon.pause {
+
+    width: 10px;
+    height: 14px;
+
+    margin-left: 0;
+
+    border: none;
+
+    position: relative;
+}
+
+.play-icon.pause::before,
+.play-icon.pause::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 3px;
+    height: 14px;
+
+    background: #ffffff;
+}
+
+.play-icon.pause::before {
+    left: 0;
+}
+
+.play-icon.pause::after {
+    right: 0;
+}
+
+
+/*
+   HOVER
+*/
+
 .play-button:hover {
 
     background: #ffffff;
-
-    color: #000000;
 
     border-color: #ffffff;
 
@@ -631,83 +814,83 @@ button {
         scale(1.06);
 }
 
+.play-button:hover .play-icon {
 
-.play-button.playing {
+    border-left-color: #000;
+}
 
-    background: #ffffff;
+.play-button:hover
+.play-icon.pause::before,
 
-    color: #000000;
+.play-button:hover
+.play-icon.pause::after {
 
-    border-color: #ffffff;
+    background: #000;
 }
 
 
-.progress-area {
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.track-progress-wrap {
 
     width:
-        clamp(100px, 17vw, 200px);
+        clamp(100px,22vw,500px);
 }
 
-
-.progress {
+.track-progress {
 
     width: 100%;
 
-    height: 2px;
+    height: 3px;
+
+    background: #333;
 
     appearance: none;
 
     -webkit-appearance: none;
-
-    background: #333333;
 
     outline: none;
 
     cursor: pointer;
 }
 
-
-.progress::-webkit-slider-thumb {
+.track-progress::-webkit-slider-thumb {
 
     appearance: none;
 
     -webkit-appearance: none;
 
-    width: 7px;
-
-    height: 7px;
+    width: 8px;
+    height: 8px;
 
     border-radius: 50%;
-
-    border: none;
 
     background: #ffffff;
 
     cursor: pointer;
 }
 
+.track-progress::-moz-range-thumb {
 
-.progress::-moz-range-thumb {
-
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
+    width: 8px;
+    height: 8px;
 
     border: none;
+
+    border-radius: 50%;
 
     background: #ffffff;
 
     cursor: pointer;
 }
 
+.track-time {
 
-.time {
+    margin-top: 8px;
 
-    margin-top: 7px;
-
-    color: #555555;
+    color: #555;
 
     font-size: 7px;
 
@@ -716,36 +899,33 @@ button {
     text-align: right;
 }
 
-
-.audio {
-
+.track-audio {
     display: none;
 }
 
 
-/* =========================================
+/* =====================================================
    COMPOSER
-========================================= */
+===================================================== */
 
 .composer {
 
-    text-align: center;
+    margin-top: 60px;
 
-    padding-top: 45px;
-
-    margin-top: 20px;
+    padding-top: 35px;
 
     border-top:
         1px solid
-        rgba(255,255,255,0.10);
-}
+        var(--line);
 
+    text-align: center;
+}
 
 .composer-label {
 
     display: block;
 
-    color: #555555;
+    color: #555;
 
     font-size: 7px;
 
@@ -756,70 +936,58 @@ button {
     margin-bottom: 12px;
 }
 
-
 .composer-name {
 
-    font-family:
-        "Bodoni Moda",
-        Georgia,
-        serif;
+    font-family: var(--serif);
 
-    color: #bbbbbb;
+    color: #bbb;
 
-    font-size: 14px;
+    font-size: 15px;
 
     letter-spacing: 4px;
 }
 
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
-.ost-footer {
-
-    text-align: center;
+footer {
 
     padding:
         70px 25px 40px;
 
+    text-align: center;
+
+    background: #000;
+
     border-top:
         1px solid
-        rgba(255,255,255,0.08);
-
-    background: #000000;
+        var(--line);
 }
 
-
-.ost-footer-logo {
+.footer-logo {
 
     width: 65px;
 
     margin:
-        0 auto 22px;
-
-    opacity: 0.9;
+        0 auto 25px;
 }
 
+.footer-name {
 
-.ost-footer-name {
-
-    font-family:
-        "Bodoni Moda",
-        Georgia,
-        serif;
+    font-family: var(--serif);
 
     font-size: 13px;
 
     letter-spacing: 5px;
 }
 
-
-.ost-footer-tagline {
+.footer-tagline {
 
     margin-top: 14px;
 
-    color: #555555;
+    color: #555;
 
     font-size: 7px;
 
@@ -828,62 +996,83 @@ button {
     text-transform: uppercase;
 }
 
+.footer-line {
 
-/* =========================================
+    width: 45px;
+    height: 1px;
+
+    background: #333;
+
+    margin:
+        30px auto;
+}
+
+.copyright {
+
+    color: #444;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width:850px) {
 
-    .ost-nav {
+    .navbar {
 
-        min-height: 70px;
+        height: 70px;
 
-        padding:
-            0 5%;
+        padding: 0 5%;
     }
 
-
-    .ost-brand-name {
-
+    .nav-name {
         display: none;
     }
 
-
-    .ost-brand img {
+    .nav-logo {
 
         width: 40px;
-
         height: 40px;
     }
 
+    .nav-links {
 
-    .back-link {
+        gap: 18px;
+    }
+
+    .nav-links a {
 
         font-size: 7px;
 
         letter-spacing: 2px;
     }
 
+    .ost-header {
 
-    .ost-hero {
-
-        min-height: 43vh;
+        min-height: 48vh;
 
         padding:
-            75px 20px 55px;
+            125px 20px 70px;
     }
 
+    .scores {
 
-    .track {
+        padding:
+            75px 20px 100px;
+    }
+
+    .score-track {
 
         grid-template-columns:
-            38px
-            minmax(0,1fr);
-
-        gap: 15px;
+            35px 1fr;
     }
-
 
     .track-player {
 
@@ -892,38 +1081,25 @@ button {
 
         width: 100%;
 
-        margin-top: 7px;
+        margin-top: 12px;
     }
 
-
-    .progress-area {
+    .track-progress-wrap {
 
         flex: 1;
 
         width: auto;
     }
 
-
-    .track-title {
-
-        font-size: 8px;
-
-        letter-spacing: 2px;
-    }
-
-
     .play-button {
 
-        width: 42px;
-
-        height: 42px;
+        width: 46px;
+        height: 46px;
     }
 
-
-    #skip-ost-intro {
+    #skip-intro {
 
         right: 18px;
-
         bottom: 18px;
 
         padding:
@@ -932,23 +1108,33 @@ button {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width:480px) {
+
+    .nav-links {
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
 
     .ost-title {
 
-        font-size: 42px;
+        font-size: 36px;
 
         letter-spacing: 5px;
     }
 
-
-    .ost-subtitle {
+    .track-title {
 
         font-size: 8px;
 
         letter-spacing: 2px;
     }
-
 
     .track-label {
 
@@ -957,7 +1143,11 @@ button {
 }
 
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
@@ -982,18 +1172,42 @@ button {
 <body>
 
 
-<!-- =========================================
-     TRIOVISION GIF INTRO
-========================================= -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
-<div id="ost-intro">
+<div id="intro-screen">
 
-    <img
-        src="triovision.gif"
-        alt="Triovision Studios Opening Animation">
+    <video
+        id="intro-video"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+        aria-label="Triovision Studios opening animation">
+
+        <source
+            src="intro.mp4"
+            type="video/mp4">
+
+    </video>
+
+
+    <div class="intro-fallback">
+
+        <img
+            src="logo.png"
+            alt="Triovision Studios">
+
+        <p>
+            Triovision Studios
+        </p>
+
+    </div>
+
 
     <button
-        id="skip-ost-intro"
+        id="skip-intro"
         type="button">
 
         Skip Intro
@@ -1003,76 +1217,113 @@ button {
 </div>
 
 
-<div class="ost-page">
-
-
-<!-- =========================================
+<!-- =====================================================
      NAVIGATION
-========================================= -->
+===================================================== -->
 
-<header class="ost-nav">
+<header class="navbar">
 
     <a
         href="index.html"
-        class="ost-brand">
+        class="nav-brand">
 
         <img
             src="logo.png"
-            alt="Triovision Studios">
+            alt="Triovision Studios"
+            class="nav-logo">
 
-        <span class="ost-brand-name">
+        <span class="nav-name">
             TRIOVISION STUDIOS
         </span>
 
     </a>
 
 
-    <a
-        href="index.html"
-        class="back-link">
+    <nav>
 
-        ← Back to Studio
+        <ul class="nav-links">
 
-    </a>
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="ost.html">
+                    Scores
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#about">
+                    Studio
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#members">
+                    Members
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 </header>
 
 
-<!-- =========================================
-     OST HERO
-========================================= -->
+<!-- =====================================================
+     OST HEADER
+===================================================== -->
 
-<section class="ost-hero">
+<section class="ost-header">
 
-    <p class="ost-small-title">
-        Triovision Studios Original
-    </p>
+    <div class="ost-header-content">
 
-    <h1 class="ost-title">
-        SWAN-MERE
-    </h1>
+        <img
+            src="logo.png"
+            alt="Triovision Studios"
+            class="ost-logo">
 
-    <div class="ost-rule"></div>
+        <h1 class="ost-title">
+            SWAN-MERE
+        </h1>
 
-    <p class="ost-subtitle">
-        Original Motion Picture Soundtrack
-    </p>
+        <p class="ost-subtitle">
+            Echoes of Hearts
+        </p>
+
+        <div class="ost-line"></div>
+
+        <p class="ost-subtitle">
+            Original Motion Picture Soundtrack
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- =========================================
-     TRACKS
-========================================= -->
+<!-- =====================================================
+     MUSIC
+===================================================== -->
 
-<section class="tracks-section">
+<main class="scores">
 
-    <div class="track-list">
+    <div class="score-list">
 
 
         <!-- TRACK 01 -->
 
-        <article class="track">
+        <article class="score-track">
 
             <span class="track-number">
                 01
@@ -1090,6 +1341,7 @@ button {
 
             </div>
 
+
             <div class="track-player">
 
                 <button
@@ -1097,14 +1349,15 @@ button {
                     type="button"
                     aria-label="Play Echoes of the Misty Lake">
 
-                    ▶
+                    <span class="play-icon"></span>
 
                 </button>
 
-                <div class="progress-area">
+
+                <div class="track-progress-wrap">
 
                     <input
-                        class="progress"
+                        class="track-progress"
                         type="range"
                         min="0"
                         max="100"
@@ -1112,16 +1365,17 @@ button {
                         step="0.1"
                         aria-label="Track progress">
 
-                    <div class="time">
-                        00:00 / 00:00
+                    <div class="track-time">
+                        00:00
                     </div>
 
                 </div>
 
             </div>
 
+
             <audio
-                class="audio"
+                class="track-audio"
                 preload="metadata">
 
                 <source
@@ -1135,7 +1389,7 @@ button {
 
         <!-- TRACK 02 -->
 
-        <article class="track">
+        <article class="score-track">
 
             <span class="track-number">
                 02
@@ -1153,6 +1407,7 @@ button {
 
             </div>
 
+
             <div class="track-player">
 
                 <button
@@ -1160,14 +1415,15 @@ button {
                     type="button"
                     aria-label="Play Fading Pulse">
 
-                    ▶
+                    <span class="play-icon"></span>
 
                 </button>
 
-                <div class="progress-area">
+
+                <div class="track-progress-wrap">
 
                     <input
-                        class="progress"
+                        class="track-progress"
                         type="range"
                         min="0"
                         max="100"
@@ -1175,16 +1431,17 @@ button {
                         step="0.1"
                         aria-label="Track progress">
 
-                    <div class="time">
-                        00:00 / 00:00
+                    <div class="track-time">
+                        00:00
                     </div>
 
                 </div>
 
             </div>
 
+
             <audio
-                class="audio"
+                class="track-audio"
                 preload="metadata">
 
                 <source
@@ -1198,7 +1455,7 @@ button {
 
         <!-- TRACK 03 -->
 
-        <article class="track">
+        <article class="score-track">
 
             <span class="track-number">
                 03
@@ -1216,6 +1473,7 @@ button {
 
             </div>
 
+
             <div class="track-player">
 
                 <button
@@ -1223,14 +1481,15 @@ button {
                     type="button"
                     aria-label="Play Swans at Golden Dawn">
 
-                    ▶
+                    <span class="play-icon"></span>
 
                 </button>
 
-                <div class="progress-area">
+
+                <div class="track-progress-wrap">
 
                     <input
-                        class="progress"
+                        class="track-progress"
                         type="range"
                         min="0"
                         max="100"
@@ -1238,16 +1497,17 @@ button {
                         step="0.1"
                         aria-label="Track progress">
 
-                    <div class="time">
-                        00:00 / 00:00
+                    <div class="track-time">
+                        00:00
                     </div>
 
                 </div>
 
             </div>
 
+
             <audio
-                class="audio"
+                class="track-audio"
                 preload="metadata">
 
                 <source
@@ -1261,7 +1521,7 @@ button {
 
         <!-- TRACK 04 -->
 
-        <article class="track">
+        <article class="score-track">
 
             <span class="track-number">
                 04
@@ -1279,6 +1539,7 @@ button {
 
             </div>
 
+
             <div class="track-player">
 
                 <button
@@ -1286,14 +1547,15 @@ button {
                     type="button"
                     aria-label="Play The Lakes">
 
-                    ▶
+                    <span class="play-icon"></span>
 
                 </button>
 
-                <div class="progress-area">
+
+                <div class="track-progress-wrap">
 
                     <input
-                        class="progress"
+                        class="track-progress"
                         type="range"
                         min="0"
                         max="100"
@@ -1301,16 +1563,17 @@ button {
                         step="0.1"
                         aria-label="Track progress">
 
-                    <div class="time">
-                        00:00 / 00:00
+                    <div class="track-time">
+                        00:00
                     </div>
 
                 </div>
 
             </div>
 
+
             <audio
-                class="audio"
+                class="track-audio"
                 preload="metadata">
 
                 <source
@@ -1324,7 +1587,7 @@ button {
 
         <!-- TRACK 05 -->
 
-        <article class="track">
+        <article class="score-track">
 
             <span class="track-number">
                 05
@@ -1342,6 +1605,7 @@ button {
 
             </div>
 
+
             <div class="track-player">
 
                 <button
@@ -1349,14 +1613,15 @@ button {
                     type="button"
                     aria-label="Play The Last Golden Hour">
 
-                    ▶
+                    <span class="play-icon"></span>
 
                 </button>
 
-                <div class="progress-area">
+
+                <div class="track-progress-wrap">
 
                     <input
-                        class="progress"
+                        class="track-progress"
                         type="range"
                         min="0"
                         max="100"
@@ -1364,16 +1629,17 @@ button {
                         step="0.1"
                         aria-label="Track progress">
 
-                    <div class="time">
-                        00:00 / 00:00
+                    <div class="track-time">
+                        00:00
                     </div>
 
                 </div>
 
             </div>
 
+
             <audio
-                class="audio"
+                class="track-audio"
                 preload="metadata">
 
                 <source
@@ -1387,7 +1653,9 @@ button {
     </div>
 
 
-    <!-- COMPOSER -->
+    <!-- =================================================
+         COMPOSER
+    ================================================= -->
 
     <div class="composer">
 
@@ -1401,32 +1669,36 @@ button {
 
     </div>
 
-</section>
+</main>
 
 
-<!-- =========================================
+<!-- =====================================================
      FOOTER
-========================================= -->
+===================================================== -->
 
-<footer class="ost-footer">
+<footer>
 
     <img
         src="logo.png"
         alt="Triovision Studios"
-        class="ost-footer-logo">
+        class="footer-logo">
 
-    <h2 class="ost-footer-name">
+    <h3 class="footer-name">
         TRIOVISION STUDIOS
-    </h2>
+    </h3>
 
-    <p class="ost-footer-tagline">
+    <p class="footer-tagline">
         Visionary Farms of Imagination
     </p>
 
+    <div class="footer-line"></div>
+
+    <p class="copyright">
+        © 2026 Triovision Studios.
+        All rights reserved.
+    </p>
+
 </footer>
-
-
-</div>
 
 
 <script>
@@ -1434,87 +1706,112 @@ button {
 "use strict";
 
 
-/* =========================================
-   OST INTRO
-========================================= */
+/* =====================================================
+   INTRO
+===================================================== */
 
-const ostIntro =
-    document.getElementById("ost-intro");
+const introScreen =
+    document.getElementById(
+        "intro-screen"
+    );
 
-const skipOstIntro =
-    document.getElementById("skip-ost-intro");
+const introVideo =
+    document.getElementById(
+        "intro-video"
+    );
+
+const skipIntro =
+    document.getElementById(
+        "skip-intro"
+    );
+
+let introClosed = false;
 
 
-let ostIntroClosed = false;
+function closeIntro() {
 
-
-function closeOstIntro() {
-
-    if (ostIntroClosed) {
+    if (introClosed) {
         return;
     }
 
-    ostIntroClosed = true;
+    introClosed = true;
 
-    ostIntro.classList.add("hide");
+    introVideo.pause();
 
-    setTimeout(
-        function () {
-
-            ostIntro.remove();
-
-        },
-        1300
+    introScreen.classList.add(
+        "hidden"
     );
 }
 
 
-/*
-   Automatically reveal OST page
-   after the Triovision animation.
-*/
+introVideo.addEventListener(
+    "ended",
+    closeIntro
+);
+
+
+skipIntro.addEventListener(
+    "click",
+    closeIntro
+);
+
 
 setTimeout(
-    closeOstIntro,
-    5000
+    closeIntro,
+    11000
 );
 
 
-/*
-   Skip Intro.
-*/
+introVideo.addEventListener(
+    "error",
+    function() {
 
-skipOstIntro.addEventListener(
-    "click",
-    closeOstIntro
+        setTimeout(
+            closeIntro,
+            1200
+        );
+
+    }
 );
 
 
-/* =========================================
+/* =====================================================
    AUDIO PLAYER
-========================================= */
+===================================================== */
 
-const tracks =
-    document.querySelectorAll(".track");
+const scoreTracks =
+    document.querySelectorAll(
+        ".score-track"
+    );
 
 
-let currentlyPlaying = null;
-
-
-tracks.forEach(
-    function (track) {
+scoreTracks.forEach(
+    function(track) {
 
         const audio =
-            track.querySelector(".audio");
+            track.querySelector(
+                ".track-audio"
+            );
 
         const button =
-            track.querySelector(".play-button");
+            track.querySelector(
+                ".play-button"
+            );
+
+        const icon =
+            track.querySelector(
+                ".play-icon"
+            );
 
         const progress =
-            track.querySelector(".progress");
+            track.querySelector(
+                ".track-progress"
+            );
 
-        const time =
-            track.querySelector(".time");
+        const timeDisplay =
+            track.querySelector(
+                ".track-time"
+            );
 
 
         function formatTime(seconds) {
@@ -1534,7 +1831,7 @@ tracks.forEach(
                 );
 
 
-            const secondsRemaining =
+            const remaining =
                 Math.floor(
                     seconds % 60
                 );
@@ -1542,34 +1839,50 @@ tracks.forEach(
 
             return (
                 String(minutes)
-                    .padStart(2, "0")
+                    .padStart(2,"0")
                 +
                 ":"
                 +
-                String(secondsRemaining)
-                    .padStart(2, "0")
+                String(remaining)
+                    .padStart(2,"0")
             );
 
         }
 
 
-        /*
-           PLAY / PAUSE
-        */
+        function playIcon() {
+
+            icon.classList.remove(
+                "pause"
+            );
+
+        }
+
+
+        function pauseIcon() {
+
+            icon.classList.add(
+                "pause"
+            );
+
+        }
+
 
         button.addEventListener(
             "click",
-            function () {
+            function() {
 
 
                 /*
-                   Stop other tracks.
-                */
+                 * Stop all other tracks.
+                 */
 
                 document
-                    .querySelectorAll(".audio")
+                    .querySelectorAll(
+                        ".track-audio"
+                    )
                     .forEach(
-                        function (otherAudio) {
+                        function(otherAudio) {
 
                             if (
                                 otherAudio !== audio
@@ -1587,27 +1900,16 @@ tracks.forEach(
 
                     audio.play()
                         .then(
-                            function () {
+                            function() {
 
-                                currentlyPlaying =
-                                    audio;
-
-                                button.classList
-                                    .add("playing");
-
-                                button.textContent =
-                                    "Ⅱ";
+                                pauseIcon();
 
                             }
                         )
                         .catch(
-                            function () {
+                            function() {
 
-                                button.classList
-                                    .remove("playing");
-
-                                button.textContent =
-                                    "▶";
+                                playIcon();
 
                             }
                         );
@@ -1616,85 +1918,17 @@ tracks.forEach(
 
                     audio.pause();
 
+                    playIcon();
+
                 }
 
             }
         );
 
 
-        /*
-           PLAY STATE
-        */
-
-        audio.addEventListener(
-            "play",
-            function () {
-
-                tracks.forEach(
-                    function (otherTrack) {
-
-                        const otherButton =
-                            otherTrack.querySelector(
-                                ".play-button"
-                            );
-
-                        const otherAudio =
-                            otherTrack.querySelector(
-                                ".audio"
-                            );
-
-
-                        if (
-                            otherAudio !== audio
-                        ) {
-
-                            otherButton.classList
-                                .remove("playing");
-
-                            otherButton.textContent =
-                                "▶";
-
-                        }
-
-                    }
-                );
-
-
-                button.classList
-                    .add("playing");
-
-                button.textContent =
-                    "Ⅱ";
-
-            }
-        );
-
-
-        /*
-           PAUSE STATE
-        */
-
-        audio.addEventListener(
-            "pause",
-            function () {
-
-                button.classList
-                    .remove("playing");
-
-                button.textContent =
-                    "▶";
-
-            }
-        );
-
-
-        /*
-           PROGRESS
-        */
-
         audio.addEventListener(
             "timeupdate",
-            function () {
+            function() {
 
                 if (
                     audio.duration
@@ -1709,30 +1943,20 @@ tracks.forEach(
                 }
 
 
-                time.textContent =
+                timeDisplay.textContent =
                     formatTime(
                         audio.currentTime
-                    )
-                    +
-                    " / "
-                    +
-                    formatTime(
-                        audio.duration
                     );
 
             }
         );
 
 
-        /*
-           METADATA
-        */
-
         audio.addEventListener(
             "loadedmetadata",
-            function () {
+            function() {
 
-                time.textContent =
+                timeDisplay.textContent =
                     "00:00 / " +
                     formatTime(
                         audio.duration
@@ -1742,13 +1966,9 @@ tracks.forEach(
         );
 
 
-        /*
-           SEEK
-        */
-
         progress.addEventListener(
             "input",
-            function () {
+            function() {
 
                 if (
                     audio.duration
@@ -1758,8 +1978,7 @@ tracks.forEach(
                         (
                             progress.value /
                             100
-                        )
-                        *
+                        ) *
                         audio.duration;
 
                 }
@@ -1768,23 +1987,16 @@ tracks.forEach(
         );
 
 
-        /*
-           END
-        */
-
         audio.addEventListener(
             "ended",
-            function () {
+            function() {
 
-                button.classList
-                    .remove("playing");
+                playIcon();
 
-                button.textContent =
-                    "▶";
+                progress.value =
+                    0;
 
-                progress.value = 0;
-
-                time.textContent =
+                timeDisplay.textContent =
                     "00:00 / " +
                     formatTime(
                         audio.duration
@@ -1793,10 +2005,23 @@ tracks.forEach(
             }
         );
 
+
+        audio.addEventListener(
+            "play",
+            pauseIcon
+        );
+
+
+        audio.addEventListener(
+            "pause",
+            playIcon
+        );
+
     }
 );
 
 </script>
 
 </body>
-      </html>
+
+    </html>
