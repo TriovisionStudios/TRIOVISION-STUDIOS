@@ -3,1956 +3,1946 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <!-- =========================================
+         BASIC DOCUMENT SETTINGS
+    ========================================== -->
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<meta name="description"
-      content="Triovision Studios — Visionary Farms of Imagination. Original stories, films, cinematic worlds and original music.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="author"
-      content="Triovision Studios">
+    <meta name="description"
+          content="Triovision Studios — Visionary Farms of Imagination. Original stories, films, cinematic worlds and original music.">
 
-<meta name="robots"
-      content="index, follow">
+    <meta name="author"
+          content="Triovision Studios">
 
-<meta name="theme-color"
-      content="#050505">
+    <meta name="robots"
+          content="index, follow">
 
-<link rel="canonical"
-      href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
+    <meta name="theme-color"
+          content="#050505">
 
-<title>Triovision Studios | Visionary Farms of Imagination</title>
+    <link rel="canonical"
+          href="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
-<meta name="referrer"
-      content="strict-origin-when-cross-origin">
+    <title>Triovision Studios | Visionary Farms of Imagination</title>
 
-<meta property="og:title"
-      content="Triovision Studios">
 
-<meta property="og:description"
-      content="Visionary Farms of Imagination — original stories, films, cinematic worlds and music.">
+    <!-- =========================================
+         SECURITY / REFERRER
+    ========================================== -->
 
-<meta property="og:type"
-      content="website">
+    <meta name="referrer"
+          content="strict-origin-when-cross-origin">
 
-<meta property="og:url"
-      content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
-<meta property="og:image"
-      content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/swan-mere.png">
+    <!-- =========================================
+         SOCIAL PREVIEW
+    ========================================== -->
 
-<link rel="icon"
-      type="image/png"
-      href="logo.png">
+    <meta property="og:title"
+          content="Triovision Studios">
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+    <meta property="og:description"
+          content="Visionary Farms of Imagination — original stories, films, cinematic worlds and music.">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <meta property="og:type"
+          content="website">
 
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
-      rel="stylesheet">
+    <meta property="og:url"
+          content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/">
 
+    <meta property="og:image"
+          content="https://triovisionstudios.github.io/TRIOVISION-STUDIOS/swan-mere.png">
 
-<style>
 
-/* =====================================================
-   RESET
-===================================================== */
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <link rel="icon"
+          type="image/png"
+          href="logo.png">
 
-html {
-    scroll-behavior: smooth;
-}
 
-body {
-    background: #050505;
-    color: #ffffff;
-    font-family: "Manrope", Arial, sans-serif;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
+    <!-- =========================================
+         FONTS
+    ========================================== -->
 
-img {
-    max-width: 100%;
-    display: block;
-}
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-button {
-    font: inherit;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
 
-:root {
 
-    --black: #000000;
-    --background: #050505;
-    --background-two: #0a0a0a;
-    --panel: #0d0d0d;
+    <!-- =========================================
+         STYLES
+    ========================================== -->
 
-    --white: #ffffff;
-    --soft-white: #dedede;
+    <style>
 
-    --gray: #999999;
-    --dark-gray: #555555;
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    --line: rgba(255,255,255,0.10);
-    --line-strong: rgba(255,255,255,0.22);
 
-    --serif: "Bodoni Moda", Georgia, serif;
-    --sans: "Manrope", Arial, sans-serif;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
 
-/* =====================================================
-   INTRO
-===================================================== */
+        body {
+            background: #050505;
+            color: #ffffff;
+            font-family: "Manrope", Arial, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
-#intro-screen {
 
-    position: fixed;
-    inset: 0;
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    width: 100%;
-    height: 100dvh;
 
-    background: #000000;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    z-index: 99999;
 
-    display: flex;
+        button {
+            font: inherit;
+        }
 
-    align-items: center;
-    justify-content: center;
 
-    overflow: hidden;
+        :root {
 
-    transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-}
+            --black: #000000;
+            --background: #050505;
+            --background-two: #0a0a0a;
+            --panel: #0d0d0d;
+            --white: #ffffff;
+            --soft-white: #dedede;
+            --gray: #999999;
+            --dark-gray: #555555;
 
-#intro-screen.hidden {
+            --line:
+                rgba(255,255,255,0.10);
 
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
+            --line-strong:
+                rgba(255,255,255,0.22);
 
-#intro-video {
+            --serif:
+                "Bodoni Moda",
+                Georgia,
+                serif;
 
-    position: absolute;
+            --sans:
+                "Manrope",
+                Arial,
+                sans-serif;
+        }
 
-    inset: 0;
 
-    width: 100%;
-    height: 100%;
+        /* =========================================
+           INTRO SCREEN
+           PERFECT FULL-SCREEN FIT
+        ========================================== */
 
-    object-fit: cover;
+        #intro-screen {
 
-    object-position: center center;
+            position: fixed;
 
-    background: #000000;
-}
+            inset: 0;
 
-.intro-fallback {
+            width: 100vw;
+            height: 100dvh;
 
-    position: absolute;
-    inset: 0;
+            min-height: 100vh;
 
-    display: flex;
+            background: #000000;
 
-    align-items: center;
-    justify-content: center;
+            z-index: 99999;
 
-    flex-direction: column;
+            display: flex;
 
-    background: #000;
+            align-items: center;
 
-    z-index: -1;
-}
+            justify-content: center;
 
-.intro-fallback img {
+            overflow: hidden;
 
-    width: 150px;
+            transition:
+                opacity 1.2s ease,
+                visibility 1.2s ease;
+        }
 
-    opacity: 0.9;
 
-    margin-bottom: 25px;
-}
+        #intro-screen.hidden {
 
-.intro-fallback p {
+            opacity: 0;
 
-    font-size: 9px;
+            visibility: hidden;
 
-    letter-spacing: 5px;
+            pointer-events: none;
+        }
 
-    color: #777;
 
-    text-transform: uppercase;
-}
+        /*
+         * IMPORTANT:
+         * contain prevents the intro video
+         * from being cropped or extending outside
+         * the screen.
+         */
 
+        #intro-video {
 
-/* =====================================================
-   SKIP INTRO
-===================================================== */
+            position: absolute;
 
-#skip-intro {
+            inset: 0;
 
-    position: absolute;
+            width: 100%;
+            height: 100%;
 
-    right: 30px;
-    bottom: 30px;
+            max-width: none;
 
-    z-index: 20;
+            object-fit: contain;
 
-    padding: 12px 22px;
+            object-position: center center;
 
-    border: 1px solid rgba(255,255,255,0.35);
+            background: #000000;
+        }
 
-    background: rgba(0,0,0,0.55);
 
-    color: #ffffff;
+        .intro-fallback {
 
-    font-family: var(--sans);
+            position: absolute;
 
-    font-size: 8px;
+            inset: 0;
 
-    letter-spacing: 3px;
+            display: flex;
 
-    text-transform: uppercase;
+            align-items: center;
 
-    cursor: pointer;
+            justify-content: center;
 
-    backdrop-filter: blur(10px);
+            flex-direction: column;
 
-    -webkit-backdrop-filter: blur(10px);
+            background: #000000;
 
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
-}
+            z-index: -1;
+        }
 
-#skip-intro:hover {
 
-    background: #ffffff;
+        .intro-fallback img {
 
-    color: #000000;
+            width: 150px;
 
-    border-color: #ffffff;
+            opacity: 0.9;
 
-    transform: translateY(-2px);
-}
+            margin-bottom: 25px;
+        }
 
 
-/* =====================================================
-   PAGE LOADER
-===================================================== */
+        .intro-fallback p {
 
-#page-loader {
+            font-size: 9px;
 
-    position: fixed;
+            letter-spacing: 5px;
 
-    inset: 0;
+            color: #777;
 
-    background: #050505;
+            text-transform: uppercase;
+        }
 
-    z-index: 9998;
 
-    pointer-events: none;
+        /* =========================================
+           SKIP INTRO
+        ========================================== */
 
-    opacity: 1;
+        #skip-intro {
 
-    transition: opacity 1s ease;
-}
+            position: absolute;
 
-#page-loader.loaded {
-    opacity: 0;
-}
+            right: 30px;
 
+            bottom: 30px;
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+            z-index: 10;
 
-.navbar {
+            padding:
+                12px 22px;
 
-    position: fixed;
+            border:
+                1px solid
+                rgba(255,255,255,0.35);
 
-    top: 0;
-    left: 0;
+            background:
+                rgba(0,0,0,0.55);
 
-    width: 100%;
+            color: #ffffff;
 
-    height: 82px;
+            font-family: var(--sans);
 
-    z-index: 5000;
+            font-size: 8px;
 
-    display: flex;
+            letter-spacing: 3px;
 
-    align-items: center;
-    justify-content: space-between;
+            text-transform: uppercase;
 
-    padding: 0 6%;
+            cursor: pointer;
 
-    background: rgba(0,0,0,0.72);
+            backdrop-filter: blur(10px);
 
-    backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(10px);
 
-    -webkit-backdrop-filter: blur(15px);
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
 
-    border-bottom: 1px solid rgba(255,255,255,0.07);
 
-    transition:
-        background 0.4s ease,
-        height 0.4s ease;
-}
+        #skip-intro:hover {
 
-.navbar.scrolled {
+            background: #ffffff;
 
-    height: 70px;
+            color: #000000;
 
-    background: rgba(0,0,0,0.92);
-}
+            border-color: #ffffff;
 
-.nav-brand {
+            transform: translateY(-2px);
+        }
 
-    display: flex;
 
-    align-items: center;
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
 
-    gap: 15px;
-}
+        #page-loader {
 
-.nav-logo {
+            position: fixed;
 
-    width: 47px;
-    height: 47px;
+            inset: 0;
 
-    object-fit: contain;
-}
+            background: #050505;
 
-.nav-name {
+            z-index: 9998;
 
-    font-family: var(--serif);
+            pointer-events: none;
 
-    font-size: 14px;
+            opacity: 1;
 
-    letter-spacing: 4px;
+            transition:
+                opacity 1s ease;
+        }
 
-    font-weight: 500;
-}
 
-.nav-links {
+        #page-loader.loaded {
+            opacity: 0;
+        }
 
-    display: flex;
 
-    align-items: center;
+        /* =========================================
+           NAVIGATION
+        ========================================== */
 
-    gap: 38px;
+        .navbar {
 
-    list-style: none;
-}
+            position: fixed;
 
-.nav-links a {
+            top: 0;
+            left: 0;
 
-    position: relative;
+            width: 100%;
 
-    color: #d8d8d8;
+            height: 82px;
 
-    font-size: 9px;
+            z-index: 5000;
 
-    letter-spacing: 3px;
+            display: flex;
 
-    text-transform: uppercase;
+            align-items: center;
 
-    transition: color 0.3s ease;
-}
+            justify-content: space-between;
 
-.nav-links a::after {
+            padding:
+                0 6%;
 
-    content: "";
+            background:
+                rgba(0,0,0,0.72);
 
-    position: absolute;
+            backdrop-filter:
+                blur(15px);
 
-    left: 0;
-    bottom: -8px;
+            -webkit-backdrop-filter:
+                blur(15px);
 
-    width: 0;
-    height: 1px;
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
 
-    background: #ffffff;
+            transition:
+                background 0.4s ease,
+                height 0.4s ease;
+        }
 
-    transition: width 0.3s ease;
-}
 
-.nav-links a:hover {
-    color: #ffffff;
-}
+        .navbar.scrolled {
 
-.nav-links a:hover::after {
-    width: 100%;
-}
+            height: 70px;
 
+            background:
+                rgba(0,0,0,0.92);
+        }
 
-/* =====================================================
-   HERO
-===================================================== */
 
-.hero {
+        .nav-brand {
 
-    position: relative;
+            display: flex;
 
-    min-height: 100vh;
+            align-items: center;
 
-    display: flex;
+            gap: 15px;
+        }
 
-    align-items: center;
-    justify-content: center;
 
-    text-align: center;
+        .nav-logo {
 
-    overflow: hidden;
+            width: 47px;
+            height: 47px;
 
-    padding: 150px 25px 100px;
+            object-fit: contain;
+        }
 
-    background:
-        radial-gradient(
-            circle at center,
-            #181818 0%,
-            #090909 40%,
-            #000000 100%
-        );
-}
 
-.hero::before {
+        .nav-name {
 
-    content: "";
+            font-family: var(--serif);
 
-    position: absolute;
+            font-size: 14px;
 
-    width: 700px;
-    height: 700px;
+            letter-spacing: 4px;
 
-    left: 50%;
-    top: 50%;
+            font-weight: 500;
+        }
 
-    transform: translate(-50%, -50%);
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.045),
-            transparent 65%
-        );
+        .nav-links {
 
-    animation:
-        heroGlow 8s ease-in-out infinite;
-}
+            display: flex;
 
-@keyframes heroGlow {
+            align-items: center;
 
-    0%,
-    100% {
-        transform:
-            translate(-50%, -50%)
-            scale(0.9);
-    }
+            gap: 38px;
 
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.15);
-    }
-}
+            list-style: none;
+        }
 
-.hero-content {
 
-    position: relative;
+        .nav-links a {
 
-    z-index: 2;
+            position: relative;
 
-    max-width: 1000px;
+            color: #d8d8d8;
 
-    animation:
-        heroReveal 1.8s
-        cubic-bezier(.16,1,.3,1)
-        both;
-}
+            font-size: 9px;
 
-@keyframes heroReveal {
+            letter-spacing: 3px;
 
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
+            text-transform: uppercase;
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            transition:
+                color 0.3s ease;
+        }
 
-.hero-logo {
 
-    width: min(250px,65vw);
+        .nav-links a::after {
 
-    margin: 0 auto 40px;
+            content: "";
 
-    filter:
-        drop-shadow(
-            0 0 35px
-            rgba(255,255,255,0.08)
-        );
+            position: absolute;
 
-    animation:
-        logoFloat 6s ease-in-out infinite;
-}
+            left: 0;
 
-@keyframes logoFloat {
+            bottom: -8px;
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+            width: 0;
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
+            height: 1px;
 
-.hero-title {
+            background: #ffffff;
 
-    font-family: var(--serif);
+            transition:
+                width 0.3s ease;
+        }
 
-    font-size: clamp(42px,8vw,92px);
 
-    font-weight: 400;
+        .nav-links a:hover {
 
-    letter-spacing: clamp(6px,1.2vw,14px);
+            color: #ffffff;
+        }
 
-    line-height: 1;
-}
 
-.hero-divider {
+        .nav-links a:hover::after {
 
-    width: 90px;
+            width: 100%;
+        }
 
-    height: 1px;
 
-    background: rgba(255,255,255,0.7);
+        /* =========================================
+           HERO
+        ========================================== */
 
-    margin: 32px auto;
-}
+        .hero {
 
-.hero-tagline {
+            position: relative;
 
-    font-size: clamp(11px,1.8vw,16px);
+            min-height: 100vh;
 
-    letter-spacing: clamp(3px,0.7vw,6px);
+            display: flex;
 
-    color: #bdbdbd;
+            align-items: center;
 
-    text-transform: uppercase;
+            justify-content: center;
 
-    font-weight: 300;
-}
+            text-align: center;
 
-.hero-scroll {
+            overflow: hidden;
 
-    position: absolute;
+            padding:
+                150px 25px 100px;
 
-    bottom: 35px;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #181818 0%,
+                    #090909 40%,
+                    #000000 100%
+                );
+        }
 
-    left: 50%;
 
-    transform: translateX(-50%);
+        .hero::before {
 
-    display: flex;
+            content: "";
 
-    flex-direction: column;
+            position: absolute;
 
-    align-items: center;
+            width: 700px;
+            height: 700px;
 
-    gap: 12px;
+            left: 50%;
+            top: 50%;
 
-    color: #666;
+            transform:
+                translate(-50%, -50%);
 
-    font-size: 8px;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.045),
+                    transparent 65%
+                );
 
-    letter-spacing: 4px;
+            animation:
+                heroGlow 8s ease-in-out infinite;
+        }
 
-    text-transform: uppercase;
-}
 
-.scroll-line {
+        @keyframes heroGlow {
 
-    width: 1px;
-    height: 45px;
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.9);
+            }
 
-    background:
-        linear-gradient(
-            to bottom,
-            #777,
-            transparent
-        );
+            50% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+            }
+        }
 
-    animation:
-        scrollPulse 2s ease-in-out infinite;
-}
 
-@keyframes scrollPulse {
+        .hero-content {
 
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scaleY(0.7);
-    }
+            position: relative;
 
-    50% {
-        opacity: 1;
-        transform: scaleY(1);
-    }
-}
+            z-index: 2;
 
+            max-width: 1000px;
 
-/* =====================================================
-   SECTIONS
-===================================================== */
+            animation:
+                heroReveal 1.8s
+                cubic-bezier(.16,1,.3,1)
+                both;
+        }
 
-.section {
 
-    position: relative;
+        @keyframes heroReveal {
 
-    padding: 130px 7%;
-}
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
 
-.section-header {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    text-align: center;
 
-    margin-bottom: 75px;
-}
+        .hero-logo {
 
-.section-number {
+            width:
+                min(250px, 65vw);
 
-    display: block;
+            margin:
+                0 auto 40px;
 
-    color: #555;
+            filter:
+                drop-shadow(
+                    0 0 35px
+                    rgba(255,255,255,0.08)
+                );
 
-    font-size: 8px;
+            animation:
+                logoFloat 6s ease-in-out infinite;
+        }
 
-    letter-spacing: 5px;
 
-    margin-bottom: 20px;
-}
+        @keyframes logoFloat {
 
-.section-title {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
-    font-family: var(--serif);
+            50% {
+                transform: translateY(-8px);
+            }
+        }
 
-    font-size: clamp(30px,5vw,58px);
 
-    font-weight: 400;
+        .hero-title {
 
-    letter-spacing: clamp(4px,0.8vw,9px);
+            font-family: var(--serif);
 
-    text-transform: uppercase;
-}
+            font-size:
+                clamp(42px, 8vw, 92px);
 
-.section-subtitle {
+            font-weight: 400;
 
-    margin-top: 20px;
+            letter-spacing:
+                clamp(6px, 1.2vw, 14px);
 
-    color: #777;
+            line-height: 1;
+        }
 
-    font-size: 10px;
 
-    letter-spacing: 4px;
+        .hero-divider {
 
-    text-transform: uppercase;
-}
+            width: 90px;
+            height: 1px;
 
+            background:
+                rgba(255,255,255,0.7);
 
-/* =====================================================
-   PROJECT
-===================================================== */
+            margin:
+                32px auto;
+        }
 
-#projects {
 
-    background:
-        linear-gradient(
-            180deg,
-            #050505,
-            #090909
-        );
-}
+        .hero-tagline {
 
-.project-card {
+            font-size:
+                clamp(11px, 1.8vw, 16px);
 
-    max-width: 1200px;
+            letter-spacing:
+                clamp(3px, 0.7vw, 6px);
 
-    margin: 0 auto;
+            color: #bdbdbd;
 
-    display: grid;
+            text-transform: uppercase;
 
-    grid-template-columns:
-        minmax(0,1.05fr)
-        minmax(0,0.95fr);
+            font-weight: 300;
+        }
 
-    background: #0a0a0a;
 
-    border: 1px solid var(--line);
+        .hero-scroll {
 
-    overflow: hidden;
+            position: absolute;
 
-    opacity: 0;
+            bottom: 35px;
+            left: 50%;
 
-    transform: translateY(40px);
+            transform:
+                translateX(-50%);
 
-    transition:
-        opacity 1s ease,
-        transform 1s cubic-bezier(.16,1,.3,1),
-        border-color 0.4s ease;
-}
+            display: flex;
 
-.project-card.visible {
+            flex-direction: column;
 
-    opacity: 1;
+            align-items: center;
 
-    transform: translateY(0);
-}
+            gap: 12px;
 
-.project-card:hover {
+            color: #666;
 
-    border-color: var(--line-strong);
+            font-size: 8px;
 
-    transform: translateY(-7px);
-}
+            letter-spacing: 4px;
 
-.project-poster {
+            text-transform: uppercase;
+        }
 
-    position: relative;
 
-    min-height: 620px;
+        .scroll-line {
 
-    overflow: hidden;
+            width: 1px;
+            height: 45px;
 
-    background: #000;
-}
+            background:
+                linear-gradient(
+                    to bottom,
+                    #777,
+                    transparent
+                );
 
-.project-poster img {
+            animation:
+                scrollPulse 2s ease-in-out infinite;
+        }
 
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+        @keyframes scrollPulse {
 
-    transition:
-        transform 1.2s
-        cubic-bezier(.16,1,.3,1);
-}
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scaleY(0.7);
+            }
 
-.project-poster::after {
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
 
-    content: "";
 
-    position: absolute;
+        /* =========================================
+           GENERAL SECTION
+        ========================================== */
 
-    inset: 0;
+        .section {
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent 65%,
-            rgba(0,0,0,0.25)
-        );
+            position: relative;
 
-    pointer-events: none;
-}
+            padding:
+                130px 7%;
+        }
 
-.project-card:hover
-.project-poster img {
 
-    transform: scale(1.045);
-}
+        .section-header {
 
-.project-details {
+            text-align: center;
 
-    display: flex;
+            margin-bottom: 75px;
+        }
 
-    flex-direction: column;
 
-    justify-content: center;
+        .section-number {
 
-    padding: clamp(35px,5vw,70px);
-}
+            display: block;
 
-.project-type {
+            color: #555;
 
-    color: #777;
+            font-size: 8px;
 
-    font-size: 8px;
+            letter-spacing: 5px;
 
-    letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
 
-    text-transform: uppercase;
 
-    margin-bottom: 22px;
-}
+        .section-title {
 
-.project-title {
+            font-family: var(--serif);
 
-    font-family: var(--serif);
+            font-size:
+                clamp(30px, 5vw, 58px);
 
-    font-size: clamp(38px,5vw,68px);
+            font-weight: 400;
 
-    font-weight: 400;
+            letter-spacing:
+                clamp(4px, 0.8vw, 9px);
 
-    letter-spacing: 4px;
+            text-transform: uppercase;
+        }
 
-    line-height: 1.05;
-}
 
-.project-subtitle {
+        .section-subtitle {
 
-    margin-top: 13px;
+            margin-top: 20px;
 
-    color: #aaa;
+            color: #777;
 
-    font-size: 11px;
+            font-size: 10px;
 
-    letter-spacing: 5px;
+            letter-spacing: 4px;
 
-    text-transform: uppercase;
-}
+            text-transform: uppercase;
+        }
 
-.project-rule {
 
-    width: 60px;
+        /* =========================================
+           PROJECTS
+        ========================================== */
 
-    height: 1px;
+        #projects {
 
-    background: #666;
+            background:
+                linear-gradient(
+                    180deg,
+                    #050505,
+                    #090909
+                );
+        }
 
-    margin: 30px 0;
-}
 
-.project-description {
+        .project-card {
 
-    color: #b5b5b5;
+            max-width: 1200px;
 
-    font-size: 13px;
+            margin: 0 auto;
 
-    line-height: 2;
+            display: grid;
 
-    max-width: 520px;
-}
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(0, 0.95fr);
 
-.project-description::first-letter {
+            background: #0a0a0a;
 
-    font-family: var(--serif);
+            border:
+                1px solid
+                var(--line);
 
-    font-size: 42px;
+            overflow: hidden;
 
-    float: left;
+            opacity: 0;
 
-    line-height: 0.8;
+            transform:
+                translateY(40px);
 
-    padding: 5px 8px 0 0;
+            transition:
+                opacity 1s ease,
+                transform 1s cubic-bezier(.16,1,.3,1),
+                border-color 0.4s ease;
+        }
 
-    color: #fff;
-}
 
-.project-credits {
+        .project-card.visible {
 
-    margin-top: 38px;
+            opacity: 1;
 
-    padding-top: 25px;
+            transform:
+                translateY(0);
+        }
 
-    border-top: 1px solid var(--line);
 
-    color: #666;
+        .project-card:hover {
 
-    font-size: 8px;
+            border-color:
+                var(--line-strong);
 
-    line-height: 2.3;
+            transform:
+                translateY(-7px);
+        }
 
-    letter-spacing: 2px;
-}
 
-.project-status {
+        .project-poster {
 
-    margin-top: 35px;
+            position: relative;
 
-    display: inline-flex;
+            min-height: 620px;
 
-    align-items: center;
+            overflow: hidden;
 
-    gap: 10px;
+            background: #000;
+        }
 
-    color: #aaa;
 
-    font-size: 8px;
+        .project-poster img {
 
-    letter-spacing: 3px;
+            width: 100%;
+            height: 100%;
 
-    text-transform: uppercase;
-}
+            object-fit: cover;
 
-.status-dot {
+            transition:
+                transform 1.2s
+                cubic-bezier(.16,1,.3,1);
+        }
 
-    width: 6px;
-    height: 6px;
 
-    border-radius: 50%;
+        .project-poster::after {
 
-    background: #aaa;
+            content: "";
 
-    box-shadow:
-        0 0 10px
-        rgba(255,255,255,0.5);
+            position: absolute;
 
-    animation:
-        statusBlink 2s infinite;
-}
+            inset: 0;
 
-@keyframes statusBlink {
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 65%,
+                    rgba(0,0,0,0.25)
+                );
 
-    0%,
-    100% {
-        opacity: 0.4;
-    }
+            pointer-events: none;
+        }
 
-    50% {
-        opacity: 1;
-    }
-}
 
+        .project-card:hover
+        .project-poster img {
 
-/* =====================================================
-   SCORES
-===================================================== */
+            transform:
+                scale(1.045);
+        }
 
-#scores {
-    background: #070707;
-}
 
-.scores-container {
+        .project-details {
 
-    max-width: 1000px;
+            display: flex;
 
-    margin: 0 auto;
-}
+            flex-direction: column;
 
-.scores-intro {
+            justify-content: center;
 
-    text-align: center;
+            padding:
+                clamp(35px, 5vw, 70px);
+        }
 
-    max-width: 650px;
 
-    margin: 0 auto 60px;
-}
+        .project-type {
 
-.scores-project {
+            color: #777;
 
-    font-family: var(--serif);
+            font-size: 8px;
 
-    font-size: clamp(27px,5vw,48px);
+            letter-spacing: 4px;
 
-    letter-spacing: 4px;
+            text-transform: uppercase;
 
-    font-weight: 400;
-}
+            margin-bottom: 22px;
+        }
 
-.scores-subtitle {
 
-    margin-top: 12px;
+        .project-title {
 
-    color: #777;
+            font-family: var(--serif);
 
-    font-size: 9px;
+            font-size:
+                clamp(38px, 5vw, 68px);
 
-    letter-spacing: 4px;
+            font-weight: 400;
 
-    text-transform: uppercase;
-}
+            letter-spacing: 4px;
 
-.score-list {
+            line-height: 1.05;
+        }
 
-    border-top: 1px solid var(--line);
-}
 
-.score-track {
+        .project-subtitle {
 
-    position: relative;
+            margin-top: 13px;
 
-    display: grid;
+            color: #aaa;
 
-    grid-template-columns:
-        55px
-        1fr
-        auto;
+            font-size: 11px;
 
-    align-items: center;
+            letter-spacing: 5px;
 
-    gap: 20px;
+            text-transform: uppercase;
+        }
 
-    padding: 28px 0;
 
-    border-bottom: 1px solid var(--line);
+        .project-rule {
 
-    transition: padding 0.3s ease;
-}
+            width: 60px;
+            height: 1px;
 
-.score-track:hover {
+            background: #666;
 
-    padding-left: 10px;
-    padding-right: 10px;
+            margin:
+                30px 0;
+        }
 
-    background:
-        rgba(255,255,255,0.015);
-}
 
-.track-number {
+        .project-description {
 
-    color: #444;
+            color: #b5b5b5;
 
-    font-family: var(--serif);
+            font-size: 13px;
 
-    font-size: 15px;
+            line-height: 2;
 
-    letter-spacing: 2px;
-}
+            max-width: 520px;
+        }
 
-.track-info {
-    min-width: 0;
-}
 
-.track-title {
+        .project-description::first-letter {
 
-    display: block;
+            font-family: var(--serif);
 
-    color: #e6e6e6;
+            font-size: 42px;
 
-    font-size: 10px;
+            float: left;
 
-    letter-spacing: 3px;
+            line-height: 0.8;
 
-    text-transform: uppercase;
+            padding:
+                5px 8px 0 0;
 
-    white-space: nowrap;
+            color: #fff;
+        }
 
-    overflow: hidden;
 
-    text-overflow: ellipsis;
-}
+        .project-credits {
 
-.track-label {
+            margin-top: 38px;
 
-    display: block;
+            padding-top: 25px;
 
-    margin-top: 8px;
+            border-top:
+                1px solid
+                var(--line);
 
-    color: #555;
+            color: #666;
 
-    font-size: 7px;
+            font-size: 8px;
 
-    letter-spacing: 2px;
+            line-height: 2.3;
 
-    text-transform: uppercase;
-}
+            letter-spacing: 2px;
+        }
 
-.track-player {
 
-    display: flex;
+        .project-status {
 
-    align-items: center;
+            margin-top: 35px;
 
-    gap: 14px;
-}
+            display: inline-flex;
 
+            align-items: center;
 
-/* =====================================================
-   PURE WHITE PLAY BUTTON
-===================================================== */
+            gap: 10px;
 
-.play-button {
+            color: #aaa;
 
-    width: 42px;
-    height: 42px;
+            font-size: 8px;
 
-    flex-shrink: 0;
+            letter-spacing: 3px;
 
-    border: 1px solid rgba(255,255,255,0.25);
+            text-transform: uppercase;
+        }
 
-    border-radius: 50%;
 
-    background: transparent;
+        .status-dot {
 
-    color: #ffffff;
+            width: 6px;
+            height: 6px;
 
-    cursor: pointer;
+            border-radius: 50%;
 
-    display: flex;
+            background: #aaa;
 
-    align-items: center;
+            box-shadow:
+                0 0 10px
+                rgba(255,255,255,0.5);
 
-    justify-content: center;
+            animation:
+                statusBlink 2s infinite;
+        }
 
-    padding: 0;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
-}
+        @keyframes statusBlink {
 
+            0%,
+            100% {
+                opacity: 0.4;
+            }
 
-/*
-   IMPORTANT:
-   CSS-drawn icon.
-   This prevents Android/Chrome from
-   turning the play symbol into a blue emoji.
-*/
+            50% {
+                opacity: 1;
+            }
+        }
 
-.play-icon {
 
-    display: block;
+        /* =========================================
+           SCORES
+           SEPARATE PAGE LINK
+        ========================================== */
 
-    width: 0;
-    height: 0;
+        #scores {
 
-    margin-left: 3px;
+            background: #070707;
 
-    border-top: 7px solid transparent;
+            text-align: center;
+        }
 
-    border-bottom: 7px solid transparent;
 
-    border-left: 10px solid #ffffff;
-}
+        .scores-container {
 
-.play-icon.pause {
+            max-width: 850px;
 
-    width: 10px;
-    height: 14px;
+            margin: 0 auto;
+        }
 
-    margin-left: 0;
 
-    border: none;
+        .scores-intro {
 
-    position: relative;
-}
+            max-width: 650px;
 
-.play-icon.pause::before,
-.play-icon.pause::after {
+            margin: 0 auto;
+        }
 
-    content: "";
 
-    position: absolute;
+        .scores-project {
 
-    top: 0;
+            font-family: var(--serif);
 
-    width: 3px;
-    height: 14px;
+            font-size:
+                clamp(27px, 5vw, 48px);
 
-    background: #ffffff;
-}
+            letter-spacing: 4px;
 
-.play-icon.pause::before {
-    left: 0;
-}
+            font-weight: 400;
+        }
 
-.play-icon.pause::after {
-    right: 0;
-}
 
-.play-button:hover {
+        .scores-subtitle {
 
-    background: #ffffff;
+            margin-top: 12px;
 
-    border-color: #ffffff;
+            color: #777;
 
-    transform: scale(1.05);
-}
+            font-size: 9px;
 
-.play-button:hover .play-icon {
+            letter-spacing: 4px;
 
-    border-left-color: #000000;
-}
+            text-transform: uppercase;
+        }
 
-.play-button:hover .play-icon.pause::before,
-.play-button:hover .play-icon.pause::after {
 
-    background: #000000;
-}
+        .scores-link {
 
+            display: inline-flex;
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+            align-items: center;
 
-.track-progress-wrap {
+            justify-content: center;
 
-    width: clamp(90px,15vw,170px);
-}
+            margin-top: 35px;
 
-.track-progress {
+            padding:
+                15px 30px;
 
-    width: 100%;
+            border:
+                1px solid
+                rgba(255,255,255,0.25);
 
-    height: 2px;
+            color: #ddd;
 
-    background: #333;
+            font-size: 8px;
 
-    cursor: pointer;
+            letter-spacing: 4px;
 
-    appearance: none;
+            text-transform: uppercase;
 
-    -webkit-appearance: none;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
 
-    outline: none;
-}
 
-.track-progress::-webkit-slider-thumb {
+        .scores-link:hover {
 
-    appearance: none;
+            background: #fff;
 
-    -webkit-appearance: none;
+            color: #000;
 
-    width: 7px;
-    height: 7px;
+            border-color: #fff;
 
-    border-radius: 50%;
+            transform:
+                translateY(-3px);
+        }
 
-    background: #ffffff;
 
-    cursor: pointer;
-}
+        /* =========================================
+           STUDIO DIVIDER
+        ========================================== */
 
-.track-progress::-moz-range-thumb {
+        .studio-divider {
 
-    width: 7px;
-    height: 7px;
+            display: flex;
 
-    border: 0;
+            align-items: center;
 
-    border-radius: 50%;
+            gap: 20px;
 
-    background: #ffffff;
+            max-width: 700px;
 
-    cursor: pointer;
-}
+            margin:
+                0 auto;
+        }
 
-.track-time {
 
-    margin-top: 7px;
+        .studio-divider span {
 
-    color: #555;
+            flex: 1;
 
-    font-size: 7px;
+            height: 1px;
 
-    letter-spacing: 1px;
+            background:
+                var(--line);
+        }
 
-    text-align: right;
-}
 
-.track-audio {
-    display: none;
-}
+        .studio-divider i {
 
-.composer-credit {
+            width: 7px;
+            height: 7px;
 
-    margin-top: 55px;
+            border:
+                1px solid #777;
 
-    text-align: center;
+            transform:
+                rotate(45deg);
+        }
 
-    padding-top: 30px;
 
-    border-top: 1px solid var(--line);
-}
+        /* =========================================
+           FUTURE PROJECTS
+        ========================================== */
 
-.composer-label {
+        .future-section {
 
-    display: block;
+            min-height: 55vh;
 
-    color: #555;
+            display: flex;
 
-    font-size: 7px;
+            align-items: center;
 
-    letter-spacing: 4px;
+            justify-content: center;
 
-    text-transform: uppercase;
+            text-align: center;
 
-    margin-bottom: 10px;
-}
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #111111 0%,
+                    #050505 65%
+                );
 
-.composer-name {
+            border-top:
+                1px solid
+                var(--line);
 
-    font-family: var(--serif);
+            border-bottom:
+                1px solid
+                var(--line);
+        }
 
-    color: #bbb;
 
-    font-size: 14px;
+        .future-content {
 
-    letter-spacing: 4px;
-}
+            max-width: 800px;
+        }
 
 
-/* =====================================================
-   FUTURE
-===================================================== */
+        .future-symbol {
 
-.future-section {
+            width: 55px;
+            height: 55px;
 
-    min-height: 55vh;
+            margin:
+                0 auto 35px;
 
-    display: flex;
+            border:
+                1px solid #444;
 
-    align-items: center;
-    justify-content: center;
+            border-radius: 50%;
 
-    text-align: center;
+            display: flex;
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            #111111 0%,
-            #050505 65%
-        );
+            align-items: center;
 
-    border-top: 1px solid var(--line);
+            justify-content: center;
 
-    border-bottom: 1px solid var(--line);
-}
+            color: #777;
 
-.future-content {
-    max-width: 800px;
-}
+            font-family: var(--serif);
 
-.future-symbol {
+            font-size: 20px;
 
-    width: 55px;
-    height: 55px;
+            animation:
+                futureRotate 12s linear infinite;
+        }
 
-    margin: 0 auto 35px;
 
-    border: 1px solid #444;
+        @keyframes futureRotate {
 
-    border-radius: 50%;
+            from {
+                transform: rotate(0deg);
+            }
 
-    display: flex;
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-    align-items: center;
-    justify-content: center;
 
-    color: #777;
+        .future-title {
 
-    font-family: var(--serif);
+            font-family: var(--serif);
 
-    font-size: 20px;
+            font-size:
+                clamp(30px, 6vw, 65px);
 
-    animation:
-        futureRotate 12s linear infinite;
-}
+            font-weight: 400;
 
-@keyframes futureRotate {
+            letter-spacing:
+                clamp(4px, 1vw, 10px);
+        }
 
-    from {
-        transform: rotate(0deg);
-    }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
+        .future-line {
 
-.future-title {
+            width: 70px;
+            height: 1px;
 
-    font-family: var(--serif);
+            background: #555;
 
-    font-size: clamp(30px,6vw,65px);
+            margin:
+                30px auto;
+        }
 
-    font-weight: 400;
 
-    letter-spacing: clamp(4px,1vw,10px);
-}
+        .future-text {
 
-.future-line {
+            color: #777;
 
-    width: 70px;
-    height: 1px;
+            font-size: 10px;
 
-    background: #555;
+            letter-spacing: 4px;
 
-    margin: 30px auto;
-}
+            text-transform: uppercase;
 
-.future-text {
+            line-height: 2;
+        }
 
-    color: #777;
 
-    font-size: 10px;
+        .coming-soon {
 
-    letter-spacing: 4px;
+            display: inline-block;
 
-    text-transform: uppercase;
+            margin-top: 35px;
 
-    line-height: 2;
-}
+            padding:
+                13px 28px;
 
-.coming-soon {
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
 
-    display: inline-block;
+            color: #999;
 
-    margin-top: 35px;
+            font-size: 8px;
 
-    padding: 13px 28px;
+            letter-spacing: 4px;
 
-    border: 1px solid rgba(255,255,255,0.18);
+            text-transform: uppercase;
+        }
 
-    color: #999;
 
-    font-size: 8px;
+        /* =========================================
+           ABOUT
+        ========================================== */
 
-    letter-spacing: 4px;
+        #about {
+            background: #050505;
+        }
 
-    text-transform: uppercase;
-}
 
+        .about-container {
 
-/* =====================================================
-   ABOUT
-===================================================== */
+            max-width: 900px;
 
-#about {
-    background: #050505;
-}
+            margin: 0 auto;
 
-.about-container {
+            text-align: center;
 
-    max-width: 900px;
+            opacity: 0;
 
-    margin: 0 auto;
+            transform:
+                translateY(30px);
 
-    text-align: center;
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
 
-    opacity: 0;
 
-    transform: translateY(30px);
+        .about-container.visible {
 
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
-}
+            opacity: 1;
 
-.about-container.visible {
+            transform:
+                translateY(0);
+        }
 
-    opacity: 1;
 
-    transform: translateY(0);
-}
+        .about-lead {
 
-.about-lead {
+            font-family: var(--serif);
 
-    font-family: var(--serif);
+            font-size:
+                clamp(22px, 3vw, 34px);
 
-    font-size: clamp(22px,3vw,34px);
+            line-height: 1.6;
 
-    line-height: 1.6;
+            color: #ddd;
 
-    color: #ddd;
+            letter-spacing: 1px;
+        }
 
-    letter-spacing: 1px;
-}
 
-.about-text {
+        .about-text {
 
-    margin-top: 35px;
+            margin-top: 35px;
 
-    color: #888;
+            color: #888;
 
-    font-size: 13px;
+            font-size: 13px;
 
-    line-height: 2.1;
-}
+            line-height: 2.1;
+        }
 
-.about-motto {
 
-    margin-top: 45px;
+        .about-motto {
 
-    font-family: var(--serif);
+            margin-top: 45px;
 
-    font-size: 11px;
+            font-family: var(--serif);
 
-    letter-spacing: 5px;
+            font-size: 11px;
 
-    color: #aaa;
+            letter-spacing: 5px;
 
-    text-transform: uppercase;
-}
+            color: #aaa;
 
+            text-transform: uppercase;
+        }
 
-/* =====================================================
-   MEMBERS
-===================================================== */
 
-#members {
+        /* =========================================
+           MEMBERS
+        ========================================== */
 
-    background:
-        linear-gradient(
-            180deg,
-            #050505,
-            #080808
-        );
-}
+        #members {
 
-.members-container {
+            background:
+                linear-gradient(
+                    180deg,
+                    #050505,
+                    #080808
+                );
+        }
 
-    max-width: 900px;
 
-    margin: 0 auto;
-}
+        .members-container {
 
-.members-grid {
+            max-width: 900px;
 
-    display: grid;
+            margin: 0 auto;
+        }
 
-    grid-template-columns:
-        repeat(2,1fr);
 
-    border-top: 1px solid var(--line);
+        .members-grid {
 
-    border-left: 1px solid var(--line);
-}
+            display: grid;
 
-.member {
+            grid-template-columns:
+                repeat(2, 1fr);
 
-    min-height: 170px;
+            border-top:
+                1px solid
+                var(--line);
 
-    display: flex;
+            border-left:
+                1px solid
+                var(--line);
+        }
 
-    align-items: center;
-    justify-content: center;
 
-    flex-direction: column;
+        .member {
 
-    text-align: center;
+            min-height: 170px;
 
-    padding: 30px;
+            display: flex;
 
-    border-right: 1px solid var(--line);
+            align-items: center;
 
-    border-bottom: 1px solid var(--line);
+            justify-content: center;
 
-    transition:
-        background 0.4s ease;
-}
+            flex-direction: column;
 
-.member:hover {
+            text-align: center;
 
-    background:
-        rgba(255,255,255,0.025);
-}
+            padding: 30px;
 
-.member-number {
+            border-right:
+                1px solid
+                var(--line);
 
-    color: #444;
+            border-bottom:
+                1px solid
+                var(--line);
 
-    font-family: var(--serif);
+            transition:
+                background 0.4s ease;
+        }
 
-    font-size: 12px;
 
-    margin-bottom: 15px;
-}
+        .member:hover {
 
-.member-name {
+            background:
+                rgba(255,255,255,0.025);
+        }
 
-    font-family: var(--serif);
 
-    color: #ddd;
+        .member-number {
 
-    font-size: clamp(17px,2.5vw,24px);
+            color: #444;
 
-    font-weight: 400;
+            font-family: var(--serif);
 
-    letter-spacing: 2px;
-}
+            font-size: 12px;
 
-.member-line {
+            margin-bottom: 15px;
+        }
 
-    width: 35px;
-    height: 1px;
 
-    background: #555;
+        .member-name {
 
-    margin-top: 15px;
-}
+            font-family: var(--serif);
 
+            color: #ddd;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+            font-size:
+                clamp(17px, 2.5vw, 24px);
 
-footer {
+            font-weight: 400;
 
-    padding: 80px 25px 40px;
+            letter-spacing: 2px;
+        }
 
-    text-align: center;
 
-    background: #000;
+        .member-line {
 
-    border-top: 1px solid var(--line);
-}
+            width: 35px;
+            height: 1px;
 
-.footer-logo {
+            background: #555;
 
-    width: 75px;
+            margin-top: 15px;
+        }
 
-    margin: 0 auto 25px;
 
-    opacity: 0.9;
-}
+        /* =========================================
+           FOOTER
+        ========================================== */
 
-.footer-name {
+        footer {
 
-    font-family: var(--serif);
+            padding:
+                80px 25px 40px;
 
-    font-size: 14px;
+            text-align: center;
 
-    letter-spacing: 6px;
+            background: #000;
 
-    font-weight: 400;
-}
+            border-top:
+                1px solid
+                var(--line);
+        }
 
-.footer-tagline {
 
-    margin-top: 15px;
+        .footer-logo {
 
-    color: #555;
+            width: 75px;
 
-    font-size: 8px;
+            margin:
+                0 auto 25px;
 
-    letter-spacing: 4px;
+            opacity: 0.9;
+        }
 
-    text-transform: uppercase;
-}
 
-.footer-line {
+        .footer-name {
 
-    width: 50px;
-    height: 1px;
+            font-family: var(--serif);
 
-    background: #333;
+            font-size: 14px;
 
-    margin: 35px auto;
-}
+            letter-spacing: 6px;
 
-.copyright {
+            font-weight: 400;
+        }
 
-    color: #444;
 
-    font-size: 8px;
+        .footer-tagline {
 
-    letter-spacing: 2px;
+            margin-top: 15px;
 
-    text-transform: uppercase;
-}
+            color: #555;
 
+            font-size: 8px;
 
-/* =====================================================
-   TOP
-===================================================== */
+            letter-spacing: 4px;
 
-#top-button {
+            text-transform: uppercase;
+        }
 
-    position: fixed;
 
-    right: 25px;
-    bottom: 25px;
+        .footer-line {
 
-    width: 42px;
-    height: 42px;
+            width: 50px;
+            height: 1px;
 
-    display: flex;
+            background: #333;
 
-    align-items: center;
-    justify-content: center;
+            margin:
+                35px auto;
+        }
 
-    border: 1px solid rgba(255,255,255,0.2);
 
-    background: rgba(0,0,0,0.7);
+        .copyright {
 
-    color: #aaa;
+            color: #444;
 
-    cursor: pointer;
+            font-size: 8px;
 
-    opacity: 0;
+            letter-spacing: 2px;
 
-    visibility: hidden;
+            text-transform: uppercase;
+        }
 
-    transition: all 0.3s ease;
 
-    z-index: 4000;
-}
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
 
-#top-button.show {
+        #top-button {
 
-    opacity: 1;
+            position: fixed;
 
-    visibility: visible;
-}
+            right: 25px;
+            bottom: 25px;
 
-#top-button:hover {
+            width: 42px;
+            height: 42px;
 
-    color: #fff;
+            display: flex;
 
-    border-color: #777;
-}
+            align-items: center;
 
+            justify-content: center;
 
-/* =====================================================
-   MOBILE
-===================================================== */
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
 
-@media (max-width:850px) {
+            background:
+                rgba(0,0,0,0.7);
 
-    .navbar {
+            color: #aaa;
 
-        height: 70px;
+            cursor: pointer;
 
-        padding: 0 5%;
-    }
+            opacity: 0;
 
-    .nav-name {
-        display: none;
-    }
+            visibility: hidden;
 
-    .nav-logo {
+            transition:
+                all 0.3s ease;
 
-        width: 40px;
-        height: 40px;
-    }
+            z-index: 4000;
+        }
 
-    .nav-links {
 
-        gap: 18px;
-    }
+        #top-button.show {
 
-    .nav-links a {
+            opacity: 1;
 
-        font-size: 8px;
+            visibility: visible;
+        }
 
-        letter-spacing: 2px;
-    }
 
-    .hero {
+        #top-button:hover {
 
-        padding:
-            130px 20px 80px;
-    }
+            color: #fff;
 
-    .hero-logo {
+            border-color: #777;
+        }
 
-        width: min(220px,60vw);
 
-        margin-bottom: 35px;
-    }
+        /* =========================================
+           MOBILE
+        ========================================== */
 
-    .hero-scroll {
-        bottom: 20px;
-    }
+        @media (max-width: 850px) {
 
-    .section {
+            .navbar {
 
-        padding:
-            90px 5%;
-    }
+                height: 70px;
 
-    .section-header {
+                padding:
+                    0 5%;
+            }
 
-        margin-bottom: 50px;
-    }
 
-    .project-card {
+            .nav-name {
+                display: none;
+            }
 
-        grid-template-columns: 1fr;
-    }
 
-    .project-poster {
+            .nav-logo {
 
-        min-height: auto;
+                width: 40px;
+                height: 40px;
+            }
 
-        aspect-ratio: 2 / 3;
-    }
 
-    .project-details {
+            .nav-links {
 
-        padding:
-            38px 25px 45px;
-    }
+                gap: 18px;
+            }
 
-    .project-title {
 
-        font-size: 42px;
-    }
+            .nav-links a {
 
-    .project-description {
+                font-size: 8px;
 
-        font-size: 13px;
-    }
+                letter-spacing: 2px;
+            }
 
-    .future-section {
 
-        min-height: 50vh;
+            .hero {
 
-        padding:
-            80px 25px;
-    }
+                padding:
+                    130px 20px 80px;
+            }
 
-    .score-track {
 
-        grid-template-columns:
-            35px 1fr;
-    }
+            .hero-logo {
 
-    .track-player {
+                width:
+                    min(220px, 60vw);
 
-        grid-column:
-            2 / 3;
+                margin-bottom: 35px;
+            }
 
-        width: 100%;
 
-        margin-top: 10px;
-    }
+            .hero-scroll {
+                bottom: 20px;
+            }
 
-    .track-progress-wrap {
 
-        flex: 1;
+            .section {
 
-        width: auto;
-    }
+                padding:
+                    90px 5%;
+            }
 
-    .members-grid {
 
-        grid-template-columns: 1fr;
-    }
+            .section-header {
 
-    #skip-intro {
+                margin-bottom: 50px;
+            }
 
-        right: 18px;
-        bottom: 18px;
 
-        padding:
-            11px 17px;
-    }
-}
+            .project-card {
 
+                grid-template-columns: 1fr;
+            }
 
-@media (max-width:480px) {
 
-    .nav-links {
-        gap: 12px;
-    }
+            .project-poster {
 
-    .nav-links a {
+                min-height: auto;
 
-        font-size: 7px;
+                aspect-ratio:
+                    2 / 3;
+            }
 
-        letter-spacing: 1.5px;
-    }
 
-    .hero-title {
+            .project-details {
 
-        font-size: 38px;
+                padding:
+                    38px 25px 45px;
+            }
 
-        letter-spacing: 5px;
-    }
 
-    .hero-tagline {
+            .project-title {
 
-        font-size: 9px;
+                font-size: 42px;
+            }
 
-        letter-spacing: 3px;
 
-        line-height: 2;
-    }
+            .project-description {
 
-    .project-title {
+                font-size: 13px;
+            }
 
-        font-size: 36px;
 
-        letter-spacing: 2px;
-    }
+            .future-section {
 
-    .project-subtitle {
+                min-height: 50vh;
 
-        letter-spacing: 3px;
-    }
+                padding:
+                    80px 25px;
+            }
 
-    .project-credits {
 
-        font-size: 8px;
+            .members-grid {
 
-        letter-spacing: 1.5px;
-    }
+                grid-template-columns: 1fr;
+            }
 
-    .track-title {
 
-        font-size: 8px;
+            #skip-intro {
 
-        letter-spacing: 2px;
-    }
+                right: 18px;
 
-    .composer-name {
+                bottom: 18px;
 
-        font-size: 12px;
+                padding:
+                    11px 17px;
+            }
+        }
 
-        letter-spacing: 3px;
-    }
-}
 
+        /* =========================================
+           SMALL PHONES
+        ========================================== */
 
-@media (prefers-reduced-motion:reduce) {
+        @media (max-width: 480px) {
 
-    html {
-        scroll-behavior: auto;
-    }
+            .nav-links {
 
-    *,
-    *::before,
-    *::after {
+                gap: 12px;
+            }
 
-        animation-duration:
-            0.01ms !important;
 
-        animation-iteration-count:
-            1 !important;
+            .nav-links a {
 
-        transition-duration:
-            0.01ms !important;
-    }
-}
+                font-size: 7px;
 
-</style>
+                letter-spacing: 1.5px;
+            }
+
+
+            .hero-title {
+
+                font-size: 38px;
+
+                letter-spacing: 5px;
+            }
+
+
+            .hero-tagline {
+
+                font-size: 9px;
+
+                letter-spacing: 3px;
+
+                line-height: 2;
+            }
+
+
+            .project-title {
+
+                font-size: 36px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .project-subtitle {
+
+                letter-spacing: 3px;
+            }
+
+
+            .project-credits {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
 
 </head>
 
@@ -1960,1453 +1950,991 @@ footer {
 <body>
 
 
-<!-- =====================================================
-     INTRO
-===================================================== -->
+    <!-- =========================================
+         INTRO
+    ========================================== -->
 
-<div id="intro-screen">
+    <div id="intro-screen">
 
-    <video
-        id="intro-video"
-        autoplay
-        muted
-        playsinline
-        preload="auto"
-        aria-label="Triovision Studios opening animation">
+        <video
+            id="intro-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Triovision Studios opening animation">
 
-        <source
-            src="intro.mp4"
-            type="video/mp4">
+            <source
+                src="intro.mp4"
+                type="video/mp4">
 
-    </video>
+        </video>
 
 
-    <div class="intro-fallback">
+        <div class="intro-fallback">
 
-        <img
-            src="logo.png"
-            alt="Triovision Studios">
+            <img
+                src="logo.png"
+                alt="Triovision Studios">
 
-        <p>
-            Triovision Studios
-        </p>
+            <p>
+                Triovision Studios
+            </p>
+
+        </div>
+
+
+        <button
+            id="skip-intro"
+            type="button">
+
+            Skip Intro
+
+        </button>
 
     </div>
 
 
-    <button
-        id="skip-intro"
-        type="button">
+    <!-- =========================================
+         PAGE LOADER
+    ========================================== -->
 
-        Skip Intro
-
-    </button>
-
-</div>
+    <div id="page-loader"></div>
 
 
-<div id="page-loader"></div>
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <header
+        class="navbar"
+        id="navbar">
+
+        <a
+            href="#home"
+            class="nav-brand"
+            aria-label="Triovision Studios Home">
+
+            <img
+                src="logo.png"
+                alt="Triovision Studios Logo"
+                class="nav-logo">
+
+            <span class="nav-name">
+                TRIOVISION STUDIOS
+            </span>
+
+        </a>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+        <nav>
 
-<header
-    class="navbar"
-    id="navbar">
+            <ul class="nav-links">
 
-    <a
-        href="#home"
-        class="nav-brand"
-        aria-label="Triovision Studios Home">
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <!-- SEPARATE OST PAGE -->
+
+                <li>
+                    <a href="ost.html">
+                        Scores
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        Studio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#members">
+                        Members
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="hero-content">
+
+                <img
+                    src="logo.png"
+                    alt="Triovision Studios"
+                    class="hero-logo">
+
+
+                <h1 class="hero-title">
+                    TRIOVISION
+                </h1>
+
+
+                <div class="hero-divider"></div>
+
+
+                <p class="hero-tagline">
+                    Visionary Farms of Imagination
+                </p>
+
+            </div>
+
+
+            <div class="hero-scroll">
+
+                <span>
+                    Explore
+                </span>
+
+                <div class="scroll-line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PROJECTS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="projects">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01 / PROJECTS
+                </span>
+
+                <h2 class="section-title">
+                    Current Project
+                </h2>
+
+                <p class="section-subtitle">
+                    Stories currently in creation
+                </p>
+
+            </div>
+
+
+            <article
+                class="project-card"
+                id="swan-mere">
+
+
+                <div class="project-poster">
+
+                    <img
+                        src="swan-mere.png"
+                        alt="SWAN-MERE — Echoes of Hearts poster"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="project-details">
+
+
+                    <span class="project-type">
+                        A TRIOVISION STUDIOS
+                        ORIGINAL FILM
+                    </span>
+
+
+                    <h3 class="project-title">
+                        SWAN-MERE
+                    </h3>
+
+
+                    <p class="project-subtitle">
+                        Echoes of Hearts
+                    </p>
+
+
+                    <div class="project-rule"></div>
+
+
+                    <p class="project-description">
+
+                        A wounded swan journeys through
+                        love, betrayal, and loss, only to
+                        discover that true healing means
+                        choosing herself and learning to
+                        fly free.
+
+                    </p>
+
+
+                    <div class="project-credits">
+
+                        SCREENPLAY BY SUVESH.B
+
+                        <br>
+
+                        WRITTEN AND DIRECTED BY
+                        SUVESH.B
+
+                        <br>
+
+                        MUSIC COMPOSER
+                        M.D. NISHANTH
+
+                        <br>
+
+                        ASSOCIATE DIRECTOR
+                        M.G. ASWATH NANDHAN
+
+                    </div>
+
+
+                    <div class="project-status">
+
+                        <span class="status-dot"></span>
+
+                        CURRENT PROJECT
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================
+             SCORES TEASER
+             FULL OST IS ON ost.html
+        ====================================== -->
+
+        <section
+            class="section"
+            id="scores">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    03 / ORIGINAL SCORES
+                </span>
+
+                <h2 class="section-title">
+                    Original Scores
+                </h2>
+
+                <p class="section-subtitle">
+                    Music from the world of SWAN-MERE
+                </p>
+
+            </div>
+
+
+            <div class="scores-container">
+
+                <div class="scores-intro">
+
+                    <h3 class="scores-project">
+                        SWAN-MERE
+                    </h3>
+
+                    <p class="scores-subtitle">
+                        Original Motion Picture Soundtrack
+                    </p>
+
+
+                    <a
+                        href="ost.html"
+                        class="scores-link">
+
+                        ENTER ORIGINAL SOUNDTRACK
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DIVIDER
+        ====================================== -->
+
+        <div class="studio-divider">
+
+            <span></span>
+
+            <i></i>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- =====================================
+             FUTURE PROJECTS
+        ====================================== -->
+
+        <section
+            class="future-section"
+            id="future">
+
+
+            <div class="future-content">
+
+
+                <div class="future-symbol">
+                    +
+                </div>
+
+
+                <h2 class="future-title">
+                    Future Projects
+                </h2>
+
+
+                <div class="future-line"></div>
+
+
+                <p class="future-text">
+
+                    New worlds are taking shape.
+
+                    <br>
+
+                    More stories are coming soon.
+
+                </p>
+
+
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ABOUT
+        ====================================== -->
+
+        <section
+            class="section"
+            id="about">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    02 / THE STUDIO
+                </span>
+
+                <h2 class="section-title">
+                    Triovision Studios
+                </h2>
+
+                <p class="section-subtitle">
+                    Visionary Farms of Imagination
+                </p>
+
+            </div>
+
+
+            <div class="about-container">
+
+
+                <p class="about-lead">
+
+                    We imagine worlds.
+
+                    <br>
+
+                    We build stories.
+
+                    <br>
+
+                    We create visions.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    Triovision Studios is a creative
+                    studio focused on developing
+                    original stories, cinematic worlds
+                    and imaginative experiences.
+
+                    <br><br>
+
+                    Every project begins as an idea.
+                    Every idea has a world waiting
+                    to be discovered.
+
+                </p>
+
+
+                <p class="about-motto">
+
+                    Visionary Farms of Imagination
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MEMBERS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="members">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    04 / THE MEMBERS
+                </span>
+
+                <h2 class="section-title">
+                    Members
+                </h2>
+
+                <p class="section-subtitle">
+                    The people building the worlds
+                </p>
+
+            </div>
+
+
+            <div class="members-container">
+
+                <div class="members-grid">
+
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            01
+                        </span>
+
+                        <h3 class="member-name">
+                            Suvesh.B
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            02
+                        </span>
+
+                        <h3 class="member-name">
+                            M.G. Aswath Nandhan
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            03
+                        </span>
+
+                        <h3 class="member-name">
+                            Ritheesh Kumar
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                    <article class="member">
+
+                        <span class="member-number">
+                            04
+                        </span>
+
+                        <h3 class="member-name">
+                            Nishanth.M.D
+                        </h3>
+
+                        <span class="member-line"></span>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
 
         <img
             src="logo.png"
             alt="Triovision Studios Logo"
-            class="nav-logo">
+            class="footer-logo">
 
-        <span class="nav-name">
+
+        <h3 class="footer-name">
             TRIOVISION STUDIOS
-        </span>
-
-    </a>
+        </h3>
 
 
-    <nav>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#home">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="ost.html">
-                    Scores
-                </a>
-            </li>
-
-            <li>
-                <a href="#about">
-                    Studio
-                </a>
-            </li>
-
-            <li>
-                <a href="#members">
-                    Members
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-</header>
-
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
-<main>
-
-
-<section
-    class="hero"
-    id="home">
-
-    <div class="hero-content">
-
-        <img
-            src="logo.png"
-            alt="Triovision Studios"
-            class="hero-logo">
-
-        <h1 class="hero-title">
-            TRIOVISION
-        </h1>
-
-        <div class="hero-divider"></div>
-
-        <p class="hero-tagline">
+        <p class="footer-tagline">
             Visionary Farms of Imagination
         </p>
 
-    </div>
 
+        <div class="footer-line"></div>
 
-    <div class="hero-scroll">
 
-        <span>
-            Explore
-        </span>
+        <p class="copyright">
 
-        <div class="scroll-line"></div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section
-    class="section"
-    id="projects">
-
-    <div class="section-header">
-
-        <span class="section-number">
-            01 / PROJECTS
-        </span>
-
-        <h2 class="section-title">
-            Current Project
-        </h2>
-
-        <p class="section-subtitle">
-            Stories currently in creation
-        </p>
-
-    </div>
-
-
-    <article
-        class="project-card"
-        id="swan-mere">
-
-        <div class="project-poster">
-
-            <img
-                src="swan-mere.png"
-                alt="SWAN-MERE — Echoes of Hearts poster"
-                loading="lazy">
-
-        </div>
-
-
-        <div class="project-details">
-
-            <span class="project-type">
-                A TRIOVISION STUDIOS ORIGINAL FILM
-            </span>
-
-            <h3 class="project-title">
-                SWAN-MERE
-            </h3>
-
-            <p class="project-subtitle">
-                Echoes of Hearts
-            </p>
-
-            <div class="project-rule"></div>
-
-            <p class="project-description">
-
-                A wounded swan journeys through
-                love, betrayal, and loss, only to
-                discover that true healing means
-                choosing herself and learning to
-                fly free.
-
-            </p>
-
-
-            <div class="project-credits">
-
-                SCREENPLAY BY SUVESH.B
-
-                <br>
-
-                WRITTEN AND DIRECTED BY SUVESH.B
-
-                <br>
-
-                MUSIC COMPOSER M.D. NISHANTH
-
-                <br>
-
-                ASSOCIATE DIRECTOR
-                M.G. ASWATH NANDHAN
-
-            </div>
-
-
-            <div class="project-status">
-
-                <span class="status-dot"></span>
-
-                CURRENT PROJECT
-
-            </div>
-
-        </div>
-
-    </article>
-
-</section>
-
-
-<!-- =====================================================
-     ORIGINAL SCORES
-===================================================== -->
-
-<section
-    class="section"
-    id="scores">
-
-    <div class="section-header">
-
-        <span class="section-number">
-            03 / ORIGINAL SCORES
-        </span>
-
-        <h2 class="section-title">
-            Original Scores
-        </h2>
-
-        <p class="section-subtitle">
-            Music from the world of SWAN-MERE
-        </p>
-
-    </div>
-
-
-    <div class="scores-container">
-
-        <div class="scores-intro">
-
-            <h3 class="scores-project">
-                SWAN-MERE
-            </h3>
-
-            <p class="scores-subtitle">
-                Original Motion Picture Soundtrack
-            </p>
-
-        </div>
-
-
-        <div class="score-list">
-
-            <!-- TRACK 01 -->
-
-            <article class="score-track">
-
-                <span class="track-number">
-                    01
-                </span>
-
-                <div class="track-info">
-
-                    <span class="track-title">
-                        Echoes of the Misty Lake
-                    </span>
-
-                    <span class="track-label">
-                        Original Score
-                    </span>
-
-                </div>
-
-                <div class="track-player">
-
-                    <button
-                        class="play-button"
-                        type="button"
-                        aria-label="Play Echoes of the Misty Lake">
-
-                        <span class="play-icon"></span>
-
-                    </button>
-
-                    <div class="track-progress-wrap">
-
-                        <input
-                            class="track-progress"
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            step="0.1"
-                            aria-label="Track progress">
-
-                        <div class="track-time">
-                            00:00
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <audio
-                    class="track-audio"
-                    preload="metadata">
-
-                    <source
-                        src="Echoes%20of%20the%20Misty%20Lake.mp3"
-                        type="audio/mpeg">
-
-                </audio>
-
-            </article>
-
-
-            <!-- TRACK 02 -->
-
-            <article class="score-track">
-
-                <span class="track-number">
-                    02
-                </span>
-
-                <div class="track-info">
-
-                    <span class="track-title">
-                        Fading Pulse
-                    </span>
-
-                    <span class="track-label">
-                        Original Score
-                    </span>
-
-                </div>
-
-                <div class="track-player">
-
-                    <button
-                        class="play-button"
-                        type="button"
-                        aria-label="Play Fading Pulse">
-
-                        <span class="play-icon"></span>
-
-                    </button>
-
-                    <div class="track-progress-wrap">
-
-                        <input
-                            class="track-progress"
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            step="0.1"
-                            aria-label="Track progress">
-
-                        <div class="track-time">
-                            00:00
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <audio
-                    class="track-audio"
-                    preload="metadata">
-
-                    <source
-                        src="Fading%20Pulse%20%282%29.mp3"
-                        type="audio/mpeg">
-
-                </audio>
-
-            </article>
-
-
-            <!-- TRACK 03 -->
-
-            <article class="score-track">
-
-                <span class="track-number">
-                    03
-                </span>
-
-                <div class="track-info">
-
-                    <span class="track-title">
-                        Swans at Golden Dawn
-                    </span>
-
-                    <span class="track-label">
-                        Original Score
-                    </span>
-
-                </div>
-
-                <div class="track-player">
-
-                    <button
-                        class="play-button"
-                        type="button"
-                        aria-label="Play Swans at Golden Dawn">
-
-                        <span class="play-icon"></span>
-
-                    </button>
-
-                    <div class="track-progress-wrap">
-
-                        <input
-                            class="track-progress"
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            step="0.1"
-                            aria-label="Track progress">
-
-                        <div class="track-time">
-                            00:00
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <audio
-                    class="track-audio"
-                    preload="metadata">
-
-                    <source
-                        src="Swans%20at%20Golden%20Dawn.mp3"
-                        type="audio/mpeg">
-
-                </audio>
-
-            </article>
-
-
-            <!-- TRACK 04 -->
-
-            <article class="score-track">
-
-                <span class="track-number">
-                    04
-                </span>
-
-                <div class="track-info">
-
-                    <span class="track-title">
-                        The Lakes
-                    </span>
-
-                    <span class="track-label">
-                        Original Score
-                    </span>
-
-                </div>
-
-                <div class="track-player">
-
-                    <button
-                        class="play-button"
-                        type="button"
-                        aria-label="Play The Lakes">
-
-                        <span class="play-icon"></span>
-
-                    </button>
-
-                    <div class="track-progress-wrap">
-
-                        <input
-                            class="track-progress"
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            step="0.1"
-                            aria-label="Track progress">
-
-                        <div class="track-time">
-                            00:00
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <audio
-                    class="track-audio"
-                    preload="metadata">
-
-                    <source
-                        src="The%20Lakes.mp3"
-                        type="audio/mpeg">
-
-                </audio>
-
-            </article>
-
-
-            <!-- TRACK 05 -->
-
-            <article class="score-track">
-
-                <span class="track-number">
-                    05
-                </span>
-
-                <div class="track-info">
-
-                    <span class="track-title">
-                        The Last Golden Hour
-                    </span>
-
-                    <span class="track-label">
-                        Original Score
-                    </span>
-
-                </div>
-
-                <div class="track-player">
-
-                    <button
-                        class="play-button"
-                        type="button"
-                        aria-label="Play The Last Golden Hour">
-
-                        <span class="play-icon"></span>
-
-                    </button>
-
-                    <div class="track-progress-wrap">
-
-                        <input
-                            class="track-progress"
-                            type="range"
-                            min="0"
-                            max="100"
-                            value="0"
-                            step="0.1"
-                            aria-label="Track progress">
-
-                        <div class="track-time">
-                            00:00
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <audio
-                    class="track-audio"
-                    preload="metadata">
-
-                    <source
-                        src="The%20Last%20Golden%20Hour.mp3"
-                        type="audio/mpeg">
-
-                </audio>
-
-            </article>
-
-        </div>
-
-
-        <div class="composer-credit">
-
-            <span class="composer-label">
-                Music Composer
-            </span>
-
-            <span class="composer-name">
-                M.D. NISHANTH
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FUTURE
-===================================================== -->
-
-<section
-    class="future-section"
-    id="future">
-
-    <div class="future-content">
-
-        <div class="future-symbol">
-            +
-        </div>
-
-        <h2 class="future-title">
-            Future Projects
-        </h2>
-
-        <div class="future-line"></div>
-
-        <p class="future-text">
-
-            New worlds are taking shape.
-
-            <br>
-
-            More stories are coming soon.
+            © 2026 Triovision Studios.
+            All rights reserved.
 
         </p>
 
-        <span class="coming-soon">
-            Coming Soon
-        </span>
+    </footer>
 
-    </div>
 
-</section>
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
 
+    <button
+        id="top-button"
+        type="button"
+        aria-label="Back to top">
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+        ↑
 
-<section
-    class="section"
-    id="about">
+    </button>
 
-    <div class="section-header">
 
-        <span class="section-number">
-            02 / THE STUDIO
-        </span>
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
-        <h2 class="section-title">
-            Triovision Studios
-        </h2>
+    <script>
 
-        <p class="section-subtitle">
-            Visionary Farms of Imagination
-        </p>
+        "use strict";
 
-    </div>
 
+        const introScreen =
+            document.getElementById("intro-screen");
 
-    <div class="about-container">
+        const introVideo =
+            document.getElementById("intro-video");
 
-        <p class="about-lead">
+        const skipIntro =
+            document.getElementById("skip-intro");
 
-            We imagine worlds.
+        const pageLoader =
+            document.getElementById("page-loader");
 
-            <br>
+        const navbar =
+            document.getElementById("navbar");
 
-            We build stories.
+        const topButton =
+            document.getElementById("top-button");
 
-            <br>
+        const projectCard =
+            document.querySelector(".project-card");
 
-            We create visions.
+        const aboutContainer =
+            document.querySelector(".about-container");
 
-        </p>
+        const memberCards =
+            document.querySelectorAll(".member");
 
-        <p class="about-text">
 
-            Triovision Studios is a creative
-            studio focused on developing
-            original stories, cinematic worlds
-            and imaginative experiences.
+        /* =========================================
+           INTRO
+        ========================================== */
 
-            <br><br>
+        let introClosed = false;
 
-            Every project begins as an idea.
-            Every idea has a world waiting
-            to be discovered.
 
-        </p>
+        function closeIntro() {
 
-        <p class="about-motto">
-            Visionary Farms of Imagination
-        </p>
+            if (introClosed) {
+                return;
+            }
 
-    </div>
+            introClosed = true;
 
-</section>
+            try {
+                introVideo.pause();
+            } catch (error) {}
 
+            introScreen.classList.add("hidden");
+        }
 
-<!-- =====================================================
-     MEMBERS
-===================================================== -->
 
-<section
-    class="section"
-    id="members">
+        introVideo.addEventListener(
+            "ended",
+            closeIntro
+        );
 
-    <div class="section-header">
 
-        <span class="section-number">
-            04 / THE MEMBERS
-        </span>
+        skipIntro.addEventListener(
+            "click",
+            closeIntro
+        );
 
-        <h2 class="section-title">
-            Members
-        </h2>
 
-        <p class="section-subtitle">
-            The people building the worlds
-        </p>
-
-    </div>
-
-
-    <div class="members-container">
-
-        <div class="members-grid">
-
-            <article class="member">
-
-                <span class="member-number">
-                    01
-                </span>
-
-                <h3 class="member-name">
-                    Suvesh.B
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-
-            <article class="member">
-
-                <span class="member-number">
-                    02
-                </span>
-
-                <h3 class="member-name">
-                    M.G. Aswath Nandhan
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-
-            <article class="member">
-
-                <span class="member-number">
-                    03
-                </span>
-
-                <h3 class="member-name">
-                    Ritheesh Kumar
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-
-            <article class="member">
-
-                <span class="member-number">
-                    04
-                </span>
-
-                <h3 class="member-name">
-                    Nishanth.M.D
-                </h3>
-
-                <span class="member-line"></span>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <img
-        src="logo.png"
-        alt="Triovision Studios Logo"
-        class="footer-logo">
-
-    <h3 class="footer-name">
-        TRIOVISION STUDIOS
-    </h3>
-
-    <p class="footer-tagline">
-        Visionary Farms of Imagination
-    </p>
-
-    <div class="footer-line"></div>
-
-    <p class="copyright">
-        © 2026 Triovision Studios.
-        All rights reserved.
-    </p>
-
-</footer>
-
-
-<button
-    id="top-button"
-    type="button"
-    aria-label="Back to top">
-
-    ↑
-
-</button>
-
-
-<script>
-
-"use strict";
-
-
-/* =====================================================
-   ELEMENTS
-===================================================== */
-
-const introScreen =
-    document.getElementById("intro-screen");
-
-const introVideo =
-    document.getElementById("intro-video");
-
-const skipIntro =
-    document.getElementById("skip-intro");
-
-const pageLoader =
-    document.getElementById("page-loader");
-
-const navbar =
-    document.getElementById("navbar");
-
-const topButton =
-    document.getElementById("top-button");
-
-const projectCard =
-    document.querySelector(".project-card");
-
-const aboutContainer =
-    document.querySelector(".about-container");
-
-const memberCards =
-    document.querySelectorAll(".member");
-
-const scoreTracks =
-    document.querySelectorAll(".score-track");
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-let introClosed = false;
-
-function closeIntro() {
-
-    if (introClosed) {
-        return;
-    }
-
-    introClosed = true;
-
-    introVideo.pause();
-
-    introScreen.classList.add("hidden");
-}
-
-introVideo.addEventListener(
-    "ended",
-    closeIntro
-);
-
-skipIntro.addEventListener(
-    "click",
-    closeIntro
-);
-
-setTimeout(
-    closeIntro,
-    11000
-);
-
-introVideo.addEventListener(
-    "error",
-    function () {
+        /*
+         * Safety fallback.
+         * Gives the 10-second intro enough time
+         * to finish while preventing it from
+         * remaining permanently on screen.
+         */
 
         setTimeout(
             closeIntro,
-            1200
+            11000
         );
 
-    }
-);
 
-introVideo.addEventListener(
-    "contextmenu",
-    function(event) {
+        introVideo.addEventListener(
+            "error",
+            function () {
 
-        event.preventDefault();
-
-    }
-);
-
-
-/* =====================================================
-   PAGE LOADER
-===================================================== */
-
-window.addEventListener(
-    "load",
-    function() {
-
-        setTimeout(
-            function() {
-
-                pageLoader.classList.add(
-                    "loaded"
+                setTimeout(
+                    closeIntro,
+                    1000
                 );
 
-            },
-            300
+            }
         );
 
-    }
-);
 
+        introVideo.addEventListener(
+            "contextmenu",
+            function (event) {
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+                event.preventDefault();
 
-function updateNavbar() {
-
-    if (window.scrollY > 60) {
-
-        navbar.classList.add(
-            "scrolled"
+            }
         );
 
-    } else {
 
-        navbar.classList.remove(
-            "scrolled"
-        );
+        /* =========================================
+           PAGE LOADER
+        ========================================== */
 
-    }
+        window.addEventListener(
+            "load",
+            function () {
 
-}
+                setTimeout(
+                    function () {
 
-window.addEventListener(
-    "scroll",
-    updateNavbar,
-    { passive: true }
-);
-
-updateNavbar();
-
-
-/* =====================================================
-   TOP BUTTON
-===================================================== */
-
-function updateTopButton() {
-
-    if (window.scrollY > 600) {
-
-        topButton.classList.add(
-            "show"
-        );
-
-    } else {
-
-        topButton.classList.remove(
-            "show"
-        );
-
-    }
-
-}
-
-window.addEventListener(
-    "scroll",
-    updateTopButton,
-    { passive: true }
-);
-
-topButton.addEventListener(
-    "click",
-    function() {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-const observer =
-    new IntersectionObserver(
-
-        function(entries) {
-
-            entries.forEach(
-                function(entry) {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target
-                            .classList
-                            .add("visible");
-
-                        observer.unobserve(
-                            entry.target
+                        pageLoader.classList.add(
+                            "loaded"
                         );
 
-                    }
+                    },
+                    300
+                );
 
-                }
-            );
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-if (projectCard) {
-
-    observer.observe(
-        projectCard
-    );
-
-}
-
-if (aboutContainer) {
-
-    observer.observe(
-        aboutContainer
-    );
-
-}
-
-
-/* =====================================================
-   MEMBERS
-===================================================== */
-
-const memberObserver =
-    new IntersectionObserver(
-
-        function(entries) {
-
-            entries.forEach(
-                function(entry) {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.style.opacity =
-                            "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                        memberObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-memberCards.forEach(
-    function(member) {
-
-        member.style.opacity = "0";
-
-        member.style.transform =
-            "translateY(25px)";
-
-        member.style.transition =
-            "opacity 0.8s ease, transform 0.8s ease";
-
-        memberObserver.observe(
-            member
+            }
         );
 
-    }
-);
 
+        /* =========================================
+           NAVBAR
+        ========================================== */
 
-/* =====================================================
-   AUDIO PLAYER
-===================================================== */
+        function updateNavbar() {
 
-scoreTracks.forEach(
-    function(track) {
+            if (window.scrollY > 60) {
 
-        const audio =
-            track.querySelector(
-                ".track-audio"
-            );
+                navbar.classList.add(
+                    "scrolled"
+                );
 
-        const button =
-            track.querySelector(
-                ".play-button"
-            );
+            } else {
 
-        const icon =
-            track.querySelector(
-                ".play-icon"
-            );
-
-        const progress =
-            track.querySelector(
-                ".track-progress"
-            );
-
-        const timeDisplay =
-            track.querySelector(
-                ".track-time"
-            );
-
-
-        function formatTime(seconds) {
-
-            if (
-                !Number.isFinite(seconds)
-            ) {
-
-                return "00:00";
+                navbar.classList.remove(
+                    "scrolled"
+                );
 
             }
 
-            const minutes =
-                Math.floor(
-                    seconds / 60
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
+        );
+
+
+        updateNavbar();
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
+
+        function updateTopButton() {
+
+            if (window.scrollY > 600) {
+
+                topButton.classList.add(
+                    "show"
                 );
 
-            const remaining =
-                Math.floor(
-                    seconds % 60
+            } else {
+
+                topButton.classList.remove(
+                    "show"
                 );
 
-            return (
-                String(minutes).padStart(2,"0")
-                +
-                ":"
-                +
-                String(remaining).padStart(2,"0")
-            );
+            }
 
         }
 
 
-        function setPlayIcon() {
-
-            icon.classList.remove(
-                "pause"
-            );
-
-        }
+        window.addEventListener(
+            "scroll",
+            updateTopButton,
+            { passive: true }
+        );
 
 
-        function setPauseIcon() {
-
-            icon.classList.add(
-                "pause"
-            );
-
-        }
-
-
-        button.addEventListener(
+        topButton.addEventListener(
             "click",
-            function() {
+            function () {
 
-                document
-                    .querySelectorAll(
-                        ".track-audio"
-                    )
-                    .forEach(
-                        function(otherAudio) {
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
 
                             if (
-                                otherAudio !== audio
+                                entry.isIntersecting
                             ) {
 
-                                otherAudio.pause();
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
 
                             }
 
                         }
                     );
 
+                },
 
-                if (audio.paused) {
-
-                    audio.play()
-                        .then(
-                            function() {
-
-                                setPauseIcon();
-
-                            }
-                        )
-                        .catch(
-                            function() {
-
-                                setPlayIcon();
-
-                            }
-                        );
-
-                } else {
-
-                    audio.pause();
-
-                    setPlayIcon();
-
+                {
+                    threshold: 0.15
                 }
 
-            }
-        );
+            );
 
 
-        audio.addEventListener(
-            "timeupdate",
-            function() {
+        if (projectCard) {
 
-                if (audio.duration) {
-
-                    const percentage =
-                        (
-                            audio.currentTime /
-                            audio.duration
-                        ) * 100;
-
-                    progress.value =
-                        percentage;
-
-                }
-
-                timeDisplay.textContent =
-                    formatTime(
-                        audio.currentTime
-                    );
-
-            }
-        );
-
-
-        audio.addEventListener(
-            "loadedmetadata",
-            function() {
-
-                timeDisplay.textContent =
-                    "00:00 / " +
-                    formatTime(
-                        audio.duration
-                    );
-
-            }
-        );
-
-
-        progress.addEventListener(
-            "input",
-            function() {
-
-                if (audio.duration) {
-
-                    audio.currentTime =
-                        (
-                            progress.value /
-                            100
-                        ) *
-                        audio.duration;
-
-                }
-
-            }
-        );
-
-
-        audio.addEventListener(
-            "ended",
-            function() {
-
-                setPlayIcon();
-
-                progress.value = 0;
-
-                timeDisplay.textContent =
-                    "00:00 / " +
-                    formatTime(
-                        audio.duration
-                    );
-
-            }
-        );
-
-
-        audio.addEventListener(
-            "play",
-            setPauseIcon
-        );
-
-
-        audio.addEventListener(
-            "pause",
-            setPlayIcon
-        );
-
-    }
-);
-
-
-/* =====================================================
-   VISIBILITY
-===================================================== */
-
-document.addEventListener(
-    "visibilitychange",
-    function() {
-
-        if (
-            document.hidden &&
-            !introClosed
-        ) {
-
-            introVideo.pause();
+            observer.observe(
+                projectCard
+            );
 
         }
 
-    }
-);
 
-document.addEventListener(
-    "visibilitychange",
-    function() {
+        if (aboutContainer) {
 
-        if (
-            !document.hidden &&
-            !introClosed
-        ) {
+            observer.observe(
+                aboutContainer
+            );
 
-            introVideo.play()
-                .catch(
-                    function() {}
+        }
+
+
+        /* =========================================
+           MEMBERS REVEAL
+        ========================================== */
+
+        const memberObserver =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.style.opacity =
+                                    "1";
+
+                                entry.target.style.transform =
+                                    "translateY(0)";
+
+                                memberObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        memberCards.forEach(
+            function (member) {
+
+                member.style.opacity = "0";
+
+                member.style.transform =
+                    "translateY(25px)";
+
+                member.style.transition =
+                    "opacity 0.8s ease, transform 0.8s ease";
+
+                memberObserver.observe(
+                    member
                 );
 
-        }
+            }
+        );
 
-    }
-);
 
-</script>
+        /* =========================================
+           VISIBILITY
+        ========================================== */
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.pause();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "visibilitychange",
+            function () {
+
+                if (
+                    !document.hidden &&
+                    !introClosed
+                ) {
+
+                    introVideo.play()
+                        .catch(
+                            function () {}
+                        );
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
-    </html>
+
+      </html>
